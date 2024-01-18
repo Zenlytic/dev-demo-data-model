@@ -99,6 +99,8 @@ fields:
   - month
   - quarter
   - year
+  - month_of_year
+  - week_index
   sql: ${TABLE}.first_order_at
 description: This view provides a comprehensive overview of customer data for Pure
   Organics, including details such as the customer's ID, email address, name, address,

@@ -155,6 +155,8 @@ fields:
   - month
   - quarter
   - year
+  - month_of_year
+  - week_index
   sql: ${TABLE}.ORDER_AT
 
 - name: between_first_order_and_this_order

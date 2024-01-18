@@ -63,6 +63,8 @@ fields:
   - month
   - quarter
   - year
+  - month_of_year
+  - week_index
   sql: ${TABLE}.SUBSCRIBE_AT
 
 - name: number_of_active_subscriptions
