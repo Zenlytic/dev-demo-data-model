@@ -1,0 +1,50 @@
+version: 1
+type: view
+name: customers
+model_name: pure_organics
+sql_table_name: DEMO_RAW.CUSTOMERS
+fields:
+- name: customer_id
+  field_type: dimension
+  type: string
+  sql: ${TABLE}.CUSTOMER_ID
+
+- name: last_name
+  field_type: dimension
+  type: string
+  sql: ${TABLE}.LAST_NAME
+
+- name: first_name
+  field_type: dimension
+  type: string
+  sql: ${TABLE}.FIRST_NAME
+
+- name: email
+  field_type: dimension
+  type: string
+  sql: ${TABLE}.EMAIL
+
+- name: zipcode
+  field_type: dimension
+  type: string
+  sql: ${TABLE}.ZIPCODE
+
+- name: city
+  field_type: dimension
+  type: string
+  sql: ${TABLE}.CITY
+
+- name: address
+  field_type: dimension
+  type: string
+  sql: ${TABLE}.ADDRESS
+
+- name: state
+  field_type: dimension
+  type: string
+  sql: ${TABLE}.STATE
+
+- name: accepts_marketing
+  field_type: dimension
+  type: yesno
+  sql: ${TABLE}.ACCEPTS_MARKETING
