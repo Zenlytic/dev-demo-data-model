@@ -72,7 +72,7 @@ fields:
   field_type: measure
   type: number
   sql: AVG(CAST(${revenue} AS FLOAT))
-  description: The average revenue generated per order test.
+  description: The average revenue generated per order test2.
 
 identifiers:
 - name: order_line_id
