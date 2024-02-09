@@ -61,7 +61,7 @@ fields:
   - quarter
   - year
   sql: ${TABLE}.ORDER_AT
-  
+
 - name: total_revenue
   field_type: measure
   type: number
@@ -71,7 +71,7 @@ fields:
   field_type: measure
   type: number
   sql: AVG(CAST(${revenue} AS FLOAT))
-  description: The average revenue generated per order.
+  description: The average revenue generated per order test.
 
 identifiers:
 - name: order_line_id
