@@ -21,10 +21,6 @@ fields:
   field_type: dimension
   type: string
   sql: ${TABLE}.ORDER_ID
-- name: marketing_source
-  field_type: dimension
-  type: string
-  sql: ${TABLE}.MARKETING_SOURCE
 - name: price
   field_type: dimension
   type: number
