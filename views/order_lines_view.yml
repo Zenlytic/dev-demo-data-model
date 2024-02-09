@@ -41,7 +41,7 @@ fields:
   field_type: dimension
   type: string
   sql: ${TABLE}.MARKETING_CHANNEL
-  # searchable: true
+  searchable: true
 - name: campaign
   field_type: dimension
   type: string
