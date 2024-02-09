@@ -77,7 +77,7 @@ fields:
   field_type: measure
   type: number
   sql: SUM(CAST(${revenue} AS FLOAT))
-  description: The average revenue generated per order test2 test5.
+  description: The average revenue generated per order.
 
 
 identifiers:
