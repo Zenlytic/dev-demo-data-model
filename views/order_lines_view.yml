@@ -27,11 +27,11 @@ fields:
   sql: ${TABLE}.MARKETING_SOURCE
 - name: price
   field_type: dimension
-  type: string
+  type: number
   sql: ${TABLE}.PRICE
 - name: revenue
   field_type: dimension
-  type: string
+  type: number
   sql: ${TABLE}.REVENUE
 - name: quantity
   field_type: dimension
@@ -71,6 +71,7 @@ fields:
   type: number
   sql: AVG(CAST(${revenue} AS FLOAT))
   description: The average revenue generated per order.
+
 identifiers:
 - name: order_line_id
   type: primary
