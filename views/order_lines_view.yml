@@ -61,7 +61,7 @@ fields:
   - quarter
   - year
   sql: ${TABLE}.ORDER_AT
-  description: tester.
+  description: tester2.
 
 - name: total_revenue
   field_type: measure
