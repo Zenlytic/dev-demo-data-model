@@ -61,6 +61,7 @@ fields:
   - quarter
   - year
   sql: ${TABLE}.ORDER_AT
+  
 - name: total_revenue
   field_type: measure
   type: number
