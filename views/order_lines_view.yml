@@ -35,9 +35,8 @@ fields:
   sql: ${TABLE}.REVENUE
 - name: quantity
   field_type: dimension
-  type: string
+  type: number
   sql: ${TABLE}.QUANTITY
-  searchable: true
 - name: marketing_channel
   field_type: dimension
   type: string
