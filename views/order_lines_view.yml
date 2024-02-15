@@ -62,13 +62,11 @@ fields:
 - name: revenue
   field_type: dimension
   type: number
-  hidden: true
   sql: ${TABLE}.REVENUE
 
 - name: price
   field_type: dimension
   type: number
-  hidden: true
   sql: ${TABLE}.PRICE
 
 - name: quantity
