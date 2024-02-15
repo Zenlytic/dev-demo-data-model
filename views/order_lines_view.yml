@@ -56,7 +56,6 @@ fields:
 - name: discount
   field_type: dimension
   type: number
-  hidden: true
   sql: ${TABLE}.DISCOUNT
 
 - name: revenue
@@ -67,6 +66,7 @@ fields:
 - name: price
   field_type: dimension
   type: number
+  hidden: true
   sql: ${TABLE}.PRICE
 
 - name: quantity
