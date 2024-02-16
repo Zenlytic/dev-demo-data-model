@@ -3,7 +3,7 @@ type: view
 name: marketing_spend
 model_name: pure_organics
 sql_table_name: DEMO_PROD.MARKETING_SPEND
-default_date: spend
+default_date: spend_date
 row_label: Spend Item
 fields:
 - name: unique_key
