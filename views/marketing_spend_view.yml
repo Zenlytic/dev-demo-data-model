@@ -39,7 +39,6 @@ fields:
 - name: ad_spend
   field_type: dimension
   type: number
-  hidden: yes
   description: The amount spent
   sql: ${TABLE}.ad_spend
   label_prefix:
