@@ -60,28 +60,24 @@ fields:
 - name: discount
   field_type: dimension
   type: number
-  hidden: yes
   sql: ${TABLE}.DISCOUNT
   label_prefix:
 
 - name: revenue
   field_type: dimension
   type: number
-  hidden: yes
   sql: ${TABLE}.REVENUE
   label_prefix:
 
 - name: price
   field_type: dimension
   type: number
-  hidden: yes
   sql: ${TABLE}.PRICE
   label_prefix:
 
 - name: quantity
   field_type: dimension
   type: number
-  hidden: yes
   sql: ${TABLE}.QUANTITY
   label_prefix:
 
