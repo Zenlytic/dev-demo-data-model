@@ -146,7 +146,7 @@ fields:
   type: time
   datatype: timestamp
   description: The time at which the order was placed. This is the main time field
-    to use for orders
+    to use for orders 
   timeframes:
   - raw
   - date
