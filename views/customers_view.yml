@@ -124,3 +124,8 @@ fields:
   - week_index
   sql: ${TABLE}.first_order_at
   label_prefix:
+
+- name: unique customers
+  field_type: measure
+  type: count_distinct
+  sql: ${customer_id}
