@@ -125,7 +125,7 @@ fields:
   sql: ${TABLE}.first_order_at
   label_prefix:
 
-- name: unique customers
+- name: unique_customers
   field_type: measure
   type: count_distinct
   sql: ${customer_id}
