@@ -128,4 +128,6 @@ fields:
 - name: unique_customers
   field_type: measure
   type: count_distinct
+  description: test
   sql: ${customer_id}
+  label_prefix:

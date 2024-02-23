@@ -184,3 +184,70 @@ fields:
   sql_start: ${customers.first_order_date}
   sql_end: ${order_date}
   label_prefix:
+
+- name: NEW_CUSTOMERS
+  field_type: measure
+  type: count_distinct
+  datatype: timestamp
+  hidden: false
+  primary_key: false
+  label: New Customers
+  description: The count of new customers.
+  required_access_grants: []
+  value_format_name:
+  drill_fields: []
+  sql_distinct_key:
+  tiers: []
+  timeframes: []
+  intervals: []
+  sql_start:
+  sql_end:
+  sql: CASE WHEN ${order_lines.NEW_VS_REPEAT} = 'New' THEN ${order_lines.CUSTOMER_ID}
+    END
+  filters: []
+  extra: []
+  id: order_lines.NEW_CUSTOMERS
+  workspace_id: 11-dev
+  user_id: 622bc4a0-be87-448a-942f-256af905eba8
+  tags: []
+  searchable: false
+  synonyms: []
+  link:
+  convert_tz: false
+  measure:
+  canon_date:
+  non_additive_dimension: []
+  is_personal_field: true
+
+- name: TOTAL_GROSS_REVENUE
+  field_type: measure
+  type: sum
+  datatype: timestamp
+  hidden: false
+  primary_key: false
+  label: Total Gross Revenue
+  description: The total gross revenue from all orders.
+  required_access_grants: []
+  value_format_name:
+  drill_fields: []
+  sql_distinct_key:
+  tiers: []
+  timeframes: []
+  intervals: []
+  sql_start:
+  sql_end:
+  sql: ${order_lines.REVENUE}
+  filters: []
+  extra: []
+  id: order_lines.TOTAL_GROSS_REVENUE
+  workspace_id: 11-dev
+  user_id: 622bc4a0-be87-448a-942f-256af905eba8
+  tags: []
+  searchable: false
+  synonyms: []
+  link:
+  convert_tz: false
+  measure:
+  canon_date:
+  non_additive_dimension: []
+  is_personal_field: true
