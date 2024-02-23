@@ -114,7 +114,7 @@ fields:
   field_type: dimension
   type: string
   description: The marketing channel that the customer came through before placing
-    their order.
+    their order. 
   sql: ${TABLE}.MARKETING_CHANNEL
   searchable: true
   drill_down: marketing_source
