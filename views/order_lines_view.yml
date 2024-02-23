@@ -16,14 +16,14 @@ fields:
 - name: order_line_id
   field_type: dimension
   type: string
-  hidden: true
-  primary_key: true
+  hidden: yes
+  primary_key: yes
   sql: ${TABLE}.ORDER_LINE_ID
+  label_prefix:
 
 - name: customer_id
   field_type: dimension
   type: string
-  hidden: true
   drill_fields:
   - customers.email
   - customers.state
@@ -32,11 +32,12 @@ fields:
   sql: ${TABLE}.CUSTOMER_ID
   tags:
   - customer
+  label_prefix:
 
 - name: order_id
   field_type: dimension
   type: string
-  hidden: true
+  hidden: yes
   drill_fields:
   - order_date
   - subscription_vs_otp
@@ -47,35 +48,38 @@ fields:
   sql: ${TABLE}.ORDER_ID
   tags:
   - order
+  label_prefix:
 
 - name: product_id
   field_type: dimension
   type: string
-  hidden: true
+  hidden: yes
   sql: ${TABLE}.PRODUCT_ID
+  label_prefix:
 
 - name: discount
   field_type: dimension
   type: number
-  hidden: true
   sql: ${TABLE}.DISCOUNT
+  label_prefix:
 
 - name: revenue
   field_type: dimension
   type: number
   sql: ${TABLE}.REVENUE
+  label_prefix:
 
 - name: price
   field_type: dimension
   type: number
-  hidden: true
   sql: ${TABLE}.PRICE
+  label_prefix:
 
 - name: quantity
   field_type: dimension
   type: number
-  hidden: true
   sql: ${TABLE}.QUANTITY
+  label_prefix:
 
 - name: campaign
   field_type: dimension
@@ -85,6 +89,7 @@ fields:
   sql: ${TABLE}.CAMPAIGN
   searchable: true
   drill_up: marketing_source
+  label_prefix:
 
 - name: promotion
   field_type: dimension
@@ -92,6 +97,7 @@ fields:
   description: The promotion given to the customer for this order
   sql: ${TABLE}.PROMOTION
   searchable: true
+  label_prefix:
 
 - name: subscription_vs_otp
   field_type: dimension
@@ -99,6 +105,7 @@ fields:
   description: Whether the order was from a subscription or a one time purchase (OTP)
   sql: ${TABLE}.SUBSCRIPTION_VS_OTP
   searchable: true
+  label_prefix:
 
 - name: marketing_source
   field_type: dimension
@@ -109,6 +116,7 @@ fields:
   searchable: true
   drill_up: marketing_channel
   drill_down: campaign
+  label_prefix:
 
 - name: marketing_channel
   field_type: dimension
@@ -118,6 +126,7 @@ fields:
   sql: ${TABLE}.MARKETING_CHANNEL
   searchable: true
   drill_down: marketing_source
+  label_prefix:
 
 - name: last_click_marketing_channel
   field_type: dimension
@@ -125,6 +134,7 @@ fields:
   description: The last click marketing channel that the customer came through before
     placing their order.
   sql: ${TABLE}.last_click
+  label_prefix:
 
 - name: first_click_marketing_channel
   field_type: dimension
@@ -132,6 +142,7 @@ fields:
   description: The first click marketing channel that the customer came through before
     placing their order.
   sql: ${TABLE}.first_click
+  label_prefix:
 
 - name: new_vs_repeat
   field_type: dimension
@@ -140,6 +151,7 @@ fields:
     customer
   sql: ${TABLE}.new_vs_repeat
   searchable: true
+  label_prefix:
 
 - name: order
   field_type: dimension_group
@@ -157,6 +169,7 @@ fields:
   - month_of_year
   - week_index
   sql: ${TABLE}.ORDER_AT
+  label_prefix:
 
 - name: between_first_order_and_this_order
   field_type: dimension_group
@@ -170,6 +183,7 @@ fields:
   - year
   sql_start: ${customers.first_order_date}
   sql_end: ${order_date}
+<<<<<<< HEAD
 
 - name: total_gross_revenue
   field_type: measure
@@ -305,3 +319,6 @@ fields_for_analysis:
 - promotion
 - campaign
 - products.product_title
+=======
+  label_prefix:
+>>>>>>> 8ce82ae8bf3a99200bd792d07d92a1c908648b4e

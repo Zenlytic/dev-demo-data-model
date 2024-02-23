@@ -66,8 +66,3 @@ fields:
   - month_of_year
   - week_index
   sql: ${TABLE}.SUBSCRIBE_AT
-
-- name: number_of_active_subscriptions
-  field_type: measure
-  type: count
-  value_format_name: decimal_0
