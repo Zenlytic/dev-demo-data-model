@@ -318,6 +318,5 @@ fields_for_analysis:
 - promotion
 - campaign
 - products.product_title
-=======
   label_prefix:
 >>>>>>> 8ce82ae8bf3a99200bd792d07d92a1c908648b4e
