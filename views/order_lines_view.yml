@@ -140,7 +140,7 @@ fields:
   field_type: dimension
   type: string
   description: The first click marketing channel that the customer came through before
-    placing their order. 
+    placing their order.
   sql: ${TABLE}.first_click
   label_prefix:
 
