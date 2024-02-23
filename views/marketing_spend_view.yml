@@ -59,12 +59,12 @@ fields:
   sql: ${TABLE}.spend_at
   label_prefix:
 
-- name: TOTAL_AD_SPEND
+- name: total_ad_spend
   field_type: measure
   type: sum
   datatype: timestamp
-  hidden: false
-  primary_key: false
+  hidden: no
+  primary_key: no
   label: Total Ad Spend
   description: The total amount spent on ads.
   required_access_grants: []
@@ -91,13 +91,14 @@ fields:
   canon_date:
   non_additive_dimension: []
   is_personal_field: true
+  label_prefix:
 
-- name: CUSTOMER_ACQUISITION_COST
+- name: customer_acquisition_cost
   field_type: measure
   type: min
   datatype: timestamp
-  hidden: false
-  primary_key: false
+  hidden: no
+  primary_key: no
   label: Customer Acquisition Cost
   description: The cost of acquiring a new customer, calculated as the total ad spend
     divided by the number of new customers.
@@ -125,13 +126,14 @@ fields:
   canon_date:
   non_additive_dimension: []
   is_personal_field: true
+  label_prefix:
 
-- name: PERSONAL_FIELD_DDHIPPR
+- name: personal_field_ddhippr
   field_type: measure
   type: average
   datatype: timestamp
-  hidden: false
-  primary_key: false
+  hidden: no
+  primary_key: no
   label: Average Ad Spend
   description: The amount spent
   required_access_grants: []
@@ -158,3 +160,4 @@ fields:
   canon_date: marketing_spend.spend
   non_additive_dimension: []
   is_personal_field: true
+  label_prefix:

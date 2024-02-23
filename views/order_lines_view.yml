@@ -185,12 +185,12 @@ fields:
   sql_end: ${order_date}
   label_prefix:
 
-- name: NEW_CUSTOMERS
+- name: new_customers
   field_type: measure
   type: count_distinct
   datatype: timestamp
-  hidden: false
-  primary_key: false
+  hidden: no
+  primary_key: no
   label: New Customers
   description: The count of new customers.
   required_access_grants: []
@@ -218,13 +218,14 @@ fields:
   canon_date:
   non_additive_dimension: []
   is_personal_field: true
+  label_prefix:
 
-- name: TOTAL_GROSS_REVENUE
+- name: total_gross_revenue
   field_type: measure
   type: sum
   datatype: timestamp
-  hidden: false
-  primary_key: false
+  hidden: no
+  primary_key: no
   label: Total Gross Revenue
   description: The total gross revenue from all orders.
   required_access_grants: []
@@ -251,3 +252,4 @@ fields:
   canon_date:
   non_additive_dimension: []
   is_personal_field: true
+  label_prefix:
