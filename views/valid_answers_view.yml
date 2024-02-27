@@ -1,0 +1,23 @@
+version: 1
+type: view
+name: valid_answers
+model_name: pure_organics
+sql_table_name: ONLINE_EXAMS.VALID_ANSWERS
+fields:
+- name: question_id
+  field_type: dimension
+  type: string
+  sql: ${TABLE}.QUESTION_ID
+  searchable: true
+
+- name: valid_answer_id
+  field_type: dimension
+  type: string
+  sql: ${TABLE}.VALID_ANSWER_ID
+  searchable: true
+
+- name: valid_answer_text
+  field_type: dimension
+  type: string
+  sql: ${TABLE}.VALID_ANSWER_TEXT
+  searchable: true

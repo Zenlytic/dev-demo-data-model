@@ -1,0 +1,59 @@
+version: 1
+type: view
+name: students
+model_name: pure_organics
+sql_table_name: ONLINE_EXAMS.STUDENTS
+fields:
+- name: student_id
+  field_type: dimension
+  type: string
+  sql: ${TABLE}.STUDENT_ID
+  searchable: true
+
+- name: middle_name
+  field_type: dimension
+  type: string
+  sql: ${TABLE}.MIDDLE_NAME
+  searchable: true
+
+- name: last_name
+  field_type: dimension
+  type: string
+  sql: ${TABLE}.LAST_NAME
+  searchable: true
+
+- name: first_name
+  field_type: dimension
+  type: string
+  sql: ${TABLE}.FIRST_NAME
+  searchable: true
+
+- name: cell_mobile_phone
+  field_type: dimension
+  type: string
+  sql: ${TABLE}.CELL_MOBILE_PHONE
+  searchable: true
+
+- name: email_adress
+  field_type: dimension
+  type: string
+  sql: ${TABLE}.EMAIL_ADRESS
+  searchable: true
+
+- name: student_address
+  field_type: dimension
+  type: string
+  sql: ${TABLE}.STUDENT_ADDRESS
+  searchable: true
+
+- name: gender_mfu
+  field_type: dimension
+  type: string
+  sql: ${TABLE}.GENDER_MFU
+  searchable: true
+
+- name: home_phone
+  field_type: dimension
+  type: string
+  sql: ${TABLE}.HOME_PHONE
+  searchable: true

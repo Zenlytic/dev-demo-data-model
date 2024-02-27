@@ -1,0 +1,35 @@
+version: 1
+type: view
+name: student_assessments
+model_name: pure_organics
+sql_table_name: ONLINE_EXAMS.STUDENT_ASSESSMENTS
+fields:
+- name: valid_answer_id
+  field_type: dimension
+  type: string
+  sql: ${TABLE}.VALID_ANSWER_ID
+  searchable: true
+
+- name: student_answer_id
+  field_type: dimension
+  type: string
+  sql: ${TABLE}.STUDENT_ANSWER_ID
+  searchable: true
+
+- name: satisfactory_yn
+  field_type: dimension
+  type: string
+  sql: ${TABLE}.SATISFACTORY_YN
+  searchable: true
+
+- name: assessment
+  field_type: dimension
+  type: string
+  sql: ${TABLE}.ASSESSMENT
+  searchable: true
+
+- name: student_answer_text
+  field_type: dimension
+  type: string
+  sql: ${TABLE}.STUDENT_ANSWER_TEXT
+  searchable: true

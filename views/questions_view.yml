@@ -1,0 +1,23 @@
+version: 1
+type: view
+name: questions
+model_name: pure_organics
+sql_table_name: ONLINE_EXAMS.QUESTIONS
+fields:
+- name: question_id
+  field_type: dimension
+  type: string
+  sql: ${TABLE}.QUESTION_ID
+  searchable: true
+
+- name: type_of_question_code
+  field_type: dimension
+  type: string
+  sql: ${TABLE}.TYPE_OF_QUESTION_CODE
+  searchable: true
+
+- name: question_text
+  field_type: dimension
+  type: string
+  sql: ${TABLE}.QUESTION_TEXT
+  searchable: true
