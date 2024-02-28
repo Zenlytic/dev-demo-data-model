@@ -1,4 +1,4 @@
-connection: DEMO
+connection: demo
 name: my_model
 type: model
 version: 1
