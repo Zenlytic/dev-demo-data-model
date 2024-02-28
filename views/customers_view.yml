@@ -106,6 +106,7 @@ fields:
   type: string
   description: The first campaign the user came in through
   sql: ${TABLE}.first_campaign
+  primary_key: false
   label_prefix:
 
 - name: first_order
