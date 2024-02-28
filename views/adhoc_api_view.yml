@@ -16,6 +16,13 @@ fields:
   hidden: true
   name: createdat_api
   sql: ${TABLE}.createdat
+  timeframes:
+  - raw
+  - date
+  - week
+  - month
+  - quarter
+  - year
   type: time
 - drill_fields:
   - createdby_api

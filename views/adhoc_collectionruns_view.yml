@@ -20,6 +20,13 @@ fields:
 - field_type: dimension_group
   name: createdat_collectionrun
   sql: ${TABLE}.createdat
+  timeframes:
+  - raw
+  - date
+  - week
+  - month
+  - quarter
+  - year
   type: time
 - drill_fields:
   - owner_collectionrun

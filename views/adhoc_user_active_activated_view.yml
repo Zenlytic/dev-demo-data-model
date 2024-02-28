@@ -41,6 +41,13 @@ fields:
   field_type: dimension_group
   name: timestamp_date
   sql: ${TABLE}.timestamp_date
+  timeframes:
+  - raw
+  - date
+  - week
+  - month
+  - quarter
+  - year
   type: time
 - description: Active User Count
   drill_fields:
