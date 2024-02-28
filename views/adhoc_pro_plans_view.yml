@@ -1,0 +1,55 @@
+access_filters: []
+fields:
+- field_type: dimension
+  hidden: true
+  name: plan
+  primary_key: true
+  sql: ${TABLE}.plan
+  type: string
+- field_type: dimension
+  name: price_per_license
+  sql: ${TABLE}.price_per_license
+  type: number
+- description: 'Types of plan: Free/Pro/Team/Business/Professional/Enterprise/Enterprise(2020)/Enterprise(2021)/Enterprise
+    Essentials'
+  field_type: dimension
+  group_label: Team Plan
+  name: plan_type
+  sql: "CASE\n            WHEN ${TABLE}.plan_type = 'cloud' THEN 'Pro'\n         \
+    \   WHEN ${TABLE}.plan_type IS NULL THEN 'Free'\n            ELSE INITCAP(${TABLE}.plan_type)\n\
+    \          END"
+  type: string
+- description: 'Types of plan: Free/Basic/Professional/Enterprise'
+  field_type: dimension
+  group_label: Team Plan
+  name: plan_groups
+  sql: "CASE\n            WHEN ${TABLE}.plan_type IN ('cloud', 'team', 'pro') THEN\
+    \ 'Basic'\n            WHEN ${TABLE}.plan_type IN ('business', 'enterprise', 'professional')\
+    \ THEN 'Professional'\n            WHEN ${TABLE}.plan_type IN ('enterprise (2020)',\
+    \ 'enterprise (2021)', 'enterprise essentials') THEN 'Enterprise'\n          \
+    \  WHEN ${TABLE}.plan_type IS NULL THEN 'Free'\n            ELSE UPPER(LEFT(${TABLE}.plan_type,\
+    \ 1)) + LOWER(SUBSTRING(${TABLE}.plan_type, 2, LEN(${TABLE}.plan_type)))\n   \
+    \       END"
+  type: string
+- field_type: dimension
+  name: subscription_period
+  sql: ${TABLE}.subscription_period
+  type: string
+identifiers:
+- name: plan
+  sql: ${plan}
+  type: primary
+model_name: my_model
+name: adhoc_pro_plans
+required_access_grants: []
+row_label: Adhoc Pro Plans
+sets:
+- fields:
+  - plan
+  - price_per_license
+  - plan_type
+  - subscription_period
+  name: detail
+sql_table_name: adhoc_melvin_moncy.pro_plans
+type: view
+version: 1

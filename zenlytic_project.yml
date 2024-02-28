@@ -1,7 +1,8 @@
-name: demo_zenlytic_project
-
-profile: demo
-
-model-paths: ['models']
-view-paths: ['views']
-dashboard-paths: ['dashboards']
+dashboard-paths:
+- dashboards
+model-paths:
+- models
+name: new_zenlytic_project
+profile: new_zenlytic_project
+view-paths:
+- views
