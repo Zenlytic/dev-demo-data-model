@@ -39,10 +39,10 @@ fields:
   name: createdat
   sql: ${TABLE}.createdat
   timeframes:
-  - raw
-  - date
-  - month
-  - year
+    - raw
+    - date
+    - month
+    - year
   type: time
 - field_type: measure
   label: Count of user_ids
