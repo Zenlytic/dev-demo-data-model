@@ -1,84 +1,84 @@
-access_filters: []
-fields:
-- description: Team_id of the team
-  field_type: dimension
-  name: id
-  primary_key: true
-  sql: ${TABLE}.id
-  type: number
-- description: Annual reccuring revenue of the team
-  field_type: dimension
-  name: arr
-  sql: ${TABLE}.arr
-  type: number
-- description: Total unused licenses of the users
-  field_type: dimension
-  name: available_licenses
-  sql: ${TABLE}.available_licenses
-  type: number
-- description: Flag for identiying if it's an internal team
-  field_type: dimension
-  name: is_internal_team
-  sql: ${TABLE}.is_internal_team
-  type: yesno
-- description: Total licenses bought by the team
-  field_type: dimension
-  name: jetpacks_total_licenses
-  sql: ${TABLE}.jetpacks_total_licenses
-  type: number
-- description: Plan bought by the team. Null plan means it's a free team
-  field_type: dimension
-  name: plan
-  sql: ${TABLE}.plan
-  type: string
-- description: Number of users in the team
-  field_type: dimension
-  name: user_count
-  sql: ${TABLE}.user_count
-  type: number
-- description: Total licenses bought by the team
-  field_type: dimension
-  name: total_licenses
-  sql: ${TABLE}.total_licenses
-  type: number
-- description: Total team count
-  drill_fields:
-  - id
-  field_type: measure
-  name: total_teams
-  sql: ${TABLE}.id
-  type: count_distinct
-- drill_fields:
-  - id
-  - total_licenses_measure
-  field_type: measure
-  label: Total licenses
-  name: total_licenses_measure
-  sql: ${TABLE}.total_licenses
-  type: sum
-- description: Total ARR
-  drill_fields:
-  - id
-  - total_arr
-  field_type: measure
-  name: total_arr
-  sql: ${TABLE}.arr
-  type: sum
-identifiers:
-- name: team_id
-  sql: ${id}
-  type: primary
-- name: team_id
-  sql: ${id}
-  type: foreign
-- name: plan
-  sql: ${plan}
-  type: foreign
-model_name: my_model
+version: 1
+type: view
 name: adhoc_dim_team
+model_name: my_model
 required_access_grants: []
 row_label: Adhoc Dim Team
 sets: []
+access_filters: []
+identifiers:
+  - name: team_id
+    type: primary
+    sql: ${id}
+  - name: team_id
+    type: foreign
+    sql: ${id}
+  - name: plan
+    type: foreign
+    sql: ${plan}
 sql_table_name: adhoc_melvin_moncy.dim_team
-type: view
-version: 1
+fields:
+  - name: id
+    field_type: dimension
+    type: number
+    description: Team_id of the team
+    sql: ${TABLE}.id
+    primary_key: true
+  - name: arr
+    field_type: dimension
+    type: number
+    description: Annual reccuring revenue of the team
+    sql: ${TABLE}.arr
+  - name: available_licenses
+    field_type: dimension
+    type: number
+    description: Total unused licenses of the users
+    sql: ${TABLE}.available_licenses
+  - name: is_internal_team
+    field_type: dimension
+    type: yesno
+    description: Flag for identiying if it's an internal team
+    sql: ${TABLE}.is_internal_team
+  - name: jetpacks_total_licenses
+    field_type: dimension
+    type: number
+    description: Total licenses bought by the team
+    sql: ${TABLE}.jetpacks_total_licenses
+  - name: plan
+    field_type: dimension
+    type: string
+    description: Plan bought by the team. Null plan means it's a free team
+    sql: ${TABLE}.plan
+  - name: user_count
+    field_type: dimension
+    type: number
+    description: Number of users in the team
+    sql: ${TABLE}.user_count
+  - name: total_licenses
+    field_type: dimension
+    type: number
+    description: Total licenses bought by the team
+    sql: ${TABLE}.total_licenses
+  - name: total_teams
+    field_type: measure
+    type: count_distinct
+    description: Total team count
+    sql: ${TABLE}.id
+    drill_fields:
+      - id
+  - name: total_licenses_measure
+    field_type: measure
+    type: sum
+    sql: ${TABLE}.total_licenses
+    label: Total licenses
+    drill_fields:
+      - id
+      - total_licenses_measure
+  - name: total_arr
+    field_type: measure
+    type: sum
+    description: Total ARR
+    sql: ${TABLE}.arr
+    drill_fields:
+      - id
+      - total_arr

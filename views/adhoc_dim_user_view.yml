@@ -1,74 +1,74 @@
-access_filters: []
-default_date: createdat
-fields:
-- description: User_id of the user
-  field_type: dimension
-  name: id
-  primary_key: true
-  sql: ${TABLE}.id
-  type: number
-- description: Unique identifier for a user. A user can have multiple user_id associated
-    with him/her if they are part of multiple teams
-  field_type: dimension
-  name: unique_user_hash
-  sql: ${TABLE}.unique_user_hash
-  type: number
-- description: Latest country in whichuser used postman
-  field_type: dimension
-  name: country_name
-  sql: ${TABLE}.country_name
-  type: string
-- field_type: dimension
-  name: internal_user
-  sql: ${TABLE}.internal_user
-  type: string
-- field_type: dimension
-  name: org_plan
-  sql: ${TABLE}.org_plan
-  type: string
-- field_type: dimension
-  name: team_id
-  sql: ${TABLE}.team_id
-  type: number
-- field_type: dimension
-  name: user_role
-  sql: ${TABLE}.user_role
-  type: string
-- description: Sign-up date for the user
-  field_type: dimension_group
-  name: createdat
-  sql: ${TABLE}.createdat
-  timeframes:
-    - raw
-    - date
-    - month
-    - year
-  type: time
-- field_type: measure
-  label: Count of user_ids
-  name: user_count
-  sql: ${TABLE}.id
-  type: count_distinct
-- field_type: measure
-  label: Count of unique users
-  name: unique_user_count
-  sql: ${TABLE}.unique_user_hash
-  type: count_distinct
-identifiers: []
-model_name: my_model
+version: 1
+type: view
 name: adhoc_dim_user
+model_name: my_model
 required_access_grants: []
 row_label: Adhoc Dim User
 sets:
-- fields:
-  - id
-  - country_name
-  - createdat_date
-  - internal_user
-  - org_plan
-  - team_id
-  - user_role
-  name: detail
+  - fields:
+      - id
+      - country_name
+      - createdat_date
+      - internal_user
+      - org_plan
+      - team_id
+      - user_role
+    name: detail
+access_filters: []
+identifiers: []
 sql_table_name: adhoc_melvin_moncy.dim_user
-type: view
-version: 1
+default_date: createdat
+fields:
+  - name: id
+    field_type: dimension
+    type: number
+    description: User_id of the user
+    sql: ${TABLE}.id
+    primary_key: true
+  - name: unique_user_hash
+    field_type: dimension
+    type: number
+    description: Unique identifier for a user. A user can have multiple user_id associated
+      with him/her if they are part of multiple teams
+    sql: ${TABLE}.unique_user_hash
+  - name: country_name
+    field_type: dimension
+    type: string
+    description: Latest country in whichuser used postman
+    sql: ${TABLE}.country_name
+  - name: internal_user
+    field_type: dimension
+    type: string
+    sql: ${TABLE}.internal_user
+  - name: org_plan
+    field_type: dimension
+    type: string
+    sql: ${TABLE}.org_plan
+  - name: team_id
+    field_type: dimension
+    type: number
+    sql: ${TABLE}.team_id
+  - name: user_role
+    field_type: dimension
+    type: string
+    sql: ${TABLE}.user_role
+  - name: createdat
+    field_type: dimension_group
+    type: time
+    description: Sign-up date for the user
+    timeframes:
+      - raw
+      - date
+      - month
+      - year
+    sql: ${TABLE}.createdat
+  - name: user_count
+    field_type: measure
+    type: count_distinct
+    sql: ${TABLE}.id
+    label: Count of user_ids
+  - name: unique_user_count
+    field_type: measure
+    type: count_distinct
+    sql: ${TABLE}.unique_user_hash
+    label: Count of unique users
