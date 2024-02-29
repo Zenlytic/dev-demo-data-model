@@ -25,41 +25,35 @@ fields:
   hidden: yes
   primary_key: yes
   sql: ${TABLE}.CUSTOMER_ID
-  label_prefix:
 
 - name: accepts_marketing
   field_type: dimension
   type: yesno
   sql: ${TABLE}.ACCEPTS_MARKETING
-  label_prefix:
 
 - name: email
   field_type: dimension
-  type: string
+  type: yesno
   description: The customer's email address
   required_access_grants:
   - pii_access
   sql: ${TABLE}.EMAIL
-  label_prefix:
 
 - name: first_name
   field_type: dimension
   type: string
   sql: ${TABLE}.FIRST_NAME
-  label_prefix:
 
 - name: last_name
   field_type: dimension
   type: string
   sql: ${TABLE}.LAST_NAME
-  label_prefix:
 
 - name: address
   field_type: dimension
   type: string
   description: The customer's address (shipping)
   sql: ${TABLE}.ADDRESS
-  label_prefix:
 
 - name: city
   field_type: dimension
@@ -68,7 +62,6 @@ fields:
   sql: ${TABLE}.CITY
   drill_up: state
   drill_down: zipcode
-  label_prefix:
 
 - name: state
   field_type: dimension
@@ -77,7 +70,6 @@ fields:
   sql: ${TABLE}.STATE
   searchable: true
   drill_down: city
-  label_prefix:
 
 - name: zipcode
   field_type: dimension
@@ -85,29 +77,25 @@ fields:
   description: The customer's zip code
   sql: ${TABLE}.ZIPCODE
   drill_up: city
-  label_prefix:
 
 - name: first_marketing_group
   field_type: dimension
   type: string
   description: The first marketing group the user came in through
   sql: ${TABLE}.first_channel
-  label_prefix:
 
 - name: first_promotion
   field_type: dimension
   type: string
   description: The first promotion the user came in through
   sql: ${TABLE}.first_promotion
-  label_prefix:
 
 - name: first_campaign
   field_type: dimension
   type: string
+  primary_key: no
   description: The first campaign the user came in through
   sql: ${TABLE}.first_campaign
-  primary_key: no
-  label_prefix:
 
 - name: first_order
   field_type: dimension_group
@@ -124,11 +112,9 @@ fields:
   - month_of_year
   - week_index
   sql: ${TABLE}.first_order_at
-  label_prefix:
 
 - name: unique_customers
   field_type: measure
   type: count_distinct
   description: testasdasd
   sql: ${customer_id}
-  label_prefix:
