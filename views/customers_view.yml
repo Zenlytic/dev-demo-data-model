@@ -112,9 +112,3 @@ fields:
   - month_of_year
   - week_index
   sql: ${TABLE}.first_order_at
-
-- name: unique_customers
-  field_type: measure
-  type: count_distinct
-  description: testasdasd
-  sql: ${customer_id}
