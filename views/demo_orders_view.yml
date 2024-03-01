@@ -2,7 +2,7 @@ version: 1
 type: view
 name: demo_orders
 model_name: pure_organics
-sql_table_name: ANALYTICS.DEMO_ORDERS
+sql_table_name: ANALYTICS.TEST_TO_SEE_IF_THIS_IS_SMART
 default_date: customer_created_at
 fields:
 - name: order_id
