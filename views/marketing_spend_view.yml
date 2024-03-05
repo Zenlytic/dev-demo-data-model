@@ -19,6 +19,7 @@ fields:
   field_type: dimension
   type: string
   sql: ${TABLE}.CHANNEL
+  searchable: yes
 
 - name: ad_spend
   field_type: dimension
