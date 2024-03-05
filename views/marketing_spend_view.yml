@@ -20,6 +20,7 @@ fields:
   type: string
   description: The channel of the ad spend
   sql: ${TABLE}.channel
+  searchable: yes
   label_prefix:
 
 - name: source
