@@ -175,3 +175,10 @@ fields:
   - year
   sql_start: ${customers.first_order_date}
   sql_end: ${order_date}
+
+- name: personal_field_ucrpcvp
+  field_type: measure
+  type: count_distinct
+  label: Count Distinct Order Id
+  sql: ${TABLE}.ORDER_ID
+  view_name: order_lines
