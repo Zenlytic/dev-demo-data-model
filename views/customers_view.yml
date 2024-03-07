@@ -111,3 +111,10 @@ fields:
   - month_of_year
   - week_index
   sql: ${TABLE}.first_order_at
+
+- name: personal_field_bsviesm
+  field_type: measure
+  type: count_distinct
+  label: Count Distinct Email
+  description: The customer's email address
+  sql: ${TABLE}.EMAIL
