@@ -174,3 +174,11 @@ fields:
   label: Total Gross Revenue
   description: The total gross revenue from all orders
   sql: ${order_lines.REVENUE}
+
+- name: personal_field_eqbflga
+  field_type: measure
+  type: count_distinct
+  label: WOAH TEST
+  sql: ${TABLE}.CUSTOMER_ID
+  tags:
+  - customer
