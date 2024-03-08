@@ -146,12 +146,12 @@ fields:
 
 - name: new_vs_repeat
   field_type: dimension
-  type: string
+  type: tier
+  tiers: [0, 100, 500]
   description: Whether the customer placing the order was a new customer or a returning
     customer
   sql: ${TABLE}.new_vs_repeat
   searchable: true
-  label_prefix:
 
 - name: order
   field_type: dimension_group
