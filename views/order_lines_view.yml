@@ -60,8 +60,10 @@ fields:
 
 - name: revenue
   field_type: dimension
-  type: number
+  type: tier
+  tiers: [0, 20, 80, 1000]
   sql: ${TABLE}.REVENUE
+
 
 - name: price
   field_type: dimension
