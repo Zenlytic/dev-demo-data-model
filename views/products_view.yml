@@ -25,10 +25,10 @@ identifiers:
   # join_as_label: third_product     # This will be the label of the view when joined
   # join_as_field_prefix: Assignee  # This will be the prefix for the fields when joined
 
-- name: fourth_product_id
-  type: primary
-  sql: ${product_id}
-  join_as: fourth_product
+# - name: fourth_product_id
+#   type: primary
+#   sql: ${product_id}
+#   join_as: fourth_product
   # join_as_label: fourth_product     # This will be the label of the view when joined
   # join_as_field_prefix: Assignee  # This will be the prefix for the fields when joined
 
