@@ -8,13 +8,13 @@ row_label: Order line
 identifiers:
 - name: my_product_id
   type: foreign
-  sql: ${product_id}
+  sql: ${customer_id}
 - name: your_product_id
   type: foreign
   sql: ${product_id}
-- name: customer_id
-  type: foreign
-  sql: ${customer_id}
+# - name: customer_id
+#   type: foreign
+#   sql: ${customer_id}
 fields:
 - name: order_line_id
   field_type: dimension
