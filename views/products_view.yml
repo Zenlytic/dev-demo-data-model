@@ -15,22 +15,22 @@ identifiers:
   type: primary
   sql: ${product_id}
   join_as: your_product
-  # join_as_label: your_product     # This will be the label of the view when joined
+  join_as_label: your_product     # This will be the label of the view when joined
   # join_as_field_prefix: Assignee  # This will be the prefix for the fields when joined
 
 - name: third_product_id
   type: primary
   sql: ${product_id}
   join_as: third_product
-  # join_as_label: third_product     # This will be the label of the view when joined
-  # join_as_field_prefix: Assignee  # This will be the prefix for the fields when joined
+  join_as_label: Third Product     # This will be the label of the view when joined
+  join_as_field_prefix: Third Product  # This will be the prefix for the fields when joined
 
-# - name: fourth_product_id
-#   type: primary
-#   sql: ${product_id}
-#   join_as: fourth_product
-  # join_as_label: fourth_product     # This will be the label of the view when joined
-  # join_as_field_prefix: Assignee  # This will be the prefix for the fields when joined
+- name: fourth_product_id
+  type: primary
+  sql: ${product_id}
+  join_as: fourth_product
+  join_as_label: Fourth Product Test     # This will be the label of the view when joined
+  join_as_field_prefix: Fourth Product  # This will be the prefix for the fields when joined
 
 
 
