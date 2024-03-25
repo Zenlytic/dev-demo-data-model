@@ -12,6 +12,13 @@ identifiers:
 - name: your_product_id
   type: foreign
   sql: ${product_id}
+- name: third_product_id
+  type: foreign
+  sql: ${customer_id}
+- name: fourth_product_id
+  type: foreign
+  sql: ${product_id}
+
 # - name: customer_id
 #   type: foreign
 #   sql: ${customer_id}
