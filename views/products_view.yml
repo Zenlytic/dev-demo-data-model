@@ -5,9 +5,19 @@ model_name: pure_organics
 sql_table_name: DEMO_PROD.PRODUCTS
 row_label: Product
 identifiers:
-- name: product_id
+- name: my_product_id
   type: primary
   sql: ${product_id}
+  join_as: my_product
+  join_as_label: Requestor
+
+- name: your_product_id
+  type: primary
+  sql: ${product_id}
+  join_as: your_product
+  join_as_label: your_product     # This will be the label of the view when joined
+  # join_as_field_prefix: Assignee  # This will be the prefix for the fields when joined
+  
 fields:
 - name: product_id
   field_type: dimension
