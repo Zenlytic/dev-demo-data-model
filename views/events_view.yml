@@ -7,85 +7,77 @@ sql_table_name: demo_prod.events
 default_date: event
 row_label: Event
 fields:
-- name: event_id
-  field_type: dimension
-  type: string
-  hidden: yes
-  primary_key: yes
-  sql: ${TABLE}.EVENT_ID
-  label_prefix:
-
 - name: anonymous_id
   field_type: dimension
   type: string
-  hidden: yes
+  hidden: true
+  primary_key: true
   sql: ${TABLE}.ANONYMOUS_ID
   tags:
   - customer
-  label_prefix:
+  searchable: false
 
 - name: click_id
   field_type: dimension
   type: string
-  hidden: yes
+  hidden: true
   sql: ${TABLE}.CLICK_ID
-  label_prefix:
+  searchable: false
 
 - name: customer_id
   field_type: dimension
   type: string
-  hidden: yes
+  hidden: true
   sql: ${TABLE}.CUSTOMER_ID
-  label_prefix:
+  searchable: false
 
 - name: session_id
   field_type: dimension
   type: string
-  hidden: yes
+  hidden: true
   sql: ${TABLE}.SESSION_ID
-  label_prefix:
+  searchable: false
 
 - name: device_is_mobile
   field_type: dimension
   type: yesno
   description: Whether the device is mobile or not
   sql: ${TABLE}.DEVICE_IS_MOBILE
-  label_prefix:
 
 - name: marketing_channel
   field_type: dimension
   type: string
   description: The marketing channel the user came through to reach the site initially
   sql: ${TABLE}.MARKETING_CHANNEL
-  label_prefix:
+  searchable: false
 
 - name: utm_medium
   field_type: dimension
   type: string
   description: The marketing medium the user came through to reach the site initially
   sql: ${TABLE}.UTM_MEDIUM
-  label_prefix:
+  searchable: false
 
 - name: utm_source
   field_type: dimension
   type: string
   description: The marketing source the user came through to reach the site initially
   sql: ${TABLE}.UTM_SOURCE
-  label_prefix:
+  searchable: false
 
 - name: promotion
   field_type: dimension
   type: string
   description: The promotion the user came through to reach the site initially
   sql: ${TABLE}.PROMOTION
-  label_prefix:
+  searchable: true
 
 - name: device_type
   field_type: dimension
   type: string
   description: The user's device type (hardware)
   sql: ${TABLE}.DEVICE_TYPE
-  label_prefix:
+  searchable: true
 
 - name: browser_user_agent
   field_type: dimension
@@ -93,14 +85,13 @@ fields:
   description: The user's browser user agent used to access the site
   sql: ${TABLE}.BROWSER_USER_AGENT
   searchable: false
-  label_prefix:
 
 - name: browser_language
   field_type: dimension
   type: string
   description: The user's browser language setting
   sql: ${TABLE}.BROWSER_LANGUAGE
-  label_prefix:
+  searchable: false
 
 - name: ip_address
   field_type: dimension
@@ -108,98 +99,98 @@ fields:
   label: IP address
   description: The user's IP address
   sql: ${TABLE}.IP_ADDRESS
-  label_prefix:
+  searchable: false
 
 - name: browser_name
   field_type: dimension
   type: string
   description: The user's browser
   sql: ${TABLE}.BROWSER_NAME
-  label_prefix:
+  searchable: true
 
 - name: geo_region_name
   field_type: dimension
   type: string
   description: The user's geographical region
   sql: ${TABLE}.GEO_REGION_NAME
-  label_prefix:
+  searchable: false
 
 - name: geo_country
   field_type: dimension
   type: string
   description: The user's country
   sql: ${TABLE}.GEO_COUNTRY
-  label_prefix:
+  searchable: false
 
 - name: geo_latitude
   field_type: dimension
   type: string
   description: The user's latitude
   sql: ${TABLE}.GEO_LATITUDE
-  label_prefix:
+  searchable: false
 
 - name: geo_longitude
   field_type: dimension
   type: string
   description: The user's longitude
   sql: ${TABLE}.GEO_LONGITUDE
-  label_prefix:
+  searchable: false
 
 - name: geo_timezone
   field_type: dimension
   type: string
   description: The user's (geographical) timezone
   sql: ${TABLE}.GEO_TIMEZONE
-  label_prefix:
+  searchable: false
 
 - name: os
   field_type: dimension
   type: string
   description: The full description of the user's operating system
   sql: ${TABLE}.OS
-  label_prefix:
+  searchable: false
 
 - name: os_name
   field_type: dimension
   type: string
   description: The name of the user's operating system
   sql: ${TABLE}.OS_NAME
-  label_prefix:
+  searchable: true
 
 - name: os_timezone
   field_type: dimension
   type: string
   description: The user's (operating system) timezone
   sql: ${TABLE}.OS_TIMEZONE
-  label_prefix:
+  searchable: false
 
 - name: referer_url
   field_type: dimension
   type: string
   description: The full referring url (where the user came from)
   sql: ${TABLE}.REFERER_URL
-  label_prefix:
+  searchable: true
 
 - name: referer_url_scheme
   field_type: dimension
   type: string
   description: The referring url scheme (where the user came from)
   sql: ${TABLE}.REFERER_URL_SCHEME
-  label_prefix:
+  searchable: true
 
 - name: referer_url_port
   field_type: dimension
   type: string
   description: The referring url port (where the user came from)
   sql: ${TABLE}.REFERER_URL_PORT
-  label_prefix:
+  searchable: true
 
 - name: referer_medium
   field_type: dimension
   type: string
   description: The referring medium (where the user came from)
   sql: ${TABLE}.REFERER_MEDIUM
-  label_prefix:
+  searchable: true
 
 - name: event_name
   field_type: dimension
@@ -207,28 +198,27 @@ fields:
   description: The action the user took on the site
   sql: ${TABLE}.EVENT_NAME
   searchable: true
-  label_prefix:
 
 - name: page_url_path
   field_type: dimension
   type: string
   description: The page url path (partial) the user was on at the time of the event
   sql: ${TABLE}.PAGE_URL_PATH
-  label_prefix:
+  searchable: true
 
 - name: page_url
   field_type: dimension
   type: string
   description: The (full) page url the user was on at the time of the event
   sql: ${TABLE}.PAGE_URL
-  label_prefix:
+  searchable: true
 
 - name: utm_campaign
   field_type: dimension
   type: string
   description: The campaign the user came in on to the site
   sql: ${TABLE}.UTM_CAMPAIGN
-  label_prefix:
+  searchable: true
 
 - name: event
   field_type: dimension_group
@@ -242,7 +232,31 @@ fields:
   - month
   - quarter
   - year
+  - day_of_year
+  - week_of_year
   - month_of_year
-  - week_index
   sql: ${TABLE}.EVENT_TIMESTAMP
-  label_prefix:
+
+- name: number_of_events
+  field_type: measure
+  type: count
+  description: The number of events from interaction with the site
+  value_format_name: decimal_0
+  sql: ${anonymous_id}
+
+- name: number_of_sessions
+  field_type: measure
+  type: count_distinct
+  description: The number of sessions (usage of the site by a unique user in a 6 hour
+    window)
+  value_format_name: decimal_0
+  sql: ${session_id}
+
+- name: number_of_users
+  field_type: measure
+  type: count_distinct
+  description: The number of site users (including people who are not logged in /
+    we can't identify)
+  value_format_name: decimal_0
+  sql: ${anonymous_id}
+event_dimension: event_name
