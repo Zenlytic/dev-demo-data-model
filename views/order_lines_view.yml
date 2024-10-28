@@ -48,7 +48,7 @@ fields:
   - campaign
   - promotion
   - total_gross_revenue
-  sql: ${TABLE}.ORDER_ID
+  sql: cast(${TABLE}.ORDER_ID as int)
   tags:
   - order
   searchable: false
