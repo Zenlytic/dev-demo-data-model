@@ -39,7 +39,7 @@ fields:
 
 - name: order_id
   field_type: dimension
-  type: string
+  type: number
   hidden: false
   drill_fields:
   - order_date
