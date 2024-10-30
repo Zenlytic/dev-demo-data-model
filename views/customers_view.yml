@@ -104,6 +104,12 @@ fields:
   sql: ${TABLE}.first_campaign
   searchable: false
 
+- name: personal_field_phqrdtl
+  field_type: dimension
+  type: string
+  label: First Name
+  sql: ${TABLE}.FIRST_NAME
+
 - name: first_order
   field_type: dimension_group
   type: time
