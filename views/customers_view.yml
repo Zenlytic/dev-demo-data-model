@@ -110,6 +110,14 @@ fields:
   label: First Name
   sql: ${TABLE}.FIRST_NAME
 
+- name: personal_field_tnxzhfd
+  field_type: dimension
+  type: string
+  label: StatePersonalField
+  description: The customer's state (location)
+  sql: ${TABLE}.STATE
+  searchable: true
+
 - name: first_order
   field_type: dimension_group
   type: time
