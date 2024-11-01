@@ -332,6 +332,14 @@ fields:
   type: count
   label: Count Order Id
   sql: ${TABLE}.ORDER_ID
+
+- name: personal_field_gyxnjkd
+  field_type: measure
+  type: count_distinct
+  label: Number Of Orders
+  description: The unique number of orders placed
+  value_format_name: decimal_0
+  sql: ${order_id}
 event_name: Purchase
 fields_for_analysis:
 - subscription_vs_otp
