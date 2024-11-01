@@ -104,11 +104,6 @@ fields:
   sql: ${TABLE}.first_campaign
   searchable: false
 
-- name: personal_field_phqrdtl
-  field_type: dimension
-  type: string
-  label: First Name
-  sql: ${TABLE}.FIRST_NAME
 
 - name: personal_field_tnxzhfd
   field_type: dimension
