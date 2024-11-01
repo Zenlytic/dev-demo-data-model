@@ -144,15 +144,6 @@ fields:
       customer
     sql: ${TABLE}.new_vs_repeat
     searchable: true
-  - name: personal_field_qjfpnsi
-    field_type: dimension
-    type: string
-    label: New Vs Repeat
-    description: >-
-      Whether the customer placing the order was a new customer or a returning
-      customer
-    sql: ${TABLE}.new_vs_repeat
-    searchable: true
   - name: order
     field_type: dimension_group
     type: time
