@@ -536,6 +536,33 @@ fields:
   filters:
   - field: subscription_vs_otp
     value: Subscription
+
+- name: personal_field_mtzepdi
+  field_type: measure
+  type: count_distinct
+  label: Number Of New Customers With Orders
+  description: The unique number of new customers who placed orders
+  value_format_name: decimal_0
+  sql: case when ${new_vs_repeat}='New' then ${customer_id} end
+  filters:
+  - field: new_vs_repeat
+    value: New
+
+- name: personal_field_oabfewb
+  field_type: measure
+  type: number
+  label: Gross Aov
+  description: Gross AOV = gross revenues / number of orders
+  value_format_name: usd
+  sql: ${total_gross_revenue} / nullif(${number_of_orders}, 0)
+  synonyms:
+  - Average order value
+
+- name: personal_field_qhhsmnp
+  field_type: measure
+  type: count_distinct
+  label: Count Distinct Order Id
+  sql: ${TABLE}.ORDER_ID
 event_name: Purchase
 fields_for_analysis:
 - subscription_vs_otp
