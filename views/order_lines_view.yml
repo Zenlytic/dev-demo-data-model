@@ -167,6 +167,7 @@ fields:
   - week_index
   - week
   - month_of_year
+  - month_of_year_full_name
   - month
   - quarter
   - year
