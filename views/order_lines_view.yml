@@ -244,7 +244,7 @@ fields:
   field_type: measure
   type: count_distinct
   hidden: false
-  description: The unique number of customers who placed orders
+  description: The unique number of customers who placed orders.
   value_format_name: decimal_0
   sql: ${customer_id}
 
