@@ -247,6 +247,7 @@ fields:
 - name: number_of_sessions
   field_type: measure
   type: count_distinct
+  label: Number Of Sessions NJM
   description: The number of sessions (usage of the site by a unique user in a 6 hour
     window)
   value_format_name: decimal_0
