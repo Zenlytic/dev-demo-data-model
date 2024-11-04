@@ -268,4 +268,13 @@ fields:
   description: The number of events from interaction with the site
   value_format_name: decimal_0
   sql: ${anonymous_id}
+
+- name: personal_field_oiwurms
+  field_type: measure
+  type: count_distinct
+  label: Number Of Sessions NJM
+  description: The number of sessions (usage of the site by a unique user in a 6 hour
+    window)
+  value_format_name: decimal_0
+  sql: ${session_id}
 event_dimension: event_name
