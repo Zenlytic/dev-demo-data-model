@@ -328,6 +328,22 @@ fields:
   value_format_name: usd
   sql: ${total_net_revenue} - ${total_cogs}
   zoe_description: This is the gross profit.
+
+- name: personal_field_ovipkuy
+  field_type: measure
+  type: count_distinct
+  label: Count Distinct Order Id
+  sql: ${TABLE}.ORDER_ID
+
+- name: personal_field_hekvrbw
+  field_type: measure
+  type: number
+  label: Gross Aov
+  description: Gross AOV = gross revenues / number of orders
+  value_format_name: usd
+  sql: ${total_gross_revenue} / nullif(${number_of_orders}, 0)
+  synonyms:
+  - Average order value
 event_name: Purchase
 fields_for_analysis:
 - subscription_vs_otp
