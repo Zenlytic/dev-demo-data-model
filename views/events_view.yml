@@ -268,4 +268,13 @@ fields:
   description: The number of events from interaction with the site
   value_format_name: decimal_0
   sql: ${anonymous_id}
+
+- name: personal_field_yewfufi
+  field_type: measure
+  type: count_distinct
+  label: Number Of Users NJM
+  description: The number of site users (including people who are not logged in /
+    we can't identify) NJM
+  value_format_name: decimal_0
+  sql: ${anonymous_id}
 event_dimension: event_name
