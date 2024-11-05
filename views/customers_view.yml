@@ -112,6 +112,12 @@ fields:
   sql: ${TABLE}.STATE
   searchable: true
 
+- name: personal_field_pnesrfd
+  field_type: dimension
+  type: string
+  label: Last NameDELETETHIS
+  sql: ${TABLE}.LAST_NAME
+
 - name: first_order
   field_type: dimension_group
   type: time
