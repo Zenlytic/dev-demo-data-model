@@ -164,6 +164,7 @@ fields:
     to use for orders
   timeframes:
   - raw
+  - time
   - date
   - week_index
   - week
