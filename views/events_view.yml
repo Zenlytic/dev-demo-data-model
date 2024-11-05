@@ -255,6 +255,7 @@ fields:
 - name: number_of_users
   field_type: measure
   type: count_distinct
+  label: Number Of Users NJM
   description: The number of site users (including people who are not logged in /
     we can't identify)
   value_format_name: decimal_0
