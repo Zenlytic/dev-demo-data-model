@@ -3,6 +3,7 @@ type: view
 name: demo_high_cardinality
 model_name: pure_organics
 sql_table_name: DEMO_RAW.DEMO_HIGH_CARDINALITY
+
 fields:
 - name: session_id
   field_type: dimension
@@ -14,7 +15,8 @@ fields:
   field_type: dimension
   type: string
   sql: ${TABLE}."SUPPLER_SIEVO"
-  searchable: false
+  searchable: true
+  allow_higher_max: true
 
 - name: number_to_test
   field_type: dimension
