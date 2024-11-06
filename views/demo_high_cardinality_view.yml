@@ -16,7 +16,7 @@ fields:
   type: string
   sql: ${TABLE}."SUPPLER_SIEVO"
   searchable: true
-  allow_higher_max: true
+  allow_higher_searchable_max: true
 
 - name: number_to_test
   field_type: dimension
