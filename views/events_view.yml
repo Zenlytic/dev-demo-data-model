@@ -36,7 +36,6 @@ fields:
   type: string
   sql: ${TABLE}.SESSION_ID
   searchable: true
-  allow_higher_max: true
 
 - name: device_is_mobile
   field_type: dimension
