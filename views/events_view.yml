@@ -34,9 +34,9 @@ fields:
 - name: session_id
   field_type: dimension
   type: string
-  hidden: true
   sql: ${TABLE}.SESSION_ID
-  searchable: false
+  searchable: true
+  allow_higher_max: true
 
 - name: device_is_mobile
   field_type: dimension
