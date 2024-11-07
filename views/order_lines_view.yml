@@ -325,10 +325,10 @@ fields:
   value_format_name: usd
   sql: ${TABLE}.cogs
 
-- name: personal_field_ereqmvp
+- name: total_net_revenue
   field_type: measure
   type: number
-  label: Total Net Revenue-v2
+  label: Total Net Revenue
   description: Total net revenue = gross revenue - discounts, volume 2
   value_format_name: decimal_0
   sql: ${total_gross_revenue} - ${total_discounts}
