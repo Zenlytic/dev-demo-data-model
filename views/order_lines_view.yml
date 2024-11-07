@@ -371,6 +371,16 @@ fields:
   filters:
   - field: new_vs_repeat
     value: Repeat
+
+- name: personal_field_tfjnpkf
+  field_type: measure
+  type: number
+  label: Repurchase Ratesd
+  description: Repurchase rate = number of repeat orders / number of orders.
+  value_format_name: percent_1
+  sql: ${number_of_repeat_orders} / ${number_of_orders}
+  synonyms:
+  - Repeat order rate
 event_name: Purchase
 fields_for_analysis:
 - subscription_vs_otp
