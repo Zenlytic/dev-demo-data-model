@@ -14,7 +14,7 @@ fields:
 - name: suppler_sievo
   field_type: dimension
   type: string
-  sql: ${TABLE}."SUPPLER_SIEVO"
+  sql: ${TABLE}.SUPPLER_SIEVO
   searchable: true
   allow_higher_searchable_max: true
 
