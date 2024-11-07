@@ -374,7 +374,7 @@ fields:
   synonyms:
   - Repeat order rate
 
-- name: personal_field_mlaytap
+- name: total_discounts
   field_type: measure
   type: sum
   label: Total Discounts--hi
