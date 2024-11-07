@@ -306,15 +306,6 @@ fields:
   value_format_name: decimal_0
   sql: ${quantity}
 
-- name: total_cogs
-  field_type: measure
-  type: sum
-  hidden: false
-  label: Total COGS
-  description: The allocated cost of goods sold to the order line
-  value_format_name: usd
-  sql: ${TABLE}.cogs
-
 - name: gross_profit
   field_type: measure
   type: number
@@ -380,6 +371,13 @@ fields:
   label: Total Discounts
   value_format_name: decimal_1
   sql: ${discount}
+
+- name: personal_field_qzlzmqx
+  field_type: measure
+  type: sum
+  label: Total COGS-wjjj
+  value_format_name: decimal_1
+  sql: ${TABLE}.cogs
 event_name: Purchase
 fields_for_analysis:
 - subscription_vs_otp
