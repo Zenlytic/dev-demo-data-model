@@ -328,9 +328,9 @@ fields:
 - name: total_discounts
   field_type: measure
   type: sum
-  label: Total Discounts
-  description: All discounts applied to either the order or the product in the order
-  value_format_name: usd
+  label: Total Discounts--tt
+  description: All discounts applied to either the order or the product in the order-tt
+  value_format_name: decimal_1
   sql: ${discount}
 event_name: Purchase
 fields_for_analysis:
