@@ -212,14 +212,6 @@ fields:
   - sales
   - revenue
 
-- name: total_discounts
-  field_type: measure
-  type: sum
-  hidden: false
-  description: All discounts applied to either the order or the product in the order
-  value_format_name: usd
-  sql: ${discount}
-
 - name: total_net_revenue
   field_type: measure
   type: number
@@ -309,15 +301,6 @@ fields:
   value_format_name: decimal_0
   sql: ${quantity}
 
-- name: total_cogs
-  field_type: measure
-  type: sum
-  hidden: false
-  label: Total COGS
-  description: The allocated cost of goods sold to the order line
-  value_format_name: usd
-  sql: ${TABLE}.cogs
-
 - name: gross_profit
   field_type: measure
   type: number
@@ -327,6 +310,23 @@ fields:
   sql: ${total_net_revenue} - ${total_cogs}
   zoe_description: This is the gross profit.
 
+- name: total_cogs
+  field_type: measure
+  type: sum
+  label: Total COGS--test
+  description: The allocated cost of goods sold to the order line--test
+  value_format_name: decimal_1
+  sql: ${TABLE}.cogs
+
+- name: personal_field_mkaixca
+  field_type: measure
+  type: number
+  label: Gross Aov
+  description: Gross AOV = gross revenues / number of orders
+  value_format_name: usd
+  sql: ${total_gross_revenue} / nullif(${number_of_orders}, 0)
+  synonyms:
+  - Average order value
 event_name: Purchase
 fields_for_analysis:
 - subscription_vs_otp
