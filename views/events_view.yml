@@ -6,6 +6,8 @@ model_name: pure_organics
 sql_table_name: demo_prod.events
 default_date: event
 row_label: Event
+event_dimension: event_name
+
 fields:
 - name: anonymous_id
   field_type: dimension
@@ -34,8 +36,9 @@ fields:
 - name: session_id
   field_type: dimension
   type: string
+  hidden: true
   sql: ${TABLE}.SESSION_ID
-  searchable: true
+  searchable: false
 
 - name: device_is_mobile
   field_type: dimension
@@ -198,6 +201,18 @@ fields:
   sql: ${TABLE}.EVENT_NAME
   searchable: true
 
+- name: event_sequence
+  field_type: dimension
+  type: number
+  description: The sequence of events user took on the site
+  sql: case when ${event_name} = 'Visit Website' then 1
+            when ${event_name} = 'View Product' then 2
+            when ${event_name} = 'Read Blog' then 3
+            when ${event_name} = 'Cart' then 4
+            when ${event_name} = 'Complete Purchase' then 5
+            when ${event_name} = 'Subscribe' then 6 end
+  value_format_name: decimal_0
+
 - name: page_url_path
   field_type: dimension
   type: string
@@ -217,21 +232,6 @@ fields:
   type: string
   description: The campaign the user came in on to the site
   sql: ${TABLE}.UTM_CAMPAIGN
-  searchable: true
-
-- name: personal_field_tefesug
-  field_type: dimension
-  type: yesno
-  label: Device Is Mobile
-  description: Whether the device is mobile or not
-  sql: (${TABLE}.DEVICE_IS_MOBILE)
-
-- name: personal_field_bugcdzk
-  field_type: dimension
-  type: string
-  label: Event NameDELETE THIS
-  description: The action the user took on the site
-  sql: ${TABLE}.EVENT_NAME
   searchable: true
 
 - name: event
@@ -269,26 +269,7 @@ fields:
 - name: number_of_users
   field_type: measure
   type: count_distinct
-  label: Number Of Users
   description: The number of site users (including people who are not logged in /
     we can't identify)
   value_format_name: decimal_0
   sql: ${anonymous_id}
-
-- name: personal_field_mivjrqn
-  field_type: measure
-  type: count
-  label: Number Of Events
-  description: The number of events from interaction with the site
-  value_format_name: decimal_0
-  sql: ${anonymous_id}
-
-- name: personal_field_yewfufi
-  field_type: measure
-  type: count_distinct
-  label: Number Of Users NJM
-  description: The number of site users (including people who are not logged in /
-    we can't identify) NJM
-  value_format_name: decimal_0
-  sql: ${anonymous_id}
-event_dimension: event_name
