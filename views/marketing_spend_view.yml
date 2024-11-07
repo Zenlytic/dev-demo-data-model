@@ -109,3 +109,12 @@ fields:
   value_format_name: decimal_1
   sql: ${order_lines.gross_profit} / nullif(${total_marketing_spend}, 0)
   is_merged_result: true
+
+- name: personal_field_azioull
+  field_type: measure
+  type: number
+  label: PROAS
+  description: Profitable return on advertising spend = Total advertising gross profit
+    / Total marketing spend across all channels
+  value_format_name: decimal_1
+  sql: ${order_lines.gross_profit} / nullif(${total_marketing_spend}, 0)
