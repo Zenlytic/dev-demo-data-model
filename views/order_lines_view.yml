@@ -329,7 +329,7 @@ fields:
   field_type: measure
   type: number
   label: Total Net Revenue
-  description: Total net revenue = gross revenue - discounts, volume 2
+  description: Total net revenue = gross revenue - discounts
   value_format_name: decimal_0
   sql: ${total_gross_revenue} - ${total_discounts}
 event_name: Purchase
