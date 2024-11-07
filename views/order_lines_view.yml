@@ -220,14 +220,6 @@ fields:
   value_format_name: usd
   sql: ${discount}
 
-- name: total_net_revenue
-  field_type: measure
-  type: number
-  hidden: false
-  description: Total net revenue = gross revenue - discounts
-  value_format_name: usd
-  sql: ${total_gross_revenue} - ${total_discounts}
-
 - name: subscription_revenue
   field_type: measure
   type: sum
@@ -332,6 +324,14 @@ fields:
   description: The allocated cost of goods sold to the order line
   value_format_name: usd
   sql: ${TABLE}.cogs
+
+- name: personal_field_ereqmvp
+  field_type: measure
+  type: number
+  label: Total Net Revenue-v2
+  description: Total net revenue = gross revenue - discounts, volume 2
+  value_format_name: decimal_0
+  sql: ${total_gross_revenue} - ${total_discounts}
 event_name: Purchase
 fields_for_analysis:
 - subscription_vs_otp
