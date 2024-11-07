@@ -212,14 +212,6 @@ fields:
   - sales
   - revenue
 
-- name: total_discounts
-  field_type: measure
-  type: sum
-  hidden: false
-  description: All discounts applied to either the order or the product in the order
-  value_format_name: usd
-  sql: ${discount}
-
 - name: total_net_revenue
   field_type: measure
   type: number
@@ -227,18 +219,6 @@ fields:
   description: Total net revenue = gross revenue - discounts
   value_format_name: usd
   sql: ${total_gross_revenue} - ${total_discounts}
-
-- name: subscription_revenue
-  field_type: measure
-  type: sum
-  hidden: false
-  description: Subscription revenue = gross revenue (product revenues + shipping,
-    for subscriptions only)
-  value_format_name: usd
-  sql: ${revenue}
-  filters:
-  - field: subscription_vs_otp
-    value: Subscription
 
 - name: number_of_customers_with_orders
   field_type: measure
@@ -316,6 +296,13 @@ fields:
   value_format_name: usd
   sql: ${total_net_revenue} - ${total_cogs}
 
+- name: total_discounts
+  field_type: measure
+  type: sum
+  label: Total Discounts-yoyo
+  description: All discounts applied to either the order or the product in the order
+  value_format_name: usd
+  sql: ${discount}
 event_name: Purchase
 fields_for_analysis:
 - subscription_vs_otp
