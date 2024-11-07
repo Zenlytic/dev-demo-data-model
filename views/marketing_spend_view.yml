@@ -69,12 +69,12 @@ fields:
   value_format_name: usd
   sql: ${ad_spend}
   filters:
-    - field: f0
-      value: v0
-    - field: f1
-      value: v1
-    - field: f2
-      value: v2
+  - field: f0
+    value: v0
+  - field: f1
+    value: v1
+  - field: f2
+    value: v2
 
 - name: cac
   field_type: measure
