@@ -346,6 +346,18 @@ fields:
   filters:
   - field: new_vs_repeat
     value: Repeat
+
+- name: personal_field_ijtukix
+  field_type: measure
+  type: count_distinct
+  label: Number Of Repeat Orders
+  description: The unique number of orders placed by customers who have placed at
+    least one order before.
+  value_format_name: decimal_0
+  sql: case when ${new_vs_repeat}='Repeat' then ${order_id} end
+  filters:
+  - field: new_vs_repeat
+    value: Repeat
 event_name: Purchase
 fields_for_analysis:
 - subscription_vs_otp
