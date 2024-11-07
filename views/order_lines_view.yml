@@ -372,11 +372,11 @@ fields:
   value_format_name: decimal_1
   sql: ${discount}
 
-- name: total_cogs
+- name: personal_field_aismzdu
   field_type: measure
   type: sum
-  label: Total COGS-wjjj
-  value_format_name: decimal_1
+  label: Total COGS
+  value_format_name: usd
   sql: ${TABLE}.cogs
 event_name: Purchase
 fields_for_analysis:
