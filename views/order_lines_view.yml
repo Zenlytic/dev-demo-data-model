@@ -302,13 +302,6 @@ fields:
   sql: ${total_net_revenue} - ${total_cogs}
   zoe_description: This is the gross profit.
 
-- name: personal_field_iydzona
-  field_type: measure
-  type: sum
-  label: Total COGS--new
-  value_format_name: decimal_1
-  sql: ${TABLE}.cogs
-
 - name: total_cogs
   field_type: measure
   type: sum
