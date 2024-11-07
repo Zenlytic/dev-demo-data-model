@@ -212,14 +212,6 @@ fields:
   - sales
   - revenue
 
-- name: total_discounts
-  field_type: measure
-  type: sum
-  hidden: false
-  description: All discounts applied to either the order or the product in the order
-  value_format_name: usd
-  sql: ${discount}
-
 - name: subscription_revenue
   field_type: measure
   type: sum
@@ -332,6 +324,14 @@ fields:
   description: Total net revenue = gross revenue - discounts
   value_format_name: decimal_0
   sql: ${total_gross_revenue} - ${total_discounts}
+
+- name: personal_field_tcttyab
+  field_type: measure
+  type: sum
+  label: Total Discounts--bruv
+  description: All discounts applied to either the order or the product in the order
+  value_format_name: usd
+  sql: ${discount}
 event_name: Purchase
 fields_for_analysis:
 - subscription_vs_otp
