@@ -317,7 +317,7 @@ fields:
   value_format_name: decimal_1
   sql: ${TABLE}.cogs
 
-- name: personal_field_rqplxii
+- name: total_cogs
   field_type: measure
   type: sum
   label: Total COGS
