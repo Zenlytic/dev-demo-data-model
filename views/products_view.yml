@@ -42,3 +42,11 @@ fields:
   description: Blahabababbaba
   sql: ${TABLE}.PRICE
   searchable: true
+
+- name: personal_field_dmgozwg
+  field_type: dimension
+  type: string
+  label: Price
+  description: Blahabababbaba
+  sql: ${TABLE}.PRICE
+  searchable: true
