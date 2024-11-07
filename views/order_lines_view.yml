@@ -311,19 +311,11 @@ fields:
 - name: gross_profit
   field_type: measure
   type: number
-  label: Gross Profit-hihi
+  label: Gross Profit
   description: The total net revenue - allocated cost of goods sold to the order line
   value_format_name: usd
   sql: ${total_net_revenue} - ${total_cogs}
 
-- name: personal_field_wxcrwjv
-  field_type: measure
-  type: sum
-  label: Number Of Units
-  description: 'The unique number of units purchased (e.g. customer orders: 2 lip
-    gloss and 1 blush = 3 units sold)'
-  value_format_name: decimal_0
-  sql: ${quantity}
 event_name: Purchase
 fields_for_analysis:
 - subscription_vs_otp
