@@ -213,14 +213,6 @@ fields:
   - sales
   - revenue
 
-- name: total_discounts
-  field_type: measure
-  type: sum
-  hidden: false
-  description: All discounts applied to either the order or the product in the order
-  value_format_name: usd
-  sql: ${discount}
-
 - name: total_net_revenue
   field_type: measure
   type: number
@@ -381,6 +373,13 @@ fields:
   sql: ${number_of_repeat_orders} / ${number_of_orders}
   synonyms:
   - Repeat order rate
+
+- name: personal_field_mlaytap
+  field_type: measure
+  type: sum
+  label: Total Discounts--hi
+  value_format_name: decimal_3
+  sql: ${discount}
 event_name: Purchase
 fields_for_analysis:
 - subscription_vs_otp
