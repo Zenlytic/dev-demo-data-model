@@ -273,6 +273,7 @@ fields:
   field_type: measure
   type: count_distinct
   hidden: false
+  label: Foobar
   description: The unique number of orders placed by customers who have placed at
     least one order before.
   value_format_name: decimal_0
