@@ -19,7 +19,6 @@ fields:
   type: string
   hidden: true
   primary_key: true
-  description: 'The id of the associated order line. '
   sql: ${TABLE}.ORDER_LINE_ID
   searchable: false
 
@@ -213,6 +212,14 @@ fields:
   - sales
   - revenue
 
+- name: total_discounts
+  field_type: measure
+  type: sum
+  hidden: false
+  description: All discounts applied to either the order or the product in the order
+  value_format_name: usd
+  sql: ${discount}
+
 - name: total_net_revenue
   field_type: measure
   type: number
@@ -237,7 +244,7 @@ fields:
   field_type: measure
   type: count_distinct
   hidden: false
-  description: The unique number of customers who placed orders.
+  description: The unique number of customers who placed orders
   value_format_name: decimal_0
   sql: ${customer_id}
 
@@ -256,7 +263,6 @@ fields:
   field_type: measure
   type: count_distinct
   hidden: false
-  label: Number Of Orders NJM
   description: The unique number of orders placed
   value_format_name: decimal_0
   sql: ${order_id}
@@ -265,9 +271,8 @@ fields:
   field_type: measure
   type: count_distinct
   hidden: false
-  label: Foobar
   description: The unique number of orders placed by customers who have placed at
-    least one order before.
+    least one order before
   value_format_name: decimal_0
   sql: ${order_id}
   filters:
@@ -278,7 +283,6 @@ fields:
   field_type: measure
   type: number
   hidden: false
-  label: Repurchase Ratesd
   description: Repurchase rate = number of repeat orders / number of orders.
   value_format_name: percent_1
   sql: ${number_of_repeat_orders} / ${number_of_orders}
@@ -289,7 +293,6 @@ fields:
   field_type: measure
   type: number
   hidden: false
-  label: Gross Aov 12
   description: Gross AOV = gross revenues / number of orders
   value_format_name: usd
   sql: ${total_gross_revenue} / nullif(${number_of_orders}, 0)
@@ -300,11 +303,20 @@ fields:
   field_type: measure
   type: sum
   hidden: false
-  label: Number Of Unitsreer
+  label: Number Of Units
   description: 'The unique number of units purchased (e.g. customer orders: 2 lip
     gloss and 1 blush = 3 units sold)'
   value_format_name: decimal_0
   sql: ${quantity}
+
+- name: total_cogs
+  field_type: measure
+  type: sum
+  hidden: false
+  label: Total COGS
+  description: The allocated cost of goods sold to the order line
+  value_format_name: usd
+  sql: ${TABLE}.cogs
 
 - name: gross_profit
   field_type: measure
@@ -314,70 +326,6 @@ fields:
   value_format_name: usd
   sql: ${total_net_revenue} - ${total_cogs}
   zoe_description: This is the gross profit.
-
-- name: personal_field_nqyuziv
-  field_type: measure
-  type: count_distinct
-  label: Count Distinct Order Id
-  sql: ${TABLE}.ORDER_ID
-
-- name: personal_field_euheekh
-  field_type: measure
-  type: count_distinct
-  label: Number Of Repeat Orders NJM
-  value_format_name: decimal_0
-  sql: case when ${new_vs_repeat}='Repeat' then ${order_id} end
-  filters:
-  - field: new_vs_repeat
-    value: Repeat
-
-- name: personal_field_ijtukix
-  field_type: measure
-  type: count_distinct
-  label: Number Of Repeat Orders
-  description: The unique number of orders placed by customers who have placed at
-    least one order before.
-  value_format_name: decimal_0
-  sql: case when ${new_vs_repeat}='Repeat' then ${order_id} end
-  filters:
-  - field: new_vs_repeat
-    value: Repeat
-
-- name: personal_field_bzxvpqv
-  field_type: measure
-  type: count_distinct
-  label: Number Of Repeat Orders
-  description: The unique number of orders placed by customers who have placed at
-    least one order before.
-  value_format_name: decimal_0
-  sql: case when ${new_vs_repeat}='Repeat' then ${order_id} end
-  filters:
-  - field: new_vs_repeat
-    value: Repeat
-
-- name: personal_field_tfjnpkf
-  field_type: measure
-  type: number
-  label: Repurchase Ratesd
-  description: Repurchase rate = number of repeat orders / number of orders.
-  value_format_name: percent_1
-  sql: ${number_of_repeat_orders} / ${number_of_orders}
-  synonyms:
-  - Repeat order rate
-
-- name: total_discounts
-  field_type: measure
-  type: sum
-  label: Total Discounts
-  value_format_name: decimal_1
-  sql: ${discount}
-
-- name: personal_field_aismzdu
-  field_type: measure
-  type: sum
-  label: Total COGS
-  value_format_name: usd
-  sql: ${TABLE}.cogs
 event_name: Purchase
 fields_for_analysis:
 - subscription_vs_otp
