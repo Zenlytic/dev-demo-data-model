@@ -186,7 +186,7 @@ fields:
     synonyms:
       - sales
       - revenue
-    zoe_description: zoe description
+    zoe_description: njm_zoe_description
     group_label: some_group_label_njm
     required_access_grants:
       - pii_access
@@ -201,8 +201,8 @@ fields:
         - njm
         - njm2
       window_choice: min
-    canon_date: canon_date_njm
-    sql_distinct_key: sql_distinct_key_njm
+    canon_date: njm_canon_Date
+    sql_distinct_key: njm_sql_distinct_key
   - name: total_gross_revenue_from_advertising
     field_type: measure
     type: sum
