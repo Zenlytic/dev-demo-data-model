@@ -295,7 +295,7 @@ fields:
   hidden: false
   description: Gross AOV = gross revenues / number of orders
   value_format_name: usd
-  sql: ${total_gross_revenue} / nullif(${number_of_orders}, 0)
+  sql: (${total_gross_revenue} / nullif(${number_of_orders}, 0))/ ${total_gross_revenue}
   synonyms:
   - Average order value
 
