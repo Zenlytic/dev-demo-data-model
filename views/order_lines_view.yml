@@ -212,6 +212,14 @@ fields:
   - sales
   - revenue
 
+- name: total_discounts
+  field_type: measure
+  type: sum
+  hidden: false
+  description: All discounts applied to either the order or the product in the order
+  value_format_name: usd
+  sql: ${discount}
+
 - name: total_net_revenue
   field_type: measure
   type: number
@@ -319,30 +327,6 @@ fields:
   sql: ${total_net_revenue} - ${total_cogs}
   zoe_description: This is the gross profit.
 
-- name: personal_field_hivvjei
-  field_type: measure
-  type: sum
-  label: Total Gross Revenue
-  description: Total gross revenue = revenue from product sales + shipping revenues.
-  value_format_name: usd
-  sql: ${revenue}
-  synonyms:
-  - sales
-  - revenue
-
-- name: total_discounts
-  field_type: measure
-  type: sum
-  label: Total Discounts-reverted
-  description: All discounts applied to either the order or the product in the order
-  value_format_name: usd
-  sql: ${discount}
-
-- name: personal_field_flgwdnb
-  field_type: measure
-  type: count_distinct
-  label: Count Distinct Order Id
-  sql: ${TABLE}.ORDER_ID
 event_name: Purchase
 fields_for_analysis:
 - subscription_vs_otp
