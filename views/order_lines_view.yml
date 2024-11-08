@@ -335,10 +335,10 @@ fields:
   value_format_name: decimal_0
   sql: ${order_id}
 
-- name: personal_field_feiggpn
+- name: personal_field_evzyori
   field_type: measure
   type: count_distinct
-  label: Number Of OrdersDELELELEE
+  label: Number Of OrdershDELELTEE
   description: The unique number of orders placed
   value_format_name: decimal_0
   sql: ${order_id}
