@@ -186,6 +186,18 @@ fields:
   sql_start: ${customers.first_order_date}
   sql_end: ${order_date}
 
+- name: total_gross_revenue
+  field_type: measure
+  type: sum
+  hidden: false
+  label: Total Gross Revenue
+  description: Total gross revenue = revenue from product sales + shipping revenues.
+  value_format_name: usd
+  sql: ${revenue}
+  synonyms:
+  - sales
+  - revenue
+
 - name: total_gross_revenue_from_advertising
   field_type: measure
   type: sum
@@ -309,32 +321,11 @@ fields:
 - name: gross_profit
   field_type: measure
   type: number
-  label: Gross Profit, new
+  hidden: false
   description: The total net revenue - allocated cost of goods sold to the order line
   value_format_name: usd
   sql: ${total_net_revenue} - ${total_cogs}
-
-- name: personal_field_iwrijaa
-  field_type: measure
-  type: sum
-  label: Total Gross Revenue
-  description: Total gross revenue = revenue from product sales + shipping revenues.
-  value_format_name: usd
-  sql: ${revenue}
-  synonyms:
-  - sales
-  - revenue
-
-- name: total_gross_revenue
-  field_type: measure
-  type: sum
-  label: Total Gross Revenuehihi
-  description: Total gross revenue = revenue from product sales + shipping revenues.
-  value_format_name: usd
-  sql: ${revenue}
-  synonyms:
-  - sales
-  - revenue
+  zoe_description: This is the gross profit.
 event_name: Purchase
 fields_for_analysis:
 - subscription_vs_otp
