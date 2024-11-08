@@ -259,14 +259,6 @@ fields:
   - field: new_vs_repeat
     value: New
 
-- name: number_of_orders
-  field_type: measure
-  type: count_distinct
-  hidden: false
-  description: The unique number of orders placed
-  value_format_name: decimal_0
-  sql: ${order_id}
-
 - name: number_of_repeat_orders
   field_type: measure
   type: count_distinct
@@ -318,15 +310,21 @@ fields:
   value_format_name: usd
   sql: ${TABLE}.cogs
 
-- name: gross_profit
+- name: number_of_orders
+  field_type: measure
+  type: count_distinct
+  label: Number Of Orders-supp
+  description: The unique number of orders placed
+  value_format_name: decimal_0
+  sql: ${order_id}
+
+- name: personal_field_jzmxwte
   field_type: measure
   type: number
-  hidden: false
-  description: The total net revenue - allocated cost of goods sold to the order line
+  label: Total Net Revenue
+  description: Total net revenue = gross revenue - discounts
   value_format_name: usd
-  sql: ${total_net_revenue} - ${total_cogs}
-  zoe_description: This is the gross profit.
-
+  sql: ${total_gross_revenue} - ${total_discounts}
 event_name: Purchase
 fields_for_analysis:
 - subscription_vs_otp
