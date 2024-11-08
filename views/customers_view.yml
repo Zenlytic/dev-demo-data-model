@@ -26,6 +26,13 @@ fields:
     description: The id of the customer.
     sql: ${TABLE}.CUSTOMER_ID
     searchable: false
+  - name: customer_id2
+    field_type: dimension
+    type: string
+    hidden: true
+    description: The id of the customer.
+    sql: ${TABLE}.CUSTOMER_ID
+    searchable: false
   - name: accepts_marketing
     field_type: dimension
     type: yesno
