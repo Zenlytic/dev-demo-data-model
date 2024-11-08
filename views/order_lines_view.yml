@@ -358,6 +358,30 @@ fields:
   description: JOEJOEJOE
   value_format_name: usd
   sql: ${order_id}
+
+- name: personal_field_iwumbvd
+  field_type: measure
+  type: count_distinct
+  label: NOT NUMBER IOF ORDERS
+  description: NONONONO
+  value_format_name: percent_4
+  sql: ${order_id}
+
+- name: personal_field_axqvokc
+  field_type: measure
+  type: count_distinct
+  label: NOTNOTNumber Of Orders
+  description: The unique number of orders placed
+  value_format_name: decimal_0
+  sql: ${order_id}
+
+- name: personal_field_zemcxxc
+  field_type: measure
+  type: count_distinct
+  label: NOTNOTNOTNumber Of Orders
+  description: The unique number of orders placed
+  value_format_name: decimal_0
+  sql: ${order_id}
 event_name: Purchase
 fields_for_analysis:
 - subscription_vs_otp
