@@ -186,18 +186,6 @@ fields:
   sql_start: ${customers.first_order_date}
   sql_end: ${order_date}
 
-- name: total_gross_revenue
-  field_type: measure
-  type: sum
-  hidden: false
-  label: Total Gross Revenue
-  description: Total gross revenue = revenue from product sales + shipping revenues.
-  value_format_name: usd
-  sql: ${revenue}
-  synonyms:
-  - sales
-  - revenue
-
 - name: total_gross_revenue_from_advertising
   field_type: measure
   type: sum
@@ -330,6 +318,17 @@ fields:
   field_type: measure
   type: sum
   label: Total Gross Revenue
+  description: Total gross revenue = revenue from product sales + shipping revenues.
+  value_format_name: usd
+  sql: ${revenue}
+  synonyms:
+  - sales
+  - revenue
+
+- name: total_gross_revenue
+  field_type: measure
+  type: sum
+  label: Total Gross Revenuehihi
   description: Total gross revenue = revenue from product sales + shipping revenues.
   value_format_name: usd
   sql: ${revenue}
