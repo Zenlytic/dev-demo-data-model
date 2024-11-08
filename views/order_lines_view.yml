@@ -334,6 +334,14 @@ fields:
   description: The unique number of orders placed
   value_format_name: decimal_0
   sql: ${order_id}
+
+- name: personal_field_feiggpn
+  field_type: measure
+  type: count_distinct
+  label: Number Of OrdersDELELELEE
+  description: The unique number of orders placed
+  value_format_name: decimal_0
+  sql: ${order_id}
 event_name: Purchase
 fields_for_analysis:
 - subscription_vs_otp
