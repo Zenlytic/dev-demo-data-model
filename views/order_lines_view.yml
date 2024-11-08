@@ -323,8 +323,8 @@ fields:
   type: number
   label: Gross Profit--12
   description: The total net revenue - allocated cost of goods sold to the order line
-  value_format_name: usd
-  sql: ${total_net_revenue} - ${total_cogs}
+  value_format_name: percent_1
+  sql: (${total_net_revenue} - ${total_cogs} )/ ${total_net_revenue}
 
 - name: personal_field_crfdbhj
   field_type: measure
