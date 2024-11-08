@@ -308,7 +308,7 @@ fields:
 - name: subscription_revenue
   field_type: measure
   type: sum
-  label: Subscription Revenue-yo
+  label: Subscription Revenue-yoy
   description: Subscription revenue = gross revenue (product revenues + shipping,
     for subscriptions only)
   value_format_name: usd
