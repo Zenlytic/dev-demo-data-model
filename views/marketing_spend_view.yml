@@ -68,6 +68,10 @@ fields:
     filters:
       - field: f0
         value: v0
+      - field: f1
+        value: v1
+      - field: f2
+        value: v2
     formatter: decimal_0
     canon_date: ''
     sql_distinct_key: ''
