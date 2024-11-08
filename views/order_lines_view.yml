@@ -195,7 +195,12 @@ fields:
         value: v0
     formatter: decimal_0
     'false': null
-    non_additive_dimension: null
+    non_additive_dimension:
+      name: njm
+      window_aware_of_query_dimensions:
+        - njm
+        - njm2
+      window_choice: min
     canon_date: canon_date_njm
     sql_distinct_key: sql_distinct_key_njm
   - name: total_gross_revenue_from_advertising
