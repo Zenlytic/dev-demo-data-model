@@ -294,9 +294,8 @@ fields:
   type: number
   hidden: false
   description: Gross AOV = gross revenues / number of orders
-  value_format_name: percent_1
-  sql: (${total_gross_revenue} / nullif(${number_of_orders}, 0))/ ${total_gross_revenue}
-    * 100
+  value_format_name: usd
+  sql: ${total_gross_revenue} / nullif(${number_of_orders}, 0)
   synonyms:
   - Average order value
 
@@ -322,18 +321,12 @@ fields:
 - name: gross_profit
   field_type: measure
   type: number
-  label: Gross Profit--12
+  hidden: false
   description: The total net revenue - allocated cost of goods sold to the order line
-  value_format_name: percent_1
-  sql: (${total_net_revenue} - ${total_cogs} )/ ${total_net_revenue}
-
-- name: personal_field_crfdbhj
-  field_type: measure
-  type: sum
-  label: Total COGS
-  description: The allocated cost of goods sold to the order line
   value_format_name: usd
-  sql: ${TABLE}.cogs
+  sql: ${total_net_revenue} - ${total_cogs}
+  zoe_description: This is the gross profit.
+
 event_name: Purchase
 fields_for_analysis:
 - subscription_vs_otp
