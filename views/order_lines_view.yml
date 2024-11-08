@@ -330,7 +330,7 @@ fields:
 - name: personal_field_nurajgb
   field_type: measure
   type: count_distinct
-  label: Number Of Orders
+  label: Number Of OrdersDELETEME
   description: The unique number of orders placed
   value_format_name: decimal_0
   sql: ${order_id}
