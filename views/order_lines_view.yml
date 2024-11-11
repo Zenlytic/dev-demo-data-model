@@ -316,14 +316,6 @@ fields:
   value_format_name: usd
   sql: ${total_net_revenue} - ${total_cogs}
 
-- name: personal_field_vprdlko
-  field_type: measure
-  type: sum
-  label: Total COGS
-  description: The allocated cost of goods sold to the order line
-  value_format_name: usd
-  sql: ${TABLE}.cogs
-
 - name: gross_aov
   field_type: measure
   type: number
@@ -334,11 +326,6 @@ fields:
   synonyms:
   - Average order value
 
-- name: personal_field_jhmrcof
-  field_type: measure
-  type: count_distinct
-  label: Count Distinct Promotion
-  sql: ${TABLE}.PROMOTION
 event_name: Purchase
 fields_for_analysis:
 - subscription_vs_otp
