@@ -220,14 +220,6 @@ fields:
   value_format_name: usd
   sql: ${discount}
 
-- name: total_net_revenue
-  field_type: measure
-  type: number
-  hidden: false
-  description: Total net revenue = gross revenue - discounts
-  value_format_name: usd
-  sql: ${total_gross_revenue} - ${total_discounts}
-
 - name: subscription_revenue
   field_type: measure
   type: sum
@@ -309,15 +301,6 @@ fields:
   value_format_name: decimal_0
   sql: ${quantity}
 
-- name: total_cogs
-  field_type: measure
-  type: sum
-  hidden: false
-  label: Total COGS
-  description: The allocated cost of goods sold to the order line
-  value_format_name: usd
-  sql: ${TABLE}.cogs
-
 - name: gross_profit
   field_type: measure
   type: number
@@ -326,6 +309,25 @@ fields:
   value_format_name: usd
   sql: ${total_net_revenue} - ${total_cogs}
   zoe_description: This is the gross profit.
+
+- name: total_net_revenue
+  field_type: measure
+  type: number
+  hidden: false
+  description: Total net revenue = gross revenue - discounts
+  value_format_name: usd
+  sql:
+  - order_lines.total_discounts
+  - order_lines.total_gross_revenue
+  sql_raw: ${total_gross_revenue} - ${total_discounts}
+
+- name: total_cogs
+  field_type: measure
+  type: sum
+  label: Total COGS-newww
+  description: The allocated cost of goods sold to the order line
+  value_format_name: usd
+  sql: ${TABLE}.cogs
 event_name: Purchase
 fields_for_analysis:
 - subscription_vs_otp
