@@ -284,7 +284,7 @@ fields:
   type: number
   hidden: false
   description: Repurchase rate = number of repeat orders / number of orders.
-  value_format_name: percent_1
+  value_format_name: usd
   sql: ${number_of_repeat_orders} / ${number_of_orders}
   synonyms:
   - Repeat order rate
