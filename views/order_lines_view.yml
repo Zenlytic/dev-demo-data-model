@@ -154,6 +154,20 @@ fields:
   sql: ${TABLE}.new_vs_repeat
   searchable: true
 
+- name: between_first_order_and_this_order
+  field_type: dimension_group
+  type: duration
+  hidden: false
+  label: between first order and this order
+  intervals:
+  - day
+  - week
+  - month
+  - quarter
+  - year
+  sql_start: ${customers.first_order_date}
+  sql_end: ${order_date}
+
 - name: order
   field_type: dimension_group
   type: time
@@ -172,19 +186,47 @@ fields:
   - year
   sql: ${TABLE}.ORDER_AT
 
-- name: between_first_order_and_this_order
+- name: order
   field_type: dimension_group
-  type: duration
-  hidden: false
-  label: between first order and this order
-  intervals:
-  - day
+  type: time
+  datatype: timestamp
+  hidden:
+  primary_key:
+  label: Order Date-edited
+  description: The time at which the order was placed. This is the main time field
+    to use for orders
+  required_access_grants:
+  value_format_name:
+  drill_fields:
+  sql_distinct_key:
+  tiers:
+  timeframes:
+  - raw
+  - date
+  - week_index
   - week
+  - month_of_year
   - month
   - quarter
   - year
-  sql_start: ${customers.first_order_date}
-  sql_end: ${order_date}
+  intervals:
+  sql_start:
+  sql_end:
+  sql: ${TABLE}.ORDER_AT
+  filters:
+  extra:
+  id: order_lines.ORDER
+  workspace_id: '11'
+  user_id: 622bc4a0-be87-448a-942f-256af905eba8
+  tags:
+  searchable:
+  synonyms:
+  link:
+  convert_tz:
+  measure:
+  canon_date:
+  non_additive_dimension:
+  is_personal_field: true
 
 - name: total_gross_revenue
   field_type: measure
@@ -240,14 +282,6 @@ fields:
   - field: subscription_vs_otp
     value: Subscription
 
-- name: number_of_customers_with_orders
-  field_type: measure
-  type: count_distinct
-  hidden: false
-  description: The unique number of customers who placed orders
-  value_format_name: decimal_0
-  sql: ${customer_id}
-
 - name: number_of_new_customers_with_orders
   field_type: measure
   type: count_distinct
@@ -289,16 +323,6 @@ fields:
   synonyms:
   - Repeat order rate
 
-- name: gross_aov
-  field_type: measure
-  type: number
-  hidden: false
-  description: Gross AOV = gross revenues / number of orders
-  value_format_name: usd
-  sql: ${total_gross_revenue} / nullif(${number_of_orders}, 0)
-  synonyms:
-  - Average order value
-
 - name: number_of_units
   field_type: measure
   type: sum
@@ -318,6 +342,16 @@ fields:
   value_format_name: usd
   sql: ${TABLE}.cogs
 
+- name: gross_aov
+  field_type: measure
+  type: number
+  hidden: false
+  description: Gross AOV = gross revenues / number of orders
+  value_format_name: usd
+  sql: ${total_gross_revenue} / nullif(${number_of_orders}, 0)
+  synonyms:
+  - Average order value
+
 - name: gross_profit
   field_type: measure
   type: number
@@ -326,6 +360,20 @@ fields:
   value_format_name: usd
   sql: ${total_net_revenue} - ${total_cogs}
   zoe_description: This is the gross profit.
+
+- name: personal_field_hopaxyr
+  field_type: measure
+  type: count_distinct
+  label: Count Distinct New Vs Repeat
+  sql: ${TABLE}.new_vs_repeat
+
+- name: number_of_customers_with_orders
+  field_type: measure
+  type: count_distinct
+  label: Number Of Customers With Ordershi
+  description: The unique number of customers who placed orders
+  value_format_name: decimal_0
+  sql: ${customer_id}
 event_name: Purchase
 fields_for_analysis:
 - subscription_vs_otp
