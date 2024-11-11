@@ -312,23 +312,17 @@ fields:
 - name: gross_aov
   field_type: measure
   type: number
-  label: Gross Aov-newneww
+  label: Gross Aov
   description: Gross AOV = gross revenues / number of orders
   value_format_name: usd
   sql: ${total_gross_revenue} / nullif(${number_of_orders}, 0)
   synonyms:
   - Average order value
 
-- name: personal_field_cadsdst
-  field_type: measure
-  type: count_distinct
-  label: Count Distinct Order Id
-  sql: ${TABLE}.ORDER_ID
-
 - name: number_of_customers_with_orders
   field_type: measure
   type: count_distinct
-  label: Number Of Customers With Orders-yoyo
+  label: Number Of Customers With Orders
   description: The unique number of customers who placed orders
   value_format_name: decimal_0
   sql: ${customer_id}
