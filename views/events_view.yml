@@ -257,10 +257,13 @@ fields:
 - name: number_of_sessions
   field_type: measure
   type: count_distinct
+  hidden: false
+  label: Number Of Sessions
   description: The number of sessions (usage of the site by a unique user in a 6 hour
-    window)
+    window) NJM
   value_format_name: decimal_0
   sql: ${session_id}
+  filters: []
 
 - name: number_of_users
   field_type: measure
