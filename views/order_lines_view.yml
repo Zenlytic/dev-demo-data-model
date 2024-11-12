@@ -41,6 +41,9 @@ fields:
   field_type: dimension
   type: string
   hidden: false
+  primary_key: false
+  label: Order Id
+  description: my order id description
   drill_fields:
   - order_date
   - subscription_vs_otp
@@ -48,7 +51,7 @@ fields:
   - campaign
   - promotion
   - total_gross_revenue
-  sql: ${TABLE}.ORDER_ID
+  sql: ${TABLE}.order_id
   tags:
   - order
   searchable: false
