@@ -1,5 +1,5 @@
 version: 1
-# type: model
+type: model
 name: derp_organics
 connection: demo
 access_grants:
