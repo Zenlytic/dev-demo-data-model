@@ -75,8 +75,11 @@ fields:
 - name: device_type
   field_type: dimension
   type: string
+  hidden: false
+  primary_key: false
+  label: Device Type
   description: The user's device type (hardware)
-  sql: ${TABLE}.DEVICE_TYPE
+  sql: ${TABLE}.device_type
   searchable: true
 
 - name: browser_user_agent
