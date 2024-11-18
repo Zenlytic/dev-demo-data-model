@@ -308,27 +308,23 @@ fields:
   value_format_name: usd
   sql: ${TABLE}.cogs
 
-- name: gross_aov
-  field_type: measure
-  type: number
-  hidden: false
-  description: Gross AOV = gross revenues / number of orders
-  value_format_name: usd
-  sql:
-  - order_lines.total_gross_revenue
-  - order_lines.number_of_orders
-  synonyms:
-  - Average order value
-
-  sql_raw: ${total_gross_revenue} / nullif(${number_of_orders}, 0)
-
-- name: GROSS_PROFIT
+- name: gross_profit
   field_type: measure
   type: number
   label: Gross Profit-edited
   description: The total net revenue - allocated cost of goods sold to the order line
   value_format_name: usd
   sql: ${total_net_revenue} - ${total_cogs}
+
+- name: GROSS_AOV
+  field_type: measure
+  type: number
+  label: Gross Aov-newew
+  description: Gross AOV = gross revenues / number of orders
+  value_format_name: usd
+  sql: ${total_gross_revenue} / nullif(${number_of_orders}, 0)
+  synonyms:
+  - Average order value
 event_name: Purchase
 fields_for_analysis:
 - subscription_vs_otp
