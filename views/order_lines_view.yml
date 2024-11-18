@@ -154,6 +154,20 @@ fields:
   sql: ${TABLE}.new_vs_repeat
   searchable: true
 
+- name: between_first_order_and_this_order
+  field_type: dimension_group
+  type: duration
+  hidden: false
+  label: between first order and this order
+  intervals:
+  - day
+  - week
+  - month
+  - quarter
+  - year
+  sql_start: ${customers.first_order_date}
+  sql_end: ${order_date}
+
 - name: order
   field_type: dimension_group
   type: time
@@ -171,32 +185,7 @@ fields:
   - quarter
   - year
   sql: ${TABLE}.ORDER_AT
-
-- name: between_first_order_and_this_order
-  field_type: dimension_group
-  type: duration
-  hidden: false
-  label: between first order and this order
-  intervals:
-  - day
-  - week
-  - month
-  - quarter
-  - year
-  sql_start: ${customers.first_order_date}
-  sql_end: ${order_date}
-
-- name: total_gross_revenue
-  field_type: measure
-  type: sum
-  hidden: false
-  label: Total Gross Revenue
-  description: Total gross revenue = revenue from product sales + shipping revenues.
-  value_format_name: usd
-  sql: ${revenue}
-  synonyms:
-  - sales
-  - revenue
+  sql_raw: ${TABLE}.ORDER_AT
 
 - name: total_gross_revenue_from_advertising
   field_type: measure
@@ -211,22 +200,6 @@ fields:
   synonyms:
   - sales
   - revenue
-
-- name: total_discounts
-  field_type: measure
-  type: sum
-  hidden: false
-  description: All discounts applied to either the order or the product in the order
-  value_format_name: usd
-  sql: ${discount}
-
-- name: total_net_revenue
-  field_type: measure
-  type: number
-  hidden: false
-  description: Total net revenue = gross revenue - discounts
-  value_format_name: usd
-  sql: ${total_gross_revenue} - ${total_discounts}
 
 - name: subscription_revenue
   field_type: measure
@@ -326,6 +299,44 @@ fields:
   value_format_name: usd
   sql: ${total_net_revenue} - ${total_cogs}
   zoe_description: This is the gross profit.
+
+- name: total_discounts
+  field_type: measure
+  type: sum
+  hidden: false
+  description: All discounts applied to either the order or the product in the order
+  value_format_name: usd
+  sql: ${discount}
+  sql_raw: ${discount}
+
+- name: TOTAL_NET_REVENUE
+  field_type: measure
+  type: number
+  label: Total Net Revenue-tnr
+  description: Total net revenue = gross revenue - discounts
+  value_format_name: usd
+  sql: ${total_gross_revenue} - ${total_discounts}
+
+- name: TOTAL_GROSS_REVENUE
+  field_type: measure
+  type: sum
+  label: Total Gross Revenue-tgr
+  description: Total gross revenue = revenue from product sales + shipping revenues.
+  value_format_name: usd
+  sql: ${revenue}
+  synonyms:
+  - sales
+  - revenue
+
+- name: personal_field_powuxfl
+  field_type: measure
+  type: number
+  label: Repurchase Rate
+  description: Repurchase rate = number of repeat orders / number of orders.
+  value_format_name: percent_1
+  sql: ${number_of_repeat_orders} / ${number_of_orders}
+  synonyms:
+  - Repeat order rate
 event_name: Purchase
 fields_for_analysis:
 - subscription_vs_otp
