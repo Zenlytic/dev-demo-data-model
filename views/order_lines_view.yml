@@ -190,7 +190,7 @@ fields:
   field_type: measure
   type: sum
   hidden: false
-  label: Total Gross Revenue-just for fun
+  label: Total Gross Revenue
   description: Total gross revenue = revenue from product sales + shipping revenues.
   value_format_name: usd
   sql: ${revenue}
