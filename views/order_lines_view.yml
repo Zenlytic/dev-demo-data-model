@@ -298,16 +298,6 @@ fields:
   sql: ${total_net_revenue} - ${total_cogs}
   zoe_description: This is the gross profit.
 
-- name: total_gross_revenue
-  field_type: measure
-  type: sum
-  label: Total Gross Revenue000
-  description: Total gross revenue = revenue from product sales + shipping revenues.
-  value_format_name: usd
-  sql: ${revenue}
-  synonyms:
-  - sales
-  - revenue
 
 - name: total_net_revenue
   field_type: measure
