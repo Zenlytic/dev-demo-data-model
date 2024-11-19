@@ -158,7 +158,7 @@ fields:
   field_type: dimension_group
   type: time
   datatype: timestamp
-  label: Order Month Of Date-let's try
+  hidden: false
   description: The time at which the order was placed. This is the main time field
     to use for orders
   timeframes:
@@ -172,10 +172,11 @@ fields:
   - year
   sql: ${TABLE}.ORDER_AT
 
-- name: BETWEEN_FIRST_ORDER_AND_THIS_ORDER
+- name: between_first_order_and_this_order
   field_type: dimension_group
   type: duration
-  label: Quarters between first order and this order--try this too
+  hidden: false
+  label: between first order and this order
   intervals:
   - day
   - week
@@ -184,6 +185,18 @@ fields:
   - year
   sql_start: ${customers.first_order_date}
   sql_end: ${order_date}
+
+- name: total_gross_revenue
+  field_type: measure
+  type: sum
+  hidden: false
+  label: Total Gross Revenue
+  description: Total gross revenue = revenue from product sales + shipping revenues.
+  value_format_name: usd
+  sql: ${revenue}
+  synonyms:
+  - sales
+  - revenue
 
 - name: total_gross_revenue_from_advertising
   field_type: measure
@@ -198,6 +211,22 @@ fields:
   synonyms:
   - sales
   - revenue
+
+- name: total_discounts
+  field_type: measure
+  type: sum
+  hidden: false
+  description: All discounts applied to either the order or the product in the order
+  value_format_name: usd
+  sql: ${discount}
+
+- name: total_net_revenue
+  field_type: measure
+  type: number
+  hidden: false
+  description: Total net revenue = gross revenue - discounts
+  value_format_name: usd
+  sql: ${total_gross_revenue} - ${total_discounts}
 
 - name: subscription_revenue
   field_type: measure
@@ -260,6 +289,16 @@ fields:
   synonyms:
   - Repeat order rate
 
+- name: gross_aov
+  field_type: measure
+  type: number
+  hidden: false
+  description: Gross AOV = gross revenues / number of orders
+  value_format_name: usd
+  sql: ${total_gross_revenue} / nullif(${number_of_orders}, 0)
+  synonyms:
+  - Average order value
+
 - name: number_of_units
   field_type: measure
   type: sum
@@ -287,29 +326,6 @@ fields:
   value_format_name: usd
   sql: ${total_net_revenue} - ${total_cogs}
   zoe_description: This is the gross profit.
-
-
-- name: total_net_revenue
-  field_type: measure
-  type: number
-  hidden: false
-  description: Total net revenue = gross revenue - discounts
-  value_format_name: usd
-  sql: ${total_gross_revenue} - ${total_discounts}
-
-- name: personal_field_njkyhem
-  field_type: measure
-  type: count_distinct
-  label: Count Distinct Order Id
-  sql: ${TABLE}.ORDER_ID
-
-- name: TOTAL_DISCOUNTS
-  field_type: measure
-  type: sum
-  label: Total Discounts-yeyeye
-  description: All discounts applied to either the order or the product in the order
-  value_format_name: usd
-  sql: ${discount}
 event_name: Purchase
 fields_for_analysis:
 - subscription_vs_otp
