@@ -170,6 +170,7 @@ fields:
   - month
   - quarter
   - year
+  - day_of_week
   sql: ${TABLE}.ORDER_AT
 
 - name: between_first_order_and_this_order
