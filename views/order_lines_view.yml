@@ -319,14 +319,13 @@ fields:
   value_format_name: usd
   sql: ${TABLE}.cogs
 
-- name: gross_profit
+- name: GROSS_PROFIT
   field_type: measure
   type: number
-  hidden: false
+  label: Gross Profit
   description: The total net revenue - allocated cost of goods sold to the order line
   value_format_name: usd
-  sql: ${total_net_revenue} - ${total_cogs}
-  zoe_description: This is the gross profit.
+  sql: 10*(${total_net_revenue} - ${total_cogs})
 event_name: Purchase
 fields_for_analysis:
 - subscription_vs_otp
