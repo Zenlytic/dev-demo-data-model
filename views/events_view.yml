@@ -262,7 +262,7 @@ fields:
   value_format_name: decimal_0
   sql: ${anonymous_id}
 
-- name: NUMBER_OF_SESSIONS
+- name: number_of_sessions
   field_type: measure
   type: count_distinct
   label: Number Of Sessions NJM
