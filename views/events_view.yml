@@ -223,7 +223,7 @@ fields:
   sql: ${TABLE}.UTM_CAMPAIGN
   searchable: true
 
-- name: BROWSER_LANGUAGE
+- name: browser_language
   field_type: dimension
   type: string
   label: Browser Language NJM
@@ -262,11 +262,12 @@ fields:
   value_format_name: decimal_0
   sql: ${anonymous_id}
 
-- name: number_of_sessions
+- name: NUMBER_OF_SESSIONS
   field_type: measure
   type: count_distinct
+  label: Number Of Sessions NJM
   description: The number of sessions (usage of the site by a unique user in a 6 hour
-    window)
+    window) NJM xyzjkj
   value_format_name: decimal_0
   sql: ${session_id}
 event_dimension: event_name
