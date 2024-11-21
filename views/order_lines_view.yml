@@ -131,6 +131,7 @@ fields:
   field_type: dimension
   type: string
   hidden: false
+  label: Last Click Marketing Channell
   description: The last click marketing channel that the customer came through before
     placing their order.
   sql: ${TABLE}.last_click
@@ -319,7 +320,7 @@ fields:
   value_format_name: usd
   sql: ${TABLE}.cogs
 
-- name: GROSS_PROFIT
+- name: gross_profit
   field_type: measure
   type: number
   label: Gross Profit
