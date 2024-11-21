@@ -263,7 +263,7 @@ fields:
   field_type: measure
   type: count_distinct
   hidden: false
-  description: The unique number of orders placed
+  description: The unique number of orders placed..
   value_format_name: decimal_0
   sql: ${order_id}
 
