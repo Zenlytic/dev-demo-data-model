@@ -75,7 +75,7 @@ fields:
 - name: price
   field_type: dimension
   type: number
-  hidden: true
+  hidden: false
   sql: ${TABLE}.PRICE
 
 - name: quantity
