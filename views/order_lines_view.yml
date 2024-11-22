@@ -157,8 +157,8 @@ fields:
 - name: is_repeat_order
   field_type: dimension
   type: yesno
+  description: Whether this is a repeat order (true) or first order (false)
   sql: ${new_vs_repeat} = 'Repeat'
-  description: "Whether this is a repeat order (true) or first order (false)"
 
 - name: order
   field_type: dimension_group
