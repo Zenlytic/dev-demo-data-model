@@ -97,7 +97,7 @@ fields:
   sql: ${TABLE}.first_campaign
   searchable: false
 
-- name: ADDRESS
+- name: address
   field_type: dimension
   type: string
   label: Addresstest
