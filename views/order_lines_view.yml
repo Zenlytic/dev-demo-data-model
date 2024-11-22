@@ -154,6 +154,12 @@ fields:
   sql: ${TABLE}.new_vs_repeat
   searchable: true
 
+- name: is_repeat_order
+  field_type: dimension
+  type: yesno
+  sql: ${new_vs_repear} = 'Repeat'
+  description: "Whether this is a repeat order (true) or first order (false)"
+
 - name: order
   field_type: dimension_group
   type: time
