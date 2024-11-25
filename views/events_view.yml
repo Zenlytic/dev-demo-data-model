@@ -262,12 +262,13 @@ fields:
   value_format_name: decimal_0
   sql: ${anonymous_id}
 
-- name: number_of_sessions
+- name: NUMBER_OF_SESSIONS
   field_type: measure
   type: count_distinct
-  label: Number Of Sessions NJM
+  label: Number Of Sessions
   description: The number of sessions (usage of the site by a unique user in a 6 hour
     window) NJM xyzjkj
   value_format_name: decimal_0
   sql: ${session_id}
+  canon_date: events.event
 event_dimension: event_name
