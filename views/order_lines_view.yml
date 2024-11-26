@@ -3,7 +3,13 @@ type: view
 name: order_lines
 description: Description of order_lines view.
 model_name: pure_organics
-sql_table_name: DEMO_PROD.ORDER_LINES
+# sql_table_name: DEMO_PROD.ORDER_LINES
+derived_table: 
+  sql: >
+    SELECT
+        *,
+        ROW_NUMBER() OVER (PARTITION BY CUSTOMER_ID ORDER BY ORDER_AT) AS seq_num
+    FROM DEMO_PROD.ORDER_LINES
 default_date: order
 row_label: Order line
 identifiers:
@@ -59,6 +65,12 @@ fields:
   hidden: true
   sql: ${TABLE}.PRODUCT_ID
   searchable: false
+
+- name: order_sequence_number
+  field_type: dimension
+  type: number
+  sql: ${TABLE}.seq_num
+  description: The sequence of order the customer had made, e.g. 1 = first order, 2 = second order, etc
 
 - name: discount
   field_type: dimension
