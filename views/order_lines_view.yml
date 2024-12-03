@@ -154,24 +154,6 @@ fields:
   sql: ${TABLE}.new_vs_repeat
   searchable: true
 
-- name: order
-  field_type: dimension_group
-  type: time
-  datatype: timestamp
-  hidden: false
-  description: The time at which the order was placed. This is the main time field
-    to use for orders
-  timeframes:
-  - raw
-  - date
-  - week_index
-  - week
-  - month_of_year
-  - month
-  - quarter
-  - year
-  sql: ${TABLE}.ORDER_AT
-
 - name: between_first_order_and_this_order
   field_type: dimension_group
   type: duration
@@ -185,6 +167,24 @@ fields:
   - year
   sql_start: ${customers.first_order_date}
   sql_end: ${order_date}
+
+- name: ORDER
+  field_type: dimension_group
+  type: time
+  datatype: timestamp
+  label: Order Date
+  description: The time at which the order was placed. This is the main time field
+    to use for orders-newnew
+  timeframes:
+  - raw
+  - date
+  - week_index
+  - week
+  - month_of_year
+  - month
+  - quarter
+  - year
+  sql: ${TABLE}.ORDER_AT
 
 - name: total_gross_revenue
   field_type: measure
@@ -326,7 +326,7 @@ fields:
   sql: ${customer_id}
   is_marked_as_read: true
 
-- name: NUMBER_OF_UNITS
+- name: number_of_units
   field_type: measure
   type: sum
   label: Number Of Units
@@ -356,6 +356,24 @@ fields:
   - sales
   - revenue
   is_marked_as_read: true
+
+- name: personal_field_bsarjqt
+  field_type: measure
+  type: number
+  label: Gross Aov
+  description: Gross AOV = gross revenues / number of orders
+  value_format_name: usd
+  sql: ${total_gross_revenue} / nullif(${number_of_orders}, 0)
+  synonyms:
+  - Average order value
+
+- name: personal_field_cgvuhma
+  field_type: measure
+  type: number
+  label: Gross Profit
+  description: The total net revenue - allocated cost of goods sold to the order line
+  value_format_name: usd
+  sql: ${total_net_revenue} - ${total_cogs}
 event_name: Purchase
 fields_for_analysis:
 - subscription_vs_otp
