@@ -86,6 +86,13 @@ fields:
   sql: ${TABLE}.BROWSER_USER_AGENT
   searchable: false
 
+- name: browser_language
+  field_type: dimension
+  type: string
+  description: The user's browser language setting
+  sql: ${TABLE}.BROWSER_LANGUAGE
+  searchable: false
+
 - name: ip_address
   field_type: dimension
   type: string
@@ -223,13 +230,6 @@ fields:
   sql: ${TABLE}.UTM_CAMPAIGN
   searchable: true
 
-- name: browser_language
-  field_type: dimension
-  type: string
-  label: Browser Language NJM
-  description: The user's browser language setting
-  sql: ${TABLE}.BROWSER_LANGUAGE
-
 - name: event
   field_type: dimension_group
   type: time
@@ -254,6 +254,14 @@ fields:
   value_format_name: decimal_0
   sql: ${anonymous_id}
 
+- name: number_of_sessions
+  field_type: measure
+  type: count_distinct
+  description: The number of sessions (usage of the site by a unique user in a 6 hour
+    window)
+  value_format_name: decimal_0
+  sql: ${session_id}
+
 - name: number_of_users
   field_type: measure
   type: count_distinct
@@ -261,14 +269,4 @@ fields:
     we can't identify)
   value_format_name: decimal_0
   sql: ${anonymous_id}
-
-- name: number_of_sessions
-  field_type: measure
-  type: count_distinct
-  label: Number Of Sessions
-  description: The number of sessions (usage of the site by a unique user in a 6 hour
-    window) NJM xyzjkj
-  value_format_name: decimal_0
-  sql: ${session_id}
-  canon_date: events.event
 event_dimension: event_name
