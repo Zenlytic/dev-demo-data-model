@@ -12,7 +12,7 @@ fields:
   type: string
   hidden: true
   primary_key: true
-  description: Represents a unique key for each spend event.sd
+  description: Represents a unique key for each spend event.sdsdkl
   sql: ${TABLE}.spend_id
   zoe_description: Used to uniquely identify marketing spend events.
   searchable: false
