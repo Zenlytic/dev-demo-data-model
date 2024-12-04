@@ -69,12 +69,6 @@ fields:
   value_format_name: usd
   sql: ${ad_spend}
 
-
-
-
-
-  
-
 - name: cac
   field_type: measure
   type: number
