@@ -20,7 +20,7 @@ fields:
 - name: channel
   field_type: dimension
   type: string
-  description: The channel of the ad spendfoobar sdsd
+  description: The channel of the ad spend
   sql: ${TABLE}.channel
   searchable: true
 
