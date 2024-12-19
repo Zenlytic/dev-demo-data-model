@@ -129,6 +129,6 @@ fields:
 
 - name: count_customers
   field_type: measure
-  type: max
+  type: count
   value_format_name: decimal_0
   sql: ${customer_id}
