@@ -177,7 +177,6 @@ fields:
     to use for orders
   timeframes:
   - raw
-  - hour
   - date
   - week_index
   - week
