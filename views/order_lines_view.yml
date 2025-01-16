@@ -190,7 +190,7 @@ fields:
     synonyms:
       - sales
       - revenue
-    type: sum
+    type: count
     value_format_name: usd
     sql: ${revenue}
     non_additive_dimension: null
