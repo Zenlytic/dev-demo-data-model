@@ -1,0 +1,4 @@
+version: 1
+type: model
+name: air_quality
+connection: bigquery-public-data.epa_historical_air_quality
