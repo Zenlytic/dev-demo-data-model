@@ -175,25 +175,17 @@ fields:
       - quarter
       - year
     sql: ${TABLE}.ORDER_AT
-  - canon_date: null
-    description: |-
-      Total gross revenue = revenue from product sales + shipping revenues.\n
-      test1\n
-      test2\n
-      test3
-      test4
-    field_type: measure
+  - field_type: measure
     hidden: false
     label: Total Gross Revenue
     name: total_gross_revenue
-    sql_distinct_key: null
     synonyms:
       - sales
       - revenue
     type: sum
     value_format_name: usd
     sql: ${revenue}
-    non_additive_dimension: null
+    
   - name: total_gross_revenue_from_advertising
     field_type: measure
     type: sum
