@@ -6,6 +6,9 @@ model_name: pure_organics
 sql_table_name: DEMO_PROD.ORDER_LINES
 default_date: order
 row_label: Order line
+access_filters:
+  - field: products.product_type
+    user_attribute: 'products'
 identifiers:
   - name: product_id
     type: foreign
