@@ -278,16 +278,6 @@ fields:
   - field: new_vs_repeat
     value: Repeat
 
-- name: gross_aov
-  field_type: measure
-  type: number
-  hidden: false
-  description: Gross AOV = gross revenues / number of orders
-  value_format_name: usd
-  sql: ${total_gross_revenue} / nullif(${number_of_orders}, 0)
-  synonyms:
-  - Average order value
-
 - name: number_of_units
   field_type: measure
   type: sum
@@ -316,7 +306,7 @@ fields:
   sql: ${total_net_revenue} - ${total_cogs}
   zoe_description: This is the gross profit.
 
-- name: REPURCHASE_RATE
+- name: repurchase_rate
   field_type: measure
   type: number
   label: Repurchase Rate test
@@ -325,6 +315,17 @@ fields:
   sql: ${number_of_repeat_orders} / ${number_of_orders}
   synonyms:
   - Repeat order rate
+  canon_date: order_lines.order
+
+- name: GROSS_AOV
+  field_type: measure
+  type: number
+  label: Gross Aov njm test
+  description: Gross AOV = gross revenues / number of orders
+  value_format_name: usd
+  sql: ${total_gross_revenue} / nullif(${number_of_orders}, 0)
+  synonyms:
+  - Average order value
   canon_date: order_lines.order
 event_name: Purchase
 fields_for_analysis:
