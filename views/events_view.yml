@@ -104,7 +104,7 @@ fields:
 - name: browser_name
   field_type: dimension
   type: string
-  description: The user's browser
+  description: The user's browser name
   sql: ${TABLE}.BROWSER_NAME
   searchable: true
 
