@@ -18,13 +18,6 @@ identifiers:
 - name: customer_id
   type: primary
   sql: ${customer_id}
-
-
-
-
-
-
-  
 fields:
 - name: customer_id
   field_type: dimension
@@ -126,9 +119,3 @@ fields:
   - quarter
   - year
   sql: ${TABLE}.first_order_at
-
-# - name: count_customers
-#   field_type: measure
-#   type: count
-#   value_format_name: decimal_0
-#   sql: ${customer_id}
