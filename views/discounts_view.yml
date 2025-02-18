@@ -8,6 +8,13 @@ identifiers:
     sql: ${discount_id}
     type: primary
     allowed_fanouts: []
+  - name: discount_order
+    type: join
+    allowed_fanouts: []
+    reference: order_lines
+    relationship: many_to_one
+    join_type: left_outer
+    sql_on: some sql
 fields:
   - name: order_id
     field_type: dimension
