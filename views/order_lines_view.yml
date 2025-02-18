@@ -13,14 +13,6 @@ identifiers:
   - name: customer_id
     type: foreign
     sql: ${customer_id}
-  - name: discount_join
-    type: join
-    reference: discounts
-    relationship: many_to_one
-    join_type: left_outer
-    sql_on: >-
-      ${discounts.order_id}=${order_lines.order_id} and
-      ${discounts.product_id}=${order_lines.product_id}
 fields:
   - name: order_line_id
     field_type: dimension
