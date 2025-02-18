@@ -1,0 +1,12 @@
+version: 1
+type: view
+name: discounts
+fields:
+  - name: order_id
+    field_type: dimension
+    type: string
+    description: ''
+    hidden: false
+    primary_key: false
+    searchable: false
+    sql: '-- TODO: NJM'

@@ -13,6 +13,16 @@ identifiers:
   - name: customer_id
     type: foreign
     sql: ${customer_id}
+  - name: discount_join
+    sql: ''
+    type: join
+    allowed_fanouts: []
+    reference: discounts
+    relationship: many_to_one
+    join_type: left_outer
+    sql_on: >-
+      ${discounts.order_id}=${order_lines.order_id} and
+      ${discounts.product_id}=${order_lines.product_id}
 fields:
   - name: order_line_id
     field_type: dimension
@@ -21,6 +31,7 @@ fields:
     primary_key: true
     sql: ${TABLE}.ORDER_LINE_ID
     searchable: false
+
   - name: customer_id
     field_type: dimension
     type: string
@@ -35,6 +46,7 @@ fields:
     tags:
       - customer
     searchable: false
+
   - name: order_id
     field_type: dimension
     type: string
@@ -50,32 +62,38 @@ fields:
     tags:
       - order
     searchable: false
+
   - name: product_id
     field_type: dimension
     type: string
     hidden: true
     sql: ${TABLE}.PRODUCT_ID
     searchable: false
+
   - name: discount
     field_type: dimension
     type: number
     hidden: true
     sql: ${TABLE}.DISCOUNT
+
   - name: revenue
     field_type: dimension
     type: number
     hidden: true
     sql: ${TABLE}.REVENUE
+
   - name: price
     field_type: dimension
     type: number
     hidden: true
     sql: ${TABLE}.PRICE
+
   - name: quantity
     field_type: dimension
     type: number
     hidden: true
     sql: ${TABLE}.QUANTITY
+
   - name: campaign
     field_type: dimension
     type: string
@@ -85,6 +103,7 @@ fields:
       order.
     sql: ${TABLE}.CAMPAIGN
     searchable: true
+
   - name: promotion
     field_type: dimension
     type: string
@@ -92,6 +111,7 @@ fields:
     description: The promotion given to the customer for this order
     sql: ${TABLE}.PROMOTION
     searchable: true
+
   - name: subscription_vs_otp
     field_type: dimension
     type: string
@@ -99,6 +119,7 @@ fields:
     description: Whether the order was from a subscription or a one time purchase (OTP)
     sql: ${TABLE}.SUBSCRIPTION_VS_OTP
     searchable: true
+
   - name: marketing_source
     field_type: dimension
     type: string
@@ -108,6 +129,7 @@ fields:
       order.
     sql: ${TABLE}.MARKETING_SOURCE
     searchable: true
+
   - name: marketing_channel
     field_type: dimension
     type: string
@@ -117,6 +139,7 @@ fields:
       order.
     sql: ${TABLE}.MARKETING_CHANNEL
     searchable: true
+
   - name: last_click_marketing_channel
     field_type: dimension
     type: string
@@ -126,6 +149,7 @@ fields:
       placing their order.
     sql: ${TABLE}.last_click
     searchable: true
+
   - name: first_click_marketing_channel
     field_type: dimension
     type: string
@@ -135,6 +159,7 @@ fields:
       placing their order.
     sql: ${TABLE}.first_click
     searchable: true
+
   - name: new_vs_repeat
     field_type: dimension
     type: string
@@ -144,6 +169,7 @@ fields:
       customer
     sql: ${TABLE}.new_vs_repeat
     searchable: true
+
   - name: between_first_order_and_this_order
     field_type: dimension_group
     type: duration
@@ -157,6 +183,7 @@ fields:
       - year
     sql_start: ${customers.first_order_date}
     sql_end: ${order_date}
+
   - name: ORDER
     field_type: dimension_group
     type: time
@@ -185,7 +212,7 @@ fields:
     type: sum
     value_format_name: usd
     sql: ${revenue}
-    
+
   - name: total_gross_revenue_from_advertising
     field_type: measure
     type: sum
@@ -199,6 +226,7 @@ fields:
     synonyms:
       - sales
       - revenue
+
   - name: total_discounts
     field_type: measure
     type: sum
@@ -206,6 +234,7 @@ fields:
     description: All discounts applied to either the order or the product in the order
     value_format_name: usd
     sql: ${discount}
+
   - name: total_net_revenue
     field_type: measure
     type: number
@@ -213,6 +242,7 @@ fields:
     description: Total net revenue = gross revenue - discounts
     value_format_name: usd
     sql: ${total_gross_revenue} - ${total_discounts}
+
   - name: subscription_revenue
     field_type: measure
     type: sum
@@ -225,6 +255,7 @@ fields:
     filters:
       - field: subscription_vs_otp
         value: Subscription
+
   - name: number_of_customers_with_orders
     field_type: measure
     type: count_distinct
@@ -232,6 +263,7 @@ fields:
     description: The unique number of customers who placed orders
     value_format_name: decimal_0
     sql: ${customer_id}
+
   - name: number_of_new_customers_with_orders
     field_type: measure
     type: count_distinct
@@ -242,6 +274,7 @@ fields:
     filters:
       - field: new_vs_repeat
         value: New
+
   - name: number_of_orders
     field_type: measure
     type: count_distinct
@@ -249,6 +282,7 @@ fields:
     description: The unique number of orders placed
     value_format_name: decimal_0
     sql: ${order_id}
+
   - name: number_of_repeat_orders
     field_type: measure
     type: count_distinct
@@ -261,6 +295,7 @@ fields:
     filters:
       - field: new_vs_repeat
         value: Repeat
+
   - name: repurchase_rate
     field_type: measure
     type: number
@@ -270,6 +305,7 @@ fields:
     sql: ${number_of_repeat_orders} / ${number_of_orders}
     synonyms:
       - Repeat order rate
+
   - name: gross_aov
     field_type: measure
     type: number
@@ -279,6 +315,7 @@ fields:
     sql: ${total_gross_revenue} / nullif(${number_of_orders}, 0)
     synonyms:
       - Average order value
+
   - name: number_of_units
     field_type: measure
     type: sum
@@ -289,6 +326,7 @@ fields:
       and 1 blush = 3 units sold)
     value_format_name: decimal_0
     sql: ${quantity}
+
   - name: total_cogs
     field_type: measure
     type: sum
@@ -297,6 +335,7 @@ fields:
     description: The allocated cost of goods sold to the order line
     value_format_name: usd
     sql: ${TABLE}.cogs
+
   - name: gross_profit
     field_type: measure
     type: number
