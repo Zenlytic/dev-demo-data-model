@@ -3,6 +3,11 @@ type: view
 name: discounts
 model_name: pure_organics
 sql_table_name: DEMO_PROD.ORDER_LINES
+identifiers:
+  - name: discount
+    sql: ${discount_id}
+    type: primary
+    allowed_fanouts: []
 fields:
   - name: order_id
     field_type: dimension
@@ -19,5 +24,14 @@ fields:
     description: ''
     hidden: false
     primary_key: false
+    searchable: false
+    sql: '-- TODO: NJM'
+
+  - name: discount_id
+    field_type: dimension
+    type: string
+    description: ''
+    hidden: false
+    primary_key: true
     searchable: false
     sql: '-- TODO: NJM'
