@@ -2,6 +2,7 @@ version: 1
 type: view
 name: discounts
 model_name: pure_organics
+sql_table_name: DEMO_PROD.ORDER_LINES
 fields:
   - name: order_id
     field_type: dimension
