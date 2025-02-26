@@ -1,0 +1,210 @@
+version: 1
+type: view
+name: sales_pipeline
+model_name: pure_organics
+sql_table_name: PEOPLE_PULSE_RAW.SALES_PIPELINE
+default_date: expected_close_date
+identifiers:
+- name: id
+  type: primary
+  sql: ${id}
+- name: product_id
+  type: foreign
+  sql: ${product_id}
+- name: sales_rep_id
+  type: foreign
+  sql: ${sales_rep_id}
+fields:
+- name: id
+  field_type: dimension
+  type: string
+  sql: ${TABLE}."ID"
+  searchable: false
+
+- name: product_id
+  field_type: dimension
+  type: string
+  sql: ${TABLE}."PRODUCT_ID"
+  searchable: false
+
+- name: sales_rep_id
+  field_type: dimension
+  type: number
+  sql: ${TABLE}."SALES_REP_ID"
+
+- name: product
+  field_type: dimension
+  type: string
+  sql: ${TABLE}."PRODUCT"
+  searchable: false
+
+- name: probability_to_close
+  field_type: dimension
+  type: number
+  sql: ${TABLE}."PROBABILITY_TO_CLOSE"
+
+- name: campaign
+  field_type: dimension
+  type: string
+  sql: ${TABLE}."CAMPAIGN"
+  searchable: false
+
+- name: lead
+  field_type: dimension
+  type: string
+  sql: ${TABLE}."LEAD"
+  searchable: false
+
+- name: source
+  field_type: dimension
+  type: string
+  sql: ${TABLE}."SOURCE"
+  searchable: false
+
+- name: deal_size
+  field_type: dimension
+  type: number
+  sql: ${TABLE}."DEAL_SIZE"
+
+- name: stage
+  field_type: dimension
+  type: string
+  sql: ${TABLE}."STAGE"
+  searchable: false
+
+- name: opportunity
+  field_type: dimension
+  type: string
+  sql: ${TABLE}."OPPORTUNITY"
+  searchable: false
+
+- name: channel
+  field_type: dimension
+  type: string
+  sql: ${TABLE}."CHANNEL"
+  searchable: false
+
+- name: expected_close_date
+  field_type: dimension_group
+  type: time
+  datatype: timestamp
+  timeframes:
+  - raw
+  - date
+  - day_of_year
+  - week
+  - week_of_year
+  - month
+  - month_of_year
+  - quarter
+  - year
+  sql: ${TABLE}."EXPECTED_CLOSE_DATE"
+
+- name: total_deal_size
+  field_type: measure
+  type: sum
+  description: Total deal size of all opportunities.
+  sql: ${deal_size}
+
+- name: average_deal_size
+  field_type: measure
+  type: average
+  description: Average deal size of all opportunities.
+  sql: ${deal_size}
+
+- name: total_opportunities
+  field_type: measure
+  type: count
+  description: Total number of opportunities.
+  sql: ${id}
+
+- name: distinct_products
+  field_type: measure
+  type: count_distinct
+  description: Number of distinct products in the sales pipeline.
+  sql: ${product_id}
+
+- name: distinct_sales_reps
+  field_type: measure
+  type: count_distinct
+  description: Number of distinct sales representatives.
+  sql: ${sales_rep_id}
+
+- name: average_probability_to_close
+  field_type: measure
+  type: average
+  description: Average probability to close for all opportunities.
+  sql: ${probability_to_close}
+
+- name: total_campaigns
+  field_type: measure
+  type: count_distinct
+  description: Total number of distinct campaigns.
+  sql: ${campaign}
+
+- name: total_leads
+  field_type: measure
+  type: count_distinct
+  description: Total number of distinct leads.
+  sql: ${lead}
+
+- name: total_sources
+  field_type: measure
+  type: count_distinct
+  description: Total number of distinct sources.
+  sql: ${source}
+
+- name: total_stages
+  field_type: measure
+  type: count_distinct
+  description: Total number of distinct stages in the sales pipeline.
+  sql: ${stage}
+
+- name: total_channels
+  field_type: measure
+  type: count_distinct
+  description: Total number of distinct channels.
+  sql: ${channel}
+
+
+# To help you get started with defining fields, we've included a quick guide which you can delete at any time.
+# The following keys are required for all fields. All the fields above have been created based on the columns
+# in your table.
+
+# - name: (Required) Name of the field. This is used to reference the field in the data model.
+#   field_type: The type of field. This can be 'dimension', 'measure', or 'dimension_group'.
+#   type: This is the data type for a field.
+#         For dimensions, this can be: string, yesno, tier, number
+#         For measures, this is an aggregation type: number, sum, average, count, count_distinct
+#         For dimension groups this can be: time, duration
+#   sql: (Required) This is the SQL expression for the field. You can reference other fields in the table by
+#        using the `name` of the field. For example, if you have a field with name: 'revenue' in the view
+#        'orders', you can reference it as: ${orders.revenue}.
+#        For more information, see https://docs.zenlytic.com/docs/data_modeling/
+#
+
+# The following keys are optional but useful for providing additional context to the field in the UI and Zoe.
+#
+#   label: The is the user-facing label for the field, displayed in the UI and used by Zoe in chat.
+#          It's different from the `name` field, which is used for referencing the field in the data model.
+#
+#   description: This is used to provide context to users about the field.
+#
+#   searchable: This allows Zenlytic to index the categories and allows Zoe to properly use filters.
+#               For example, if you have a field called 'state' and you want to be able to filter
+#               on different states, you would set this to 'yes'.
+#
+#   zoe_description: This is used to provide context to Zoe about the field.
+#                    When this is not provided, Zoe will use the description field.
+#
+#   hidden: This is used to hide the field from both the UI and Zoe. By default, this is set to 'no'.
+#
+#   value_format_name: This is the format to use when displaying the field. Follow this link to see the
+#                      available formats. https://docs.zenlytic.com/docs/data_modeling/formatting
+#
+#   synonyms: This is a list of strings that act as synonyms for the field label.
+#
+#   filters: This is a list of filters that can be applied to the field.
+#
+# For a comprehensive list of options that can be specified for a field, or for more detailed information,
+# please visit: https://docs.zenlytic.com/docs/data_modeling/data_modeling
