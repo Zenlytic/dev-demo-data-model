@@ -6,7 +6,6 @@ description: Vanilla order lines topic description
 zoe_description: Secret info that is only shown to zoe
 hidden: false
 
-required_access_grants: ['test_access_grant_department_topic']
 always_filter:
   - field: orders.revenue_dimension
     value: -NULL
