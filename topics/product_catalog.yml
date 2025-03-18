@@ -1,0 +1,17 @@
+type: topic
+label: Product Catalog
+base_view: products
+model_name: pure_organics
+description: The Product Catalog view represents a collection of available products,
+  including their types, titles, images, and prices. Each entry contains the type
+  of product (PRODUCT_TYPE), a descriptive title (PRODUCT_TITLE), a URL to an image
+  of the product (PRODUCT_IMAGE_URL), and its price (PRICE). This view is essential
+  for displaying product information to customers in an e-commerce setting, assisting
+  in inventory management, and enabling price comparisons.
+zoe_description: 'The Product Catalog contains product details: type, title, image
+  URL, and price. Use this view to retrieve and display product information, such
+  as categorizing products, showcasing them to users, or generating lists for price
+  analysis. Interpret each field as follows: PRODUCT_TYPE is the category, PRODUCT_TITLE
+  is the name, PRODUCT_IMAGE_URL is the visual representation, and PRICE is the cost.'
+hidden: false
+views: {}

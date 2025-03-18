@@ -1,0 +1,21 @@
+type: topic
+label: User Events Tracking
+base_view: events
+model_name: pure_organics
+description: The User Events Tracking model captures a variety of data points related
+  to user interactions on a digital platform. It includes device information such
+  as whether the device is mobile, its type, operating system, and browser details.
+  It tracks marketing and promotional data through UTM parameters and marketing channels.
+  The model also logs geographic information including region, country, and location
+  coordinates, alongside IP address and timezone. Additionally, it provides reference
+  URLs and schemes to understand the sources directing traffic. User activities are
+  tracked through event names, sequences, and interactions on specific page URLs.
+  Aggregate metrics like the number of events, sessions, and users offer insights
+  into platform engagement.
+zoe_description: The User Events Tracking captures and analyzes user interaction details
+  on digital platforms. Monitor device, marketing, geographic, and referral data to
+  understand user behavior. Key fields include device type, marketing channels, location,
+  and event specifics. Aggregate metrics help analyze overall engagement trends. Utilize
+  this model to optimize marketing strategies and enhance user experience tracking.
+hidden: false
+views: {}

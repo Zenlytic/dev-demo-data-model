@@ -1,0 +1,20 @@
+type: topic
+label: Customer Data Overview
+base_view: customers
+model_name: pure_organics
+description: The 'Customer Data Overview' provides detailed information about customer
+  identities and marketing preferences for Pure Organics. Key fields include CUSTOMER_ID
+  for unique identification, EMAIL for contact, and FIRST and LAST NAME for personal
+  identification. ADDRESS, CITY, STATE, and ZIPCODE fields offer location information.
+  The ACCEPTS_MARKETING field shows if customers agree to receive marketing material.
+  The FIRST_MARKETING_GROUP, FIRST_PROMOTION, and FIRST_CAMPAIGN fields detail customers'
+  initial marketing interactions, while FIRST_ORDER is the indicator for their first
+  purchase. This view is crucial for analyzing customer behavior, enhancing marketing
+  strategies, and improving acquisition and retention efforts.
+zoe_description: The 'Customer Data Overview' includes key identifiers and contact
+  information for customers, along with their marketing preferences and initial interactions.
+  Use this data to analyze tendencies, improve marketing approaches, and understand
+  customer acquisition and retention patterns. Focus on fields like CUSTOMER_ID, EMAIL,
+  and ACCEPTS_MARKETING for direct insights.
+hidden: false
+views: {}

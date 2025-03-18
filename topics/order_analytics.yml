@@ -1,0 +1,32 @@
+type: topic
+label: Order Analytics
+base_view: order_lines
+model_name: pure_organics
+description: The 'Order Analytics' dataset provides a comprehensive analysis of order-related
+  metrics for Pure Organics. It includes key data such as order identifiers, marketing
+  campaign influences, and customer interactions like subscription status and marketing
+  sources. The data also details financial metrics, such as total gross and net revenues,
+  total discounts, and margins, along with order-specific statistics like numbers
+  of new and repeat customers, total orders, and repurchase rates. Marketing channel
+  impacts on first and last click are recorded to assess campaign effectiveness. This
+  dataset is critical for understanding sales performance, customer engagement trends,
+  and for making informed marketing strategies.
+zoe_description: Analyze the 'Order Analytics' dataset to evaluate sales performance
+  and marketing effectiveness. Use fields like ORDER_ID, CAMPAIGN, and PROMOTION to
+  track order and marketing campaigns. Financial metrics like TOTAL_GROSS_REVENUE
+  and TOTAL_NET_REVENUE provide revenue insights. Determine customer behavior with
+  NEW_VS_REPEAT and REPURCHASE_RATE. Assess channel effectiveness using LAST_CLICK_MARKETING_CHANNEL
+  and FIRST_CLICK_MARKETING_CHANNEL. Aim to optimize sales and marketing strategies
+  by interpreting these elements.
+hidden: false
+views:
+  products:
+    join:
+      join_type: left_outer
+      relationship: many_to_one
+      sql_on: ${order_lines.product_id}=${products.product_id}
+  customers:
+    join:
+      join_type: left_outer
+      relationship: many_to_one
+      sql_on: ${order_lines.customer_id}=${customers.customer_id}
