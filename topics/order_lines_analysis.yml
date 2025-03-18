@@ -1,0 +1,27 @@
+type: topic
+label: Order Lines Analysis
+model_name: pure_organics
+base_view: order_lines
+description: The Order Lines view is a comprehensive dataset representing transactions
+  and marketing interactions related to orders. Key fields include ORDER_ID for transaction
+  details, CAMPAIGN and PROMOTION for marketing data, and metrics such as TOTAL_GROSS_REVENUE
+  and TOTAL_NET_REVENUE for financial insights. It also captures marketing channels
+  influencing orders and customer behavior such as NEW_VS_REPEAT. Useful for analyzing
+  revenue streams, understanding customer purchasing patterns, and evaluating the
+  effectiveness of marketing campaigns across different channels.
+zoe_description: The Order Lines view provides transaction data and marketing insights,
+  including revenue details (gross and net), customer behavior (new vs. repeat), and
+  marketing channels (first and last click). It's key for analyzing order patterns
+  and evaluating marketing effectiveness.
+hidden: false
+views:
+  products:
+    join:
+      join_type: left_outer
+      relationship: many_to_one
+      sql_on: ${order_lines.product_id}=${products.product_id}
+  customers:
+    join:
+      join_type: left_outer
+      relationship: many_to_one
+      sql_on: ${order_lines.customer_id}=${customers.customer_id}

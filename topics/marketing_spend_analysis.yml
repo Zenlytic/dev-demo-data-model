@@ -1,0 +1,19 @@
+type: topic
+label: Marketing Spend Analysis
+model_name: pure_organics
+base_view: marketing_spend
+description: This topic represents detailed insights into marketing expenditures across
+  various channels and sources. It includes fields such as CHANNEL and SOURCE, which
+  categorize the medium and origin of the spend, respectively. CAMPAIGN specifies
+  individual marketing campaigns, while SPEND_NONE may indicate zero promotional costs.
+  TOTAL_MARKETING_SPEND summarizes the complete marketing expenditure. CAC (Customer
+  Acquisition Cost) and CPC (Cost Per Click) provide cost-efficiency metrics. ROAS
+  (Return on Advertising Spend) and PROAS (Profitability Return on Advertising Spend)
+  measure the returns generated from marketing efforts. This information is essential
+  for evaluating the effectiveness and efficiency of marketing strategies.
+zoe_description: Analyze detailed marketing expenditure data across channels, sources,
+  and campaigns. Calculate metrics like CAC, CPC, ROAS, and PROAS to assess cost-efficiency
+  and return effectiveness. Use CHANNEL and SOURCE to categorize spend origins. Interpret
+  TOTAL_MARKETING_SPEND for comprehensive cost insight.
+hidden: false
+views: {}

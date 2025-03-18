@@ -1,0 +1,16 @@
+type: topic
+label: Product Information
+model_name: pure_organics
+base_view: products
+description: This dataset contains essential information about products in an inventory.
+  Each entry includes the product type, title, image URL, and price. 'PRODUCT_TYPE'
+  categorizes the product (e.g., electronics, apparel), 'PRODUCT_TITLE' provides the
+  name or title, 'PRODUCT_IMAGE_URL' links to a visual representation of the product,
+  and 'PRICE' indicates its cost. This information is crucial for inventory management,
+  e-commerce platforms, and customer-facing applications.
+zoe_description: This dataset contains product details, including type, title, image
+  URL, and price. Use this information to categorize, display, and price products
+  in inventory and e-commerce systems. Ensure accurate representation and accessibility
+  for optimal user experience.
+hidden: false
+views: {}

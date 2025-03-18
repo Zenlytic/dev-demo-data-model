@@ -1,0 +1,19 @@
+type: topic
+label: User Event Analytics
+model_name: pure_organics
+base_view: events
+description: The 'User Event Analytics' model captures detailed information about
+  user interactions and sessions on a platform. It includes data on device type, marketing
+  channels, and geographical information. Fields such as DEVICE_IS_MOBILE and DEVICE_TYPE
+  indicate user device details, while MARKETING_CHANNEL and UTM parameters capture
+  marketing information. GEO fields provide location insights, and BROWSER-related
+  fields detail user software. The view also tracks event specifics like EVENT_NAME
+  and reference URLs, offering a comprehensive picture of user behavior and marketing
+  effectiveness.
+zoe_description: This model represents user engagement data, tracking device details,
+  marketing sources, geographic location, and user events. Use fields like DEVICE_IS_MOBILE
+  and DEVICE_TYPE for device insights, UTM parameters for marketing analysis, and
+  GEO fields for location tracking. EVENT_NAME and REFERER_URL provide specific interaction
+  details. Ideal for analyzing user behavior patterns and assessing marketing strategies.
+hidden: false
+views: {}
