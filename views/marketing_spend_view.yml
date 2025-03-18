@@ -15,7 +15,7 @@ fields:
     description: Represents a unique key for each spend event.
     sql: ${TABLE}.spend_id
     zoe_description: Used to uniquely identify marketing spend events.
-    searchable: falsed
+    searchable: false
 
   - name: channel
     field_type: dimension
@@ -122,21 +122,3 @@ fields:
     value_format_name: decimal_1
     sql: ${order_lines.gross_profit} / nullif(${total_marketing_spend}, 0)
     is_merged_result: true
-label: Pure Organics
-identifiers:
-
-  - name: My identified
-    type: primary
-    sql: ${user_id}
-    allowed_fanouts: []
-
-  - name: hello
-    type: join
-    sql_on: ''
-    include_metrics: false
-    join_as: ''
-    join_as_field_prefix: ''
-    join_as_label: ''
-    join_type: inner
-    reference: orders
-    relationship: one_to_one
