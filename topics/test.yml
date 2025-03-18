@@ -1,0 +1,8 @@
+type: topic
+label: test
+model_name: pure_organics
+base_view: events
+description: test
+zoe_description: test
+hidden: false
+views: {}
