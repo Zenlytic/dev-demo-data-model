@@ -1,0 +1,30 @@
+type: topic
+label: User Event Tracking
+model_name: pure_organics
+base_view: events
+description: 'This data model tracks user events by capturing a wide array of information.
+  It identifies whether the user device is mobile (DEVICE_IS_MOBILE) and provides
+  marketing-related data such as the marketing channel (MARKETING_CHANNEL), UTM medium
+  (UTM_MEDIUM), and UTM source (UTM_SOURCE). It also captures details on promotions
+  (PROMOTION) and device specifications like device type (DEVICE_TYPE), operating
+  system (OS), browser details (BROWSER_USER_AGENT, BROWSER_NAME, BROWSER_LANGUAGE),
+  and geographic location (GEO_REGION_NAME, GEO_COUNTRY, GEO_LATITUDE, GEO_LONGITUDE,
+  GEO_TIMEZONE).
+
+
+  Additionally, the model logs network data such as IP address (IP_ADDRESS) and details
+  on page referrals (REFERER_URL, REFERER_URL_SCHEME, REFERER_URL_PORT, REFERER_MEDIUM).
+  It records event-specific information like the event name (EVENT_NAME), event sequence
+  (EVENT_SEQUENCE), and page URLs involved (PAGE_URL_PATH, PAGE_URL).
+
+
+  The model also integrates marketing campaign identifiers (UTM_CAMPAIGN) and tracks
+  a summary of user interactions including the number of events (NUMBER_OF_EVENTS),
+  sessions (NUMBER_OF_SESSIONS), and users (NUMBER_OF_USERS) involved in the interactions.'
+zoe_description: This model captures detailed user interaction data, focusing on device,
+  network, geographic, and marketing attributes. It's designed to analyze user behavior
+  across different events and channels, providing insights for targeted marketing
+  and user experience optimization. Key fields help identify user devices, geographic
+  locations, and marketing channels, enabling comprehensive event tracking and analysis.
+hidden: false
+views: {}

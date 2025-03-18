@@ -1,0 +1,17 @@
+type: topic
+label: Customer Data Overview
+model_name: pure_organics
+base_view: customers
+description: The Customer Data Overview provides detailed information on Pure Organics'
+  customers, capturing essential elements such as customer ID, email, full name, and
+  address details (city, state, and zipcode). This dataset helps identify whether
+  a customer has opted into marketing communications via the 'accepts_marketing' field.
+  It also tracks the customer's first interactions, including the first order date,
+  first marketing group, first promotion, and first campaign. This information is
+  crucial for analyzing customer behavior, tracking acquisition and retention, and
+  refining marketing strategies to enhance revenue and growth.
+zoe_description: Use this dataset to retrieve detailed information on customers, including
+  their contact details, marketing preferences, and first engagement metrics. Analyze
+  patterns to enhance marketing efficacy and customer retention efforts.
+hidden: false
+views: {}

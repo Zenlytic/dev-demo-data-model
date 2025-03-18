@@ -1,0 +1,16 @@
+type: topic
+label: Product Details
+model_name: pure_organics
+base_view: products
+description: This dataset contains information about various products, including the
+  type of product, title, image URL, and price. The 'PRODUCT_TYPE' field categorizes
+  the product into a specific type, such as electronics, clothing, etc. 'PRODUCT_TITLE'
+  provides the name or title of the product. 'PRODUCT_IMAGE_URL' is a link to an image
+  representing the product visually. Finally, 'PRICE' indicates the cost of the product
+  in a specific currency.
+zoe_description: The 'Product Details' dataset includes fields such as 'PRODUCT_TYPE'
+  for product categorization, 'PRODUCT_TITLE' for product naming, 'PRODUCT_IMAGE_URL'
+  for accessing product images, and 'PRICE' for its cost. Use these fields for tasks
+  involving product categorization, image sourcing, or price-related analysis.
+hidden: false
+views: {}
