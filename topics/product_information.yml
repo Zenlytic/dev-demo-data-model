@@ -1,0 +1,16 @@
+type: topic
+label: Product Information
+model_name: pure_organics
+base_view: products
+description: 'This model represents detailed information about products offered. It
+  includes: PRODUCT_TYPE, indicating the category or classification of the product;
+  PRODUCT_TITLE, providing the name or designation of the product; PRODUCT_IMAGE_URL,
+  offering a visual representation of the product through a link to an image; and
+  PRICE, detailing the cost of the product. This data aids in organizing, displaying,
+  and analyzing product-related information within an e-commerce or retail setting,
+  ensuring efficient management and enhanced customer interactions.'
+zoe_description: This dataset provides critical product information that includes
+  type, title, image URL, and price. The agent can use this to categorize products,
+  generate product listings, and facilitate pricing analytics in retail applications.
+hidden: false
+views: {}

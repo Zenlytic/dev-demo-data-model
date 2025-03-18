@@ -1,0 +1,19 @@
+type: topic
+label: Event Analytics
+model_name: pure_organics
+base_view: events
+description: "The 'Event Analytics' data model captures information about user interactions\
+  \ and sessions on web platforms. It includes fields such as device specifics (e.g.,\
+  \ device type and OS), marketing and UTM parameters (e.g., UTM source, medium),\
+  \ geographical data (e.g., region, country, latitude, longitude), the user\u2019\
+  s browsing environment (e.g., browser type, language, IP address), and referral\
+  \ sources. Event tracking metrics like event name, sequence, page URL, and session\
+  \ details are also included to help analyze user behavior and marketing performance\
+  \ across different campaigns."
+zoe_description: The 'Event Analytics' model describes user and session data across
+  web platforms, tracking devices, marketing channels, location, and browsing activity.
+  It includes attributes for analyzing user behavior through event names, sequences,
+  and metrics, such as event counts and session numbers. Use this to understand user
+  interactions and campaign performance effectively.
+hidden: false
+views: {}

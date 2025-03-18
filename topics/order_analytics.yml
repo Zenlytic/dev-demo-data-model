@@ -1,0 +1,22 @@
+type: topic
+label: Order Analytics
+model_name: pure_organics
+base_view: order_lines
+description: The Order Analytics module incorporates detailed data from the 'order_lines',
+  'products', and 'customers' views, offering a holistic understanding of sales and
+  customer engagement at Pure Organics. The 'order_lines' view tracks order details
+  such as revenue, order types, marketing channels, discounts, and profitability metrics.
+  The 'products' view provides insights into product types, titles, imagery, and pricing
+  information. Meanwhile, the 'customers' view offers extensive customer data including
+  marketing preferences, personal contact information, and initial interaction details,
+  aiding in analyzing customer acquisition and retention. This comprehensive view
+  supports strategic decision-making to enhance marketing efficiency and sales performance.
+zoe_description: This module compiles intricate data from the 'order_lines', 'products',
+  and 'customers' views. Analyze order metrics, marketing impact, and customer information
+  to understand sales patterns and consumer behavior. Use this data to improve marketing
+  strategies, optimize product offerings, and increase customer retention for Pure
+  Organics.
+hidden: false
+views:
+  products: {}
+  customers: {}

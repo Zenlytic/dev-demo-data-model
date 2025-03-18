@@ -1,0 +1,18 @@
+type: topic
+label: Customer Data Overview
+model_name: pure_organics
+base_view: customers
+description: This view provides detailed information about Pure Organics' customers,
+  including customer IDs, contact details, and location data. Key fields include `accepts_marketing`
+  (opt-in status for marketing communications) and `first_order_none` (date of first
+  order). It also includes `first_marketing_group`, `first_promotion`, and `first_campaign`
+  to track initial marketing interactions. Use this view to analyze customer behavior,
+  enhance acquisition and retention strategies, and optimize marketing campaigns for
+  increased revenue and growth.
+zoe_description: This view contains customer data for Pure Organics. Important fields
+  include `CUSTOMER_ID`, `EMAIL`, `ACCEPTS_MARKETING` (indicates marketing opt-in),
+  and `FIRST_ORDER_NONE` (first order date). Use this view to analyze customer interactions,
+  marketing engagement, and optimize campaigns to improve customer acquisition and
+  retention.
+hidden: false
+views: {}
