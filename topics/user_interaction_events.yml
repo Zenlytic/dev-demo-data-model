@@ -1,0 +1,18 @@
+type: topic
+label: User Interaction Events
+base_view: events
+model_name: pure_organics
+description: This dataset captures detailed information about user interactions across
+  various marketing channels. Each event entry provides device details such as type,
+  operating system, and whether it is mobile. Marketing insights include UTM parameters,
+  promotion identifiers, and referrer URLs. Additionally, geographical data like country,
+  region, and coordinates help localize the event, while browser details such as name,
+  language, and user agent provide context on user access methods. The dataset also
+  tracks event sequences, counts, and unique sessions and users, offering a comprehensive
+  view of user engagement.
+zoe_description: User Interaction Events dataset tracks marketing and device-specific
+  data during user interactions. Includes device type, OS, geolocation, UTM parameters,
+  and browser details. Useful for analyzing user engagement across channels and devices.
+  Monitor event sequences and session counts to understand user behavior.
+hidden: false
+views: {}
