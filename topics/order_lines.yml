@@ -1,0 +1,30 @@
+type: topic
+label: Order Lines
+base_view: order_lines
+model_name: pure_organics
+description: The 'Order Lines' view encompasses detailed transaction data, focusing
+  on marketing and sales metrics. It includes fields like ORDER_ID, CAMPAIGN, PROMOTION,
+  and various marketing channels that track customer journey stages. Metrics such
+  as TOTAL_GROSS_REVENUE, TOTAL_DISCOUNTS, and TOTAL_NET_REVENUE provide insights
+  into revenue performance. It also measures customer engagement via NUMBER_OF_CUSTOMERS_WITH_ORDERS
+  and NUMBER_OF_NEW_CUSTOMERS_WITH_ORDERS. Additionally, it computes profitability
+  with GROSS_PROFIT and NET_MARGIN_PERCENTAGE, offering a comprehensive view of sales
+  efficacy and customer loyalty.
+zoe_description: The 'Order Lines' view tracks sales and marketing performance. Key
+  metrics include ORDER_ID, CAMPAIGN, and PROMOTION, with revenue details like TOTAL_GROSS_REVENUE
+  and TOTAL_NET_REVENUE. It analyzes customer engagement trends, such as NEW_VS_REPEAT
+  orders, and measures profitability using GROSS_PROFIT and NET_MARGIN_PERCENTAGE.
+  Use this for understanding sales effectiveness and informing strategic marketing
+  decisions.
+hidden: false
+views:
+  products:
+    join:
+      join_type: left_outer
+      relationship: many_to_one
+      sql_on: ${order_lines.product_id}=${products.product_id}
+  customers:
+    join:
+      join_type: left_outer
+      relationship: many_to_one
+      sql_on: ${order_lines.customer_id}=${customers.customer_id}

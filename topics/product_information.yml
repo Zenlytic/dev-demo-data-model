@@ -1,0 +1,17 @@
+type: topic
+label: Product Information
+base_view: products
+model_name: pure_organics
+description: The 'Product Information' model captures essential details about various
+  products offered by an organization. It includes fields such as 'PRODUCT_TYPE',
+  which represents the category or genre of the product (e.g., electronics, clothing);
+  'PRODUCT_TITLE', which is the name of the product; 'PRODUCT_IMAGE_URL', which provides
+  a link to an image of the product for visual reference; and 'PRICE', indicating
+  the cost of the product. This model is crucial for presenting product listings on
+  e-commerce platforms or within inventory management systems.
+zoe_description: The 'Product Information' model contains details about products,
+  including the type ('PRODUCT_TYPE'), title ('PRODUCT_TITLE'), image URL ('PRODUCT_IMAGE_URL'),
+  and price ('PRICE'). Use this to display product listings, retrieve product details,
+  or manage inventory records efficiently.
+hidden: false
+views: {}

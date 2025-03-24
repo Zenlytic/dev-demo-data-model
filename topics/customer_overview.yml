@@ -1,0 +1,20 @@
+type: topic
+label: Customer Overview
+base_view: customers
+model_name: pure_organics
+description: The Customer Overview model offers detailed insights into Pure Organics'
+  customer base, including unique identifiers like CUSTOMER_ID, personal information
+  such as EMAIL and NAME, and geographical data including ADDRESS, CITY, STATE, and
+  ZIPCODE. Key marketing and engagement fields, such as ACCEPTS_MARKETING, FIRST_MARKETING_GROUP,
+  FIRST_PROMOTION, and FIRST_CAMPAIGN, reveal initial customer interactions and preferences.
+  The FIRST_ORDER_NONE field indicates the absence of an order, signaling potential
+  engagement opportunities. Utilize this view to analyze customer acquisition patterns,
+  enhance retention strategies, and refine marketing efforts.
+zoe_description: The Customer Overview model provides structured data on Pure Organics'
+  customers, including identifying details (ID, EMAIL, NAME), location data (ADDRESS,
+  CITY, STATE, ZIPCODE), and marketing engagement preferences (ACCEPTS_MARKETING,
+  FIRST_MARKETING_GROUP, FIRST_PROMOTION, FIRST_CAMPAIGN). Use this information to
+  assess customer acquisition and optimize marketing strategies. The FIRST_ORDER_NONE
+  field indicates no recorded orders, highlighting engagement opportunities.
+hidden: false
+views: {}

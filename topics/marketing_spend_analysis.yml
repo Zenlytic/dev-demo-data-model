@@ -1,0 +1,17 @@
+type: topic
+label: Marketing Spend Analysis
+base_view: marketing_spend
+model_name: pure_organics
+description: This view provides a comprehensive analysis of marketing expenditure
+  across various channels and sources. It includes key metrics such as the campaign
+  spend, total marketing spend, Customer Acquisition Cost (CAC), Cost Per Click (CPC),
+  Return on Advertising Spend (ROAS), and Profit Return on Advertising Spend (PROAS).
+  This data is essential for assessing the performance and efficiency of marketing
+  campaigns, enabling strategic decision-making.
+zoe_description: The Marketing Spend Analysis view captures detailed data on marketing
+  expenditures, including channel and source specifics. Key metrics like CAC, CPC,
+  ROAS, and PROAS are provided, allowing for evaluation of campaign performance and
+  cost efficiency. Leverage this data to inform strategic marketing decisions and
+  optimize spend outcomes.
+hidden: false
+views: {}
