@@ -352,21 +352,21 @@ fields:
     sql: ${total_net_revenue} - ${total_cogs}
     zoe_description: This is the gross profit.
 
-  - name: net_margin_percentage
-    field_type: measure
-    type: number
-    label: Net Margin Percentage
-    description: >-
-      Net Margin Percentage is calculated as ((Net Revenue - Cost of Goods Sold)
-      / Net Revenue) * 100.
+  # - name: net_margin_percentage
+  #   field_type: measure
+  #   type: number
+  #   label: Net Margin Percentage
+  #   description: >-
+  #     Net Margin Percentage is calculated as ((Net Revenue - Cost of Goods Sold)
+  #     / Net Revenue) * 100.
 
 
-      This is true
-    value_format_name: decimal_0
-    sql: >-
-      (${order_lines.total_net_revenue} - ${order_lines.total_cogs}) /
-      ${order_lines.total_net_revenue} * 100
-    canon_date: order_lines.order
+  #     This is true
+  #   value_format_name: decimal_0
+  #   sql: >-
+  #     (${order_lines.total_net_revenue} - ${order_lines.total_cogs}) /
+  #     ${order_lines.total_net_revenue} * 100
+  #   canon_date: order_lines.order
 event_name: Purchase
 fields_for_analysis:
   - subscription_vs_otp
