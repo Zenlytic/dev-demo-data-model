@@ -1,17 +1,16 @@
 type: topic
-label: Product Information
+label: Products Overview
 base_view: products
 model_name: pure_organics
-description: The 'Product Information' model captures essential details about various
-  products offered by an organization. It includes fields such as 'PRODUCT_TYPE',
-  which represents the category or genre of the product (e.g., electronics, clothing);
-  'PRODUCT_TITLE', which is the name of the product; 'PRODUCT_IMAGE_URL', which provides
-  a link to an image of the product for visual reference; and 'PRICE', indicating
-  the cost of the product. This model is crucial for presenting product listings on
-  e-commerce platforms or within inventory management systems.
-zoe_description: The 'Product Information' model contains details about products,
-  including the type ('PRODUCT_TYPE'), title ('PRODUCT_TITLE'), image URL ('PRODUCT_IMAGE_URL'),
-  and price ('PRICE'). Use this to display product listings, retrieve product details,
-  or manage inventory records efficiently.
+description: 'The Products Overview captures essential information about the items
+  available in an inventory or catalog. It includes: PRODUCT_TYPE, which defines the
+  category or kind of product; PRODUCT_TITLE, offering a clear name or title for the
+  product; PRODUCT_IMAGE_URL, providing a link to an image representing the product;
+  PRICE, indicating the cost of the product; and COUNT_PRODUCTS, showing the quantity
+  of these products available. This data is crucial for managing inventory, setting
+  pricing strategies, and enhancing the shopping experience for customers.'
+zoe_description: The Products Overview includes product details such as type, title,
+  image URL, price, and count. Use this to retrieve product-related information, manage
+  inventory, and support pricing strategies.
 hidden: false
 views: {}
