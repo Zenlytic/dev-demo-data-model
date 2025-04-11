@@ -1,21 +1,24 @@
 type: topic
-label: Order Lines
+label: Order Analysis
 base_view: order_lines
 model_name: pure_organics
-description: The 'Order Lines' view encompasses detailed transaction data, focusing
-  on marketing and sales metrics. It includes fields like ORDER_ID, CAMPAIGN, PROMOTION,
-  and various marketing channels that track customer journey stages. Metrics such
-  as TOTAL_GROSS_REVENUE, TOTAL_DISCOUNTS, and TOTAL_NET_REVENUE provide insights
-  into revenue performance. It also measures customer engagement via NUMBER_OF_CUSTOMERS_WITH_ORDERS
-  and NUMBER_OF_NEW_CUSTOMERS_WITH_ORDERS. Additionally, it computes profitability
-  with GROSS_PROFIT and NET_MARGIN_PERCENTAGE, offering a comprehensive view of sales
-  efficacy and customer loyalty.
-zoe_description: The 'Order Lines' view tracks sales and marketing performance. Key
-  metrics include ORDER_ID, CAMPAIGN, and PROMOTION, with revenue details like TOTAL_GROSS_REVENUE
-  and TOTAL_NET_REVENUE. It analyzes customer engagement trends, such as NEW_VS_REPEAT
-  orders, and measures profitability using GROSS_PROFIT and NET_MARGIN_PERCENTAGE.
-  Use this for understanding sales effectiveness and informing strategic marketing
-  decisions.
+description: This data model represents a detailed breakdown of order lines, helping
+  analyze marketing influences and revenue outcomes. Key fields include 'ORDER_ID,'
+  identifying unique orders, and 'CAMPAIGN' and 'PROMOTION,' indicating marketing
+  strategies linked to each order. The model differentiates between 'SUBSCRIPTION_VS_OTP'
+  to track subscription versus one-time purchases, and includes 'MARKETING_SOURCE'
+  and 'CHANNELS' for attribution insights. Revenue fields such as 'TOTAL_GROSS_REVENUE'
+  and 'TOTAL_NET_REVENUE' help evaluate financial performance. The model also measures
+  customer behavior and purchasing patterns through 'NEW_VS_REPEAT,' and detailed
+  metrics like 'REPURCHASE_RATE' and 'NET_MARGIN,' supporting strategy optimization
+  across marketing and sales.
+zoe_description: This model analyzes order data, providing insights into marketing
+  efficacy and financial results. It covers identifiers like 'ORDER_ID' and marketing
+  details ('CAMPAIGN,' 'PROMOTION'), distinguishing between 'SUBSCRIPTION_VS_OTP.'
+  Channels and sources are detailed for attribution. Revenue metrics ('TOTAL_GROSS_REVENUE,'
+  'NET_REVENUE') measure financial outcomes. Customer purchasing behavior is characterized
+  by 'NEW_VS_REPEAT' and metrics like 'REPURCHASE_RATE.' Use this model to refine
+  marketing strategies and enhance sales performance.
 hidden: false
 views:
   products:
