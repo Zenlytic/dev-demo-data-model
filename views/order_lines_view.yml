@@ -185,6 +185,7 @@ fields:
     label: Order Date
     sql: ${TABLE}.ORDER_AT
     timeframes:
+      - raw
       - date
       - week_index
       - week
