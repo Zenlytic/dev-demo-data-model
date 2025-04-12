@@ -226,6 +226,7 @@ fields:
     type: number
     sql: RATIO_TO_REPORT(${total_gross_revenue}) OVER ()
     window: true
+    value_format_name: percent_1
 
   - name: total_gross_revenue_from_advertising
     field_type: measure
