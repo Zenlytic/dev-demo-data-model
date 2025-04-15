@@ -221,6 +221,14 @@ fields:
       - sales
       - revenue
 
+  - name: roi
+    field_type: measure
+    type: number
+    hidden: false
+    label: ROI
+    value_format_name: usd
+    sql: (SUM(${order_lines.revenue}) - SUM(${TABLE}.cogs)) / NULLIF(SUM(${TABLE}.cogs), 0)
+ 
   - name: total_gross_revenue_from_advertising
     field_type: measure
     type: sum
