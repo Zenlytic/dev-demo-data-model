@@ -111,6 +111,7 @@ fields:
   hidden: false
   description: The time at which the customer's first order was placed.
   timeframes:
+  - raw
   - date
   - week_index
   - week
