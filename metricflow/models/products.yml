@@ -1,7 +1,9 @@
 semantic_models:
   - name: products                    # corresponds to your original name  
     label: Product                    # from row_label: Product  
-    model: ref('products')       # references the dbt model  
+    model: ref('products')
+    meta:
+      sql_table_name: demo_prod.products       # references the dbt model  
     entities:                          # your identifiers → entities  
       - name: product_id
         type: primary

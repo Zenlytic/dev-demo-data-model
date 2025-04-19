@@ -10,7 +10,7 @@ semantic_models:
       customer's initial marketing interactions with the company. Use this view to gain
       insights into customer behavior, track customer acquisition and retention, and
       optimize your marketing campaigns to drive revenue and growth.
-    model: ref('pure_organics')
+    model: ref('customers')
     defaults:
       agg_time_dimension: first_order         # default_date → agg_time_dimension :contentReference[oaicite:0]{index=0}
 

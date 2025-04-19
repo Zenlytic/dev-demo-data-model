@@ -1,7 +1,7 @@
 semantic_models:
   - name: order_lines
     description: "Description of order_lines view."
-    model: ref('pure_organics')
+    model: ref('order_lines')
     defaults:
       agg_time_dimension: order_date
 

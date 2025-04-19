@@ -1,7 +1,7 @@
 semantic_models:
   - name: marketing_spend
     description: "A view for marketing spend. <joe changed everything in there>"
-    model: ref('pure_organics')
+    model: ref('marketing_spend')
     defaults:
       agg_time_dimension: spend
 
