@@ -115,7 +115,7 @@ semantic_models:
         description: Group by user_id to achieve each user's revenue
         expr: revenue
         agg: sum
-        create_metric: true  
+        create_metric: true
         non_additive_dimension: 
             name: order_date
             window_choice: max
