@@ -3,6 +3,8 @@ dashboard-paths:
 model-paths:
 - models
 name: demo_zenlytic_project
+mode: metricflow
+metricflow-path: 'metricflow/'
 profile: demo
 topic-paths:
 - topics
