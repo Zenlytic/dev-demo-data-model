@@ -11,7 +11,7 @@ semantic_models:
         expr: spend_id
 
     dimensions:
-      - name: unique_key
+      - name: spend_id
         type: Categorical
         description: "Represents a unique key for each spend event."
 
