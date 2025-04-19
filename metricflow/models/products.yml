@@ -1,7 +1,7 @@
 semantic_models:
   - name: products                    # corresponds to your original name  
     label: Product                    # from row_label: Product  
-    model: ref('pure_organics')       # references the dbt model  
+    model: ref('products')       # references the dbt model  
     entities:                          # your identifiers → entities  
       - name: product_id
         type: primary
