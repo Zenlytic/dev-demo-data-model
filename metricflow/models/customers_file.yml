@@ -25,7 +25,7 @@ semantic_models:
         description: "The id of the customer."
 
       - name: accepts_marketing
-        type: Categorical
+        type: Categorica
         description: "Whether the customer accepts marketing."
 
       - name: email
