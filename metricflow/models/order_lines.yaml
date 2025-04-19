@@ -111,19 +111,16 @@ semantic_models:
         agg: sum
         expr: cogs
         create_metric: true
-
-      - name: gross_profit
-        description: "Gross profit = (revenue - discount) - cogs."
-        agg: expression
-        expr: (revenue - discount) - cogs
-        create_metric: true
-
-      - name: net_margin_percentage
-        label: "Net Margin Percentage"
-        description: "Net Margin Percentage = ((Net Revenue - COGS) / Net Revenue) * 100."
-        agg: expression
-        expr: ((revenue - discount) - cogs) / nullif((revenue - discount), 0) * 100
-        create_metric: true
+      - name: user_revenue
+        description: Group by user_id to achieve each user's revenue
+        expr: revenue
+        agg: sum
+        create_metric: true  
+        non_additive_dimension: 
+            name: order_date
+            window_choice: max
+            window_groupings: 
+            - customer_id 
 
 metrics:
   # 1) Simple metric built on a measure
@@ -197,12 +194,3 @@ metrics:
         - name: total_gross_revenue_from_advertising
         - name: total_gross_revenue
 
-  - name: user_revenue
-    description: Group by user_id to achieve each user's revenue
-    expr: revenue
-    agg: sum  
-    non_additive_dimension: 
-        name: order_date
-        window_choice: max
-        window_groupings: 
-        - customer_id 
