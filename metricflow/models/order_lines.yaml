@@ -189,8 +189,8 @@ metrics:
     type: derived
     label: "Pct Ad Revenue"
     type_params:
-      expr: total_gross_revenue_from_advertising / nullif(total_gross_revenue, 0)
+      expr: advertising_revenue / nullif(total_gross_revenue, 0)
       metrics:
-        - name: total_gross_revenue_from_advertising
+        - name: advertising_revenue
         - name: total_gross_revenue
 
