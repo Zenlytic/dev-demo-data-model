@@ -224,6 +224,7 @@ fields:
 
 
 
+
 - name: total_gross_revenue_from_advertising
   field_type: measure
   type: sum
@@ -237,6 +238,7 @@ fields:
   synonyms:
   - sales
   - revenue
+
 
 
 
@@ -271,6 +273,7 @@ fields:
 
 
 
+
 - name: number_of_customers_with_orders
   field_type: measure
   type: count_distinct
@@ -289,6 +292,7 @@ fields:
   filters:
   - field: new_vs_repeat
     value: New
+
 
 
 
@@ -315,6 +319,7 @@ fields:
 
 
 
+
 - name: repurchase_rate
   field_type: measure
   type: number
@@ -327,6 +332,7 @@ fields:
 
 
 
+
 - name: gross_aov
   field_type: measure
   type: number
@@ -336,6 +342,7 @@ fields:
   sql: ${total_gross_revenue} / nullif(${number_of_orders}, 0)
   synonyms:
   - Average order value
+
 
 
 
@@ -394,6 +401,7 @@ fields:
   synonyms:
   - Average order value
 
+
 - name: 1bfd0388bb6c3c3dde4c536b25f939c8
   field_type: measure
   type: number
@@ -402,6 +410,17 @@ fields:
   value_format_name: usd
   sql: ${total_net_revenue} - ${total_cogs}
   zoe_description: This is the gross profit.
+
+- name: 7fa175282483ce5015a7175ff7c326bf
+  field_type: measure
+  type: number
+  label: Duplicate Net Margin Percentage
+  description: "Net Margin Percentage is calculated as ((Net Revenue - Cost of Goods
+    Sold) / Net Revenue) * 100.\n\nThis is true"
+  value_format_name: decimal_0
+  sql: (${order_lines.total_net_revenue} - ${order_lines.total_cogs}) / ${order_lines.total_net_revenue}
+    * 100
+  canon_date: order_lines.order
 event_name: Purchase
 fields_for_analysis:
 - subscription_vs_otp
