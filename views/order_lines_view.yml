@@ -377,15 +377,6 @@ fields:
     ${order_lines.total_net_revenue} * 100
   canon_date: order_lines.order
 
-- name: 6ca86a3d9f9d01eb944d4460bd6a9c37
-  field_type: measure
-  type: number
-  label: Duplicate Repurchase Rate
-  description: Repurchase rate = number of repeat orders / number of orders.
-  value_format_name: percent_1
-  sql: ${number_of_repeat_orders} / ${number_of_orders}
-  synonyms:
-  - Repeat order rate
 event_name: Purchase
 fields_for_analysis:
 - subscription_vs_otp
