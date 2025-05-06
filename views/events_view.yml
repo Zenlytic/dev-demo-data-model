@@ -269,4 +269,15 @@ fields:
     we can't identify)
   value_format_name: decimal_0
   sql: ${anonymous_id}
+
+- name: hfodafnplmiqrehgvizirtqlpywmfufbdybwvrxh
+  field_type: measure
+  type: count_distinct
+  label: Duplicate Number Of Users
+  description: The number of site users (including people who are not logged in /
+    we can't identify)
+  value_format_name: decimal_0
+  sql: ${anonymous_id}
+  canon_date: events.event
+  update_where_timeframe: true
 event_dimension: event_name
