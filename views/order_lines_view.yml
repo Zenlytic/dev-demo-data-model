@@ -235,6 +235,7 @@ fields:
 
 
 
+
 - name: total_gross_revenue_from_advertising
   field_type: measure
   type: sum
@@ -248,6 +249,7 @@ fields:
   synonyms:
   - sales
   - revenue
+
 
 
 
@@ -288,6 +290,7 @@ fields:
 
 
 
+
 - name: number_of_customers_with_orders
   field_type: measure
   type: count_distinct
@@ -306,6 +309,7 @@ fields:
   filters:
   - field: new_vs_repeat
     value: New
+
 
 
 
@@ -338,6 +342,7 @@ fields:
 
 
 
+
 - name: repurchase_rate
   field_type: measure
   type: number
@@ -353,6 +358,7 @@ fields:
 
 
 
+
 - name: gross_aov
   field_type: measure
   type: number
@@ -362,6 +368,7 @@ fields:
   sql: ${total_gross_revenue} / nullif(${number_of_orders}, 0)
   synonyms:
   - Average order value
+
 
 
 
@@ -443,6 +450,17 @@ fields:
   description: Total net revenue = gross revenue - discounts
   value_format_name: usd
   sql: ${total_gross_revenue} - ${total_discounts}
+  canon_date: order_lines.order
+
+- name: bukppouuzseuqfzybhahyznlgmsbpharivcsmmom
+  field_type: measure
+  type: sum
+  label: Duplicate Total Gross Revenue
+  value_format_name: usd
+  sql: ${revenue}
+  synonyms:
+  - sales
+  - revenue
   canon_date: order_lines.order
 event_name: Purchase
 fields_for_analysis:
