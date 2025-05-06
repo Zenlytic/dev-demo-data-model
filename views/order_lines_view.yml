@@ -60,6 +60,18 @@ fields:
   sql: ${TABLE}.PRODUCT_ID
   searchable: false
 
+- name: anrhogijturwsyisidlupeafajpgfkhpdohtnsfe
+  field_type: dimension
+  type: string
+  label: Duplicate New Vs Repeat
+  description: Whether the customer placing the order was a new customer or a returning
+    customer
+  sql: case when ${TABLE}.new_vs_repeat < 10 then 'Below 10' when ${TABLE}.new_vs_repeat
+    >= 10 and ${TABLE}.new_vs_repeat < 20 then '[10,20)' when ${TABLE}.new_vs_repeat
+    >= 20 then '[20,inf)' else 'Unknown' end
+  searchable: true
+  canon_date: order_lines.order
+
 - name: discount
   field_type: dimension
   type: number
@@ -226,6 +238,7 @@ fields:
 
 
 
+
 - name: total_gross_revenue_from_advertising
   field_type: measure
   type: sum
@@ -239,6 +252,7 @@ fields:
   synonyms:
   - sales
   - revenue
+
 
 
 
@@ -277,6 +291,7 @@ fields:
 
 
 
+
 - name: number_of_customers_with_orders
   field_type: measure
   type: count_distinct
@@ -295,6 +310,7 @@ fields:
   filters:
   - field: new_vs_repeat
     value: New
+
 
 
 
@@ -325,6 +341,7 @@ fields:
 
 
 
+
 - name: repurchase_rate
   field_type: measure
   type: number
@@ -339,6 +356,7 @@ fields:
 
 
 
+
 - name: gross_aov
   field_type: measure
   type: number
@@ -348,6 +366,7 @@ fields:
   sql: ${total_gross_revenue} / nullif(${number_of_orders}, 0)
   synonyms:
   - Average order value
+
 
 
 
