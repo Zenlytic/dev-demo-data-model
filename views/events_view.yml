@@ -230,6 +230,15 @@ fields:
   sql: ${TABLE}.UTM_CAMPAIGN
   searchable: true
 
+- name: uplvygsnohswyftvezgluqdsrsnjgffpupyredoe
+  field_type: dimension
+  type: string
+  label: Duplicate Event Name
+  description: The action the user took on the site
+  sql: ${TABLE}.EVENT_NAME
+  searchable: true
+  canon_date: events.event
+
 - name: event
   field_type: dimension_group
   type: time
