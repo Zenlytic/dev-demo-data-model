@@ -6,6 +6,7 @@ model_name: pure_organics
 sql_table_name: demo_prod.events
 default_date: event
 row_label: Event
+
 fields:
 - name: anonymous_id
   field_type: dimension
@@ -104,7 +105,7 @@ fields:
 - name: browser_name
   field_type: dimension
   type: string
-  description: The user's browser name
+  description: The user's browser
   sql: ${TABLE}.BROWSER_NAME
   searchable: true
 
