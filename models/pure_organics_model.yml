@@ -1,8 +1,8 @@
-version: 1
+version: '1'
 type: model
 name: pure_organics
 connection: demo
-week_start_day: wednesday
+week_start_day: sunday
 access_grants:
 - name: pii_access
   user_attribute: department
@@ -10,6 +10,7 @@ access_grants:
   - Executive
   - Finance
   - Marketing
+
 mappings:
   marketing_channel:
     fields:
