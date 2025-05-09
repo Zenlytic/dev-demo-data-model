@@ -1,11 +1,12 @@
 version: 1
 type: view
 name: marketing_spend
-description: A view for marketing spend. <joe changed everything in there>
+description: A view for marketing spend.
 model_name: pure_organics
 sql_table_name: DEMO_PROD.MARKETING_SPEND
 default_date: spend
 row_label: Spend Item
+
 fields:
 - name: unique_key
   field_type: dimension
@@ -50,8 +51,6 @@ fields:
   field_type: dimension_group
   type: time
   datatype: timestamp
-  hidden: false
-  label: Joe's Spend (change this back to Spend afterwards)
   description: The date of the ad spend
   timeframes:
   - date
@@ -62,12 +61,6 @@ fields:
   - day_of_year
   - week_of_year
   - month_of_year
-  - hour_of_day
-  - day_of_week
-  - day_of_month
-  - week_of_month
-  - week_index
-
   sql: ${TABLE}.spend_at
 
 - name: total_marketing_spend
@@ -81,22 +74,19 @@ fields:
   field_type: measure
   type: number
   label: CaC
-  description: >-
-    Cost of acquisition = Total marketing spend across all channels / number
+  description: Cost of acquisition = Total marketing spend across all channels / number
     of new customers who placed orders in that period
   value_format_name: usd
-  sql: >-
-    ${total_marketing_spend} /
-    nullif(${order_lines.number_of_new_customers_with_orders}, 0)
+  sql: ${total_marketing_spend} / nullif(${order_lines.number_of_new_customers_with_orders},
+    0)
   is_merged_result: true
 
 - name: cpc
   field_type: measure
   type: number
   label: CPC
-  description: >-
-    Cost oer click = Total marketing spend across all channels / number of
-    clicks through ads
+  description: Cost oer click = Total marketing spend across all channels / number
+    of clicks through ads
   value_format_name: usd
   sql: ${total_marketing_spend} / 1304000
 
@@ -104,22 +94,19 @@ fields:
   field_type: measure
   type: number
   label: ROAS
-  description: >-
-    Return on advertising spend = Total advertising revenue / Total marketing
+  description: Return on advertising spend = Total advertising revenue / Total marketing
     spend across all channels
   value_format_name: decimal_1
-  sql: >-
-    ${order_lines.total_gross_revenue_from_advertising} /
-    nullif(${total_marketing_spend}, 0)
+  sql: ${order_lines.total_gross_revenue_from_advertising} / nullif(${total_marketing_spend},
+    0)
   is_merged_result: true
 
 - name: proas
   field_type: measure
   type: number
   label: PROAS
-  description: >-
-    Profitable return on advertising spend = Total advertising gross profit /
-    Total marketing spend across all channels
+  description: Profitable return on advertising spend = Total advertising gross profit
+    / Total marketing spend across all channels
   value_format_name: decimal_1
   sql: ${order_lines.gross_profit} / nullif(${total_marketing_spend}, 0)
   is_merged_result: true
