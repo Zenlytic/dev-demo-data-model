@@ -6,6 +6,7 @@ model_name: pure_organics
 sql_table_name: DEMO_PROD.ORDER_LINES
 default_date: order
 row_label: Order line
+
 identifiers:
 - name: product_id
   type: foreign
@@ -90,8 +91,7 @@ fields:
   field_type: dimension
   type: string
   hidden: false
-  description: The marketing campaign that the customer came through before placing
-    their order.
+  description: The marketing campaign that the customer came through before placing their order.
   sql: ${TABLE}.CAMPAIGN
   searchable: true
 
@@ -133,8 +133,7 @@ fields:
   field_type: dimension
   type: string
   hidden: false
-  description: The last click marketing channel that the customer came through before
-    placing their order.
+  description: The last click marketing channel that the customer came through before placing their order.
   sql: ${TABLE}.last_click
   searchable: true
 
@@ -142,8 +141,7 @@ fields:
   field_type: dimension
   type: string
   hidden: false
-  description: The first click marketing channel that the customer came through before
-    placing their order.
+  description: The first click marketing channel that the customer came through before placing their order.
   sql: ${TABLE}.first_click
   searchable: true
 
@@ -151,8 +149,7 @@ fields:
   field_type: dimension
   type: string
   hidden: false
-  description: Whether the customer placing the order was a new customer or a returning
-    customer
+  description: Whether the customer placing the order was a new customer or a returning customer
   sql: ${TABLE}.new_vs_repeat
   searchable: true
 
@@ -176,8 +173,7 @@ fields:
   datatype: timestamp
   hidden: false
   label: Order Date
-  description: The time at which the order was placed. This is the main time field
-    to use for orders
+  description: The time at which the order was placed. This is the main time field to use for orders
   timeframes:
   - date
   - week_index
@@ -190,50 +186,7 @@ fields:
   - day_of_week
   sql: ${TABLE}.ORDER_AT
 
-- name: xgvjjvtonvqvlsgeeduvjogalnfzaasaxllqvnob
-  field_type: dimension_group
-  type: time
-  datatype: timestamp
-  label: Duplicate Order
-  description: The time at which the order was placed. This is the main time field
-    to use for orders
-  timeframes:
-  - date
-  - week_index
-  - week
-  - month_of_year
-  - month
-  - quarter
-  - year
-  - hour_of_day
-  - day_of_week
-  sql: ${TABLE}.ORDER_AT
-
-- name: fsksgesezezflfbygieyhsgquuwhffbfgxhdbhuu
-  field_type: dimension_group
-  type: duration
-  datatype: timestamp
-  label: Duplicate between first order and this order
-  intervals:
-  - day
-  - week
-  - month
-  - quarter
-  - year
-  sql_start: ${customers.first_order_date}
-  sql_end: ${order_date}
-
-- name: mnkmidjiobmixnpjhtasndgfnzypptvbmybcrwxp
-  field_type: measure
-  type: number
-  label: Duplicate Duplicate Gross Aov
-  description: Gross AOV = gross revenues / number of orders
-  value_format_name: usd
-  sql: ${total_gross_revenue} / nullif(${number_of_orders}, 0)
-  synonyms:
-  - Average order value
-  canon_date: order_lines.order
-  update_where_timeframe: true
+#  MEASURES 
 
 - name: total_gross_revenue
   field_type: measure
@@ -246,13 +199,6 @@ fields:
   synonyms:
   - sales
   - revenue
-
-
-
-
-
-
-
 
 - name: total_gross_revenue_from_advertising
   field_type: measure
@@ -267,13 +213,6 @@ fields:
   synonyms:
   - sales
   - revenue
-
-
-
-
-
-
-
 
 - name: total_discounts
   field_type: measure
@@ -295,20 +234,12 @@ fields:
   field_type: measure
   type: sum
   hidden: false
-  description: Subscription revenue = gross revenue (product revenues + shipping,for
-    subscriptions only)
+  description: Subscription revenue = gross revenue (product revenues + shipping,for subscriptions only)
   value_format_name: usd
   sql: ${revenue}
   filters:
   - field: subscription_vs_otp
     value: Subscription
-
-
-
-
-
-
-
 
 - name: number_of_customers_with_orders
   field_type: measure
@@ -329,13 +260,6 @@ fields:
   - field: new_vs_repeat
     value: New
 
-
-
-
-
-
-
-
 - name: number_of_orders
   field_type: measure
   type: count_distinct
@@ -348,20 +272,12 @@ fields:
   field_type: measure
   type: count_distinct
   hidden: false
-  description: The unique number of orders placed by customers who have placed at
-    least one order before
+  description: The unique number of orders placed by customers who have placed at least one order before
   value_format_name: decimal_0
   sql: ${order_id}
   filters:
   - field: new_vs_repeat
     value: Repeat
-
-
-
-
-
-
-
 
 - name: repurchase_rate
   field_type: measure
@@ -373,13 +289,6 @@ fields:
   synonyms:
   - Repeat order rate
 
-
-
-
-
-
-
-
 - name: gross_aov
   field_type: measure
   type: number
@@ -390,20 +299,12 @@ fields:
   synonyms:
   - Average order value
 
-
-
-
-
-
-
-
 - name: number_of_units
   field_type: measure
   type: sum
   hidden: false
   label: Number Of Units
-  description: 'The unique number of units purchased (e.g. customer orders: 2 lip
-    gloss and 1 blush = 3 units sold)'
+  description: 'The unique number of units purchased (e.g. customer orders: 2 lip gloss and 1 blush = 3 units sold)'
   value_format_name: decimal_0
   sql: ${quantity}
 
@@ -425,52 +326,16 @@ fields:
   sql: ${total_net_revenue} - ${total_cogs}
   zoe_description: This is the gross profit.
 
-- name: wuazbbwhcubcslxkwhgvvmfmgnkqehheyfbgmjnc
+- name: personal_field_qebvczg
   field_type: measure
   type: number
-  label: Duplicate Gross Aov
+  label: Gross Aov
   description: Gross AOV = gross revenues / number of orders
   value_format_name: usd
   sql: ${total_gross_revenue} / nullif(${number_of_orders}, 0)
   synonyms:
   - Average order value
-  canon_date: order_lines.order
-  update_where_timeframe: true
-
-- name: yqzsmizsxsehixtjpxxxbbhteyzoxktdgjqaqcgp
-  field_type: measure
-  type: sum
-  label: Duplicate Total Gross Revenue
-  description: Total gross revenue = revenue from product sales + shipping revenues.
-  value_format_name: usd
-  sql: ${revenue}
-  synonyms:
-  - sales
-  - revenue
-  canon_date: order_lines.order
-  update_where_timeframe: true
-
-- name: zckeomxedawxqizuncafnygnybjtehjwsgrlacfo
-  field_type: measure
-  type: count_distinct
-  label: Duplicate Number Of Customers With Orders
-  description: The unique number of customers who placed orders
-  value_format_name: decimal_0
-  sql: ${customer_id}
-  canon_date: order_lines.order
-  update_where_timeframe: true
-
-- name: aryfcjazdbdivpaxqgxkhzszqjfqojqwkycrynrr
-  field_type: measure
-  type: number
-  label: Duplicate Gross Aov
-  description: Gross AOV = gross revenues / number of orders
-  value_format_name: usd
-  sql: ${total_gross_revenue} / nullif(${number_of_orders}, 0)
-  synonyms:
-  - Average order value
-  canon_date: order_lines.order
-  update_where_timeframe: true
+  
 event_name: Purchase
 fields_for_analysis:
 - subscription_vs_otp
