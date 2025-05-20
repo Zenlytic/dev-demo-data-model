@@ -215,6 +215,25 @@ fields:
   sql: ${TABLE}.ORDER_AT
   convert_timezone: true
 
+- name: jbftewhhjkgbsqfcwnhmmvzptksdtgskcgpdasox
+  field_type: dimension_group
+  type: time
+  datatype: timestamp
+  label: Duplicate Order Njm
+  description: The time at which the order was placed. This is the main time field
+    to use for orders
+  timeframes:
+  - date
+  - week_index
+  - week
+  - month_of_year
+  - month
+  - quarter
+  - year
+  - hour_of_day
+  - day_of_week
+  sql: ${TABLE}.ORDER_AT
+
 - name: total_gross_revenue
   field_type: measure
   type: sum
@@ -226,6 +245,7 @@ fields:
   synonyms:
   - sales
   - revenue
+
 
 
 
@@ -251,6 +271,7 @@ fields:
   synonyms:
   - sales
   - revenue
+
 
 
 
@@ -303,6 +324,7 @@ fields:
 
 
 
+
 - name: number_of_customers_with_orders
   field_type: measure
   type: count_distinct
@@ -321,6 +343,7 @@ fields:
   filters:
   - field: new_vs_repeat
     value: New
+
 
 
 
@@ -365,6 +388,7 @@ fields:
 
 
 
+
 - name: repurchase_rate
   field_type: measure
   type: number
@@ -386,6 +410,7 @@ fields:
 
 
 
+
 - name: gross_aov
   field_type: measure
   type: number
@@ -395,6 +420,7 @@ fields:
   sql: ${total_gross_revenue} / nullif(${number_of_orders}, 0)
   synonyms:
   - Average order value
+
 
 
 
@@ -456,6 +482,7 @@ fields:
 
 
 
+
 - name: wokhjeviuswoytnmnhjmkspdgnphxhxbrfknzhys
   field_type: measure
   type: sum
@@ -501,6 +528,7 @@ fields:
 
 
 
+
 - name: rozxflbjnvhqrxjeccqlvhgdgjhsttvqurqxrujk
   field_type: measure
   type: number
@@ -511,6 +539,7 @@ fields:
   canon_date: order_lines.order
   synonyms:
   - Repeat order rate
+
 
 
 
@@ -550,6 +579,7 @@ fields:
   sql: ${total_gross_revenue} / nullif(${number_of_orders}, 0)
   synonyms:
   - Average order value
+
 
 - name: yswuntwwdibpcgerpeewjxgusmfphujsuzlgfgdh
   field_type: measure
