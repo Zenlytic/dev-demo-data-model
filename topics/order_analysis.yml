@@ -24,4 +24,9 @@ zoe_description: >-
   'REPURCHASE_RATE.' Use this model to refine marketing strategies and enhance
   sales performance.
 hidden: false
-views: {}
+views:
+  products:
+    join:
+      join_type: left_outer
+      relationship: one_to_many
+      sql_on: '${order_lines.product_id}=${products.product_id} --TODO: NJM'
