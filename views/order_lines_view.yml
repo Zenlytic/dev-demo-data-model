@@ -16,8 +16,8 @@ fields:
 - name: order_line_id
   field_type: dimension
   type: string
-  hidden: yes
-  primary_key: yes
+  hidden: true
+  primary_key: true
   sql: ${TABLE}.ORDER_LINE_ID
 
 - name: customer_id
@@ -32,10 +32,11 @@ fields:
   tags:
   - customer
 
+
 - name: order_id
   field_type: dimension
   type: string
-  hidden: yes
+  hidden: true
   drill_fields:
   - order_date
   - subscription_vs_otp
@@ -47,10 +48,11 @@ fields:
   tags:
   - order
 
+
 - name: product_id
   field_type: dimension
   type: string
-  hidden: yes
+  hidden: true
   sql: ${TABLE}.PRODUCT_ID
 
 - name: discount

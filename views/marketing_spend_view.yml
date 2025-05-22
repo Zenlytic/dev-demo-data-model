@@ -10,8 +10,8 @@ fields:
 - name: unique_key
   field_type: dimension
   type: string
-  hidden: yes
-  primary_key: yes
+  hidden: true
+  primary_key: true
   sql: ${TABLE}.spend_id
 
 - name: channel

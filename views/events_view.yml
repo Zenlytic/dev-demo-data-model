@@ -10,34 +10,35 @@ fields:
 - name: event_id
   field_type: dimension
   type: string
-  hidden: yes
-  primary_key: yes
+  hidden: true
+  primary_key: true
   sql: ${TABLE}.EVENT_ID
 
 - name: anonymous_id
   field_type: dimension
   type: string
-  hidden: yes
+  hidden: true
   sql: ${TABLE}.ANONYMOUS_ID
   tags:
   - customer
 
+
 - name: click_id
   field_type: dimension
   type: string
-  hidden: yes
+  hidden: true
   sql: ${TABLE}.CLICK_ID
 
 - name: customer_id
   field_type: dimension
   type: string
-  hidden: yes
+  hidden: true
   sql: ${TABLE}.CUSTOMER_ID
 
 - name: session_id
   field_type: dimension
   type: string
-  hidden: yes
+  hidden: true
   sql: ${TABLE}.SESSION_ID
 
 - name: device_is_mobile

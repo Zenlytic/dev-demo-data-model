@@ -22,8 +22,8 @@ fields:
 - name: customer_id
   field_type: dimension
   type: string
-  hidden: yes
-  primary_key: yes
+  hidden: true
+  primary_key: true
   sql: ${TABLE}.CUSTOMER_ID
 
 - name: accepts_marketing
@@ -93,7 +93,7 @@ fields:
 - name: first_campaign
   field_type: dimension
   type: string
-  primary_key: no
+  primary_key: false
   description: The first campaign the user came in through
   sql: ${TABLE}.first_campaign
 
