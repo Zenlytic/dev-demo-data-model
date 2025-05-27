@@ -10,7 +10,7 @@ fields:
   - name: unique_key
     field_type: dimension
     type: string
-    description: Represents a unique key for each spend event. NJM
+    description: Represents a unique key for each spend event.
     hidden: true
     primary_key: true
     searchable: false
@@ -20,7 +20,7 @@ fields:
   - name: channel
     field_type: dimension
     type: string
-    description: The channel of the ad spend NJM
+    description: The channel of the ad spend
     hidden: false
     primary_key: false
     searchable: true
