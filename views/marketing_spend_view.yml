@@ -12,7 +12,7 @@ fields:
     type: string
     description: Represents a unique key for each spend event.
     hidden: true
-    label: jkjkj
+    label: jkjkjjh
     primary_key: true
     searchable: false
     sql: ${TABLE}.spend_id
