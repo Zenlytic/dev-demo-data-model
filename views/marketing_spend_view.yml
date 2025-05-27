@@ -10,17 +10,30 @@ fields:
   - name: unique_key
     field_type: dimension
     type: string
+<<<<<<< HEAD
     hidden: true
     primary_key: true
     description: Represents a unique key for each spend event.
     sql: ${TABLE}.spend_id
     zoe_description: Used to uniquely identify marketing spend events.
     searchable: false
+=======
+    description: Represents a unique key for each spend event. NJM
+    hidden: true
+    primary_key: true
+    searchable: false
+    sql: ${TABLE}.spend_id
+    zoe_description: Used to uniquely identify marketing spend events.
+>>>>>>> 265db521601aba5e8fb59a08eda807498ce18edc
 
   - name: channel
     field_type: dimension
     type: string
+<<<<<<< HEAD
     description: The channel of the ad spend NJM
+=======
+    description: The channel of the ad spend
+>>>>>>> 265db521601aba5e8fb59a08eda807498ce18edc
     hidden: false
     primary_key: false
     searchable: true
