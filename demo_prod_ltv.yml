@@ -3,6 +3,7 @@ type: view
 model_name: pure_organics
 sql_table_name: DEMO_PROD.LTV
 version: 1
+hidden: false
 fields:
   - name: CUSTOMER_ID
     field_type: dimension
