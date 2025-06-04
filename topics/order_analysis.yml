@@ -35,3 +35,4 @@ views:
       join_type: left_outer
       relationship: many_to_one
       sql_on: ${order_lines.customer_id}=${customers.customer_id}
+  ltv: {}
