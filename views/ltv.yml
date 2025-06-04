@@ -1,5 +1,0 @@
-name: ltv
-type: view
-model_name: pure_organics
-sql_table_name: DEMO_PROD.LTV
-fields: []
