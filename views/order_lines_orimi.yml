@@ -1,0 +1,140 @@
+name: ORDER_LINES_ORIMI
+type: view
+model_name: pure_organics
+sql_table_name: DEMO_PROD.ORDER_LINES_ORIMI
+fields:
+  - name: ORDER_LINE_ID
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."ORDER_LINE_ID"
+    searchable: true
+  - name: ORDER_ID
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."ORDER_ID"
+    searchable: true
+  - name: CUSTOMER_ID
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."CUSTOMER_ID"
+    searchable: true
+  - name: PRODUCT_ID
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."PRODUCT_ID"
+    searchable: true
+  - name: ORDER_AT
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."ORDER_AT"
+    searchable: true
+  - name: SUBSCRIPTION_VS_OTP
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."SUBSCRIPTION_VS_OTP"
+    searchable: true
+  - name: MARKETING_CHANNEL
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."MARKETING_CHANNEL"
+    searchable: true
+  - name: MARKETING_SOURCE
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."MARKETING_SOURCE"
+    searchable: true
+  - name: CAMPAIGN
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."CAMPAIGN"
+    searchable: true
+  - name: PROMOTION
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."PROMOTION"
+    searchable: true
+  - name: PRICE
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."PRICE"
+    searchable: true
+  - name: QUANTITY
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."QUANTITY"
+    searchable: true
+  - name: DISCOUNT
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."DISCOUNT"
+    searchable: true
+  - name: REVENUE
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."REVENUE"
+    searchable: true
+  - name: COGS
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."COGS"
+    searchable: true
+  - name: ORDER_NUMBER
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."ORDER_NUMBER"
+    searchable: true
+  - name: NEW_VS_REPEAT
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."NEW_VS_REPEAT"
+    searchable: true
+  - name: AR_VR_VIEWED
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."AR_VR_VIEWED"
+    searchable: true
+  - name: PRODUCT_VIDEO_VIEWED
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."PRODUCT_VIDEO_VIEWED"
+    searchable: true
+  - name: LIVE_CHAT_USED
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."LIVE_CHAT_USED"
+    searchable: true
+  - name: STYLE_GUIDE_VIEWED
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."STYLE_GUIDE_VIEWED"
+    searchable: true
+  - name: FIRST_CLICK
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."FIRST_CLICK"
+    searchable: true
+  - name: LAST_CLICK
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."LAST_CLICK"
+    searchable: true
+  - name: IS_RETURNED
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."IS_RETURNED"
+    searchable: true
+  - name: RETURN_AT
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."RETURN_AT"
+    searchable: true
+  - name: RETURNED_FOR_FIT
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."RETURNED_FOR_FIT"
+    searchable: true
+  - name: RETURN_REASON
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."RETURN_REASON"
+    searchable: true
