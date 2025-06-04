@@ -20,4 +20,5 @@ zoe_description: >-
   which aids in understanding customer behavior and optimizing marketing
   strategies.
 hidden: false
-views: {}
+views:
+  ltv: {}
