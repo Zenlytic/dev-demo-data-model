@@ -5,3 +5,5 @@ model_name: pure_organics
 description: Rolls up order Data by Title and Type
 zoe_description: Rolls up order Data by Title and Type
 hidden: false
+views:
+  ltv: {}
