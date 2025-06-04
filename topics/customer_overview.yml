@@ -25,3 +25,4 @@ views:
   factories: {}
   ltv: {}
   ORDER_LINES_ORIMI: {}
+  products_orimi: {}
