@@ -1,5 +1,6 @@
 base_view: ltv
 label: LTV
 model_name: pure_organics
-views: {}
+views:
+  ltv: {}
 type: topic
