@@ -1,7 +1,7 @@
 type: topic
-label: Customer Overview
 base_view: customers
 model_name: pure_organics
+label: Customer Overview
 description: >-
   The Customer Overview view offers detailed insights into the customer data for
   Pure Organics. It includes key information like customer IDs, contact details,
@@ -22,4 +22,3 @@ zoe_description: >-
 hidden: false
 views:
   customers: {}
-  customers_new: {}
