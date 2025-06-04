@@ -22,3 +22,4 @@ zoe_description: >-
 hidden: false
 views:
   customers: {}
+  factories: {}
