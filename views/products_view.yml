@@ -30,6 +30,7 @@ fields:
     sql: ${TABLE}.product_type
     zoe_description: 'The type of the product. '
 #testing here as well
+# something
   - name: product_title
     field_type: dimension
     type: string
