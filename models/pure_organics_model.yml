@@ -1,5 +1,5 @@
 version: '1'
 type: model
-name: pure_organics
+name: pure_organics NJM
 connection: demo
 week_start_day: wednesday
