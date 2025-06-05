@@ -34,10 +34,11 @@ fields:
     field_type: dimension
     type: string
     description: The title of the product sold (Everyday SPF Cream, etc)
-    sql: ${TABLE}.PRODUCT_TITLE
-    tags:
-      - product
+    hidden: false
+    label: Product Title NJM
+    primary_key: false
     searchable: true
+    sql: ${TABLE}.product_title
 
   - name: product_image_url
     field_type: dimension
