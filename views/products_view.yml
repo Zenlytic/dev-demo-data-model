@@ -29,7 +29,7 @@ fields:
     searchable: true
     sql: ${TABLE}.product_type
     zoe_description: 'The type of the product. '
-
+#testing here as well
   - name: product_title
     field_type: dimension
     type: string
