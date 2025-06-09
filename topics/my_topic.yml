@@ -1,0 +1,10 @@
+base_view: ltv
+label: My topic
+model_name: pure_organics
+views:
+  marketing_spend:
+    join:
+      join_type: left_outer
+      relationship: one_to_many
+      sql_on: ${ltv.CUSTOMER_ID}=${marketing_spend.unique_key}
+type: topic
