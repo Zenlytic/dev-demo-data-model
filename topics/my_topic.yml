@@ -7,4 +7,5 @@ views:
       join_type: left_outer
       relationship: one_to_many
       sql_on: ${ltv.CUSTOMER_ID}=${marketing_spend.unique_key}
+  products: {}
 type: topic
