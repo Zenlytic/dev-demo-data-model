@@ -20,9 +20,4 @@ zoe_description: >-
   which aids in understanding customer behavior and optimizing marketing
   strategies.
 hidden: false
-views:
-  ltv:
-    join:
-      join_type: left_outer
-      relationship: one_to_many
-      sql_on: '${customers.customer_id}=${ltv.CUSTOMER_ID} --TODO: NJM'
+views: {}
