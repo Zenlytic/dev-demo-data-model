@@ -10,7 +10,7 @@ fields:
   - name: unique_key
     field_type: dimension
     type: string
-    description: Represents a unique key for each spend event. NJM3
+    description: Represents a unique key for each spend event. NJM4
     hidden: true
     primary_key: true
     searchable: false
