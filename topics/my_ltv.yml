@@ -1,5 +1,10 @@
 base_view: ltv
 label: My LTV
 model_name: pure_organics
-views: {}
+views:
+  ltv2:
+    join:
+      join_type: left_outer
+      relationship: one_to_many
+      sql_on: ${ltv.CUSTOMER_ID}=${ltv2.CUSTOMER_ID}
 type: topic
