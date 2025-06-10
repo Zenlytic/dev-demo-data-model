@@ -1,7 +1,7 @@
 type: topic
-label: Customer Overview
 base_view: customers
 model_name: pure_organics
+label: Customer Overview
 description: >-
   The Customer Overview view offers detailed insights into the customer data for
   Pure Organics. It includes key information like customer IDs, contact details,
@@ -26,8 +26,3 @@ views:
       join_type: left_outer
       relationship: one_to_many
       sql_on: ${customers.customer_id}=${ltv.CUSTOMER_ID}
-  ltv2:
-    join:
-      join_type: left_outer
-      relationship: one_to_many
-      sql_on: ${customers.customer_id}=${ltv2.CUSTOMER_ID}
