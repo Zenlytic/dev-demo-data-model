@@ -1,7 +1,7 @@
 version: 1
 type: view
 name: marketing_spend
-description: A view for marketing spend. NJM -- TODO: NJM
+description: A view for marketing spend. NJM -- TODO: NJM2
 model_name: pure_organics
 sql_table_name: DEMO_PROD.MARKETING_SPEND
 default_date: spend
