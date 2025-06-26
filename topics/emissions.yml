@@ -1,5 +1,5 @@
 base_view: emissions
-label: Emissions Data
+label: Emissions
 model_name: zenlytic_managed
 views: {}
 type: topic
