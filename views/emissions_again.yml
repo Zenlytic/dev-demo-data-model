@@ -1,4 +1,4 @@
-name: emissions
+name: emissions_again
 type: view
 model_name: zenlytic_managed
 sql_table_name: main.table_3dc39e51_2778_4812_81ea_e7a7e7486a8c
