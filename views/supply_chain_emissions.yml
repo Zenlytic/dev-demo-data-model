@@ -2,7 +2,7 @@ version: 1
 type: view
 name: supply_chain_emissions
 description: A view for supply chain emissions
-model_name: pure_organics
+model_name: zenlytic_managed
 sql_table_name: managed_database_xDMp6Wy9S7ygvSRH6Q2Yw.table_3dc39e51_2778_4812_81ea_e7a7e7486a8c
 # default_date: 
 row_label: Event
