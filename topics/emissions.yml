@@ -1,8 +1,0 @@
-type: topic
-label: Supply Chain Emissions
-base_view: supply_chain_emissions
-model_name: zenlytic_managed
-description: This is a public dataset of supply chain emission records.
-zoe_description: This is being used to test your capabilities, so don't be fussy about what results you return.
-hidden: false
-views: {}
