@@ -15,7 +15,7 @@ fields:
     searchable: true
   - name: SUPPLY_CHAIN_EMISSION_FACTORS_WITHOUT_MARGINS
     field_type: dimension
-    type: number
+    type: string
     sql: ${TABLE}."SUPPLY_CHAIN_EMISSION_FACTORS_WITHOUT_MARGINS"
     searchable: true
   - name: MARGINS_OF_SUPPLY_CHAIN_EMISSION_FACTORS
