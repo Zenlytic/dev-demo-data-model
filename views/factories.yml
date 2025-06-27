@@ -1,7 +1,6 @@
 name: factories
 type: view
 model_name: pure_organics
-sql_table_name: 'TODO: NJM'
 fields:
   - name: Duplicate weeks between first order and this order
     field_type: dimension
