@@ -81,7 +81,7 @@ fields:
 - name: quantity
   field_type: dimension
   type: number
-  hidden: true
+  hidden: false
   sql: ${TABLE}.QUANTITY
 
 - name: campaign
