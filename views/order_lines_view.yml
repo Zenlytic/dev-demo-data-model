@@ -47,7 +47,6 @@ fields:
   - marketing_channel
   - campaign
   - promotion
-  - total_gross_revenue
   sql: ${TABLE}.ORDER_ID
   tags:
   - order
