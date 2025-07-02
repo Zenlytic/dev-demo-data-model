@@ -63,19 +63,19 @@ fields:
 - name: discount
   field_type: dimension
   type: number
-  hidden: true
+  hidden: false
   sql: ${TABLE}.DISCOUNT
 
 - name: revenue
   field_type: dimension
   type: number
-  hidden: true
+  hidden: false
   sql: ${TABLE}.REVENUE
 
 - name: price
   field_type: dimension
   type: number
-  hidden: true
+  hidden: false
   sql: ${TABLE}.PRICE
 
 - name: quantity
