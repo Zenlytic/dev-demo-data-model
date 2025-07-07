@@ -1,5 +1,0 @@
-base_view: factories
-label: my facs
-model_name: zenlytic_managed
-views: {}
-type: topic
