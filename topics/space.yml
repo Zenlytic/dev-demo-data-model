@@ -1,0 +1,5 @@
+base_view: stars
+label: Space
+model_name: zenlytic_managed
+views: {}
+type: topic
