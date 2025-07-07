@@ -1,5 +1,5 @@
 base_view: factories
-label: My factories
+label: Some factories
 model_name: zenlytic_managed
 views: {}
 type: topic
