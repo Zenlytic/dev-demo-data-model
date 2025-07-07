@@ -1,5 +1,0 @@
-base_view: factories
-label: Some factories
-model_name: zenlytic_managed
-views: {}
-type: topic
