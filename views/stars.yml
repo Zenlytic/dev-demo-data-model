@@ -1,7 +1,7 @@
 type: view
 name: stars
 model_name: zenlytic_managed
-sql_table_name: main.stars
+sql_table_name: main.stars_type
 fields:
   - name: Temperature (K)
     field_type: dimension
