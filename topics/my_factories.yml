@@ -1,5 +1,5 @@
 base_view: factories
 label: My factories
-model_name: pure_organics
+model_name: zenlytic_managed
 views: {}
 type: topic
