@@ -1,13 +1,14 @@
-name: factories
 type: view
+name: factories
 model_name: zenlytic_managed
-sql_table_name: main.factories
+sql_table_name: main.factories-v004
 fields:
   - name: Duplicate weeks between first order and this order
     field_type: dimension
     type: number
     sql: ${TABLE}."DUPLICATE WEEKS BETWEEN FIRST ORDER AND THIS ORDER"
     searchable: true
+
   - name: Duplicate Number Of Orders NJM
     field_type: dimension
     type: number
