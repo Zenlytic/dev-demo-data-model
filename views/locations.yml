@@ -3,7 +3,7 @@ type: view
 model_name: zenlytic_managed
 sql_table_name: main.locations
 fields:
-  - name: Factory_Id
+  - name: Factory_Id_NJM
     field_type: dimension
     type: number
     sql: ${TABLE}."FACTORY_ID"
