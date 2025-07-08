@@ -8,12 +8,12 @@ fields:
     type: number
     sql: ${TABLE}."FACTORY_ID"
     searchable: true
-  - name: Gross_Revenue
+  - name: Gross_Revenue_NJM
     field_type: dimension
     type: number
     sql: ${TABLE}."GROSS_REVENUE"
     searchable: true
-  - name: Number_of_Orders
+  - name: Number_of_Orders_NJM
     field_type: dimension
     type: string
     sql: ${TABLE}."NUMBER_OF_ORDERS"
