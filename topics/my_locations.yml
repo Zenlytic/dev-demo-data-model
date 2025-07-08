@@ -1,0 +1,5 @@
+base_view: locations
+label: My locations
+model_name: zenlytic_managed
+views: {}
+type: topic

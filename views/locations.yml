@@ -1,0 +1,20 @@
+name: locations
+type: view
+model_name: zenlytic_managed
+sql_table_name: main.locations
+fields:
+  - name: Factory Id
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."FACTORY ID"
+    searchable: true
+  - name: Gross Revenue
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."GROSS REVENUE"
+    searchable: true
+  - name: Number of Orders
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."NUMBER OF ORDERS"
+    searchable: true
