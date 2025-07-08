@@ -1,5 +1,5 @@
-base_view: some_animals
+base_view: farm
 label: My topic
-model_name: pure_organics
+model_name: zenlytic_managed
 views: {}
 type: topic
