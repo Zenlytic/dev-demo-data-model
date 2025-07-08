@@ -1,7 +1,7 @@
 name: farm
 type: view
 model_name: zenlytic_managed
-sql_table_name: main.farm
+sql_table_name: farm
 fields:
   - name: AnimalId
     field_type: dimension
