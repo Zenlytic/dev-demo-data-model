@@ -1,0 +1,15 @@
+name: some_animals
+type: view
+model_name: pure_organics
+sql_table_name: main.some_animals
+fields:
+  - name: AnimalId
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."ANIMALID"
+    searchable: true
+  - name: Size
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."SIZE"
+    searchable: true
