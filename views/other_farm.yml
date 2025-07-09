@@ -1,15 +1,16 @@
-name: other_farm
 type: view
+name: other_farm
 model_name: zenlytic_managed
 sql_table_name: other_farm
 fields:
-  - name: AnimalId_NJM
-    field_type: dimension
-    type: number
-    sql: ${TABLE}."ANIMALID"
-    searchable: true
-  - name: Size_NJM
-    field_type: dimension
-    type: number
-    sql: ${TABLE}."SIZE"
-    searchable: true
+- name: AnimalId_NJM
+  field_type: dimension
+  type: number
+  sql: ${TABLE}."ANIMALID"
+  searchable: true
+
+- name: Size_NJM
+  field_type: dimension
+  type: number
+  sql: ${TABLE}."SIZE"
+  searchable: true
