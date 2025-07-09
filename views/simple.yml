@@ -1,0 +1,15 @@
+name: simple
+type: view
+model_name: pure_organics
+sql_table_name: simple
+fields:
+  - name: column1
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."COLUMN1"
+    searchable: true
+  - name: column2
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."COLUMN2"
+    searchable: true
