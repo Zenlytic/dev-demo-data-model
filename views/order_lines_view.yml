@@ -205,6 +205,7 @@ fields:
 
 
 
+
 - name: total_gross_revenue_from_advertising
   field_type: measure
   type: sum
@@ -218,6 +219,7 @@ fields:
   synonyms:
   - sales
   - revenue
+
 
 
 
@@ -254,6 +256,7 @@ fields:
 
 
 
+
 - name: number_of_customers_with_orders
   field_type: measure
   type: count_distinct
@@ -272,6 +275,7 @@ fields:
   filters:
   - field: new_vs_repeat
     value: New
+
 
 
 
@@ -300,6 +304,7 @@ fields:
 
 
 
+
 - name: repurchase_rate
   field_type: measure
   type: number
@@ -313,6 +318,7 @@ fields:
 
 
 
+
 - name: gross_aov
   field_type: measure
   type: number
@@ -322,6 +328,7 @@ fields:
   sql: ${total_gross_revenue} / nullif(${number_of_orders}, 0)
   synonyms:
   - Average order value
+
 
 
 
@@ -382,6 +389,17 @@ fields:
   update_where_timeframe: true
 
 - name: vzgwmwzkwpkwzdqopmnxnysfztuydduvejujpofh
+  field_type: measure
+  type: number
+  label: Duplicate Gross Profit
+  description: The total net revenue - allocated cost of goods sold to the order line
+  value_format_name: usd
+  sql: ${total_net_revenue} - ${total_cogs}
+  zoe_description: This is the gross profit.
+  canon_date: order_lines.order
+  update_where_timeframe: true
+
+- name: xoqljvjrbiiqwbjbypxisftifykcqzoicjbvvwdn
   field_type: measure
   type: number
   label: Duplicate Gross Profit
