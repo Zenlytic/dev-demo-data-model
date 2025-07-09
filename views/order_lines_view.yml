@@ -348,31 +348,6 @@ fields:
   sql: ${total_net_revenue} - ${total_cogs}
   zoe_description: This is the gross profit.
 
-- name: nmsurdgwtdwmnzgnptqgcdsxcvnjplwaiqiwmhbr
-  field_type: measure
-  type: sum
-  label: Duplicate Total Gross Revenue
-  description: Total gross revenue = revenue from product sales + shipping revenues.
-  value_format_name: usd
-  sql: ${revenue}
-  synonyms:
-  - sales
-  - revenue
-  canon_date: order_lines.order
-  update_where_timeframe: true
-
-- name: qvuiqwfuexldamkqhnihumqtimjpfefqezgibiim
-  field_type: measure
-  type: sum
-  label: Duplicate Duplicate Total Gross Revenue
-  description: Total gross revenue = revenue from product sales + shipping revenues.
-  value_format_name: usd
-  sql: ${revenue}
-  synonyms:
-  - sales
-  - revenue
-  canon_date: order_lines.order
-  update_where_timeframe: true
 event_name: Purchase
 fields_for_analysis:
 - subscription_vs_otp
