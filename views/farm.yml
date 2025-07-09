@@ -1,6 +1,6 @@
-name: farm
 type: view
-model_name: pure_organics
+name: farm
+model_name: zenlytic_managed
 sql_table_name: farm
 fields:
   - name: column0
@@ -8,11 +8,13 @@ fields:
     type: number
     sql: ${TABLE}."COLUMN0"
     searchable: true
+
   - name: column1
     field_type: dimension
     type: string
     sql: ${TABLE}."COLUMN1"
     searchable: true
+
   - name: column2
     field_type: dimension
     type: string
