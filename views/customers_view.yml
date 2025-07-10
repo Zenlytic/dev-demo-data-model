@@ -86,7 +86,7 @@ fields:
 
 - name: zipcode
   field_type: dimension
-  type: string
+  type: number
   description: The customer's zip code
   sql: ${TABLE}.ZIPCODE
   searchable: false
