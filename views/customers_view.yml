@@ -88,7 +88,7 @@ fields:
   field_type: dimension
   type: number
   description: The customer's zip code
-  sql: ${TABLE}.ZIPCODE
+  sql: CAST (${TABLE}.ZIPCODE AS int)
   searchable: false
 
 - name: first_marketing_group
