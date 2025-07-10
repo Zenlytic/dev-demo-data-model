@@ -13,7 +13,6 @@ fields:
     type: string
     sql: ${TABLE}."TYPE"
     searchable: true
-    primary_key: true
   - name: Name
     field_type: dimension
     type: string
