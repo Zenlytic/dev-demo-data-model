@@ -123,12 +123,15 @@ fields:
   - name: marketing_channel
     field_type: dimension
     type: string
-    hidden: false
     description: >-
       The marketing channel that the customer came through before placing their
-      order.
-    sql: ${TABLE}.MARKETING_CHANNEL
+      order. hihi
+    hidden: false
+    primary_key: false
     searchable: true
+    sql: ${TABLE}.MARKETING_CHANNEL
+    synonyms: []
+    tiers: null
 
   - name: last_click_marketing_channel
     field_type: dimension
