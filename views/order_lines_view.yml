@@ -219,10 +219,11 @@ fields:
   - name: total_discounts
     field_type: measure
     type: sum
+    description: All discounts applied to either the order or the product in the order.
     hidden: false
-    description: All discounts applied to either the order or the product in the order
-    value_format_name: usd
     sql: ${discount}
+    synonyms: []
+    value_format_name: usd
 
   - name: total_net_revenue
     field_type: measure
