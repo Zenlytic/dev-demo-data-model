@@ -113,12 +113,15 @@ fields:
   - name: marketing_source
     field_type: dimension
     type: string
-    hidden: false
     description: >-
       The marketing source that the customer came through before placing their
-      order.
-    sql: ${TABLE}.MARKETING_SOURCE
+      order. updated
+    hidden: false
+    primary_key: false
     searchable: true
+    sql: ${TABLE}.MARKETING_SOURCE
+    synonyms: []
+    tiers: null
 
   - name: marketing_channel
     field_type: dimension
