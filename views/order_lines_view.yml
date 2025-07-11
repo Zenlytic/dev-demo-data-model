@@ -87,12 +87,24 @@ fields:
   - name: campaign
     field_type: dimension
     type: string
+<<<<<<< HEAD
     hidden: false
     description: >-
       The marketing campaign that the customer came through before placing their
       order.
     sql: ${TABLE}.CAMPAIGN
     searchable: true
+=======
+    description: >-
+      The marketing campaign that the customer came through before placing their
+      order. hi
+    hidden: false
+    primary_key: false
+    searchable: true
+    sql: ${TABLE}.CAMPAIGN
+    synonyms: []
+    tiers: null
+>>>>>>> 4d9bbb7b2bcb371b8815197d212ad8427e82af23
 
   - name: promotion
     field_type: dimension
@@ -114,21 +126,43 @@ fields:
     field_type: dimension
     type: string
     hidden: false
+<<<<<<< HEAD
     description: >-
       The marketing source that the customer came through before placing their
       order.
     sql: ${TABLE}.MARKETING_SOURCE
     searchable: true
+=======
+    primary_key: false
+    description: >-
+      The marketing source that the customer came through before placing their
+      order. updated
+    tiers: null
+    sql: ${TABLE}.MARKETING_SOURCE
+    searchable: true
+    synonyms: []
+>>>>>>> 4d9bbb7b2bcb371b8815197d212ad8427e82af23
 
   - name: marketing_channel
     field_type: dimension
     type: string
     hidden: false
+<<<<<<< HEAD
     description: >-
       The marketing channel that the customer came through before placing their
       order.
     sql: ${TABLE}.MARKETING_CHANNEL
     searchable: true
+=======
+    primary_key: false
+    description: >-
+      The marketing channel that the customer came through before placing their
+      order. hihi
+    tiers: null
+    sql: ${TABLE}.MARKETING_CHANNEL
+    searchable: true
+    synonyms: []
+>>>>>>> 4d9bbb7b2bcb371b8815197d212ad8427e82af23
 
   - name: last_click_marketing_channel
     field_type: dimension
@@ -154,6 +188,7 @@ fields:
     field_type: dimension
     type: string
     hidden: false
+<<<<<<< HEAD
     description: >-
       Whether the customer placing the order was a new customer or a returning
       customer
@@ -173,6 +208,16 @@ fields:
       - year
     sql_start: ${customers.first_order_date}
     sql_end: ${order_date}
+=======
+    primary_key: false
+    description: >-
+      Whether the customer placing the order was a new customer or a returning
+      customer.
+    tiers: null
+    sql: ${TABLE}.new_vs_repeat
+    searchable: true
+    synonyms: []
+>>>>>>> 4d9bbb7b2bcb371b8815197d212ad8427e82af23
 
   - name: order
     field_type: dimension_group
@@ -184,6 +229,10 @@ fields:
       The time at which the order was placed. This is the main time field to use
       for orders
     timeframes:
+<<<<<<< HEAD
+=======
+      - raw
+>>>>>>> 4d9bbb7b2bcb371b8815197d212ad8427e82af23
       - date
       - week_index
       - week
@@ -225,17 +274,31 @@ fields:
     field_type: measure
     type: sum
     hidden: false
+<<<<<<< HEAD
     description: All discounts applied to either the order or the product in the order
     value_format_name: usd
     sql: ${discount}
+=======
+    description: All discounts applied to either the order or the product in the order.
+    value_format_name: usd
+    sql: ${discount}
+    synonyms: []
+>>>>>>> 4d9bbb7b2bcb371b8815197d212ad8427e82af23
 
   - name: total_net_revenue
     field_type: measure
     type: number
     hidden: false
+<<<<<<< HEAD
     description: Total net revenue = gross revenue - discounts
     value_format_name: usd
     sql: ${total_gross_revenue} - ${total_discounts}
+=======
+    description: Total net revenue = gross revenue - discounts.
+    value_format_name: usd
+    sql: ${total_gross_revenue} - ${total_discounts}
+    synonyms: []
+>>>>>>> 4d9bbb7b2bcb371b8815197d212ad8427e82af23
 
   - name: subscription_revenue
     field_type: measure
@@ -269,6 +332,17 @@ fields:
       - field: new_vs_repeat
         value: New
 
+<<<<<<< HEAD
+=======
+  - name: number_of_orders
+    field_type: measure
+    type: count_distinct
+    hidden: false
+    description: The unique number of orders placed
+    value_format_name: decimal_0
+    sql: ${order_id}
+
+>>>>>>> 4d9bbb7b2bcb371b8815197d212ad8427e82af23
   - name: number_of_repeat_orders
     field_type: measure
     type: count_distinct
@@ -331,6 +405,7 @@ fields:
     sql: ${total_net_revenue} - ${total_cogs}
     zoe_description: This is the gross profit.
 
+<<<<<<< HEAD
   - name: personal_field_qebvczg
     field_type: measure
     type: number
@@ -340,6 +415,8 @@ fields:
     sql: ${total_gross_revenue} / nullif(${number_of_orders}, 0)
     synonyms:
       - Average order value
+=======
+>>>>>>> 4d9bbb7b2bcb371b8815197d212ad8427e82af23
 event_name: Purchase
 fields_for_analysis:
   - subscription_vs_otp
