@@ -159,12 +159,15 @@ fields:
   - name: new_vs_repeat
     field_type: dimension
     type: string
-    hidden: false
     description: >-
       Whether the customer placing the order was a new customer or a returning
-      customer
-    sql: ${TABLE}.new_vs_repeat
+      customer.
+    hidden: false
+    primary_key: false
     searchable: true
+    sql: ${TABLE}.new_vs_repeat
+    synonyms: []
+    tiers: null
 
   - name: order
     field_type: dimension_group
