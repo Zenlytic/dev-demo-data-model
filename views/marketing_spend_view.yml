@@ -10,11 +10,14 @@ fields:
   - name: unique_key
     field_type: dimension
     type: string
-    hidden: true
-    primary_key: true
     description: Represents a unique key for each spend event. NJM3
-    sql: ${TABLE}.spend_id
+    hidden: true
+    label: Unique Key NJM1
+    primary_key: true
     searchable: false
+    sql: ${TABLE}.spend_id
+    synonyms: []
+    tiers: null
     zoe_description: Used to uniquely identify marketing spend events.
 
   - name: channel
