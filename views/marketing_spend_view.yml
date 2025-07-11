@@ -12,7 +12,7 @@ fields:
     type: string
     description: Represents a unique key for each spend event. NJM3
     hidden: true
-    label: Unique Key NJM4
+    label: Unique Key NJM5
     primary_key: true
     searchable: false
     sql: ${TABLE}.spend_id
