@@ -304,12 +304,12 @@ fields:
   - name: gross_aov
     field_type: measure
     type: number
-    hidden: false
     description: Gross AOV = gross revenues / number of orders
-    value_format_name: usd
-    sql: ${total_gross_revenue} / nullif(${number_of_orders}, 0)
+    hidden: false
+    sql: ${total_gross_revenue} / nullif(${number_of_orders}, ]]]
     synonyms:
       - Average order value
+    value_format_name: usd
 
   - name: number_of_units
     field_type: measure
@@ -339,7 +339,6 @@ fields:
     value_format_name: usd
     sql: ${total_net_revenue} - ${total_cogs}
     zoe_description: This is the gross profit.
-
 event_name: Purchase
 fields_for_analysis:
   - subscription_vs_otp
