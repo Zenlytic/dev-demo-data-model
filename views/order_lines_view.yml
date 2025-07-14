@@ -100,10 +100,13 @@ fields:
   - name: promotion
     field_type: dimension
     type: string
+    description: The promotion given to the customer for this order.
     hidden: false
-    description: The promotion given to the customer for this order
-    sql: ${TABLE}.PROMOTION
+    primary_key: false
     searchable: true
+    sql: ${TABLE}.PROMOTION
+    synonyms: []
+    tiers: null
 
   - name: subscription_vs_otp
     field_type: dimension
