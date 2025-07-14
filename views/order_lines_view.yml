@@ -120,7 +120,7 @@ fields:
     primary_key: false
     description: >-
       The marketing source that the customer came through before placing their
-      order. updated
+      order.
     tiers: null
     sql: ${TABLE}.MARKETING_SOURCE
     searchable: true
