@@ -10,7 +10,7 @@ fields:
 - name: anonymous_id
   field_type: dimension
   type: string
-  hidden: true
+  hidden: false
   primary_key: true
   sql: ${TABLE}.ANONYMOUS_ID
   tags:
@@ -20,14 +20,14 @@ fields:
 - name: click_id
   field_type: dimension
   type: string
-  hidden: true
+  hidden: false
   sql: ${TABLE}.CLICK_ID
   searchable: false
 
 - name: customer_id
   field_type: dimension
   type: string
-  hidden: true
+  hidden: false
   sql: ${TABLE}.CUSTOMER_ID
   searchable: false
 
