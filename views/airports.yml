@@ -18,7 +18,6 @@ fields:
     sql: ${TABLE}."AIRPORT_CODE"
     synonyms: []
     tiers: null
-
   - name: description
     field_type: dimension
     type: string
