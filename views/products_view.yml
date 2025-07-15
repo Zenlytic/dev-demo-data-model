@@ -12,7 +12,7 @@ fields:
 - name: product_id
   field_type: dimension
   type: string
-  hidden: true
+  hidden: false
   primary_key: true
   description: The id of the product.
   sql: ${TABLE}.PRODUCT_ID
