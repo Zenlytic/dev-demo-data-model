@@ -1,0 +1,15 @@
+name: airports
+type: view
+model_name: zenlytic_managed
+sql_table_name: airports
+fields:
+  - name: airport_code
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."AIRPORT_CODE"
+    searchable: true
+  - name: description
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."DESCRIPTION"
+    searchable: true
