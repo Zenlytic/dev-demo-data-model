@@ -1,0 +1,16 @@
+name: air_carriers
+type: view
+model_name: zenlytic_managed
+sql_table_name: air_carriers
+fields:
+  - name: air_carrier_code
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."AIR_CARRIER_CODE"
+    searchable: true
+    primary_key: true
+  - name: description
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."DESCRIPTION"
+    searchable: true
