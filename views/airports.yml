@@ -1,13 +1,24 @@
-name: airports
 type: view
+name: airports
 model_name: zenlytic_managed
 sql_table_name: airports
+identifiers:
+  - name: airport_code
+    type: primary
+    sql: ${airport_code}
+    allowed_fanouts: []
 fields:
   - name: airport_code
     field_type: dimension
     type: string
-    sql: ${TABLE}."AIRPORT_CODE"
+    description: ''
+    hidden: false
+    primary_key: true
     searchable: true
+    sql: ${TABLE}."AIRPORT_CODE"
+    synonyms: []
+    tiers: null
+
   - name: description
     field_type: dimension
     type: string
