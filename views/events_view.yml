@@ -34,7 +34,7 @@ fields:
 - name: session_id
   field_type: dimension
   type: string
-  hidden: true
+  hidden: false
   sql: ${TABLE}.SESSION_ID
   searchable: false
 
