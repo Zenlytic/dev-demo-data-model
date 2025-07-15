@@ -43,7 +43,7 @@ fields:
 - name: ad_spend
   field_type: dimension
   type: string
-  hidden: true
+  hidden: false
   description: The amount spent
   sql: ${TABLE}.ad_spend
   searchable: false
