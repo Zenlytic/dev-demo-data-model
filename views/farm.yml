@@ -5,10 +5,9 @@ sql_table_name: farm
 fields:
   - name: AnimalId
     field_type: dimension
-    type: string
+    type: number
     sql: ${TABLE}."ANIMALID"
     searchable: true
-    primary_key: true
   - name: Type
     field_type: dimension
     type: string
