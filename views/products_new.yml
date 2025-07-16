@@ -1,6 +1,6 @@
-name: products_new
 type: view
-model_name: zenlytic_managed
+name: products_new
+model_name: pure_organics
 sql_table_name: DEMO_PROD.PRODUCTS
 fields:
   - name: Product Id
@@ -8,16 +8,19 @@ fields:
     type: string
     sql: ${TABLE}."PRODUCT ID"
     searchable: true
+
   - name: Product Type
     field_type: dimension
     type: string
     sql: ${TABLE}."PRODUCT TYPE"
     searchable: true
+
   - name: Product Title
     field_type: dimension
     type: string
     sql: ${TABLE}."PRODUCT TITLE"
     searchable: true
+
   - name: Price
     field_type: dimension
     type: string
