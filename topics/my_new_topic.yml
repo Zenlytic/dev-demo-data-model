@@ -1,5 +1,0 @@
-base_view: products_new
-label: my new topic
-model_name: zenlytic_managed
-views: {}
-type: topic
