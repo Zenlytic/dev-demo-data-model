@@ -209,6 +209,7 @@ fields:
   - sales
   - revenue
 
+
 - name: total_gross_revenue_from_advertising
   field_type: measure
   type: sum
@@ -222,6 +223,7 @@ fields:
   synonyms:
   - sales
   - revenue
+
 
 - name: total_discounts
   field_type: measure
@@ -254,6 +256,7 @@ fields:
   - field: subscription_vs_otp
     value: Subscription
 
+
 - name: number_of_customers_with_orders
   field_type: measure
   type: count_distinct
@@ -272,6 +275,7 @@ fields:
   filters:
   - field: new_vs_repeat
     value: New
+
 
 - name: number_of_orders
   field_type: measure
@@ -294,6 +298,7 @@ fields:
   - field: new_vs_repeat
     value: Repeat
 
+
 - name: repurchase_rate
   field_type: measure
   type: number
@@ -304,6 +309,7 @@ fields:
   synonyms:
   - Repeat order rate
 
+
 - name: gross_aov
   field_type: measure
   type: number
@@ -313,6 +319,7 @@ fields:
   sql: ${total_gross_revenue} / nullif(${number_of_orders}, 0)
   synonyms:
   - Average order value
+
 
 - name: number_of_units
   field_type: measure
@@ -351,6 +358,16 @@ fields:
   value_format_name: usd
   sql: ${total_net_revenue} - ${total_cogs}
   zoe_description: This is the gross profit.
+  canon_date: order_lines.order
+  update_where_timeframe: true
+
+- name: jxtzljoedjherxbsvzhybbgyifdmrhkmsdrcqmwg
+  field_type: measure
+  type: count_distinct
+  label: Duplicate Number Of Customers With Orders NJM
+  description: The unique number of customers who placed orders
+  value_format_name: decimal_0
+  sql: ${customer_id}
   canon_date: order_lines.order
   update_where_timeframe: true
 event_name: Purchase
