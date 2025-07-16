@@ -1,5 +1,0 @@
-base_view: farm
-label: Random CSVs
-model_name: zenlytic_managed
-views: {}
-type: topic
