@@ -1,0 +1,10 @@
+base_view: stars_type
+label: stars
+model_name: zenlytic_managed
+views:
+  customers:
+    join:
+      join_type: left_outer
+      relationship: one_to_many
+      sql_on: ${stars_type.Star color}=${customers.customer_id}
+type: topic
