@@ -1,0 +1,5 @@
+base_view: products
+label: my new topic
+model_name: pure_organics
+views: {}
+type: topic
