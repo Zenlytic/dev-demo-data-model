@@ -1,0 +1,10 @@
+base_view: farm
+label: My farm
+model_name: zenlytic_managed
+views:
+  customers:
+    join:
+      join_type: left_outer
+      relationship: one_to_many
+      sql_on: ${farm.AnimalId}=${customers.customer_id}
+type: topic
