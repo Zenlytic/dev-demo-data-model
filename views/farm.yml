@@ -3,18 +3,19 @@ type: view
 model_name: zenlytic_managed
 sql_table_name: farm
 fields:
-  - name: AnimalId
-    field_type: dimension
-    type: number
-    sql: ${TABLE}."ANIMALID"
-    searchable: true
-  - name: Type
+  - name: animal_id
     field_type: dimension
     type: string
-    sql: ${TABLE}."TYPE"
+    sql: ${TABLE}."ANIMAL_ID"
     searchable: true
-  - name: Name
+    primary_key: true
+  - name: animal_type
     field_type: dimension
     type: string
-    sql: ${TABLE}."NAME"
+    sql: ${TABLE}."ANIMAL_TYPE"
+    searchable: true
+  - name: animal_name
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."ANIMAL_NAME"
     searchable: true
