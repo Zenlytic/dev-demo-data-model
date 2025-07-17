@@ -1,0 +1,5 @@
+version: 1
+type: topic
+base_view: first_view
+model_name: pure_organics
+label: First view topic
