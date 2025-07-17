@@ -3,3 +3,11 @@ type: topic
 base_view: first_view
 model_name: pure_organics
 label: First view topic
+views:
+  second_view:
+    join:
+      join_type: left_outer
+      relationship: one_to_many
+      sql_on: >-
+        ${first_view.my time dimension group_month}=${second_view.some time
+        dimension group_quarter}

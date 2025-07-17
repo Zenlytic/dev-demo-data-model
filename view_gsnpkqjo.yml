@@ -2,7 +2,7 @@ version: 1
 type: view
 name: second_view
 fields:
-  - name: some measure
+  - name: some_measure
     field_type: measure
     type: sum
     description: ''
@@ -11,7 +11,7 @@ fields:
     synonyms: []
     value_format_name: decimal_0
 
-  - name: some dimension
+  - name: some_dimension
     field_type: dimension
     type: string
     description: ''
@@ -22,7 +22,7 @@ fields:
     synonyms: []
     tiers: null
 
-  - name: some time dimension group
+  - name: some_time_dimension_group
     field_type: dimension_group
     type: time
     description: ''
@@ -35,7 +35,7 @@ fields:
       - week
       - quarter
 
-  - name: some duration dimension group
+  - name: some_duration_dimension_group
     field_type: dimension_group
     type: duration
     description: ''
