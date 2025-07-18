@@ -112,6 +112,13 @@ fields:
   sql: ${TABLE}.first_campaign
   searchable: false
 
+- name: customer_name_fyisrmeg
+  field_type: dimension
+  type: string
+  label: Customer Name
+  sql: CONCAT(${customers.first_name}, ' ', ${customers.last_name})
+  canon_date: customers.first_order
+
 - name: first_order
   field_type: dimension_group
   type: time
