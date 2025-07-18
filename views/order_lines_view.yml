@@ -215,6 +215,14 @@ fields:
     ELSE 'New Client' END
   canon_date: order_lines.order
 
+- name: appointment_type_nhemkzoo
+  field_type: dimension
+  type: string
+  label: Appointment Type
+  sql: CASE WHEN ${order_lines.subscription_vs_otp} = 'Subscription' THEN 'Recurring
+    Client Program' ELSE 'Walk-in Consultation' END
+  canon_date: order_lines.order
+
 - name: order
   field_type: dimension_group
   type: time
@@ -259,6 +267,7 @@ fields:
 
 
 
+
 - name: total_gross_revenue_from_advertising
   field_type: measure
   type: sum
@@ -272,6 +281,7 @@ fields:
   synonyms:
   - sales
   - revenue
+
 
 
 
@@ -324,6 +334,7 @@ fields:
 
 
 
+
 - name: number_of_customers_with_orders
   field_type: measure
   type: count_distinct
@@ -342,6 +353,7 @@ fields:
   filters:
   - field: new_vs_repeat
     value: New
+
 
 
 
@@ -384,6 +396,7 @@ fields:
 
 
 
+
 - name: repurchase_rate
   field_type: measure
   type: number
@@ -404,6 +417,7 @@ fields:
 
 
 
+
 - name: gross_aov
   field_type: measure
   type: number
@@ -413,6 +427,7 @@ fields:
   sql: ${total_gross_revenue} / nullif(${number_of_orders}, 0)
   synonyms:
   - Average order value
+
 
 
 
