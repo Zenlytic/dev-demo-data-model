@@ -100,6 +100,16 @@ fields:
     = 'Cheek' THEN 'Complexion Service' END
   canon_date: order_lines.order
 
+- name: product_line_pwspmicd
+  field_type: dimension
+  type: string
+  label: Product Line
+  sql: CASE WHEN ${products.product_title} LIKE '%Luxury%' THEN 'Les Beiges Collection'
+    WHEN ${products.product_title} LIKE '%Everyday%' THEN 'Chance Collection' WHEN
+    ${products.product_title} LIKE '%Easygoing%' OR ${products.product_title} LIKE
+    '%Glam%' THEN 'Rouge Coco Collection' ELSE 'Specialty Collection' END
+  canon_date: order_lines.order
+
 - name: count_products
   field_type: measure
   type: count_distinct
