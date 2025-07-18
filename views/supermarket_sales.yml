@@ -9,6 +9,7 @@ fields:
     type: string
     sql: ${TABLE}."INVOICE_ID"
     searchable: true
+    primary_key: true
   - name: Branch
     field_type: dimension
     type: string
