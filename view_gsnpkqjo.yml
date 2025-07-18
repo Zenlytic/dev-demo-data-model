@@ -10,7 +10,6 @@ fields:
     sql: '-- TODO: NJM'
     synonyms: []
     value_format_name: decimal_0
-
   - name: some_dimension
     field_type: dimension
     type: string
@@ -21,7 +20,6 @@ fields:
     sql: '-- TODO: NJM'
     synonyms: []
     tiers: null
-
   - name: some_time_dimension_group
     field_type: dimension_group
     type: time
@@ -34,7 +32,6 @@ fields:
       - month
       - week
       - quarter
-
   - name: some_duration_dimension_group
     field_type: dimension_group
     type: duration
