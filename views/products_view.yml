@@ -110,6 +110,17 @@ fields:
     '%Glam%' THEN 'Rouge Coco Collection' ELSE 'Specialty Collection' END
   canon_date: order_lines.order
 
+- name: service_duration_wpbknogu
+  field_type: dimension
+  type: string
+  label: Service Duration
+  sql: CASE WHEN ${products.kcjjjfvusepnhnohvdhjxmacyesdodybdangzdpw} = 'Face' THEN
+    '90 minutes' WHEN ${products.kcjjjfvusepnhnohvdhjxmacyesdodybdangzdpw} = 'Eye'
+    THEN '60 minutes' WHEN ${products.kcjjjfvusepnhnohvdhjxmacyesdodybdangzdpw} =
+    'Lip' THEN '45 minutes' WHEN ${products.kcjjjfvusepnhnohvdhjxmacyesdodybdangzdpw}
+    = 'Cheek' THEN '30 minutes' END
+  canon_date: order_lines.order
+
 - name: count_products
   field_type: measure
   type: count_distinct
