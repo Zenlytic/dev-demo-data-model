@@ -89,6 +89,17 @@ fields:
   searchable: true
   canon_date: order_lines.order
 
+- name: service_type_giuqzprs
+  field_type: dimension
+  type: string
+  label: Service Type
+  sql: CASE WHEN ${products.kcjjjfvusepnhnohvdhjxmacyesdodybdangzdpw} = 'Face' THEN
+    'Skincare Consultation' WHEN ${products.kcjjjfvusepnhnohvdhjxmacyesdodybdangzdpw}
+    = 'Lip' THEN 'Lip Color Matching' WHEN ${products.kcjjjfvusepnhnohvdhjxmacyesdodybdangzdpw}
+    = 'Eye' THEN 'Eye Makeup Application' WHEN ${products.kcjjjfvusepnhnohvdhjxmacyesdodybdangzdpw}
+    = 'Cheek' THEN 'Complexion Service' END
+  canon_date: order_lines.order
+
 - name: count_products
   field_type: measure
   type: count_distinct
