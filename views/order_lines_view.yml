@@ -175,6 +175,17 @@ fields:
   searchable: true
   synonyms: []
 
+- name: associate_name_uijpypzq
+  field_type: dimension
+  type: string
+  label: Associate Name
+  sql: CASE WHEN ${order_lines.marketing_source} = 'google' THEN 'Amélie Dubois' WHEN
+    ${order_lines.marketing_source} = 'facebook' THEN 'Camille Laurent' WHEN ${order_lines.marketing_source}
+    = 'instagram' THEN 'Sophie Martin' WHEN ${order_lines.marketing_source} = 'klaviyo'
+    THEN 'Marie Rousseau' WHEN ${order_lines.marketing_source} = 'tiktok' THEN 'Élise
+    Bernard' ELSE 'Boutique Team' END
+  canon_date: order_lines.order
+
 - name: order
   field_type: dimension_group
   type: time
@@ -215,6 +226,7 @@ fields:
 
 
 
+
 - name: total_gross_revenue_from_advertising
   field_type: measure
   type: sum
@@ -228,6 +240,7 @@ fields:
   synonyms:
   - sales
   - revenue
+
 
 
 
@@ -272,6 +285,7 @@ fields:
 
 
 
+
 - name: number_of_customers_with_orders
   field_type: measure
   type: count_distinct
@@ -290,6 +304,7 @@ fields:
   filters:
   - field: new_vs_repeat
     value: New
+
 
 
 
@@ -324,6 +339,7 @@ fields:
 
 
 
+
 - name: repurchase_rate
   field_type: measure
   type: number
@@ -340,6 +356,7 @@ fields:
 
 
 
+
 - name: gross_aov
   field_type: measure
   type: number
@@ -349,6 +366,7 @@ fields:
   sql: ${total_gross_revenue} / nullif(${number_of_orders}, 0)
   synonyms:
   - Average order value
+
 
 
 
