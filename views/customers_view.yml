@@ -128,6 +128,16 @@ fields:
     WHEN MOD(ABS(HASH(${customers.customer_id})), 5) = 3 THEN '84' ELSE '88' END
   canon_date: customers.first_order
 
+- name: chanel_clothing_size_eu_eltojjka
+  field_type: dimension
+  type: string
+  label: Chanel Clothing Size Eu
+  sql: CASE WHEN MOD(ABS(HASH(${customers.customer_id})), 6) = 0 THEN '36' WHEN MOD(ABS(HASH(${customers.customer_id})),
+    6) = 1 THEN '38' WHEN MOD(ABS(HASH(${customers.customer_id})), 6) = 2 THEN '40'
+    WHEN MOD(ABS(HASH(${customers.customer_id})), 6) = 3 THEN '42' WHEN MOD(ABS(HASH(${customers.customer_id})),
+    6) = 4 THEN '44' ELSE '46' END
+  canon_date: customers.first_order
+
 - name: first_order
   field_type: dimension_group
   type: time
