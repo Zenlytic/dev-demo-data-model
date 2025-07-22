@@ -46,7 +46,9 @@ fields:
     field_type: dimension
     type: string
     description: Product image url for the product title
-    value_format_name: image_from_url
+    hidden: true
+    primary_key: false
+    searchable: false
     sql: >+
       CASE ${product_title}
 
@@ -76,7 +78,8 @@ fields:
       'https://exq-art-data.s3.us-east-1.amazonaws.com/organic_color_correct.jpg'
       END
 
-    searchable: false
+    synonyms: []
+    tiers: null
 
   - name: price
     field_type: dimension
