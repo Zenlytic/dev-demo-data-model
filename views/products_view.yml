@@ -121,6 +121,17 @@ fields:
     = 'Cheek' THEN '30 minutes' END
   canon_date: order_lines.order
 
+- name: chanel_product_type_nixetsjf
+  field_type: dimension
+  type: string
+  label: Chanel Product Type
+  sql: CASE WHEN ${products.kcjjjfvusepnhnohvdhjxmacyesdodybdangzdpw} = 'Cheek' THEN
+    'Joues' WHEN ${products.kcjjjfvusepnhnohvdhjxmacyesdodybdangzdpw} = 'Lip' THEN
+    'Lèvres' WHEN ${products.kcjjjfvusepnhnohvdhjxmacyesdodybdangzdpw} = 'Face' THEN
+    'Teint' WHEN ${products.kcjjjfvusepnhnohvdhjxmacyesdodybdangzdpw} = 'Eye' THEN
+    'Yeux' ELSE 'Collection' END
+  canon_date: order_lines.order
+
 - name: count_products
   field_type: measure
   type: count_distinct
