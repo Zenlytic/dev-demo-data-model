@@ -132,6 +132,22 @@ fields:
     'Yeux' ELSE 'Collection' END
   canon_date: order_lines.order
 
+- name: chanel_product_title_fnrjnvlw
+  field_type: dimension
+  type: string
+  label: Chanel Product Title
+  sql: CASE WHEN ${products.product_title} = 'Luxury Blush' THEN 'Rouge Allure Blush'
+    WHEN ${products.product_title} = 'Luxury Eyeliner' THEN 'Stylo Yeux Élégance'
+    WHEN ${products.product_title} = 'Everyday SPF Cream' THEN 'Crème Lumière SPF'
+    WHEN ${products.product_title} = 'Everyday Eyeshadow' THEN 'Ombre Première' WHEN
+    ${products.product_title} = 'Organic Color Correct' THEN 'Correcteur Sublime'
+    WHEN ${products.product_title} = 'Organic Foundation' THEN 'Teint Haute Couture'
+    WHEN ${products.product_title} = 'Easygoing Lipstick' THEN 'Rouge Coco Baume'
+    WHEN ${products.product_title} = 'Glam Lipstick' THEN 'Rouge Coco Glamour' WHEN
+    ${products.product_title} = 'NoChap Lip Gloss SPF 15' THEN 'Brillant Lèvres SPF
+    15' ELSE 'Édition Spéciale' END
+  canon_date: order_lines.order
+
 - name: count_products
   field_type: measure
   type: count_distinct
