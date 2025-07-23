@@ -437,7 +437,7 @@ fields:
     label: Sell Through Rate
     sql: SUM(${order_lines.quantity}) / 20000.0
     synonyms: []
-    value_format_name: decimal_0
+    value_format_name: percent_0
 event_name: Purchase
 fields_for_analysis:
   - subscription_vs_otp
