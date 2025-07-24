@@ -8,6 +8,7 @@ row_label: Order line
 fields:
   - name: order_line_id
     field_type: dimension
+    label: njmtest
     type: string
     hidden: true
     primary_key: true
