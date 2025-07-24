@@ -8,9 +8,12 @@ row_label: Order line
 fields:
   - name: order_line_id
     field_type: dimension
-    label: njmtest
     type: string
+    description: ''
     hidden: true
+    label: njmtest2
     primary_key: true
-    sql: ${TABLE}.ORDER_LINE_ID
     searchable: false
+    sql: ${TABLE}.ORDER_LINE_ID
+    synonyms: []
+    tiers: null
