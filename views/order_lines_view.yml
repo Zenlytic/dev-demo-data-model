@@ -163,6 +163,13 @@ fields:
   searchable: true
   synonyms: []
 
+- name: ldmtcajkydmyyiybvrvvauewuslxsxxfvhwgifks
+  field_type: dimension
+  type: number
+  label: Duplicate Discount 2
+  sql: ${TABLE}.DISCOUNT
+  canon_date: order_lines.order
+
 - name: order
   field_type: dimension_group
   type: time
