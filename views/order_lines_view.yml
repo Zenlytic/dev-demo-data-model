@@ -198,3 +198,12 @@ fields:
   label: Total Gross Revenue
   sql: ${order_lines.revenue}
   canon_date: order_lines.order
+
+- name: bxsscueereejrmblvohgmdjylrovhotoiofzzafv
+  field_type: measure
+  type: number
+  label: Sum Price
+  value_format_name: decimal_0
+  sql: SUM(CASE WHEN ${TABLE}.PRICE IS NOT NULL THEN ${TABLE}.PRICE ELSE 0 END)
+  canon_date: order_lines.order
+  update_where_timeframe: true
