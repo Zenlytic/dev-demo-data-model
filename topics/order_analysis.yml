@@ -29,7 +29,7 @@ views:
     join:
       join_type: left_outer
       relationship: many_to_one
-      sql_on: ${order_lines.product_id}=${products.product_id}
+      sql_on: ${order_lines.product_id}=${products.product_id} and ${myfakeview.mykey} is null
   customers:
     join:
       join_type: left_outer
