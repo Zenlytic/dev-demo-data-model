@@ -63,7 +63,6 @@ fields:
   - name: discount
     field_type: dimension
     type: number
-    hidden: true
     sql: ${TABLE}.DISCOUNT
 
   - name: revenue
