@@ -20,6 +20,9 @@ zoe_description: This model analyzes order data, providing insights into marketi
   by 'NEW_VS_REPEAT' and metrics like 'REPURCHASE_RATE.' Use this model to refine
   marketing strategies and enhance sales performance.
 hidden: false
+always_filter:
+  - field: order_lines.product_id 
+    value: -P5, -P6
 views:
   products:
     join:
