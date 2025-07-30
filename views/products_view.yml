@@ -64,7 +64,7 @@ fields:
   sql: ${TABLE}.PRICE
   searchable: true
 
-- name: count_products
+- name: number_of_products
   field_type: measure
   type: count_distinct
   description: The Distinct Number of Products
