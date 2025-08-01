@@ -1,3 +1,24 @@
 version: 1
 type: view
 name: view_lbjryqvm
+fields:
+  - name: measure_1
+    field_type: measure
+    type: sum
+    sql: '-- TODO: NJM'
+    value_format_name: decimal_0
+
+  - name: dim_1
+    field_type: dimension
+    type: string
+    sql: '-- TODO: NJM'
+
+  - name: dimgroup_1
+    field_type: dimension_group
+    type: time
+    convert_tz: false
+    datatype: date
+    sql: '-- TODO: NJM'
+    timeframes:
+      - quarter
+      - year
