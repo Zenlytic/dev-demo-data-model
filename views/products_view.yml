@@ -64,6 +64,15 @@ fields:
   sql: ${TABLE}.PRICE
   searchable: true
 
+- name: product_category_eyhkhdxe
+  field_type: dimension
+  type: string
+  label: Product Category
+  sql: CASE WHEN ${products.product_type} = 'Face' THEN 'Premium Spirits' WHEN ${products.product_type}
+    = 'Lip' THEN 'Wine & Champagne' WHEN ${products.product_type} = 'Eye' THEN 'Craft
+    Beer' WHEN ${products.product_type} = 'Cheek' THEN 'Liqueurs' END
+  canon_date: order_lines.order
+
 - name: number_of_products
   field_type: measure
   type: count_distinct
