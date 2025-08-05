@@ -7,6 +7,27 @@ sql_table_name: DEMO_PROD.MARKETING_SPEND
 default_date: spend
 row_label: Spend Item
 fields:
+- name: revenue_from_paid_marketing
+  field_type: dimension
+  type: number
+  hidden: true
+  sql: ${TABLE}.revenue_from_paid_marketing
+  searchable: false
+
+- name: customers_from_paid_marketing
+  field_type: dimension
+  type: number
+  hidden: true
+  sql: ${TABLE}.customers_from_paid_marketing
+  searchable: false
+
+- name: gross_profit_from_paid_marketing
+  field_type: dimension
+  type: number
+  hidden: true
+  sql: ${TABLE}.gross_profit_from_paid_marketing
+  searchable: false
+
 - name: unique_key
   field_type: dimension
   type: string
@@ -63,6 +84,18 @@ fields:
   - month_of_year
   sql: ${TABLE}.spend_at
 
+- name: ktqidfkwchnvnygwdctlgchkikmnjwlggelixksa
+  field_type: measure
+  type: number
+  label: Duplicate PROAS
+  description: Profitable return on advertising spend = Total advertising gross profit
+    / Total marketing spend across all channels
+  value_format_name: decimal_1
+  sql: SUM(${gross_profit_from_paid_marketing}) / nullif(${total_marketing_spend},
+    0)
+  canon_date: marketing_spend.spend
+  update_where_timeframe: true
+
 - name: total_marketing_spend
   field_type: measure
   type: sum
@@ -77,9 +110,7 @@ fields:
   description: Cost of acquisition = Total marketing spend across all channels / number
     of new customers who placed orders in that period
   value_format_name: usd
-  sql: ${total_marketing_spend} / nullif(${order_lines.number_of_new_customers_with_orders},
-    0)
-  is_merged_result: true
+  sql: ${total_marketing_spend} / nullif(sum(${customers_from_paid_marketing}), 0)
 
 - name: cpc
   field_type: measure
@@ -97,9 +128,7 @@ fields:
   description: Return on advertising spend = Total advertising revenue / Total marketing
     spend across all channels
   value_format_name: decimal_1
-  sql: ${order_lines.total_gross_revenue_from_advertising} / nullif(${total_marketing_spend},
-    0)
-  is_merged_result: true
+  sql: SUM(${revenue_from_paid_marketing}) / nullif(${total_marketing_spend}, 0)
 
 - name: proas
   field_type: measure
@@ -108,5 +137,5 @@ fields:
   description: Profitable return on advertising spend = Total advertising gross profit
     / Total marketing spend across all channels
   value_format_name: decimal_1
-  sql: ${order_lines.gross_profit} / nullif(${total_marketing_spend}, 0)
-  is_merged_result: true
+  sql: SUM(${gross_profit_from_paid_marketing}) / nullif(${total_marketing_spend},
+    0)
