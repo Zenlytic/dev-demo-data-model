@@ -1,0 +1,4 @@
+version: '1'
+type: model
+name: bq_model
+connection: bq_conn
