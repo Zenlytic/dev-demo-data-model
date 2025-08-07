@@ -1,0 +1,21 @@
+name: product_sales
+type: view
+model_name: zenlytic_managed
+sql_table_name: product_sales
+fields:
+  - name: sale_id
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."SALE_ID"
+    searchable: true
+    primary_key: true
+  - name: product_type_id
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."PRODUCT_TYPE_ID"
+    searchable: true
+  - name: amount
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."AMOUNT"
+    searchable: true
