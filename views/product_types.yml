@@ -1,7 +1,12 @@
-name: product_types
 type: view
+name: product_types
 model_name: zenlytic_managed
 sql_table_name: product_types
+identifiers:
+  - name: product_type_id
+    type: primary
+    sql: ${product_type_id}
+    allowed_fanouts: []
 fields:
   - name: product_type_id
     field_type: dimension
@@ -9,6 +14,7 @@ fields:
     sql: ${TABLE}."PRODUCT_TYPE_ID"
     searchable: true
     primary_key: true
+
   - name: name
     field_type: dimension
     type: string
