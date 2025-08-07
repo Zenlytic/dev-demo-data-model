@@ -1,0 +1,16 @@
+name: product_types
+type: view
+model_name: zenlytic_managed
+sql_table_name: product_types
+fields:
+  - name: product_type_id
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."PRODUCT_TYPE_ID"
+    searchable: true
+    primary_key: true
+  - name: name
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."NAME"
+    searchable: true
