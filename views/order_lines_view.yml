@@ -166,6 +166,15 @@ fields:
   sql: dense_rank() over (partition by ${customer_id} order by ${order_date} asc)
   window: true
 
+- name: promoted_dimension_label_fuqgodys
+  field_type: dimension
+  type: string
+  label: Promoted dimension label
+  description: Promoted dimension description
+  sql: ${TABLE}.new_vs_repeat
+  searchable: true
+  canon_date: order_lines.order
+
 - name: order
   field_type: dimension_group
   type: time
@@ -221,6 +230,7 @@ fields:
   synonyms:
   - sales
   - revenue
+
 
 
 - name: total_discounts
@@ -286,6 +296,7 @@ fields:
   - Repeat order rate
 
 
+
 - name: gross_aov
   field_type: measure
   type: number
@@ -295,6 +306,7 @@ fields:
   sql: ${total_gross_revenue} / nullif(${number_of_orders}, 0)
   synonyms:
   - Average order value
+
 
 
 - name: gross_profit
@@ -333,6 +345,7 @@ fields:
   - revenue
 
 
+
 - name: subscription_revenue
   field_type: measure
   type: sum
@@ -347,6 +360,7 @@ fields:
     value: Subscription
 
 
+
 - name: number_of_new_customers_with_orders
   field_type: measure
   type: count_distinct
@@ -357,6 +371,7 @@ fields:
   filters:
   - field: new_vs_repeat
     value: New
+
 
 
 - name: number_of_repeat_orders
@@ -371,6 +386,7 @@ fields:
   filters:
   - field: new_vs_repeat
     value: Repeat
+
 
 
 - name: avg_products_per_order
