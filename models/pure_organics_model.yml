@@ -9,7 +9,7 @@ access_grants:
   allowed_values:
   - Executive
   - Finance
-
+required_access_grants: [pii_access]
 mappings:
   marketing_channel:
     fields:
