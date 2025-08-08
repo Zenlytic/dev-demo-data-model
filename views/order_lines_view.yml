@@ -166,15 +166,6 @@ fields:
     sql: dense_rank() over (partition by ${customer_id} order by ${order_date} asc)
     window: true
 
-  - name: duplicate_new_vs_repeat_njm_d1_xfahfyun
-    field_type: dimension
-    type: string
-    label: Duplicate New Vs Repeat njm d1
-    description: D1 description
-    sql: ${TABLE}.new_vs_repeat
-    searchable: true
-    canon_date: order_lines.order
-
   - name: order
     field_type: dimension_group
     type: time
