@@ -186,7 +186,7 @@ fields:
   - year
   - hour_of_day
   - day_of_week
-  sql: ${TABLE}.ORDER_AT
+  sql: PARSE_DATE ('%Y-&m-sd', CONCAT('20', SUBSTR(${TABLE}. "BEGINNING MONTH", 3, 2), '-', SUBSTR(${TABLE}. "BEGINNING MONTH", 6, 2), '-', SUBSTR(${TABLE}. "BEGINNING_MONTH", 9, 2)
 
 - name: total_gross_revenue
   field_type: measure
