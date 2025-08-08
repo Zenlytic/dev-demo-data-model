@@ -233,6 +233,7 @@ fields:
 
 
 
+
 - name: total_discounts
   field_type: measure
   type: sum
@@ -297,6 +298,7 @@ fields:
 
 
 
+
 - name: gross_aov
   field_type: measure
   type: number
@@ -306,6 +308,7 @@ fields:
   sql: ${total_gross_revenue} / nullif(${number_of_orders}, 0)
   synonyms:
   - Average order value
+
 
 
 
@@ -346,6 +349,7 @@ fields:
 
 
 
+
 - name: subscription_revenue
   field_type: measure
   type: sum
@@ -361,6 +365,7 @@ fields:
 
 
 
+
 - name: number_of_new_customers_with_orders
   field_type: measure
   type: count_distinct
@@ -371,6 +376,7 @@ fields:
   filters:
   - field: new_vs_repeat
     value: New
+
 
 
 
@@ -389,6 +395,7 @@ fields:
 
 
 
+
 - name: avg_products_per_order
   field_type: measure
   type: number
@@ -396,6 +403,19 @@ fields:
   description: Total gross revenue = revenue from product sales + shipping revenues
   value_format_name: decimal_1
   sql: ${products.number_of_products} / ${number_of_orders}
+
+- name: promoted_metric_cpakbdkb
+  field_type: measure
+  type: sum
+  label: Promoted metric
+  description: Promoted metric description
+  value_format_name: usd
+  sql: ${revenue}
+  synonyms:
+  - sales
+  - revenue
+  canon_date: order_lines.order
+  update_where_timeframe: true
 event_name: Purchase
 fields_for_analysis:
 - subscription_vs_otp
