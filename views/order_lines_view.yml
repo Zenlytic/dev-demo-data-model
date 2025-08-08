@@ -176,16 +176,10 @@ fields:
       The time at which the order was placed. This is the main time field to use
       for orders
     timeframes:
-      - raw
-      - date
-      - week_index
-      - week
-      - month_of_year
       - month
+      - month_of_year
       - quarter
       - year
-      - hour_of_day
-      - day_of_week
     sql: ${TABLE}.ORDER_AT
 
   - name: total_gross_revenue
