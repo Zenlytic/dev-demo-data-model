@@ -88,6 +88,6 @@ fields:
   - name: my_dim1
     field_type: dimension
     type: string
+    description: jkjkj
     searchable: false
     sql: '-- TODO: NJM'
-    tiers: null
