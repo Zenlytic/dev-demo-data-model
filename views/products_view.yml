@@ -89,5 +89,5 @@ fields:
     field_type: dimension
     type: string
     description: jkjkj
-    searchable: false
+    searchable: true
     sql: '-- TODO: NJM'
