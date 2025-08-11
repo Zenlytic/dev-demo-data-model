@@ -91,3 +91,10 @@ fields:
     sql: '-- TODO: NJM1'
     synonyms: []
     tiers: null
+
+  - name: my_dim2
+    field_type: dimension
+    type: tier
+    sql: '-- TODO: NJM'
+    synonyms: []
+    tiers: []
