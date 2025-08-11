@@ -84,25 +84,3 @@ fields:
     type: count_distinct
     description: The Distinct Number of Products
     sql: ${product_id}
-
-  - name: my_dim1
-    field_type: dimension
-    type: string
-    sql: '-- TODO: NJM1'
-    synonyms: []
-    tiers: null
-
-  - name: my_dim2
-    field_type: dimension
-    type: tier
-    sql: '-- TODO: NJM'
-    synonyms: []
-    tiers: []
-
-  - name: my_dim3
-    field_type: dimension
-    type: string
-    searchable: false
-    sql: '-- TODO: NJM'
-    synonyms: []
-    tiers: null
