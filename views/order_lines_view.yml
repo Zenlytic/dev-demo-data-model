@@ -224,6 +224,7 @@ fields:
   - revenue
 
 
+
 - name: total_discounts
   field_type: measure
   type: sum
@@ -287,6 +288,7 @@ fields:
   - Repeat order rate
 
 
+
 - name: gross_aov
   field_type: measure
   type: number
@@ -296,6 +298,7 @@ fields:
   sql: ${total_gross_revenue} / nullif(${number_of_orders}, 0)
   synonyms:
   - Average order value
+
 
 
 - name: gross_profit
@@ -334,6 +337,7 @@ fields:
   - revenue
 
 
+
 - name: subscription_revenue
   field_type: measure
   type: sum
@@ -348,6 +352,7 @@ fields:
     value: Subscription
 
 
+
 - name: number_of_new_customers_with_orders
   field_type: measure
   type: count_distinct
@@ -358,6 +363,7 @@ fields:
   filters:
   - field: new_vs_repeat
     value: New
+
 
 
 - name: number_of_repeat_orders
@@ -374,6 +380,7 @@ fields:
     value: Repeat
 
 
+
 - name: avg_products_per_order
   field_type: measure
   type: number
@@ -381,6 +388,20 @@ fields:
   description: Total gross revenue = revenue from product sales + shipping revenues
   value_format_name: decimal_1
   sql: ${products.number_of_products} / ${number_of_orders}
+
+- name: duplicate_total_gross_revenue_njm2_vgqxghaf
+  field_type: measure
+  type: sum
+  label: Duplicate Total Gross Revenue NJM2
+  description: Total gross revenue = revenue from product sales + shipping revenues.
+    Testing.
+  value_format_name: usd
+  sql: ${revenue}
+  synonyms:
+  - sales
+  - revenue
+  canon_date: order_lines.order
+  update_where_timeframe: true
 event_name: Purchase
 fields_for_analysis:
 - subscription_vs_otp
