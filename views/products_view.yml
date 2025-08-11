@@ -87,10 +87,7 @@ fields:
 
   - name: my_dim1
     field_type: dimension
-    type: tier
+    type: string
     searchable: false
     sql: '-- TODO: NJM'
-    tiers:
-      - 10
-      - 20
-      - 35
+    tiers: null
