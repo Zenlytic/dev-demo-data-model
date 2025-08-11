@@ -1,0 +1,10 @@
+version: 1
+type: view
+name: my_new_view
+fields:
+  - name: my_dim1
+    field_type: dimension
+    type: tier
+    sql: '-- TODO: NJM'
+    synonyms: []
+    tiers: []
