@@ -91,3 +91,6 @@ fields:
     description: jkjkj
     searchable: false
     sql: '-- TODO: NJM'
+    synonyms:
+      - syn1
+      - syn2
