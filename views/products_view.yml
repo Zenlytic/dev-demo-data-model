@@ -98,3 +98,11 @@ fields:
     sql: '-- TODO: NJM'
     synonyms: []
     tiers: []
+
+  - name: my_dim3
+    field_type: dimension
+    type: string
+    searchable: false
+    sql: '-- TODO: NJM'
+    synonyms: []
+    tiers: null
