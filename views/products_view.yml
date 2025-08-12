@@ -88,5 +88,7 @@ fields:
   - name: Dim1
     field_type: dimension
     type: tier
-    searchable: false
+    hidden: true
+    primary_key: true
+    searchable: true
     sql: '-- TODO: NJM'
