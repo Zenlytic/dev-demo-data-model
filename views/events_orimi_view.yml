@@ -1,6 +1,6 @@
 version: 1
 type: view
-name: events_orimi
+name: events_o
 model_name: pure_organics
 sql_table_name: DEMO_PROD.EVENTS_ORIMI
 fields:
