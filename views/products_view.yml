@@ -90,6 +90,3 @@ fields:
     type: tier
     searchable: false
     sql: '-- TODO: NJM'
-    tiers:
-      - 10
-      - 20
