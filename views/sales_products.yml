@@ -1,7 +1,7 @@
-name: sales_products
 type: view
+name: sales_products
 model_name: zenlytic_managed
-sql_table_name: products
+sql_table_name: sales_products
 fields:
   - name: product_id
     field_type: dimension
@@ -9,6 +9,7 @@ fields:
     sql: ${TABLE}."PRODUCT_ID"
     searchable: true
     primary_key: true
+
   - name: name
     field_type: dimension
     type: string
