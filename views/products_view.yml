@@ -90,3 +90,9 @@ fields:
     type: tier
     searchable: false
     sql: '-- TODO: NJM'
+
+  - name: dim1
+    field_type: dimension
+    type: string
+    searchable: false
+    sql: '-- TODO: NJM'
