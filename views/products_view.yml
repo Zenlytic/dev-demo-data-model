@@ -88,5 +88,5 @@ fields:
   - name: Dim1
     field_type: dimension
     type: string
-    searchable: false
+    searchable: true
     sql: '-- TODO: NJM'
