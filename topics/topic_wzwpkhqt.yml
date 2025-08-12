@@ -1,0 +1,4 @@
+version: 1
+type: topic
+base_view: customers
+model_name: pure_organics
