@@ -90,6 +90,3 @@ fields:
     type: string
     searchable: false
     sql: '-- TODO: NJM'
-    synonyms:
-      - syn1
-      - syn2
