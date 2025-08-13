@@ -1,5 +1,10 @@
 base_view: sales
 label: Sales
 model_name: zenlytic_managed
-views: {}
+views:
+  sales_products:
+    join:
+      join_type: left_outer
+      relationship: many_to_one
+      sql_on: ${sales.product_id}=${sales_products.product_id}
 type: topic
