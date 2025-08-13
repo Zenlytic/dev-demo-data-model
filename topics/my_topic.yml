@@ -1,0 +1,5 @@
+base_view: sales_1
+label: My topic
+model_name: zenlytic_managed
+views: {}
+type: topic
