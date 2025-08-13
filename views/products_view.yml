@@ -84,4 +84,3 @@ fields:
   type: count_distinct
   description: The Distinct Number of Products
   sql: ${product_id}
-
