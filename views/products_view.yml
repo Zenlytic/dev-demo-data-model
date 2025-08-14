@@ -84,4 +84,8 @@ fields:
     field_type: measure
     type: count_distinct
     description: The Distinct Number of Products
+    canon_date: order_lines.order
+    label: Number Of Products Testing NJM 2
+    primary_key: false
     sql: ${product_id}
+    value_format_name: decimal_0
