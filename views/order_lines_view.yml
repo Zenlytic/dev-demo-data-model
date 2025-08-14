@@ -240,13 +240,14 @@ fields:
     valueFormatName: decimal_0
 
   - name: total_cogs
-    field_type: measure
+    fieldType: measure
     type: sum
-    hidden: false
-    label: Total COGS
     description: The allocated cost of goods sold to the order line
-    value_format_name: usd
+    canonDate: order_lines.order
+    label: Total COGS NJM
+    primaryKey: false
     sql: ${TABLE}.cogs
+    valueFormatName: usd
 
   - name: total_net_revenue
     field_type: measure
