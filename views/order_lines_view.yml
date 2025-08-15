@@ -205,6 +205,7 @@ fields:
 
 
 
+
 - name: total_discounts
   field_type: measure
   type: sum
@@ -269,6 +270,7 @@ fields:
 
 
 
+
 - name: gross_aov
   field_type: measure
   type: number
@@ -278,6 +280,7 @@ fields:
   sql: ${total_gross_revenue} / nullif(${number_of_orders}, 0)
   synonyms:
   - Average order value
+
 
 
 
@@ -318,6 +321,7 @@ fields:
 
 
 
+
 - name: subscription_revenue
   field_type: measure
   type: sum
@@ -330,6 +334,7 @@ fields:
   filters:
   - field: subscription_vs_otp
     value: Subscription
+
 
 
 
@@ -346,6 +351,7 @@ fields:
 
 
 
+
 - name: number_of_repeat_orders
   field_type: measure
   type: count_distinct
@@ -358,6 +364,7 @@ fields:
   filters:
   - field: new_vs_repeat
     value: Repeat
+
 
 
 
@@ -391,6 +398,16 @@ fields:
   value_format_name: usd
   sql: ${total_net_revenue} - ${total_cogs}
   zoe_description: This is the gross profit.
+  canon_date: order_lines.order
+  update_where_timeframe: true
+
+- name: paaimkvcrntnteijkmsthpujhbeggmricuupnqon
+  field_type: measure
+  type: count_distinct
+  label: Duplicate Number Of Orders
+  description: The unique number of orders placed
+  value_format_name: decimal_0
+  sql: ${order_id}
   canon_date: order_lines.order
   update_where_timeframe: true
 event_name: Purchase
