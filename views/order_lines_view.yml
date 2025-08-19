@@ -223,7 +223,7 @@ fields:
     field_type: measure
     type: count_distinct
     description: The unique number of orders placed
-    sql: ${order_id} * f29x
+    sql: ${order_id}
     value_format_name: decimal_0
 
   - name: number_of_units
