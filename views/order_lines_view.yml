@@ -208,6 +208,7 @@ fields:
 
 
 
+
 - name: total_discounts
   field_type: measure
   type: sum
@@ -275,6 +276,7 @@ fields:
 
 
 
+
 - name: gross_aov
   field_type: measure
   type: number
@@ -284,6 +286,7 @@ fields:
   sql: ${total_gross_revenue} / nullif(${number_of_orders}, 0)
   synonyms:
   - Average order value
+
 
 
 
@@ -330,6 +333,7 @@ fields:
 
 
 
+
 - name: subscription_revenue
   field_type: measure
   type: sum
@@ -342,6 +346,7 @@ fields:
   filters:
   - field: subscription_vs_otp
     value: Subscription
+
 
 
 
@@ -364,6 +369,7 @@ fields:
 
 
 
+
 - name: number_of_repeat_orders
   field_type: measure
   type: count_distinct
@@ -376,6 +382,7 @@ fields:
   filters:
   - field: new_vs_repeat
     value: Repeat
+
 
 
 
@@ -446,6 +453,18 @@ fields:
   description: The allocated cost of goods sold to the order line
   value_format_name: usd
   sql: ${TABLE}.cogs
+  canon_date: order_lines.order
+  update_where_timeframe: true
+
+- name: zwexfdelnbpkmqmschbmmfwrqnebcierftkewmgu
+  field_type: measure
+  type: number
+  label: Duplicate Repurchase Rate
+  description: Repurchase rate = number of repeat orders / number of orders.
+  value_format_name: percent_1
+  sql: ${number_of_repeat_orders} / ${number_of_orders}
+  synonyms:
+  - Repeat order rate
   canon_date: order_lines.order
   update_where_timeframe: true
 event_name: Purchase
