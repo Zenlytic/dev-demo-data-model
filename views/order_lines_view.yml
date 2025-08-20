@@ -218,7 +218,7 @@ fields:
     type: count_distinct
     description: The unique number of orders placed
     canon_date: order_lines.order
-    label: Number Of Orders NJM
+    label: Number Of Orders NJM3
     primary_key: false
     sql: ${order_id}
     value_format_name: decimal_0
