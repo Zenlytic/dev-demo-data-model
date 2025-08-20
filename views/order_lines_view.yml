@@ -184,7 +184,7 @@ fields:
 - name: total_revenue_ydothhcy
   field_type: measure
   type: sum
-  label: Total Revenue
+  label: Total Gross Revenue
   sql: ${order_lines.revenue}
   canon_date: order_lines.order
 
