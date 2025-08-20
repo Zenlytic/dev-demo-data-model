@@ -160,12 +160,14 @@ fields:
       customer
     sql: ${TABLE}.new_vs_repeat
     searchable: true
-
-  - name: order_sequence_number
-    field_type: dimension
-    type: number
-    sql: dense_rank() over (partition by ${customer_id} order by ${order_date} asc)
-    window: true
+  
+  # Commenting out as this confuses claude when it's pre-specified in the model 
+  # vs created on the fly
+  # - name: order_sequence_number
+  #   field_type: dimension
+  #   type: number
+  #   sql: dense_rank() over (partition by ${customer_id} order by ${order_date} asc)
+  #   window: true
 
   - name: order
     field_type: dimension_group
