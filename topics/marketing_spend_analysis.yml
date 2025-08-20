@@ -10,10 +10,6 @@ description: >-
   fields include the marketing channel, the source of spend, and specific
   campaign identifiers, all crucial for analyzing the efficiency and
   effectiveness of marketing investments.
-zoe_description: >-
-  This view provides detailed insights into marketing expenditures by channel
-  and source. It includes metrics such as total spend, CAC, CPC, ROAS, and
-  PROAS, which can be used to evaluate campaign success and optimize marketing
-  strategies.
+
 hidden: false
 views: {}

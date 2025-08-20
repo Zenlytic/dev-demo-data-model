@@ -11,9 +11,6 @@ description: >-
   showing the quantity of these products available. This data is crucial for
   managing inventory, setting pricing strategies, and enhancing the shopping
   experience for customers.
-zoe_description: >-
-  The Products Overview includes product details such as type, title, image URL,
-  price, and count. Use this to retrieve product-related information, manage
-  inventory, and support pricing strategies.
+
 hidden: false
 views: {}

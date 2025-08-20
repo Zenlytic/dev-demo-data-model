@@ -14,15 +14,7 @@ description: >-
   purchasing patterns through 'NEW_VS_REPEAT,' and detailed metrics like
   'REPURCHASE_RATE' and 'NET_MARGIN,' supporting strategy optimization across
   marketing and sales.
-zoe_description: >-
-  This model analyzes order data, providing insights into marketing efficacy and
-  financial results. It covers identifiers like 'ORDER_ID' and marketing details
-  ('CAMPAIGN,' 'PROMOTION'), distinguishing between 'SUBSCRIPTION_VS_OTP.'
-  Channels and sources are detailed for attribution. Revenue metrics
-  ('TOTAL_GROSS_REVENUE,' 'NET_REVENUE') measure financial outcomes. Customer
-  purchasing behavior is characterized by 'NEW_VS_REPEAT' and metrics like
-  'REPURCHASE_RATE.' Use this model to refine marketing strategies and enhance
-  sales performance.
+
 hidden: false
 views:
   products:

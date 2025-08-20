@@ -12,12 +12,6 @@ description: >-
   latitude, longitude, timezone). OS information, the referer URL, event names
   and sequences, as well as session statistics, help track user interaction
   comprehensively.
-zoe_description: >-
-  This topic captures metadata about user events, including device details,
-  marketing channels, and geographic information. For example,
-  'events.DEVICE_IS_MOBILE' indicates if a device is mobile, while
-  'events.MARKETING_CHANNEL' denotes the marketing channel. UTM parameters
-  provide campaign info. Browser and OS details specify the user environment.
-  Use this information to analyze user interaction and behavior.
+
 hidden: false
 views: {}
