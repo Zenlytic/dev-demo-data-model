@@ -160,14 +160,6 @@ fields:
       customer
     sql: ${TABLE}.new_vs_repeat
     searchable: true
-  
-  # Commenting out as this confuses claude when it's pre-specified in the model 
-  # vs created on the fly
-  # - name: order_sequence_number
-  #   field_type: dimension
-  #   type: number
-  #   sql: dense_rank() over (partition by ${customer_id} order by ${order_date} asc)
-  #   window: true
 
   - name: order
     field_type: dimension_group
@@ -194,16 +186,17 @@ fields:
   - name: total_gross_revenue
     field_type: measure
     type: sum
-    hidden: false
-    label: Total Gross Revenue
     description: >-
       Total gross revenue = revenue from product sales + shipping revenues.
       Testing.
-    value_format_name: usd
+    canon_date: order_lines.order
+    label: Total Gross Revenue
+    primary_key: false
     sql: ${revenue}
     synonyms:
       - sales
       - revenue
+    value_format_name: usd
 
   - name: total_discounts
     field_type: measure
