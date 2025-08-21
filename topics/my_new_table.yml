@@ -1,0 +1,5 @@
+base_view: zenlytictable20250611t144541067
+label: My new table
+model_name: zenlytic_managed
+views: {}
+type: topic

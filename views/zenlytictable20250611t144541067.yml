@@ -1,0 +1,24 @@
+name: zenlytictable20250611t144541067
+type: view
+model_name: zenlytic_managed
+sql_table_name: zenlytictable20250611t144541067
+default_date: Daily
+fields:
+  - name: Number_Of_Chats
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."NUMBER_OF_CHATS"
+    searchable: true
+  - name: Daily
+    field_type: dimension_group
+    type: time
+    sql: ${TABLE}."DAILY"
+    timeframes:
+      - date
+      - week
+      - month
+      - quarter
+      - year
+      - day_of_year
+      - week_of_year
+      - month_of_year
