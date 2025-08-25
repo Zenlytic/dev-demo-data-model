@@ -207,3 +207,10 @@ fields:
   label: Order Count
   sql: ${order_lines.order_id}
   canon_date: order_lines.order
+
+- name: total_discount_qejtbjzf
+  field_type: measure
+  type: sum
+  label: Total Discount
+  sql: ${order_lines.discount}
+  canon_date: order_lines.order
