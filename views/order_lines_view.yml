@@ -222,3 +222,11 @@ fields:
   description: Represents the id of each customer
   sql: ${order_lines.customer_id}
   canon_date: order_lines.order
+
+- name: repeat_order_metric_ibrsbhyt
+  field_type: measure
+  type: count_distinct
+  label: Repeat Order Metric
+  sql: CASE WHEN ${order_lines.new_vs_repeat} = 'Repeat' THEN ${order_lines.order_id}
+    END
+  canon_date: order_lines.order
