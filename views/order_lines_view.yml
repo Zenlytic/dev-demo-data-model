@@ -187,3 +187,10 @@ fields:
   label: Total Revenue
   sql: ${order_lines.revenue}
   canon_date: order_lines.order
+
+- name: adjusted_total_revenue_nueiuktz
+  field_type: measure
+  type: number
+  label: Adjusted Total Revenue
+  sql: SUM(${order_lines.revenue}) * 1.1
+  canon_date: order_lines.order
