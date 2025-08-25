@@ -214,3 +214,11 @@ fields:
   label: Total Discount
   sql: ${order_lines.discount}
   canon_date: order_lines.order
+
+- name: customer_count_rhactipm
+  field_type: measure
+  type: count_distinct
+  label: Customer Count
+  description: Represents the id of each customer
+  sql: ${order_lines.customer_id}
+  canon_date: order_lines.order
