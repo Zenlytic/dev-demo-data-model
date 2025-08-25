@@ -144,3 +144,10 @@ fields:
   description: The id of the customer.
   sql: ${customers.customer_id}
   canon_date: customers.first_order
+
+- name: avg_ltv_per_customer_kipkjagi
+  field_type: measure
+  type: number
+  label: Avg Ltv Per Customer
+  sql: SUM(${order_lines.revenue}) / COUNT(DISTINCT ${customers.customer_id})
+  canon_date: customers.first_order
