@@ -128,3 +128,11 @@ fields:
   - time
   - year
   sql: ${TABLE}.first_order_at
+
+- name: customer_count_nwdomqpi
+  field_type: measure
+  type: count_distinct
+  label: Customer Count
+  description: The id of the customer.
+  sql: ${customers.customer_id}
+  canon_date: customers.first_order
