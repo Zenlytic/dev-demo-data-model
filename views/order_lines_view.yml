@@ -201,3 +201,11 @@ fields:
   label: Order Count
   sql: ${order_lines.order_id}
   canon_date: order_lines.order
+
+- name: average_order_value_migkvxcb
+  field_type: measure
+  type: number
+  label: Average Order Value
+  sql: SUM(${order_lines.revenue}) / NULLIF(COUNT(DISTINCT ${order_lines.order_id}),
+    0)
+  canon_date: order_lines.order
