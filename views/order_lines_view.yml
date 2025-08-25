@@ -209,3 +209,10 @@ fields:
   sql: SUM(${order_lines.revenue}) / NULLIF(COUNT(DISTINCT ${order_lines.order_id}),
     0)
   canon_date: order_lines.order
+
+- name: total_discount_iehfjseb
+  field_type: measure
+  type: sum
+  label: Total Discount
+  sql: ${order_lines.discount}
+  canon_date: order_lines.order
