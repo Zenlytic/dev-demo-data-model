@@ -200,3 +200,10 @@ fields:
   label: Total Net Revenue
   sql: ${order_lines.revenue} - ${order_lines.discount}
   canon_date: order_lines.order
+
+- name: order_count_vezzsqzs
+  field_type: measure
+  type: count_distinct
+  label: Order Count
+  sql: ${order_lines.order_id}
+  canon_date: order_lines.order
