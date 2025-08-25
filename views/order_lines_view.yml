@@ -202,3 +202,11 @@ fields:
   label: Profit
   sql: SUM(${order_lines.revenue}) - SUM(${order_lines.discount})
   canon_date: order_lines.order
+
+- name: net_margin_ktvwihlr
+  field_type: measure
+  type: number
+  label: Net Margin
+  sql: CASE WHEN SUM(${order_lines.revenue}) > 0 THEN (SUM(${order_lines.revenue})
+    - SUM(${order_lines.discount})) / SUM(${order_lines.revenue}) ELSE NULL END
+  canon_date: order_lines.order
