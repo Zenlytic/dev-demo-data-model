@@ -187,3 +187,11 @@ fields:
   label: Campaign Revenue
   sql: ${order_lines.revenue}
   canon_date: order_lines.order
+
+- name: percent_of_total_revenue_nuwlhntv
+  field_type: measure
+  type: number
+  label: Percent Of Total Revenue
+  sql: SUM(${order_lines.revenue}) / SUM(SUM(${order_lines.revenue})) OVER () * 100
+  window: true
+  canon_date: order_lines.order
