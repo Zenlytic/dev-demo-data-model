@@ -181,14 +181,14 @@ fields:
   - day_of_week
   sql: ${TABLE}.ORDER_AT
 
-- name: total_revenue_stxnikgv
+- name: total_gross_revenue
   field_type: measure
   type: sum
-  label: Total Revenue
+  label: Total Gross Revenue
   sql: ${order_lines.revenue}
   canon_date: order_lines.order
 
-- name: total_net_revenue_rtmlsvod
+- name: total_net_revenue
   field_type: measure
   type: number
   label: Total Net Revenue
