@@ -187,3 +187,10 @@ fields:
   label: Total Revenue
   sql: ${order_lines.revenue}
   canon_date: order_lines.order
+
+- name: total_net_revenue_rtmlsvod
+  field_type: measure
+  type: number
+  label: Total Net Revenue
+  sql: SUM(${order_lines.revenue}) - SUM(${order_lines.discount})
+  canon_date: order_lines.order
