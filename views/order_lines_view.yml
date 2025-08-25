@@ -180,3 +180,10 @@ fields:
   - hour_of_day
   - day_of_week
   sql: ${TABLE}.ORDER_AT
+
+- name: total_revenue_xnkclyfx
+  field_type: measure
+  type: sum
+  label: Total Revenue
+  sql: ${order_lines.revenue}
+  canon_date: order_lines.order
