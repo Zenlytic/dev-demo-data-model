@@ -195,3 +195,10 @@ fields:
   sql: SUM(${order_lines.revenue}) / SUM(SUM(${order_lines.revenue})) OVER () * 100
   window: true
   canon_date: order_lines.order
+
+- name: profit_ejojieeq
+  field_type: measure
+  type: number
+  label: Profit
+  sql: SUM(${order_lines.revenue}) - SUM(${order_lines.discount})
+  canon_date: order_lines.order
