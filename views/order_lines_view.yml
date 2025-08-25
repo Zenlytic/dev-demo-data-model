@@ -198,3 +198,10 @@ fields:
   value_format_name: decimal_0
   sql: ${order_lines.revenue}
   canon_date: order_lines.order
+
+- name: total_net_revenue_kqdpyfsg
+  field_type: measure
+  type: sum
+  label: Total Net Revenue
+  sql: ${order_lines.revenue} - ${order_lines.discount}
+  canon_date: order_lines.order
