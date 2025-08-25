@@ -187,3 +187,14 @@ fields:
   label: Total Revenue
   sql: ${order_lines.revenue}
   canon_date: order_lines.order
+
+- name: total_revenue_xnkclyfx
+  field_type: measure
+  type: sum
+  label: Total Gross Revenue
+  description: Total Revenue shows the total monetary sales amount for the selected
+    scope, calculated by summing the revenue recorded on each order line. It contains
+    aggregated currency values (decimal amounts) representing the combined revenue.
+  value_format_name: decimal_0
+  sql: ${order_lines.revenue}
+  canon_date: order_lines.order
