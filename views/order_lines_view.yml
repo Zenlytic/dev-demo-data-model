@@ -230,3 +230,10 @@ fields:
   sql: CASE WHEN ${order_lines.new_vs_repeat} = 'Repeat' THEN ${order_lines.order_id}
     END
   canon_date: order_lines.order
+
+- name: units_sold_ilpnswmx
+  field_type: measure
+  type: sum
+  label: Units Sold
+  sql: ${order_lines.quantity}
+  canon_date: order_lines.order
