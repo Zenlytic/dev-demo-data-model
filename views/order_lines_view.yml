@@ -194,3 +194,10 @@ fields:
   label: Adjusted Total Revenue
   sql: SUM(${order_lines.revenue}) * 1.1
   canon_date: order_lines.order
+
+- name: unique_orders_nvxujyns
+  field_type: measure
+  type: count_distinct
+  label: Unique Orders
+  sql: ${order_lines.order_id}
+  canon_date: order_lines.order
