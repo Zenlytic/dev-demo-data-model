@@ -64,3 +64,10 @@ fields:
   - week_of_year
   - month_of_year
   sql: ${TABLE}.spend_at
+
+- name: total_ad_spend_cxpvyzys
+  field_type: measure
+  type: sum
+  label: Total Ad Spend
+  sql: CAST(${marketing_spend.ad_spend} AS FLOAT)
+  canon_date: marketing_spend.spend
