@@ -182,18 +182,142 @@ fields:
       - hour_of_day
       - day_of_week
     sql: ${TABLE}.ORDER_AT
-
-  - name: total_gross_revenue
+  - id: order_lines.TOTAL_GROSS_REVENUE
+    name: total_gross_revenue
+    label: Total Gross Revenue
+    value: ORDER_LINES_TOTAL_GROSS_REVENUE
+    explores:
+      - merged_result_canon_date_core_date
+      - merged_result_canon_date_core_day_of_week
+      - merged_result_canon_date_core_hour_of_day
+      - merged_result_canon_date_core_month
+      - merged_result_canon_date_core_month_of_year
+      - merged_result_canon_date_core_quarter
+      - merged_result_canon_date_core_raw
+      - merged_result_canon_date_core_week
+      - merged_result_canon_date_core_week_index
+      - merged_result_canon_date_core_year
+      - merged_result_subquery_0_subquery_1_date
+      - merged_result_subquery_0_subquery_1_day_of_week
+      - merged_result_subquery_0_subquery_1_hour_of_day
+      - merged_result_subquery_0_subquery_1_month
+      - merged_result_subquery_0_subquery_1_month_of_year
+      - merged_result_subquery_0_subquery_1_quarter
+      - merged_result_subquery_0_subquery_1_raw
+      - merged_result_subquery_0_subquery_1_week
+      - merged_result_subquery_0_subquery_1_week_index
+      - merged_result_subquery_0_subquery_1_year
+      - merged_result_subquery_1_subquery_2_date
+      - merged_result_subquery_1_subquery_2_day_of_week
+      - merged_result_subquery_1_subquery_2_hour_of_day
+      - merged_result_subquery_1_subquery_2_month
+      - merged_result_subquery_1_subquery_2_month_of_year
+      - merged_result_subquery_1_subquery_2_quarter
+      - merged_result_subquery_1_subquery_2_raw
+      - merged_result_subquery_1_subquery_2_week
+      - merged_result_subquery_1_subquery_2_week_index
+      - merged_result_subquery_1_subquery_2_year
+      - merged_result_subquery_1_subquery_3_date
+      - merged_result_subquery_1_subquery_3_day_of_week
+      - merged_result_subquery_1_subquery_3_hour_of_day
+      - merged_result_subquery_1_subquery_3_month
+      - merged_result_subquery_1_subquery_3_month_of_year
+      - merged_result_subquery_1_subquery_3_quarter
+      - merged_result_subquery_1_subquery_3_raw
+      - merged_result_subquery_1_subquery_3_week
+      - merged_result_subquery_1_subquery_3_week_index
+      - merged_result_subquery_1_subquery_3_year
+      - merged_result_subquery_1_subquery_4_date
+      - merged_result_subquery_1_subquery_4_day_of_week
+      - merged_result_subquery_1_subquery_4_hour_of_day
+      - merged_result_subquery_1_subquery_4_month
+      - merged_result_subquery_1_subquery_4_month_of_year
+      - merged_result_subquery_1_subquery_4_quarter
+      - merged_result_subquery_1_subquery_4_raw
+      - merged_result_subquery_1_subquery_4_week
+      - merged_result_subquery_1_subquery_4_week_index
+      - merged_result_subquery_1_subquery_4_year
+      - subquery_1
+    joinable_explores:
+      - subquery_1
+    view_name: order_lines
+    model_name: pure_organics
+    datatype: null
+    primary_key: false
+    dimension_group_roll_up: null
+    group_roll_up_label: Total Gross Revenue
+    roll_up: null
+    roll_up_label: null
+    view_label: Order Lines
+    date_column_sampling: __mappings__.DATE
+    category_column_id: products.PRODUCT_TITLE
+    is_additive: true
+    read_only: false
+    show_in_homepage: true
     field_type: measure
     type: sum
+    hidden: false
+    sort_type: number
+    filter_type: NUMBER
+    zenlytic_type: metric
+    is_merged_result: false
+    color_tag: green
+    searchable: false
     canon_date: order_lines.order
-    label: Total Gross Revenue
-    primary_key: false
     sql: ${revenue}
+    sql_start: null
+    sql_end: null
+    description: >-
+      Total Gross Revenue is the total of all revenue amounts before deductions
+      (such as discounts, returns, or taxes). It’s calculated by summing the
+      revenue values across the selected records and contains monetary amounts
+      (currency) representing gross sales/revenue.
+    formatter: usd
+    disable_percentile: false
+    tags: null
+    link: null
+    drill_up_id: null
+    drill_down_id: null
+    question_types:
+      - what
+      - analyze_baskets
+      - funnel
+    column_inclusion_ids:
+      - order_lines.SUBSCRIPTION_VS_OTP
+      - __mappings__.MARKETING_SOURCE
+      - __mappings__.MARKETING_CHANNEL
+      - order_lines.PROMOTION
+      - __mappings__.CAMPAIGN
+      - products.PRODUCT_TITLE
+    mapped_field_ids: []
+    is_personal_field: false
+    linked_field_id: null
+    is_mapping: false
+    is_marked_as_read: false
+    topics:
+      - Order Analysis
+    measure: null
+    cumulative_where: null
     synonyms:
       - sales
       - revenue
+    group_label: null
+    label_prefix: null
+    non_additive_dimension: null
+    extra: null
+    sql_distinct_key: null
+    required_access_grants: null
     value_format_name: usd
+    zoe_description: null
+    window: null
+    percentile: null
+    filters: []
+    update_where_timeframe: true
+    dynamic_filters: null
+    referenced_field_id: null
+    aggregation: null
+    is_dynamic_field: null
+    number_of_uses: 0
 
   - name: total_discounts
     field_type: measure
