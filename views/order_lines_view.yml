@@ -216,3 +216,10 @@ fields:
   sql: SUM(${order_lines.revenue}) / NULLIF(COUNT(DISTINCT ${order_lines.order_id}),
     0)
   canon_date: order_lines.order
+
+- name: order_line_count_wonwegkf
+  field_type: measure
+  type: count
+  label: Order Line Count
+  sql: ${order_lines.order_line_id}
+  canon_date: order_lines.order
