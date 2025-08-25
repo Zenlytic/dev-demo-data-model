@@ -187,3 +187,10 @@ fields:
   label: Total Revenue
   sql: ${order_lines.revenue}
   canon_date: order_lines.order
+
+- name: avg_order_value_zozgrild
+  field_type: measure
+  type: number
+  label: Avg Order Value
+  sql: SUM(${order_lines.revenue}) / COUNT(DISTINCT ${order_lines.order_id})
+  canon_date: order_lines.order
