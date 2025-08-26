@@ -1,7 +1,7 @@
-name: mysales
+name: my_sales
 type: view
 model_name: zenlytic_managed
-sql_table_name: mysales
+sql_table_name: my_sales
 default_date: sale_date
 fields:
   - name: sale_id
