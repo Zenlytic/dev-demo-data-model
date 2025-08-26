@@ -10,7 +10,11 @@ fields:
 - name: anonymous_id
   field_type: dimension
   type: string
+<<<<<<< HEAD
   hidden: false
+=======
+  hidden: true
+>>>>>>> 067d8d1e8c4348038628154c5737e7e115a27efb
   primary_key: true
   sql: ${TABLE}.ANONYMOUS_ID
   tags:
@@ -104,9 +108,15 @@ fields:
 - name: browser_name
   field_type: dimension
   type: string
+  hidden: true
   description: The user's browser
+  tiers:
   sql: ${TABLE}.BROWSER_NAME
   searchable: true
+<<<<<<< HEAD
+=======
+  synonyms: []
+>>>>>>> 067d8d1e8c4348038628154c5737e7e115a27efb
 
 - name: geo_region_name
   field_type: dimension
@@ -247,3 +257,32 @@ fields:
   - week_of_year
   - month_of_year
   sql: ${TABLE}.EVENT_TIMESTAMP
+<<<<<<< HEAD
+=======
+
+- name: number_of_events
+  field_type: measure
+  type: count
+  description: The number of events from interaction with the site
+  value_format_name: decimal_0
+  sql: ${anonymous_id}
+
+- name: number_of_sessions
+  field_type: measure
+  type: count_distinct
+  description: >-
+    The number of sessions (usage of the site by a unique user in a 6 hour
+    window)
+  value_format_name: decimal_0
+  sql: ${session_id}
+
+- name: number_of_users
+  field_type: measure
+  type: count_distinct
+  description: >-
+    The number of site users (including people who are not logged in / we
+    can't identify)
+  value_format_name: decimal_0
+  sql: ${anonymous_id}
+event_dimension: event_name
+>>>>>>> 067d8d1e8c4348038628154c5737e7e115a27efb

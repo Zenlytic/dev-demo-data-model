@@ -7,15 +7,43 @@ sql_table_name: DEMO_PROD.MARKETING_SPEND
 default_date: spend
 row_label: Spend Item
 fields:
+- name: revenue_from_paid_marketing
+  field_type: dimension
+  type: number
+  hidden: true
+  sql: ${TABLE}.revenue_from_paid_marketing
+  searchable: false
+
+- name: customers_from_paid_marketing
+  field_type: dimension
+  type: number
+  hidden: true
+  sql: ${TABLE}.customers_from_paid_marketing
+  searchable: false
+
+- name: gross_profit_from_paid_marketing
+  field_type: dimension
+  type: number
+  hidden: true
+  sql: ${TABLE}.gross_profit_from_paid_marketing
+  searchable: false
+
 - name: unique_key
   field_type: dimension
   type: string
   hidden: false
   primary_key: true
+<<<<<<< HEAD
   description: Represents a unique key for each spend event. NJM3
   sql: ${TABLE}.spend_id
   searchable: false
   zoe_description: Used to uniquely identify marketing spend events.
+=======
+  description: Represents a unique key for each spend event.
+  sql: ${TABLE}.spend_id
+  zoe_description: Used to uniquely identify marketing spend events.
+  searchable: false
+>>>>>>> 067d8d1e8c4348038628154c5737e7e115a27efb
 
 - name: channel
   field_type: dimension
@@ -43,7 +71,11 @@ fields:
 - name: ad_spend
   field_type: dimension
   type: string
+<<<<<<< HEAD
   hidden: false
+=======
+  hidden: true
+>>>>>>> 067d8d1e8c4348038628154c5737e7e115a27efb
   description: The amount spent
   sql: ${TABLE}.ad_spend
   searchable: false
@@ -68,6 +100,56 @@ fields:
 - name: total_ad_spend_cxpvyzys
   field_type: measure
   type: sum
+<<<<<<< HEAD
   label: Total Ad Spend
   sql: CAST(${marketing_spend.ad_spend} AS FLOAT)
   canon_date: marketing_spend.spend
+=======
+  description: Total marketing spend across all channels
+  value_format_name: usd
+  sql: ${ad_spend}
+
+- name: cac
+  field_type: measure
+  type: number
+  label: CaC
+  description: >-
+    Cost of acquisition = Total marketing spend across all channels / number
+    of new customers who placed orders in that period
+  value_format_name: usd
+  sql: >-
+    ${total_marketing_spend} / nullif(sum(${customers_from_paid_marketing}),
+    0)
+
+- name: cpc
+  field_type: measure
+  type: number
+  label: CPC
+  description: >-
+    Cost oer click = Total marketing spend across all channels / number of
+    clicks through ads
+  value_format_name: usd
+  sql: ${total_marketing_spend} / 1304000
+
+- name: roas
+  field_type: measure
+  type: number
+  label: ROAS
+  description: >-
+    Return on advertising spend = Total advertising revenue / Total marketing
+    spend across all channels
+  value_format_name: decimal_1
+  sql: SUM(${revenue_from_paid_marketing}) / nullif(${total_marketing_spend}, 0)
+
+- name: proas
+  field_type: measure
+  type: number
+  label: PROAS
+  description: >-
+    Profitable return on advertising spend = Total advertising gross profit /
+    Total marketing spend across all channels
+  value_format_name: decimal_1
+  sql: >-
+    SUM(${gross_profit_from_paid_marketing}) /
+    nullif(${total_marketing_spend}, 0)
+>>>>>>> 067d8d1e8c4348038628154c5737e7e115a27efb

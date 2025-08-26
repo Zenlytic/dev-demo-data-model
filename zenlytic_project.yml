@@ -1,4 +1,5 @@
 dashboard-paths:
+<<<<<<< HEAD
   - dashboards
 model-paths:
   - models
@@ -8,3 +9,14 @@ topic-paths:
   - topics
 view-paths:
   - views
+=======
+- dashboards
+model-paths:
+- models
+name: demo_zenlytic_project
+profile: demo
+topic-paths:
+- topics
+view-paths:
+- views
+>>>>>>> 067d8d1e8c4348038628154c5737e7e115a27efb
