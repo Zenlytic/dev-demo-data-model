@@ -1,0 +1,6 @@
+base_view: marvel_rivals_heroes
+description: 'The different heroes available to play in marvel rivals. '
+label: Marvel Rivals Heroes
+model_name: zenlytic_managed
+views: {}
+type: topic
