@@ -15,4 +15,10 @@ views:
       relationship: one_to_many
       sql_on: >-
         ${marvel_rivals_players.player_id}=${marvel_rivals_matches.mvp_player_id}
+  marvel_rivals_match_players:
+    join:
+      join_type: left_outer
+      relationship: one_to_many
+      sql_on: >-
+        ${marvel_rivals_players.player_id}=${marvel_rivals_match_players.match_player_id}
 type: topic

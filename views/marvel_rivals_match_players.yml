@@ -1,0 +1,81 @@
+name: marvel_rivals_match_players
+type: view
+model_name: zenlytic_managed
+sql_table_name: marvel_rivals_match_players
+fields:
+  - name: match_player_id
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."MATCH_PLAYER_ID"
+    searchable: true
+    primary_key: true
+  - name: match_id
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."MATCH_ID"
+    searchable: true
+  - name: player_id
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."PLAYER_ID"
+    searchable: true
+  - name: hero_id
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."HERO_ID"
+    searchable: true
+  - name: team_number
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."TEAM_NUMBER"
+    searchable: true
+  - name: eliminations
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."ELIMINATIONS"
+    searchable: true
+  - name: deaths
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."DEATHS"
+    searchable: true
+  - name: assists
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."ASSISTS"
+    searchable: true
+  - name: damage_dealt
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."DAMAGE_DEALT"
+    searchable: true
+  - name: damage_taken
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."DAMAGE_TAKEN"
+    searchable: true
+  - name: healing_done
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."HEALING_DONE"
+    searchable: true
+  - name: objective_time_seconds
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."OBJECTIVE_TIME_SECONDS"
+    searchable: true
+  - name: performance_score
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."PERFORMANCE_SCORE"
+    searchable: true
+  - name: rank_change
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."RANK_CHANGE"
+    searchable: true
+  - name: is_mvp
+    field_type: dimension
+    type: yesno
+    sql: ${TABLE}."IS_MVP"
+    searchable: true
