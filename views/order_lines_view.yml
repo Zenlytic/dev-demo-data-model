@@ -384,38 +384,3 @@ fields:
   value_format_name: decimal_1
   sql: ${products.number_of_products} / ${number_of_orders}
 
-- name: duplicate_gross_profit_hwmrrqsu
-  field_type: measure
-  type: number
-  label: Duplicate Gross Profit
-  description: The total net revenue - allocated cost of goods sold to the order line
-  value_format_name: usd
-  sql: ${total_net_revenue} - ${total_cogs}
-  zoe_description: This is the gross profit.
-  canon_date: order_lines.order
-  update_where_timeframe: true
-
-- name: duplicate_subscription_revenue_hbfxutjk
-  field_type: measure
-  type: sum
-  label: Duplicate Subscription Revenue
-  description: Subscription revenue = gross revenue (product revenues + shipping,for
-    subscriptions only)
-  value_format_name: usd
-  sql: case when ${subscription_vs_otp}='Subscription' then case when ${subscription_vs_otp}='Subscription'
-    then ${revenue} end end
-  filters:
-  - field: subscription_vs_otp
-    value: Subscription
-  canon_date: order_lines.order
-  update_where_timeframe: true
-
-- name: duplicate_number_of_customers_with_orders_bqckqzhc
-  field_type: measure
-  type: count_distinct
-  label: Duplicate Number Of Customers With Orders
-  description: The unique number of customers who placed orders
-  value_format_name: decimal_0
-  sql: ${customer_id}
-  canon_date: order_lines.order
-  update_where_timeframe: true
