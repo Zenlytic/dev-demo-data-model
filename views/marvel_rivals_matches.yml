@@ -1,0 +1,95 @@
+name: marvel_rivals_matches
+type: view
+model_name: zenlytic_managed
+sql_table_name: marvel_rivals_matches
+default_date: match_date
+fields:
+  - name: match_id
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."MATCH_ID"
+    searchable: true
+    primary_key: true
+  - name: game_mode
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."GAME_MODE"
+    searchable: true
+  - name: map_name
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."MAP_NAME"
+    searchable: true
+  - name: duration_minutes
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."DURATION_MINUTES"
+    searchable: true
+  - name: team_1_score
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."TEAM_1_SCORE"
+    searchable: true
+  - name: team_2_score
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."TEAM_2_SCORE"
+    searchable: true
+  - name: winning_team
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."WINNING_TEAM"
+    searchable: true
+  - name: season
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."SEASON"
+    searchable: true
+  - name: tournament_id
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."TOURNAMENT_ID"
+    searchable: true
+  - name: average_rank
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."AVERAGE_RANK"
+    searchable: true
+  - name: total_eliminations
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."TOTAL_ELIMINATIONS"
+    searchable: true
+  - name: total_assists
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."TOTAL_ASSISTS"
+    searchable: true
+  - name: mvp_player_id
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."MVP_PLAYER_ID"
+    searchable: true
+  - name: match_quality_score
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."MATCH_QUALITY_SCORE"
+    searchable: true
+  - name: match_date
+    field_type: dimension_group
+    type: time
+    sql: ${TABLE}."MATCH_DATE"
+    timeframes: &ref_0
+      - date
+      - week
+      - month
+      - quarter
+      - year
+      - day_of_year
+      - week_of_year
+      - month_of_year
+  - name: match_time
+    field_type: dimension_group
+    type: time
+    sql: ${TABLE}."MATCH_TIME"
+    timeframes: *ref_0
