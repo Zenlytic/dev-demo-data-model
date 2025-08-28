@@ -62,4 +62,3 @@ fields:
   field_type: measure
   type: sum
   sql: ${TABLE}.total_cogs
-
