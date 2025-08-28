@@ -1,0 +1,110 @@
+name: marvel_rivals_players
+type: view
+model_name: zenlytic_managed
+sql_table_name: marvel_rivals_players
+default_date: account_created
+fields:
+  - name: player_id
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."PLAYER_ID"
+    searchable: true
+    primary_key: true
+  - name: username
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."USERNAME"
+    searchable: true
+  - name: email
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."EMAIL"
+    searchable: true
+  - name: region
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."REGION"
+    searchable: true
+  - name: rank
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."RANK"
+    searchable: true
+  - name: rank_points
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."RANK_POINTS"
+    searchable: true
+  - name: level
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."LEVEL"
+    searchable: true
+  - name: total_matches
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."TOTAL_MATCHES"
+    searchable: true
+  - name: wins
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."WINS"
+    searchable: true
+  - name: losses
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."LOSSES"
+    searchable: true
+  - name: kda_ratio
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."KDA_RATIO"
+    searchable: true
+  - name: main_role
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."MAIN_ROLE"
+    searchable: true
+  - name: favorite_hero_id
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."FAVORITE_HERO_ID"
+    searchable: true
+  - name: playtime_hours
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."PLAYTIME_HOURS"
+    searchable: true
+  - name: premium_status
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."PREMIUM_STATUS"
+    searchable: true
+  - name: battle_pass_tier
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."BATTLE_PASS_TIER"
+    searchable: true
+  - name: achievements_unlocked
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."ACHIEVEMENTS_UNLOCKED"
+    searchable: true
+  - name: account_created
+    field_type: dimension_group
+    type: time
+    sql: ${TABLE}."ACCOUNT_CREATED"
+    timeframes: &ref_0
+      - date
+      - week
+      - month
+      - quarter
+      - year
+      - day_of_year
+      - week_of_year
+      - month_of_year
+  - name: last_login
+    field_type: dimension_group
+    type: time
+    sql: ${TABLE}."LAST_LOGIN"
+    timeframes: *ref_0
