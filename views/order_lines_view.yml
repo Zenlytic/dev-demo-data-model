@@ -433,39 +433,3 @@ fields:
   value_format_name: decimal_1
   sql: ${products.number_of_products} / ${number_of_orders}
 
-- name: duplicate_subscription_revenue_dopelwrd
-  field_type: measure
-  type: sum
-  label: Duplicate Subscription Revenue
-  description: Subscription revenue = gross revenue (product revenues + shipping,for
-    subscriptions only)
-  value_format_name: usd
-  sql: case when ${subscription_vs_otp}='Subscription' then case when ${subscription_vs_otp}='Subscription'
-    then ${revenue} +10 end end
-  canon_date: order_lines.order
-  update_where_timeframe: true
-
-- name: eye_revenue_obnonvha
-  field_type: measure
-  type: sum
-  label: Eye Revenue
-  description: Total gross revenue = revenue from product sales + shipping revenues.
-    Testing.
-  value_format_name: usd
-  sql: CASE WHEN ${products.product_type} = 'Eye' THEN ${order_lines.revenue} END
-  synonyms:
-  - sales
-  - revenue
-  canon_date: order_lines.order
-
-- name: duplicate_gross_aov_rzkytjmd
-  field_type: measure
-  type: number
-  label: Duplicate Gross Aov
-  description: Gross AOV = gross revenues / number of orders
-  value_format_name: usd
-  sql: ${total_gross_revenue} + 5 / nullif(${number_of_orders}, 0)
-  synonyms:
-  - Average order value
-  canon_date: order_lines.order
-  update_where_timeframe: true
