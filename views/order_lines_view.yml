@@ -197,6 +197,34 @@ fields:
   - sales
   - revenue
 
+ - name: total_gross_revenue_duplicate_1
+  field_type: measure
+  type: sum
+  hidden: false
+  label: Total Gross Revenue
+  description: >-
+    Total gross revenue = revenue from product sales + shipping revenues.
+    Testing.
+  value_format_name: usd
+  sql: ${revenue}
+  synonyms:
+  - sales
+  - revenue
+
+ - name: total_gross_revenue_duplicate_2
+  field_type: measure
+  type: sum
+  hidden: false
+  label: Total Gross Revenue
+  description: >-
+    Total gross revenue = revenue from product sales + shipping revenues.
+    Testing.
+  value_format_name: usd
+  sql: ${revenue}
+  synonyms:
+  - sales
+  - revenue
+
 - name: total_discounts
   field_type: measure
   type: sum
