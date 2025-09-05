@@ -1,0 +1,80 @@
+type: view
+name: doctors
+model_name: zenlytic_managed
+sql_table_name: doctors
+default_date: hire_date
+fields:
+  - name: doctor_id
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."DOCTOR_ID"
+    searchable: true
+    primary_key: true
+
+  - name: first_name
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."FIRST_NAME"
+    searchable: true
+
+  - name: last_name
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."LAST_NAME"
+    searchable: true
+
+  - name: specialty
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."SPECIALTY"
+    searchable: true
+
+  - name: department
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."DEPARTMENT"
+    searchable: true
+
+  - name: phone
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."PHONE"
+    searchable: true
+
+  - name: email
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."EMAIL"
+    searchable: true
+
+  - name: license_number
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."LICENSE_NUMBER"
+    searchable: true
+
+  - name: years_experience
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."YEARS_EXPERIENCE"
+    searchable: true
+
+  - name: office_location
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."OFFICE_LOCATION"
+    searchable: true
+
+  - name: hire_date
+    field_type: dimension_group
+    type: time
+    sql: ${TABLE}."HIRE_DATE"
+    timeframes:
+      - date
+      - week
+      - month
+      - quarter
+      - year
+      - day_of_year
+      - week_of_year
+      - month_of_year

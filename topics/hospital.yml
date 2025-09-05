@@ -1,0 +1,6 @@
+base_view: doctors
+model_name: zenlytic_managed
+label: Hospital
+description: ''
+views: {}
+type: topic
