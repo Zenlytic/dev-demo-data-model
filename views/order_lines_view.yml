@@ -352,14 +352,10 @@ fields:
   - name: tripple_revenue_ikdliwrr
     field_type: measure
     type: sum
-    label: Tripple Revenue
-    description: >-
-      Total gross revenue = revenue from product sales + shipping revenues.
-      Testing.
-    value_format_name: usd
+    canon_date: order_lines.order
+    label: Triple Revenue
     sql: ${revenue} * 3
     synonyms:
       - sales
       - revenue
-    canon_date: order_lines.order
-    update_where_timeframe: true
+    value_format_name: usd
