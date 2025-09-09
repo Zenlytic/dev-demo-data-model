@@ -348,14 +348,3 @@ fields:
     description: Total gross revenue = revenue from product sales + shipping revenues
     value_format_name: decimal_1
     sql: ${products.number_of_products} / ${number_of_orders}
-
-  - name: tripple_revenue_ikdliwrr
-    field_type: measure
-    type: sum
-    canon_date: order_lines.order
-    label: Triple Revenue
-    sql: ${revenue} * 3
-    synonyms:
-      - sales
-      - revenue
-    value_format_name: usd
