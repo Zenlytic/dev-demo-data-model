@@ -1,0 +1,6 @@
+base_view: marvel_rivals_abilities
+model_name: zenlytic_managed
+label: Marvel Rivals Abilities
+description: ''
+views: {}
+type: topic
