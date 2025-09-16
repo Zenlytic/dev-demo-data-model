@@ -1,6 +1,6 @@
 type: topic
 name: order_analysis
-label: Order Analysis 2
+label: Order Analysis 4
 base_view: order_lines
 model_name: pure_organics
 description: >-
