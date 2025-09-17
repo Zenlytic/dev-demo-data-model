@@ -1,6 +1,6 @@
 type: topic
 name: Product Facts
-label: Product Facts
+label: totally ne wtopics
 base_view: product_facts
 model_name: pure_organics
 description: Rolls up Product Data to show how a Derived Table works
