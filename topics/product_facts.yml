@@ -1,4 +1,5 @@
 type: topic
+name: Product Facts
 label: Product Facts
 base_view: product_facts
 model_name: pure_organics
