@@ -183,7 +183,7 @@ fields:
   - day_of_week
   sql: ${TABLE}.ORDER_AT
 
-- name: total_gross_revenue
+- name: total_gross_revenue_njm
   field_type: measure
   type: sum
   hidden: false
