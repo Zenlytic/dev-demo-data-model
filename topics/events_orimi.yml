@@ -1,0 +1,7 @@
+base_view: events_orimi
+name: events_orimi
+model_name: pure_organics
+label: Events Orimi
+description: ''
+views: {}
+type: topic
