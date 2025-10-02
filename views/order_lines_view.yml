@@ -347,6 +347,7 @@ fields:
   - field: new_vs_repeat
     value: Repeat
 
+# this is just something commented out
 
 - name: avg_products_per_order
   field_type: measure
