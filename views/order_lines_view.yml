@@ -356,6 +356,7 @@ fields:
   value_format_name: decimal_1
   sql: ${products.number_of_products} / ${number_of_orders}
 
+
 - name: eye_revenue_2025_bxkkxrwr
   field_type: measure
   type: sum
