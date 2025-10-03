@@ -52,11 +52,13 @@ fields:
 
 
 
+
 - name: accepts_marketing
   field_type: dimension
   type: yesno
   description: 'Whether the customer accepts marketing. '
   sql: ${TABLE}.ACCEPTS_MARKETING
+
 
 
 
@@ -82,11 +84,13 @@ fields:
 
 
 
+
 - name: first_name
   field_type: dimension
   type: string
   sql: ${TABLE}.FIRST_NAME
   searchable: false
+
 
 
 
@@ -108,11 +112,13 @@ fields:
 
 
 
+
 - name: full_name
   field_type: dimension
   type: string
   sql: concat(${first_name}, ${last_name})
   searchable: false
+
 
 
 
@@ -135,12 +141,14 @@ fields:
 
 
 
+
 - name: city
   field_type: dimension
   type: string
   description: The customer's city (location)
   sql: ${TABLE}.CITY
   searchable: false
+
 
 
 
@@ -163,12 +171,14 @@ fields:
 
 
 
+
 - name: zipcode
   field_type: dimension
   type: string
   description: The customer's zip code
   sql: ${TABLE}.ZIPCODE
   searchable: false
+
 
 
 
@@ -191,6 +201,7 @@ fields:
 
 
 
+
 - name: first_promotion
   field_type: dimension
   type: string
@@ -205,12 +216,14 @@ fields:
 
 
 
+
 - name: first_campaign
   field_type: dimension
   type: string
   description: The first campaign the user came in through
   sql: ${TABLE}.first_campaign
   searchable: false
+
 
 
 
@@ -243,11 +256,13 @@ fields:
 
 
 
+
 - name: number_of_customers
   field_type: measure
   type: count_distinct
   value_format_name: decimal_0
   sql: ${customer_id}
+
 
 
 

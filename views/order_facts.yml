@@ -34,6 +34,7 @@ fields:
 
 
 
+
 - name: product_title
   field_type: dimension
   type: string
@@ -47,11 +48,13 @@ fields:
 
 
 
+
 - name: product_type
   field_type: dimension
   type: string
   sql: ${TABLE}.product_type
   searchable: true
+
 
 
 
@@ -87,6 +90,7 @@ fields:
 
 
 
+
 - name: number_of_orders
   field_type: measure
   type: sum
@@ -99,10 +103,12 @@ fields:
 
 
 
+
 - name: number_of_units
   field_type: measure
   type: sum
   sql: ${TABLE}.number_of_units
+
 
 
 
