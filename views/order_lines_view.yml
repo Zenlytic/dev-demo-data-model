@@ -568,18 +568,3 @@ fields:
 #   sql: (SUM(CASE WHEN ${products.product_type} = 'Eye' THEN ${order_lines.revenue}
 #     END) / NULLIF(SUM(${order_lines.revenue}), 0)) * 100
 #   canon_date: order_lines.order
-
-
-
-- name: eye_revenue_osuzithe
-  field_type: measure
-  type: sum
-  label: Eye Revenue
-  description: Total gross revenue = revenue from product sales + shipping revenues.
-    Testing.
-  value_format_name: usd
-  sql: CASE WHEN ${products.product_type} = 'Eye' THEN ${order_lines.revenue} END
-  synonyms:
-  - sales
-  - revenue
-  canon_date: order_lines.order
