@@ -31,6 +31,7 @@ fields:
 
 
 
+
 - name: product_title
   field_type: dimension
   type: string
@@ -41,11 +42,13 @@ fields:
 
 
 
+
 - name: product_type
   field_type: dimension
   type: string
   sql: ${TABLE}.product_type
   searchable: true
+
 
 
 
@@ -75,10 +78,12 @@ fields:
 
 
 
+
 - name: number_of_orders
   field_type: measure
   type: sum
   sql: ${TABLE}.number_of_orders
+
 
 
 
@@ -93,7 +98,17 @@ fields:
 
 
 
+
 - name: total_cogs
   field_type: measure
   type: sum
   sql: ${TABLE}.total_cogs
+
+- name: duplicate_number_of_units_wnhcnnnw
+  field_type: measure
+  type: sum
+  label: Duplicate Number Of Units 1.2
+  value_format_name: decimal_0
+  sql: ${TABLE}.number_of_units * 1.2
+  canon_date: order_facts.order
+  update_where_timeframe: true
