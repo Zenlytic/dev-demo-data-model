@@ -439,11 +439,3 @@ fields:
 #   sql: (SUM(CASE WHEN ${products.product_type} = 'Eye' THEN ${order_lines.revenue}
 #     END) / NULLIF(SUM(${order_lines.revenue}), 0)) * 100
 #   canon_date: order_lines.order
-
-- name: eye_revenue_pct_2025_svvpuagf
-  field_type: measure
-  type: number
-  label: Eye Revenue Pct 2025
-  sql: (SUM(CASE WHEN ${products.product_type} = 'Eye' THEN ${order_lines.revenue}
-    END) / NULLIF(SUM(${order_lines.revenue}), 0)) * 100
-  canon_date: order_lines.order
