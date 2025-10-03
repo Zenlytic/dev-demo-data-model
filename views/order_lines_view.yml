@@ -717,6 +717,5 @@ fields:
   type: number
   hidden: true
   description: Total gross revenue = revenue from product sales + shipping revenues
-  # zoe_description: blahh blahhhh
   value_format_name: decimal_1
   sql: ${products.number_of_products} / ${number_of_orders}
