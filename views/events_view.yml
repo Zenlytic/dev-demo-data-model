@@ -292,7 +292,6 @@ fields:
   sql: ${TABLE}.BROWSER_NAME
   searchable: true
   synonyms: []
-
 - name: geo_region_name
   field_type: dimension
   type: string
