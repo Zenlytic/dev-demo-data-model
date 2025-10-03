@@ -33,6 +33,7 @@ fields:
 
 
 
+
 - name: customer_id
   field_type: dimension
   type: string
@@ -47,6 +48,7 @@ fields:
   tags:
   - customer
   searchable: false
+
 
 
 
@@ -84,12 +86,14 @@ fields:
 
 
 
+
 - name: product_id
   field_type: dimension
   type: string
   hidden: true
   sql: ${TABLE}.PRODUCT_ID
   searchable: false
+
 
 
 
@@ -117,11 +121,13 @@ fields:
 
 
 
+
 - name: revenue
   field_type: dimension
   type: number
   hidden: true
   sql: ${TABLE}.REVENUE
+
 
 
 
@@ -149,11 +155,13 @@ fields:
 
 
 
+
 - name: quantity
   field_type: dimension
   type: number
   hidden: true
   sql: ${TABLE}.QUANTITY
+
 
 
 
@@ -185,6 +193,7 @@ fields:
 
 
 
+
 - name: promotion
   field_type: dimension
   type: string
@@ -203,6 +212,7 @@ fields:
 
 
 
+
 - name: subscription_vs_otp
   field_type: dimension
   type: string
@@ -210,6 +220,7 @@ fields:
   description: Whether the order was from a subscription or a one time purchase (OTP)
   sql: ${TABLE}.SUBSCRIPTION_VS_OTP
   searchable: true
+
 
 
 
@@ -241,6 +252,7 @@ fields:
 
 
 
+
 - name: marketing_channel
   field_type: dimension
   type: string
@@ -250,6 +262,7 @@ fields:
     order.
   sql: ${TABLE}.MARKETING_CHANNEL
   searchable: true
+
 
 
 
@@ -281,6 +294,7 @@ fields:
 
 
 
+
 - name: first_click_marketing_channel
   field_type: dimension
   type: string
@@ -301,6 +315,7 @@ fields:
 
 
 
+
 - name: new_vs_repeat
   field_type: dimension
   type: string
@@ -310,6 +325,7 @@ fields:
     customer
   sql: ${TABLE}.new_vs_repeat
   searchable: true
+
 
 
 
@@ -353,6 +369,7 @@ fields:
 
 
 
+
 - name: total_gross_revenue
   field_type: measure
   type: sum
@@ -366,6 +383,7 @@ fields:
   synonyms:
   - sales
   - revenue
+
 
 
 
@@ -403,6 +421,7 @@ fields:
 
 
 
+
 - name: number_of_customers_with_orders
   field_type: measure
   type: count_distinct
@@ -421,6 +440,7 @@ fields:
 
 
 
+
 - name: number_of_orders
   field_type: measure
   type: count_distinct
@@ -428,6 +448,7 @@ fields:
   description: The unique number of orders placed
   value_format_name: decimal_0
   sql: ${order_id}
+
 
 
 
@@ -460,6 +481,7 @@ fields:
 
 
 
+
 - name: total_cogs
   field_type: measure
   type: sum
@@ -468,6 +490,7 @@ fields:
   description: The allocated cost of goods sold to the order line
   value_format_name: usd
   sql: ${TABLE}.cogs
+
 
 
 
@@ -497,6 +520,7 @@ fields:
 
 
 
+
 - name: repurchase_rate
   field_type: measure
   type: number
@@ -506,6 +530,7 @@ fields:
   sql: ${number_of_repeat_orders} / ${number_of_orders}
   synonyms:
   - Repeat order rate
+
 
 
 
@@ -553,6 +578,7 @@ fields:
 
 
 
+
 - name: gross_profit
   field_type: measure
   type: number
@@ -561,6 +587,7 @@ fields:
   value_format_name: usd
   sql: ${total_net_revenue} - ${total_cogs}
   zoe_description: This is the gross profit.
+
 
 
 
@@ -594,6 +621,7 @@ fields:
 
 
 
+
 - name: total_gross_revenue_from_advertising
   field_type: measure
   type: sum
@@ -607,6 +635,7 @@ fields:
   synonyms:
   - sales
   - revenue
+
 
 
 
@@ -657,6 +686,7 @@ fields:
 
 
 
+
 - name: number_of_new_customers_with_orders
   field_type: measure
   type: count_distinct
@@ -667,6 +697,7 @@ fields:
   filters:
   - field: new_vs_repeat
     value: New
+
 
 
 
@@ -712,6 +743,7 @@ fields:
 
 
 
+
 - name: avg_products_per_order
   field_type: measure
   type: number
@@ -719,3 +751,11 @@ fields:
   description: Total gross revenue = revenue from product sales + shipping revenues
   value_format_name: decimal_1
   sql: ${products.number_of_products} / ${number_of_orders}
+
+- name: percent_eye_revenue_2025_fqnmvbse
+  field_type: measure
+  type: number
+  label: Percent Eye Revenue 2025
+  sql: (SUM(CASE WHEN ${products.product_type} = 'Eye' THEN ${order_lines.revenue}
+    END) / NULLIF(SUM(${order_lines.revenue}), 0)) * 100
+  canon_date: order_lines.order
