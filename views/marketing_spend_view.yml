@@ -26,6 +26,7 @@ fields:
 
 
 
+
 - name: customers_from_paid_marketing
   field_type: dimension
   type: number
@@ -45,12 +46,14 @@ fields:
 
 
 
+
 - name: gross_profit_from_paid_marketing
   field_type: dimension
   type: number
   hidden: true
   sql: ${TABLE}.gross_profit_from_paid_marketing
   searchable: false
+
 
 
 
@@ -86,12 +89,14 @@ fields:
 
 
 
+
 - name: channel
   field_type: dimension
   type: string
   description: The channel of the ad spend
   sql: ${TABLE}.channel
   searchable: true
+
 
 
 
@@ -124,12 +129,14 @@ fields:
 
 
 
+
 - name: campaign
   field_type: dimension
   type: string
   description: The campaign of the ad spend
   sql: ${TABLE}.campaign
   searchable: true
+
 
 
 
@@ -150,6 +157,7 @@ fields:
   description: The amount spent
   sql: ${TABLE}.ad_spend
   searchable: false
+
 
 
 
@@ -192,12 +200,14 @@ fields:
 
 
 
+
 - name: total_marketing_spend
   field_type: measure
   type: sum
   description: Total marketing spend across all channels
   value_format_name: usd
   sql: ${ad_spend}
+
 
 
 
@@ -235,6 +245,7 @@ fields:
 
 
 
+
 - name: cpc
   field_type: measure
   type: number
@@ -257,6 +268,7 @@ fields:
 
 
 
+
 - name: roas
   field_type: measure
   type: number
@@ -266,6 +278,7 @@ fields:
     spend across all channels
   value_format_name: decimal_1
   sql: SUM(${revenue_from_paid_marketing}) / nullif(${total_marketing_spend}, 0)
+
 
 
 
