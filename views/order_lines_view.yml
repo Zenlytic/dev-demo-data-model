@@ -201,6 +201,7 @@ fields:
 
 
 
+
 - name: total_discounts
   field_type: measure
   type: sum
@@ -267,6 +268,7 @@ fields:
 
 
 
+
 - name: gross_aov
   field_type: measure
   type: number
@@ -276,6 +278,7 @@ fields:
   sql: ${total_gross_revenue} / nullif(${number_of_orders}, 0)
   synonyms:
   - Average order value
+
 
 
 
@@ -320,6 +323,7 @@ fields:
 
 
 
+
 - name: subscription_revenue
   field_type: measure
   type: sum
@@ -337,6 +341,7 @@ fields:
 
 
 
+
 - name: number_of_new_customers_with_orders
   field_type: measure
   type: count_distinct
@@ -347,6 +352,7 @@ fields:
   filters:
   - field: new_vs_repeat
     value: New
+
 
 
 
@@ -369,6 +375,7 @@ fields:
 
 
 
+
 - name: avg_products_per_order
   field_type: measure
   type: number
@@ -377,15 +384,10 @@ fields:
   value_format_name: decimal_1
   sql: ${products.number_of_products} / ${number_of_orders}
 
-# - name: total_gross_revenue_eye_shwmimvn
-#   field_type: measure
-#   type: sum
-#   label: Total Gross Revenue Eye
-#   description: Total gross revenue = revenue from product sales + shipping revenues.
-#     Testing.
-#   value_format_name: usd
-#   sql: CASE WHEN ${products.product_type} = 'Eye' THEN ${order_lines.revenue} END
-#   synonyms:
-#   - sales
-#   - revenue
-#   canon_date: order_lines.order
+- name: percent_revenue_eye_wyznuijs
+  field_type: measure
+  type: number
+  label: Percent Revenue Eye
+  sql: (SUM(CASE WHEN ${products.product_type} = 'Eye' THEN ${order_lines.revenue}
+    END) / NULLIF(SUM(${order_lines.revenue}), 0)) * 100
+  canon_date: order_lines.order
