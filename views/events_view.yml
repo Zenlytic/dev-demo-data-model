@@ -28,12 +28,14 @@ fields:
 
 
 
+
 - name: click_id
   field_type: dimension
   type: string
   hidden: true
   sql: ${TABLE}.CLICK_ID
   searchable: false
+
 
 
 
@@ -64,6 +66,7 @@ fields:
 
 
 
+
 - name: session_id
   field_type: dimension
   type: string
@@ -82,11 +85,13 @@ fields:
 
 
 
+
 - name: device_is_mobile
   field_type: dimension
   type: yesno
   description: Whether the device is mobile or not
   sql: ${TABLE}.DEVICE_IS_MOBILE
+
 
 
 
@@ -117,12 +122,14 @@ fields:
 
 
 
+
 - name: utm_medium
   field_type: dimension
   type: string
   description: The marketing medium the user came through to reach the site initially
   sql: ${TABLE}.UTM_MEDIUM
   searchable: false
+
 
 
 
@@ -153,12 +160,14 @@ fields:
 
 
 
+
 - name: promotion
   field_type: dimension
   type: string
   description: The promotion the user came through to reach the site initially
   sql: ${TABLE}.PROMOTION
   searchable: true
+
 
 
 
@@ -189,12 +198,14 @@ fields:
 
 
 
+
 - name: browser_user_agent
   field_type: dimension
   type: string
   description: The user's browser user agent used to access the site
   sql: ${TABLE}.BROWSER_USER_AGENT
   searchable: false
+
 
 
 
@@ -225,6 +236,7 @@ fields:
 
 
 
+
 - name: ip_address
   field_type: dimension
   type: string
@@ -232,6 +244,7 @@ fields:
   description: The user's IP address
   sql: ${TABLE}.IP_ADDRESS
   searchable: false
+
 
 
 
@@ -272,12 +285,14 @@ fields:
 
 
 
+
 - name: geo_country
   field_type: dimension
   type: string
   description: The user's country
   sql: ${TABLE}.GEO_COUNTRY
   searchable: false
+
 
 
 
@@ -308,12 +323,14 @@ fields:
 
 
 
+
 - name: geo_longitude
   field_type: dimension
   type: string
   description: The user's longitude
   sql: ${TABLE}.GEO_LONGITUDE
   searchable: false
+
 
 
 
@@ -344,12 +361,14 @@ fields:
 
 
 
+
 - name: os
   field_type: dimension
   type: string
   description: The full description of the user's operating system
   sql: ${TABLE}.OS
   searchable: false
+
 
 
 
@@ -380,12 +399,14 @@ fields:
 
 
 
+
 - name: os_timezone
   field_type: dimension
   type: string
   description: The user's (operating system) timezone
   sql: ${TABLE}.OS_TIMEZONE
   searchable: false
+
 
 
 
@@ -416,12 +437,14 @@ fields:
 
 
 
+
 - name: referer_url_scheme
   field_type: dimension
   type: string
   description: The referring url scheme (where the user came from)
   sql: ${TABLE}.REFERER_URL_SCHEME
   searchable: true
+
 
 
 
@@ -452,6 +475,7 @@ fields:
 
 
 
+
 - name: referer_medium
   field_type: dimension
   type: string
@@ -470,12 +494,14 @@ fields:
 
 
 
+
 - name: event_name
   field_type: dimension
   type: string
   description: The action the user took on the site
   sql: ${TABLE}.EVENT_NAME
   searchable: true
+
 
 
 
@@ -510,12 +536,14 @@ fields:
 
 
 
+
 - name: page_url_path
   field_type: dimension
   type: string
   description: The page url path (partial) the user was on at the time of the event
   sql: ${TABLE}.PAGE_URL_PATH
   searchable: true
+
 
 
 
@@ -546,12 +574,14 @@ fields:
 
 
 
+
 - name: utm_campaign
   field_type: dimension
   type: string
   description: The campaign the user came in on to the site
   sql: ${TABLE}.UTM_CAMPAIGN
   searchable: true
+
 
 
 
@@ -592,12 +622,14 @@ fields:
 
 
 
+
 - name: number_of_events
   field_type: measure
   type: count
   description: The number of events from interaction with the site
   value_format_name: decimal_0
   sql: ${anonymous_id}
+
 
 
 
@@ -618,6 +650,7 @@ fields:
     window)
   value_format_name: decimal_0
   sql: ${session_id}
+
 
 
 
