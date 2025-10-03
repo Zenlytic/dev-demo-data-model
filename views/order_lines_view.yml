@@ -348,11 +348,3 @@ fields:
   description: Total gross revenue = revenue from product sales + shipping revenues
   value_format_name: decimal_1
   sql: ${products.number_of_products} / ${number_of_orders}
-
-- name: eye_product_revenue_percentage_hfdqcezn
-  field_type: measure
-  type: number
-  label: Eye Product Revenue Percentage
-  sql: (SUM(CASE WHEN ${products.product_type} = 'Eye' THEN ${order_lines.revenue}
-    END) / NULLIF(SUM(${order_lines.revenue}), 0)) * 100
-  canon_date: order_lines.order
