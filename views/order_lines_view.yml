@@ -393,10 +393,10 @@ fields:
   value_format_name: decimal_1
   sql: ${products.number_of_products} / ${number_of_orders}
 
-- name: eye_revenue_percentage_yodfkjqu
-  field_type: measure
-  type: number
-  label: Eye Revenue Percentage
-  sql: (SUM(CASE WHEN ${products.product_type} = 'Eye' THEN ${order_lines.revenue}
-    END) / NULLIF(SUM(${order_lines.revenue}), 0)) * 100
-  canon_date: order_lines.order
+# - name: eye_revenue_percentage_yodfkjqu
+#   field_type: measure
+#   type: number
+#   label: Eye Revenue Percentage
+#   sql: (SUM(CASE WHEN ${products.product_type} = 'Eye' THEN ${order_lines.revenue}
+#     END) / NULLIF(SUM(${order_lines.revenue}), 0)) * 100
+#   canon_date: order_lines.order
