@@ -22,6 +22,7 @@ fields:
 
 
 
+
 - name: product_type
   field_type: dimension
   type: string
@@ -29,6 +30,7 @@ fields:
   sql: ${TABLE}.PRODUCT_TYPE
   searchable: true
   zoe_description: 'The type of the product. '
+
 
 
 
@@ -41,6 +43,7 @@ fields:
   tags:
   - product
   searchable: true
+
 
 
 
@@ -84,6 +87,7 @@ fields:
 
 
 
+
 - name: price
   field_type: dimension
   type: string
@@ -94,11 +98,13 @@ fields:
 
 
 
+
 - name: number_of_products
   field_type: measure
   type: count_distinct
   description: The Distinct Number of Products
   sql: ${product_id}
+
 
 
 
