@@ -371,11 +371,6 @@ fields:
   - field: new_vs_repeat
     value: Repeat
 
-
-
-
-
-
 - name: avg_products_per_order
   field_type: measure
   type: number
@@ -384,10 +379,3 @@ fields:
   value_format_name: decimal_1
   sql: ${products.number_of_products} / ${number_of_orders}
 
-- name: percent_revenue_eye_wyznuijs
-  field_type: measure
-  type: number
-  label: Percent Revenue Eye
-  sql: (SUM(CASE WHEN ${products.product_type} = 'Eye' THEN ${order_lines.revenue}
-    END) / NULLIF(SUM(${order_lines.revenue}), 0)) * 100
-  canon_date: order_lines.order
