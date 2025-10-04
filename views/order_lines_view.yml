@@ -346,35 +346,5 @@ fields:
   type: number
   hidden: true
   description: Total gross revenue = revenue from product sales + shipping revenues
-  # zoe_description: blahh blachhhhchchc
   value_format_name: decimal_1
   sql: ${products.number_of_products} / ${number_of_orders}
-
-# - name: eye_revenue_percentage_jvxicwlz
-#   field_type: measure
-#   type: number
-#   label: Eye Revenue Percentage
-#   sql: (SUM(CASE WHEN ${products.product_type} = 'Eye' THEN ${order_lines.revenue}
-#     END) / NULLIF(SUM(${order_lines.revenue}), 0)) * 100
-#   canon_date: order_lines.order
-
-- name: eye_revenue_percentage_2025_msycyzak
-  field_type: measure
-  type: number
-  label: Eye Revenue Percentage 2025
-  sql: (SUM(CASE WHEN ${products.product_type} = 'Eye' THEN ${order_lines.revenue}
-    END) / NULLIF(SUM(${order_lines.revenue}), 0)) * 100
-  canon_date: order_lines.order
-
-- name: eye_revenue_2025_rwwtymfl
-  field_type: measure
-  type: sum
-  label: Eye Revenue 2025
-  description: Total gross revenue = revenue from product sales + shipping revenues.
-    Testing.
-  value_format_name: usd
-  sql: CASE WHEN ${products.product_type} = 'Eye' THEN ${order_lines.revenue} END
-  synonyms:
-  - sales
-  - revenue
-  canon_date: order_lines.order
