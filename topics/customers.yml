@@ -1,7 +1,7 @@
 type: topic
-label: Customers
 base_view: customers
 model_name: pure_organics
+label: Customers
 description: Customer data
 zoe_description: Customer data
 hidden: false
@@ -11,3 +11,8 @@ views:
       join_type: left_outer
       relationship: one_to_many
       sql_on: ${customers.customer_id} = ${order_lines.customer_id}
+  customers_orimi:
+    join:
+      join_type: left_outer
+      relationship: many_to_one
+      sql_on: ${customers.customer_id}=${customers_orimi.CUSTOMER_ID}
