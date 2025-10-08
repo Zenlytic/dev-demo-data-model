@@ -79,6 +79,16 @@ fields:
   sql: ${TABLE}.PRICE
   searchable: true
 
+
+- name: fashion_brand_category_ebxnhloz
+  field_type: dimension
+  type: string
+  label: Fashion Brand Category
+  sql: CASE WHEN ${products.product_type} = 'Cheek' THEN 'Accessories' WHEN ${products.product_type}
+    = 'Eye' THEN 'Ready-to-Wear' WHEN ${products.product_type} = 'Face' THEN 'Shoes'
+    WHEN ${products.product_type} = 'Lip' THEN 'Bags' ELSE 'Other' END
+  searchable: true
+  canon_date: order_lines.order
 - name: count_price_zkjqecah
   field_type: measure
   type: count
