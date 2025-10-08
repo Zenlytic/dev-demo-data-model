@@ -19,20 +19,6 @@ fields:
   zoe_description: The id of the product.
   searchable: false
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 - name: product_type
   field_type: dimension
   type: string
@@ -40,20 +26,6 @@ fields:
   sql: ${TABLE}.PRODUCT_TYPE
   searchable: true
   zoe_description: 'The type of the product. '
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 - name: product_title
   field_type: dimension
@@ -63,20 +35,6 @@ fields:
   tags:
   - product
   searchable: true
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 - name: product_image_url
   field_type: dimension
@@ -114,69 +72,12 @@ fields:
 
   searchable: false
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 - name: price
   field_type: dimension
   type: string
   description: The Price of the Product
   sql: ${TABLE}.PRICE
   searchable: true
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-- name: fashion_brand_category_xjdcjzlr
-  field_type: dimension
-  type: string
-  label: Fashion Brand Category
-  sql: CASE WHEN ${products.product_type} = 'Cheek' THEN 'Handbags' WHEN ${products.product_type}
-    = 'Eye' THEN 'Shoes' WHEN ${products.product_type} = 'Face' THEN 'Ready-to-Wear'
-    WHEN ${products.product_type} = 'Lip' THEN 'Accessories' END
-  canon_date: order_lines.order
-- name: number_of_products
-  field_type: measure
-  type: count_distinct
-  description: The Distinct Number of Products
-  sql: ${product_id}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 - name: count_price_zkjqecah
   field_type: measure
