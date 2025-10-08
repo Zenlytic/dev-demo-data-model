@@ -1,0 +1,197 @@
+type: view
+name: events_orimi
+model_name: pure_organics
+sql_table_name: DEMO_PROD.EVENTS_ORIMI
+fields:
+  - name: EVENT_ID
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."EVENT_ID"
+    searchable: true
+    primary_key: true
+
+  - name: EVENT_TIMESTAMP
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."EVENT_TIMESTAMP"
+    searchable: true
+
+  - name: PAGE_URL
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."PAGE_URL"
+    searchable: true
+
+  - name: PAGE_URL_PATH
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."PAGE_URL_PATH"
+    searchable: true
+
+  - name: REFERER_URL
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."REFERER_URL"
+    searchable: true
+
+  - name: REFERER_URL_SCHEME
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."REFERER_URL_SCHEME"
+    searchable: true
+
+  - name: REFERER_URL_PORT
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."REFERER_URL_PORT"
+    searchable: true
+
+  - name: REFERER_MEDIUM
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."REFERER_MEDIUM"
+    searchable: true
+
+  - name: UTM_MEDIUM
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."UTM_MEDIUM"
+    searchable: true
+
+  - name: UTM_SOURCE
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."UTM_SOURCE"
+    searchable: true
+
+  - name: PROMOTION
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."PROMOTION"
+    searchable: true
+
+  - name: UTM_CAMPAIGN
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."UTM_CAMPAIGN"
+    searchable: true
+
+  - name: CLICK_ID
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."CLICK_ID"
+    searchable: true
+
+  - name: GEO_LATITUDE
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."GEO_LATITUDE"
+    searchable: true
+
+  - name: GEO_LONGITUDE
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."GEO_LONGITUDE"
+    searchable: true
+
+  - name: GEO_COUNTRY
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."GEO_COUNTRY"
+    searchable: true
+
+  - name: GEO_TIMEZONE
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."GEO_TIMEZONE"
+    searchable: true
+
+  - name: GEO_REGION_NAME
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."GEO_REGION_NAME"
+    searchable: true
+
+  - name: IP_ADDRESS
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."IP_ADDRESS"
+    searchable: true
+
+  - name: BROWSER_NAME
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."BROWSER_NAME"
+    searchable: true
+
+  - name: BROWSER_USER_AGENT
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."BROWSER_USER_AGENT"
+    searchable: true
+
+  - name: BROWSER_LANGUAGE
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."BROWSER_LANGUAGE"
+    searchable: true
+
+  - name: OS
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."OS"
+    searchable: true
+
+  - name: OS_NAME
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."OS_NAME"
+    searchable: true
+
+  - name: OS_TIMEZONE
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."OS_TIMEZONE"
+    searchable: true
+
+  - name: DEVICE_TYPE
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."DEVICE_TYPE"
+    searchable: true
+
+  - name: DEVICE_IS_MOBILE
+    field_type: dimension
+    type: yesno
+    sql: ${TABLE}."DEVICE_IS_MOBILE"
+    searchable: true
+
+  - name: EVENT_NAME
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."EVENT_NAME"
+    searchable: true
+
+  - name: MARKETING_CHANNEL
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."MARKETING_CHANNEL"
+    searchable: true
+
+  - name: SESSION_ID
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."SESSION_ID"
+    searchable: true
+
+  - name: CUSTOMER_ID
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."CUSTOMER_ID"
+    searchable: true
+
+  - name: ANONYMOUS_ID
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."ANONYMOUS_ID"
+    searchable: true
