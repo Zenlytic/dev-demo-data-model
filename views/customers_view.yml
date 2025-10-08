@@ -367,9 +367,3 @@ fields:
   value_format_name: decimal_0
   sql: ${email}
 
-- name: avg_days_since_first_order_abnjsqnr
-  field_type: measure
-  type: average
-  label: Avg Days Since First Order
-  sql: DATEDIFF(DAY, ${customers.first_order_raw}, ${order_lines.order_raw})
-  canon_date: customers.first_order
