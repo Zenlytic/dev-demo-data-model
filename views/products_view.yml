@@ -149,6 +149,15 @@ fields:
 
 
 
+
+- name: fashion_brand_category_xjdcjzlr
+  field_type: dimension
+  type: string
+  label: Fashion Brand Category
+  sql: CASE WHEN ${products.product_type} = 'Cheek' THEN 'Handbags' WHEN ${products.product_type}
+    = 'Eye' THEN 'Shoes' WHEN ${products.product_type} = 'Face' THEN 'Ready-to-Wear'
+    WHEN ${products.product_type} = 'Lip' THEN 'Accessories' END
+  canon_date: order_lines.order
 - name: number_of_products
   field_type: measure
   type: count_distinct
