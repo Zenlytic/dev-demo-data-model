@@ -86,3 +86,11 @@ fields:
   sql: ${TABLE}.PRICE
   canon_date: order_lines.order
   update_where_timeframe: true
+
+- name: count_products_qlabulae
+  field_type: measure
+  type: count
+  label: Count Products
+  description: The title of the product sold (Everyday SPF Cream, etc)
+  sql: ${products.product_title}
+  canon_date: order_lines.order
