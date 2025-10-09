@@ -3,11 +3,8 @@ type: view
 name: products
 model_name: pure_organics
 sql_table_name: DEMO_PROD.PRODUCTS
-default_date: order_lines.order
-identifiers:
-  - name: product_id
-    type: primary
-    sql: ${product_id}
+
+
 fields:
   - name: product_id
     field_type: dimension
@@ -79,16 +76,3 @@ fields:
     sql: ${TABLE}.PRICE
     searchable: true
 
-  - name: number_of_products
-    field_type: measure
-    type: count_distinct
-    description: The Distinct Number of Products
-    sql: ${product_id}
-
-  - name: count_price_zkjqecah
-    field_type: measure
-    type: count
-    label: Count Price
-    sql: ${TABLE}.PRICE
-    canon_date: order_lines.order
-    update_where_timeframe: true

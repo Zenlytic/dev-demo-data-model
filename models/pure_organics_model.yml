@@ -9,6 +9,11 @@ access_grants:
   allowed_values:
   - Executive
   - Finance
+
+relationships:
+  - from_table: order_lines
+    join_table: products
+    sql_on: ${order_lines.product_id} = ${products.product_id} and ${order_lines.quantity} > 0
 mappings:
   marketing_channel:
     fields:
