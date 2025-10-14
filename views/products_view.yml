@@ -93,7 +93,7 @@ fields:
     canon_date: order_lines.order
     update_where_timeframe: true
 
-  - name: game-quarter
+  - name: game_quarter
     field_type: measure
     type: sum
     label: Game Quarter
