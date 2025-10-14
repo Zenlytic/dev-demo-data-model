@@ -92,3 +92,10 @@ fields:
     sql: ${TABLE}.PRICE
     canon_date: order_lines.order
     update_where_timeframe: true
+
+  - name: game-quarter
+    field_type: measure
+    type: sum
+    label: Game Quarter
+    sql: ${price}
+    value_format_name: decimal_0
