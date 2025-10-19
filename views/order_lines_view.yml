@@ -349,9 +349,3 @@ fields:
   value_format_name: decimal_1
   sql: ${products.number_of_products} / ${number_of_orders}
 
-- name: adjusted_sales_jsisbqwv
-  field_type: measure
-  type: number
-  label: Adjusted Sales
-  sql: SUM(${order_lines.revenue}) * 1.1
-  canon_date: order_lines.order
