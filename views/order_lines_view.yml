@@ -3,7 +3,6 @@ type: view
 name: order_lines
 model_name: pure_organics
 sql_table_name: DEMO_PROD.ORDER_LINES
-default_date: order_at
 fields:
 - name: customer_id
   field_type: dimension
