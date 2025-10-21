@@ -75,14 +75,3 @@ fields:
   type: sum
   sql: ${TABLE}.total_cogs
 
-- name: adjusted_number_of_orders_qrrrzycl
-  field_type: measure
-  type: number
-  label: Bilbo baggins
-  description: 'The adjusted total number of orders: the sum of all orders for the
-    selected scope increased by 10%. It is calculated as SUM(NUMBER_OF_ORDERS) × 1.1
-    and contains numeric values (may be decimal) representing the adjusted order total
-    for the chosen time period or segment.'
-  value_format_name: decimal_0
-  sql: SUM(ORDER_FACTS.NUMBER_OF_ORDERS) * 1.1
-  canon_date: order_facts.order
