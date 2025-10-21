@@ -8,7 +8,6 @@ fields:
 - name: anonymous_id
   field_type: dimension
   type: string
-  hidden: true
   primary_key: true
   sql: ${TABLE}.ANONYMOUS_ID
   tags:
@@ -32,7 +31,6 @@ fields:
 - name: click_id
   field_type: dimension
   type: string
-  hidden: true
   sql: ${TABLE}.CLICK_ID
   searchable: false
 
@@ -53,7 +51,6 @@ fields:
 - name: customer_id
   field_type: dimension
   type: string
-  hidden: true
   sql: ${TABLE}.CUSTOMER_ID
   searchable: false
 
@@ -74,7 +71,6 @@ fields:
 - name: session_id
   field_type: dimension
   type: string
-  hidden: true
   sql: ${TABLE}.SESSION_ID
   searchable: false
 
@@ -284,7 +280,6 @@ fields:
 - name: browser_name
   field_type: dimension
   type: string
-  hidden: true
   description: The user's browser
   tiers:
   sql: ${TABLE}.BROWSER_NAME
