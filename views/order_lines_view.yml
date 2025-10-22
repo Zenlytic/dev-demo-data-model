@@ -167,3 +167,9 @@ fields:
   type: sum
   label: Total Sales
   sql: ORDER_LINES.REVENUE
+
+- name: total_cogs_stsmlolr
+  field_type: measure
+  type: sum
+  label: Total Cogs
+  sql: ORDER_LINES.COGS
