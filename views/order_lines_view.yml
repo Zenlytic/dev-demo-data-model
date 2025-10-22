@@ -179,3 +179,9 @@ fields:
   type: sum
   label: Total Discount
   sql: ORDER_LINES.DISCOUNT
+
+- name: total_orders_uyezvvjx
+  field_type: measure
+  type: count_distinct
+  label: Total Orders
+  sql: ORDER_LINES.ORDER_ID
