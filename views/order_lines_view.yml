@@ -162,8 +162,8 @@ fields:
 # For a comprehensive list of options that can be specified for a field, or for more detailed information,
 # please visit: https://docs.zenlytic.com/docs/data_modeling/data_modeling
 
-- name: total_sales_2025_ytd_xdpwafsz
+- name: total_sales_2025
   field_type: measure
   type: sum
-  label: Total Sales 2025 Ytd
+  label: Total Sales
   sql: ORDER_LINES.REVENUE
