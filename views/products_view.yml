@@ -3,7 +3,6 @@ type: view
 name: products
 model_name: pure_organics
 sql_table_name: DEMO_PROD.PRODUCTS
-
 fields:
 - name: product_id
   field_type: dimension

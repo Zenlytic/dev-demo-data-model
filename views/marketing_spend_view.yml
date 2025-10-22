@@ -3,7 +3,6 @@ type: view
 name: marketing_spend
 model_name: pure_organics
 sql_table_name: DEMO_PROD.MARKETING_SPEND
-
 fields:
 - name: revenue_from_paid_marketing
   field_type: dimension

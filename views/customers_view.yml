@@ -3,7 +3,6 @@ type: view
 name: customers
 model_name: pure_organics
 sql_table_name: DEMO_PROD.CUSTOMERS
-
 fields:
 - name: customer_id
   field_type: dimension

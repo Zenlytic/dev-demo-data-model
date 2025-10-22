@@ -3,7 +3,6 @@ type: view
 name: events
 model_name: pure_organics
 sql_table_name: demo_prod.events
-
 fields:
 - name: anonymous_id
   field_type: dimension
