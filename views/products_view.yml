@@ -27,6 +27,14 @@ fields:
   searchable: true
   zoe_description: 'The type of the product. '
 
+- name: product_variant
+  field_type: dimension
+  type: string
+  description: 'The variant of the product sold (Eye, Lip, Face, etc) '
+  sql: ${TABLE}.PRODUCT_TYPE
+  searchable: true
+  zoe_description: 'The variant of the product. '
+
 - name: product_title
   field_type: dimension
   type: string
