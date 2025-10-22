@@ -173,3 +173,9 @@ fields:
   type: sum
   label: Total Cogs
   sql: ORDER_LINES.COGS
+
+- name: total_discount_gouurycy
+  field_type: measure
+  type: sum
+  label: Total Discount
+  sql: ORDER_LINES.DISCOUNT
