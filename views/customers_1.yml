@@ -1,0 +1,86 @@
+type: view
+name: customers_1
+model_name: zenlytic_managed
+sql_table_name: customers_1
+default_date: registration_date
+fields:
+  - name: customer_id
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."CUSTOMER_ID"
+    searchable: true
+    primary_key: true
+
+  - name: first_name
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."FIRST_NAME"
+    searchable: true
+
+  - name: last_name
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."LAST_NAME"
+    searchable: true
+
+  - name: email
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."EMAIL"
+    searchable: true
+
+  - name: phone
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."PHONE"
+    searchable: true
+
+  - name: address
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."ADDRESS"
+    searchable: true
+
+  - name: city
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."CITY"
+    searchable: true
+
+  - name: state
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."STATE"
+    searchable: true
+
+  - name: zip_code
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."ZIP_CODE"
+    searchable: true
+
+  - name: customer_type
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."CUSTOMER_TYPE"
+    searchable: true
+
+  - name: lifetime_value
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."LIFETIME_VALUE"
+    searchable: true
+
+  - name: registration_date
+    field_type: dimension_group
+    type: time
+    sql: ${TABLE}."REGISTRATION_DATE"
+    timeframes:
+      - date
+      - week
+      - month
+      - quarter
+      - year
+      - day_of_year
+      - week_of_year
+      - month_of_year
