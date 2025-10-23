@@ -1,0 +1,7 @@
+base_view: orders_3
+name: orders_3
+model_name: zenlytic_managed
+label: Orders 3
+description: ''
+views: {}
+type: topic
