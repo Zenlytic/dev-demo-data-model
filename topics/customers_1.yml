@@ -1,7 +1,0 @@
-base_view: customers_1
-name: customers_1
-model_name: zenlytic_managed
-label: Customers 1
-description: ''
-views: {}
-type: topic
