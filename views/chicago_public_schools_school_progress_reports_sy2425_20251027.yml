@@ -1,0 +1,1103 @@
+type: view
+name: chicago_public_schools_school_progress_reports_sy2425_20251027
+model_name: zenlytic_managed
+sql_table_name: chicago_public_schools_school_progress_reports_sy2425_20251027
+fields:
+  - name: School_ID
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."SCHOOL_ID"
+    searchable: true
+    primary_key: true
+
+  - name: Short_Name
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."SHORT_NAME"
+    searchable: true
+
+  - name: Long_Name
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."LONG_NAME"
+    searchable: true
+
+  - name: School_Type
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."SCHOOL_TYPE"
+    searchable: true
+
+  - name: Primary_Category
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."PRIMARY_CATEGORY"
+    searchable: true
+
+  - name: Address
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."ADDRESS"
+    searchable: true
+
+  - name: City
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."CITY"
+    searchable: true
+
+  - name: State
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."STATE"
+    searchable: true
+
+  - name: Zip
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."ZIP"
+    searchable: true
+
+  - name: Phone
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."PHONE"
+    searchable: true
+
+  - name: Fax
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."FAX"
+    searchable: true
+
+  - name: CPS_School_Profile
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."CPS_SCHOOL_PROFILE"
+    searchable: true
+
+  - name: Website
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."WEBSITE"
+    searchable: true
+
+  - name: Progress_Report_Year
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."PROGRESS_REPORT_YEAR"
+    searchable: true
+
+  - name: Blue_Ribbon_Award_Year
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."BLUE_RIBBON_AWARD_YEAR"
+    searchable: true
+
+  - name: Excelerate_Award_Gold_Year
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."EXCELERATE_AWARD_GOLD_YEAR"
+    searchable: true
+
+  - name: Spot_Light_Award_Year
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."SPOT_LIGHT_AWARD_YEAR"
+    searchable: true
+
+  - name: Improvement_Award_Year
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."IMPROVEMENT_AWARD_YEAR"
+    searchable: true
+
+  - name: Excellence_Award_Year
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."EXCELLENCE_AWARD_YEAR"
+    searchable: true
+
+  - name: Student_Growth_Rating
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."STUDENT_GROWTH_RATING"
+    searchable: true
+
+  - name: Student_Growth_Description
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."STUDENT_GROWTH_DESCRIPTION"
+    searchable: true
+
+  - name: Growth_Reading_Grades_Tested_Pct_ES
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."GROWTH_READING_GRADES_TESTED_PCT_ES"
+    searchable: true
+
+  - name: Growth_Reading_Grades_Tested_Label_ES
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."GROWTH_READING_GRADES_TESTED_LABEL_ES"
+    searchable: true
+
+  - name: Growth_Math_Grades_Tested_Pct_ES
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."GROWTH_MATH_GRADES_TESTED_PCT_ES"
+    searchable: true
+
+  - name: Growth_Math_Grades_Tested_Label_ES
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."GROWTH_MATH_GRADES_TESTED_LABEL_ES"
+    searchable: true
+
+  - name: Student_Attainment_Rating
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."STUDENT_ATTAINMENT_RATING"
+    searchable: true
+
+  - name: Student_Attainment_Description
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."STUDENT_ATTAINMENT_DESCRIPTION"
+    searchable: true
+
+  - name: Attainment_Reading_Pct_ES
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."ATTAINMENT_READING_PCT_ES"
+    searchable: true
+
+  - name: Attainment_Reading_Lbl_ES
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."ATTAINMENT_READING_LBL_ES"
+    searchable: true
+
+  - name: Attainment_Math_Pct_ES
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."ATTAINMENT_MATH_PCT_ES"
+    searchable: true
+
+  - name: Attainment_Math_Lbl_ES
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."ATTAINMENT_MATH_LBL_ES"
+    searchable: true
+
+  - name: Culture_Climate_Rating
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."CULTURE_CLIMATE_RATING"
+    searchable: true
+
+  - name: Culture_Climate_Description
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."CULTURE_CLIMATE_DESCRIPTION"
+    searchable: true
+
+  - name: School_Survey_Student_Response_Rate_Pct
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."SCHOOL_SURVEY_STUDENT_RESPONSE_RATE_PCT"
+    searchable: true
+
+  - name: School_Survey_Student_Response_Rate_Avg_Pct
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."SCHOOL_SURVEY_STUDENT_RESPONSE_RATE_AVG_PCT"
+    searchable: true
+
+  - name: School_Survey_Teacher_Response_Rate_Pct
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."SCHOOL_SURVEY_TEACHER_RESPONSE_RATE_PCT"
+    searchable: true
+
+  - name: School_Survey_Teacher_Response_Rate_Avg_Pct
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."SCHOOL_SURVEY_TEACHER_RESPONSE_RATE_AVG_PCT"
+    searchable: true
+
+  - name: School_Survey_Parent_Response_Rate_Pct
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."SCHOOL_SURVEY_PARENT_RESPONSE_RATE_PCT"
+    searchable: true
+
+  - name: School_Survey_Parent_Response_Rate_Avg_Pct
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."SCHOOL_SURVEY_PARENT_RESPONSE_RATE_AVG_PCT"
+    searchable: true
+
+  - name: Healthy_School_Certification
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."HEALTHY_SCHOOL_CERTIFICATION"
+    searchable: true
+
+  - name: Healthy_School_Certification_Description
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."HEALTHY_SCHOOL_CERTIFICATION_DESCRIPTION"
+    searchable: true
+
+  - name: Creative_School_Certification
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."CREATIVE_SCHOOL_CERTIFICATION"
+    searchable: true
+
+  - name: Creative_School_Certification_Description
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."CREATIVE_SCHOOL_CERTIFICATION_DESCRIPTION"
+    searchable: true
+
+  - name: NWEA_Reading_Growth_Grade_3_Pct
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."NWEA_READING_GROWTH_GRADE_3_PCT"
+    searchable: true
+
+  - name: NWEA_Reading_Growth_Grade_3_Lbl
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."NWEA_READING_GROWTH_GRADE_3_LBL"
+    searchable: true
+
+  - name: NWEA_Reading_Growth_Grade_4_Pct
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."NWEA_READING_GROWTH_GRADE_4_PCT"
+    searchable: true
+
+  - name: NWEA_Reading_Growth_Grade_4_Lbl
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."NWEA_READING_GROWTH_GRADE_4_LBL"
+    searchable: true
+
+  - name: NWEA_Reading_Growth_Grade_5_Pct
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."NWEA_READING_GROWTH_GRADE_5_PCT"
+    searchable: true
+
+  - name: NWEA_Reading_Growth_Grade_5_Lbl
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."NWEA_READING_GROWTH_GRADE_5_LBL"
+    searchable: true
+
+  - name: NWEA_Reading_Growth_Grade_6_Pct
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."NWEA_READING_GROWTH_GRADE_6_PCT"
+    searchable: true
+
+  - name: NWEA_Reading_Growth_Grade_6_Lbl
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."NWEA_READING_GROWTH_GRADE_6_LBL"
+    searchable: true
+
+  - name: NWEA_Reading_Growth_Grade_7_Pct
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."NWEA_READING_GROWTH_GRADE_7_PCT"
+    searchable: true
+
+  - name: NWEA_Reading_Growth_Grade_7_Lbl
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."NWEA_READING_GROWTH_GRADE_7_LBL"
+    searchable: true
+
+  - name: NWEA_Reading_Growth_Grade_8_Pct
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."NWEA_READING_GROWTH_GRADE_8_PCT"
+    searchable: true
+
+  - name: NWEA_Reading_Growth_Grade_8_Lbl
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."NWEA_READING_GROWTH_GRADE_8_LBL"
+    searchable: true
+
+  - name: NWEA_Math_Growth_Grade_3_Pct
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."NWEA_MATH_GROWTH_GRADE_3_PCT"
+    searchable: true
+
+  - name: NWEA_Math_Growth_Grade_3_Lbl
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."NWEA_MATH_GROWTH_GRADE_3_LBL"
+    searchable: true
+
+  - name: NWEA_Math_Growth_Grade_4_Pct
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."NWEA_MATH_GROWTH_GRADE_4_PCT"
+    searchable: true
+
+  - name: NWEA_Math_Growth_Grade_4_Lbl
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."NWEA_MATH_GROWTH_GRADE_4_LBL"
+    searchable: true
+
+  - name: NWEA_Math_Growth_Grade_5_Pct
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."NWEA_MATH_GROWTH_GRADE_5_PCT"
+    searchable: true
+
+  - name: NWEA_Math_Growth_Grade_5_Lbl
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."NWEA_MATH_GROWTH_GRADE_5_LBL"
+    searchable: true
+
+  - name: NWEA_Math_Growth_Grade_6_Pct
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."NWEA_MATH_GROWTH_GRADE_6_PCT"
+    searchable: true
+
+  - name: NWEA_Math_Growth_Grade_6_Lbl
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."NWEA_MATH_GROWTH_GRADE_6_LBL"
+    searchable: true
+
+  - name: NWEA_Math_Growth_Grade_7_Pct
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."NWEA_MATH_GROWTH_GRADE_7_PCT"
+    searchable: true
+
+  - name: NWEA_Math_Growth_Grade_7_Lbl
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."NWEA_MATH_GROWTH_GRADE_7_LBL"
+    searchable: true
+
+  - name: NWEA_Math_Growth_Grade_8_Pct
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."NWEA_MATH_GROWTH_GRADE_8_PCT"
+    searchable: true
+
+  - name: NWEA_Math_Growth_Grade_8_Lbl
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."NWEA_MATH_GROWTH_GRADE_8_LBL"
+    searchable: true
+
+  - name: NWEA_Reading_Attainment_Grade_2_Pct
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."NWEA_READING_ATTAINMENT_GRADE_2_PCT"
+    searchable: true
+
+  - name: NWEA_Reading_Attainment_Grade_2_Lbl
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."NWEA_READING_ATTAINMENT_GRADE_2_LBL"
+    searchable: true
+
+  - name: NWEA_Reading_Attainment_Grade_3_Pct
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."NWEA_READING_ATTAINMENT_GRADE_3_PCT"
+    searchable: true
+
+  - name: NWEA_Reading_Attainment_Grade_3_Lbl
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."NWEA_READING_ATTAINMENT_GRADE_3_LBL"
+    searchable: true
+
+  - name: NWEA_Reading_Attainment_Grade_4_Pct
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."NWEA_READING_ATTAINMENT_GRADE_4_PCT"
+    searchable: true
+
+  - name: NWEA_Reading_Attainment_Grade_4_Lbl
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."NWEA_READING_ATTAINMENT_GRADE_4_LBL"
+    searchable: true
+
+  - name: NWEA_Reading_Attainment_Grade_5_Pct
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."NWEA_READING_ATTAINMENT_GRADE_5_PCT"
+    searchable: true
+
+  - name: NWEA_Reading_Attainment_Grade_5_Lbl
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."NWEA_READING_ATTAINMENT_GRADE_5_LBL"
+    searchable: true
+
+  - name: NWEA_Reading_Attainment_Grade_6_Pct
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."NWEA_READING_ATTAINMENT_GRADE_6_PCT"
+    searchable: true
+
+  - name: NWEA_Reading_Attainment_Grade_6_Lbl
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."NWEA_READING_ATTAINMENT_GRADE_6_LBL"
+    searchable: true
+
+  - name: NWEA_Reading_Attainment_Grade_7_Pct
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."NWEA_READING_ATTAINMENT_GRADE_7_PCT"
+    searchable: true
+
+  - name: NWEA_Reading_Attainment_Grade_7_Lbl
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."NWEA_READING_ATTAINMENT_GRADE_7_LBL"
+    searchable: true
+
+  - name: NWEA_Reading_Attainment_Grade_8_Pct
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."NWEA_READING_ATTAINMENT_GRADE_8_PCT"
+    searchable: true
+
+  - name: NWEA_Reading_Attainment_Grade_8_Lbl
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."NWEA_READING_ATTAINMENT_GRADE_8_LBL"
+    searchable: true
+
+  - name: NWEA_Math_Attainment_Grade_2_Pct
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."NWEA_MATH_ATTAINMENT_GRADE_2_PCT"
+    searchable: true
+
+  - name: NWEA_Math_Attainment_Grade_2_Lbl
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."NWEA_MATH_ATTAINMENT_GRADE_2_LBL"
+    searchable: true
+
+  - name: NWEA_Math_Attainment_Grade_3_Pct
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."NWEA_MATH_ATTAINMENT_GRADE_3_PCT"
+    searchable: true
+
+  - name: NWEA_Math_Attainment_Grade_3_Lbl
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."NWEA_MATH_ATTAINMENT_GRADE_3_LBL"
+    searchable: true
+
+  - name: NWEA_Math_Attainment_Grade_4_Pct
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."NWEA_MATH_ATTAINMENT_GRADE_4_PCT"
+    searchable: true
+
+  - name: NWEA_Math_Attainment_Grade_4_Lbl
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."NWEA_MATH_ATTAINMENT_GRADE_4_LBL"
+    searchable: true
+
+  - name: NWEA_Math_Attainment_Grade_5_Pct
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."NWEA_MATH_ATTAINMENT_GRADE_5_PCT"
+    searchable: true
+
+  - name: NWEA_Math_Attainment_Grade_5_Lbl
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."NWEA_MATH_ATTAINMENT_GRADE_5_LBL"
+    searchable: true
+
+  - name: NWEA_Math_Attainment_Grade_6_Pct
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."NWEA_MATH_ATTAINMENT_GRADE_6_PCT"
+    searchable: true
+
+  - name: NWEA_Math_Attainment_Grade_6_Lbl
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."NWEA_MATH_ATTAINMENT_GRADE_6_LBL"
+    searchable: true
+
+  - name: NWEA_Math_Attainment_Grade_7_Pct
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."NWEA_MATH_ATTAINMENT_GRADE_7_PCT"
+    searchable: true
+
+  - name: NWEA_Math_Attainment_Grade_7_Lbl
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."NWEA_MATH_ATTAINMENT_GRADE_7_LBL"
+    searchable: true
+
+  - name: NWEA_Math_Attainment_Grade_8_Pct
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."NWEA_MATH_ATTAINMENT_GRADE_8_PCT"
+    searchable: true
+
+  - name: NWEA_Math_Attainment_Grade_8_Lbl
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."NWEA_MATH_ATTAINMENT_GRADE_8_LBL"
+    searchable: true
+
+  - name: School_Survey_Involved_Families
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."SCHOOL_SURVEY_INVOLVED_FAMILIES"
+    searchable: true
+
+  - name: School_Survey_Supportive_Environment
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."SCHOOL_SURVEY_SUPPORTIVE_ENVIRONMENT"
+    searchable: true
+
+  - name: School_Survey_Ambitious_Instruction
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."SCHOOL_SURVEY_AMBITIOUS_INSTRUCTION"
+    searchable: true
+
+  - name: School_Survey_Effective_Leaders
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."SCHOOL_SURVEY_EFFECTIVE_LEADERS"
+    searchable: true
+
+  - name: School_Survey_Collaborative_Teachers
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."SCHOOL_SURVEY_COLLABORATIVE_TEACHERS"
+    searchable: true
+
+  - name: School_Survey_Safety
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."SCHOOL_SURVEY_SAFETY"
+    searchable: true
+
+  - name: Suspensions_Per_100_Students_Year_1_Pct
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."SUSPENSIONS_PER_100_STUDENTS_YEAR_1_PCT"
+    searchable: true
+
+  - name: Suspensions_Per_100_Students_Year_2_Pct
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."SUSPENSIONS_PER_100_STUDENTS_YEAR_2_PCT"
+    searchable: true
+
+  - name: Suspensions_Per_100_Students_Avg_Pct
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."SUSPENSIONS_PER_100_STUDENTS_AVG_PCT"
+    searchable: true
+
+  - name: Misconducts_To_Suspensions_Year_1_Pct
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."MISCONDUCTS_TO_SUSPENSIONS_YEAR_1_PCT"
+    searchable: true
+
+  - name: Misconducts_To_Suspensions_Year_2_Pct
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."MISCONDUCTS_TO_SUSPENSIONS_YEAR_2_PCT"
+    searchable: true
+
+  - name: Misconducts_To_Suspensions_Avg_Pct
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."MISCONDUCTS_TO_SUSPENSIONS_AVG_PCT"
+    searchable: true
+
+  - name: Average_Length_Suspension_Year_1_Pct
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."AVERAGE_LENGTH_SUSPENSION_YEAR_1_PCT"
+    searchable: true
+
+  - name: Average_Length_Suspension_Year_2_Pct
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."AVERAGE_LENGTH_SUSPENSION_YEAR_2_PCT"
+    searchable: true
+
+  - name: Average_Length_Suspension_Avg_Pct
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."AVERAGE_LENGTH_SUSPENSION_AVG_PCT"
+    searchable: true
+
+  - name: Behavior_Discipline_Year_1
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."BEHAVIOR_DISCIPLINE_YEAR_1"
+    searchable: true
+
+  - name: Behavior_Discipline_Year_2
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."BEHAVIOR_DISCIPLINE_YEAR_2"
+    searchable: true
+
+  - name: School_Survey_School_Community
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."SCHOOL_SURVEY_SCHOOL_COMMUNITY"
+    searchable: true
+
+  - name: School_Survey_Parent_Teacher_Partnership
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."SCHOOL_SURVEY_PARENT_TEACHER_PARTNERSHIP"
+    searchable: true
+
+  - name: School_Survey_Quality_Of_Facilities
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."SCHOOL_SURVEY_QUALITY_OF_FACILITIES"
+    searchable: true
+
+  - name: Student_Attendance_Year_1_Pct
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."STUDENT_ATTENDANCE_YEAR_1_PCT"
+    searchable: true
+
+  - name: Student_Attendance_Year_2_Pct
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."STUDENT_ATTENDANCE_YEAR_2_PCT"
+    searchable: true
+
+  - name: Student_Attendance_Avg_Pct
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."STUDENT_ATTENDANCE_AVG_PCT"
+    searchable: true
+
+  - name: Teacher_Attendance_Year_1_Pct
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."TEACHER_ATTENDANCE_YEAR_1_PCT"
+    searchable: true
+
+  - name: Teacher_Attendance_Year_2_Pct
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."TEACHER_ATTENDANCE_YEAR_2_PCT"
+    searchable: true
+
+  - name: Teacher_Attendance_Avg_Pct
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."TEACHER_ATTENDANCE_AVG_PCT"
+    searchable: true
+
+  - name: One_Year_Dropout_Rate_Year_1_Pct
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."ONE_YEAR_DROPOUT_RATE_YEAR_1_PCT"
+    searchable: true
+
+  - name: One_Year_Dropout_Rate_Year_2_Pct
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."ONE_YEAR_DROPOUT_RATE_YEAR_2_PCT"
+    searchable: true
+
+  - name: One_Year_Dropout_Rate_Avg_Pct
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."ONE_YEAR_DROPOUT_RATE_AVG_PCT"
+    searchable: true
+
+  - name: Other_Metrics_Year_1
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."OTHER_METRICS_YEAR_1"
+    searchable: true
+
+  - name: Other_Metrics_Year_2
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."OTHER_METRICS_YEAR_2"
+    searchable: true
+
+  - name: Freshmen_On_Track_School_Pct_Year_2
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."FRESHMEN_ON_TRACK_SCHOOL_PCT_YEAR_2"
+    searchable: true
+
+  - name: Freshmen_On_Track_CPS_Pct_Year_2
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."FRESHMEN_ON_TRACK_CPS_PCT_YEAR_2"
+    searchable: true
+
+  - name: Freshmen_On_Track_School_Pct_Year_1
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."FRESHMEN_ON_TRACK_SCHOOL_PCT_YEAR_1"
+    searchable: true
+
+  - name: Freshmen_On_Track_CPS_Pct_Year_1
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."FRESHMEN_ON_TRACK_CPS_PCT_YEAR_1"
+    searchable: true
+
+  - name: Graduation_4_Year_School_Pct_Year_2
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."GRADUATION_4_YEAR_SCHOOL_PCT_YEAR_2"
+    searchable: true
+
+  - name: Graduation_4_Year_CPS_Pct_Year_2
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."GRADUATION_4_YEAR_CPS_PCT_YEAR_2"
+    searchable: true
+
+  - name: Graduation_4_Year_School_Pct_Year_1
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."GRADUATION_4_YEAR_SCHOOL_PCT_YEAR_1"
+    searchable: true
+
+  - name: Graduation_4_Year_CPS_Pct_Year_1
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."GRADUATION_4_YEAR_CPS_PCT_YEAR_1"
+    searchable: true
+
+  - name: Graduation_5_Year_School_Pct_Year_2
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."GRADUATION_5_YEAR_SCHOOL_PCT_YEAR_2"
+    searchable: true
+
+  - name: Graduation_5_Year_CPS_Pct_Year_2
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."GRADUATION_5_YEAR_CPS_PCT_YEAR_2"
+    searchable: true
+
+  - name: Graduation_5_Year_School_Pct_Year_1
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."GRADUATION_5_YEAR_SCHOOL_PCT_YEAR_1"
+    searchable: true
+
+  - name: Graduation_5_Year_CPS_Pct_Year_1
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."GRADUATION_5_YEAR_CPS_PCT_YEAR_1"
+    searchable: true
+
+  - name: College_Enrollment_School_Pct_Year_2
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."COLLEGE_ENROLLMENT_SCHOOL_PCT_YEAR_2"
+    searchable: true
+
+  - name: College_Enrollment_CPS_Pct_Year_2
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."COLLEGE_ENROLLMENT_CPS_PCT_YEAR_2"
+    searchable: true
+
+  - name: College_Enrollment_School_Pct_Year_1
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."COLLEGE_ENROLLMENT_SCHOOL_PCT_YEAR_1"
+    searchable: true
+
+  - name: College_Enrollment_CPS_Pct_Year_1
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."COLLEGE_ENROLLMENT_CPS_PCT_YEAR_1"
+    searchable: true
+
+  - name: College_Persistence_School_Pct_Year_2
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."COLLEGE_PERSISTENCE_SCHOOL_PCT_YEAR_2"
+    searchable: true
+
+  - name: College_Persistence_CPS_Pct_Year_2
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."COLLEGE_PERSISTENCE_CPS_PCT_YEAR_2"
+    searchable: true
+
+  - name: College_Persistence_School_Pct_Year_1
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."COLLEGE_PERSISTENCE_SCHOOL_PCT_YEAR_1"
+    searchable: true
+
+  - name: College_Persistence_CPS_Pct_Year_1
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."COLLEGE_PERSISTENCE_CPS_PCT_YEAR_1"
+    searchable: true
+
+  - name: Progress_Toward_Graduation_Year_1
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."PROGRESS_TOWARD_GRADUATION_YEAR_1"
+    searchable: true
+
+  - name: Progress_Toward_Graduation_Year_2
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."PROGRESS_TOWARD_GRADUATION_YEAR_2"
+    searchable: true
+
+  - name: State_School_Report_Card_URL
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."STATE_SCHOOL_REPORT_CARD_URL"
+    searchable: true
+
+  - name: Mobility_Rate_Pct
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."MOBILITY_RATE_PCT"
+    searchable: true
+
+  - name: Chronic_Truancy_Pct
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."CHRONIC_TRUANCY_PCT"
+    searchable: true
+
+  - name: Empty_Progress_Report_Message
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."EMPTY_PROGRESS_REPORT_MESSAGE"
+    searchable: true
+
+  - name: School_Survey_Rating_Description
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."SCHOOL_SURVEY_RATING_DESCRIPTION"
+    searchable: true
+
+  - name: Supportive_School_Award
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."SUPPORTIVE_SCHOOL_AWARD"
+    searchable: true
+
+  - name: Supportive_School_Award_Desc
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."SUPPORTIVE_SCHOOL_AWARD_DESC"
+    searchable: true
+
+  - name: Parent_Survey_Results_Year
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."PARENT_SURVEY_RESULTS_YEAR"
+    searchable: true
+
+  - name: School_Latitude
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."SCHOOL_LATITUDE"
+    searchable: true
+
+  - name: School_Longitude
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."SCHOOL_LONGITUDE"
+    searchable: true
+
+  - name: Location
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."LOCATION"
+    searchable: true
+
+  - name: PSAT_Grade_9_Score_School_Avg
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."PSAT_GRADE_9_SCORE_SCHOOL_AVG"
+    searchable: true
+
+  - name: PSAT_Grade_10_Score_School_Avg
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."PSAT_GRADE_10_SCORE_SCHOOL_AVG"
+    searchable: true
+
+  - name: SAT_Grade_11_Score_School_Avg
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."SAT_GRADE_11_SCORE_SCHOOL_AVG"
+    searchable: true
+
+  - name: SAT_Grade_11_Score_CPS_Avg
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."SAT_GRADE_11_SCORE_CPS_AVG"
+    searchable: true
+
+  - name: Growth_PSAT_Grade_9_School_Pct
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."GROWTH_PSAT_GRADE_9_SCHOOL_PCT"
+    searchable: true
+
+  - name: Growth_PSAT_Grade_9_School_Lbl
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."GROWTH_PSAT_GRADE_9_SCHOOL_LBL"
+    searchable: true
+
+  - name: Growth_PSAT_Reading_Grade_10_School_Pct
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."GROWTH_PSAT_READING_GRADE_10_SCHOOL_PCT"
+    searchable: true
+
+  - name: Growth_PSAT_Reading_Grade_10_School_Lbl
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."GROWTH_PSAT_READING_GRADE_10_SCHOOL_LBL"
+    searchable: true
+
+  - name: Growth_SAT_Grade_11_School_Pct
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."GROWTH_SAT_GRADE_11_SCHOOL_PCT"
+    searchable: true
+
+  - name: Growth_SAT_Grade_11_School_Lbl
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."GROWTH_SAT_GRADE_11_SCHOOL_LBL"
+    searchable: true
+
+  - name: Attainment_PSAT_Grade_9_School_Pct
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."ATTAINMENT_PSAT_GRADE_9_SCHOOL_PCT"
+    searchable: true
+
+  - name: Attainment_PSAT_Grade_9_School_Lbl
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."ATTAINMENT_PSAT_GRADE_9_SCHOOL_LBL"
+    searchable: true
+
+  - name: Attainment_PSAT_Grade_10_School_Pct
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."ATTAINMENT_PSAT_GRADE_10_SCHOOL_PCT"
+    searchable: true
+
+  - name: Attainment_PSAT_Grade_10_School_Lbl
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."ATTAINMENT_PSAT_GRADE_10_SCHOOL_LBL"
+    searchable: true
+
+  - name: Attainment_SAT_Grade_11_School_Pct
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."ATTAINMENT_SAT_GRADE_11_SCHOOL_PCT"
+    searchable: true
+
+  - name: Attainment_SAT_Grade_11_School_Lbl
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."ATTAINMENT_SAT_GRADE_11_SCHOOL_LBL"
+    searchable: true
+
+  - name: Attainment_All_Grades_School_Pct
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."ATTAINMENT_ALL_GRADES_SCHOOL_PCT"
+    searchable: true
+
+  - name: Attainment_All_Grades_School_Lbl
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."ATTAINMENT_ALL_GRADES_SCHOOL_LBL"
+    searchable: true
+
+  - name: Growth_PSAT_Math_Grade_10_School_Pct
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."GROWTH_PSAT_MATH_GRADE_10_SCHOOL_PCT"
+    searchable: true
+
+  - name: Growth_PSAT_Math_Grade_10_School_Lbl
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."GROWTH_PSAT_MATH_GRADE_10_SCHOOL_LBL"
+    searchable: true
+
+  - name: Growth_SAT_Reading_Grade_11_School_Pct
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."GROWTH_SAT_READING_GRADE_11_SCHOOL_PCT"
+    searchable: true
+
+  - name: Growth_SAT_Reading_Grade_11_School_Lbl
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."GROWTH_SAT_READING_GRADE_11_SCHOOL_LBL"
+    searchable: true
+
+  - name: Growth_SAT_Math_Grade_11_School_Pct
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."GROWTH_SAT_MATH_GRADE_11_SCHOOL_PCT"
+    searchable: true
+
+  - name: Growth_SAT_Math_Grade_11_School_Lbl
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."GROWTH_SAT_MATH_GRADE_11_SCHOOL_LBL"
+    searchable: true

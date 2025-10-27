@@ -1,0 +1,7 @@
+base_view: chicago_public_schools_school_progress_reports_sy2425_20251027
+name: school_progress_reports
+model_name: zenlytic_managed
+label: School Progress Reports
+description: ''
+views: {}
+type: topic
