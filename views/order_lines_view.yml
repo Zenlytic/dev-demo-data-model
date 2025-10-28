@@ -177,6 +177,7 @@ fields:
   - week
   - month_of_year
   - month
+  - fiscal_week
   - quarter
   - year
   - hour_of_day
