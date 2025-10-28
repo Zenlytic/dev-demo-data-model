@@ -93,7 +93,7 @@ fields:
     field_type: dimension_group
     type: time
     sql: ${TABLE}."DATE_JOINED"
-    timeframes: &ref_0
+    timeframes:
       - date
       - week
       - month
@@ -102,9 +102,3 @@ fields:
       - day_of_year
       - week_of_year
       - month_of_year
-
-  - name: birthday
-    field_type: dimension_group
-    type: time
-    sql: ${TABLE}."BIRTHDAY"
-    timeframes: *ref_0
