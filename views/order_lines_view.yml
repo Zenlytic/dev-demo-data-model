@@ -197,6 +197,15 @@ fields:
   synonyms:
   - sales
   - revenue
+  
+- name: fiscal_week
+  field_type: dimension
+  type: number
+  hidden: false
+  label: Fiscal Week
+  description: The fiscal week number of the order (1-52/53)
+  sql: EXTRACT(WEEK FROM ${TABLE}.ORDER_AT)
+  value_format_name: decimal_0
 
 - name: total_discounts
   field_type: measure
