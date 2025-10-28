@@ -107,3 +107,10 @@ fields:
     name: average_customer_id
     sql: average(${TABLE}."CUSTOMER_ID")
     type: average
+  - description: >-
+      Measure created from dimension customer_id with count_distinct
+      aggregation.
+    field_type: measure
+    name: count_distinct_customer_id
+    sql: count_distinct(${TABLE}."CUSTOMER_ID")
+    type: count_distinct
