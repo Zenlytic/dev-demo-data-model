@@ -102,3 +102,8 @@ fields:
       - day_of_year
       - week_of_year
       - month_of_year
+  - description: Measure created from dimension customer_id with count aggregation.
+    field_type: measure
+    name: count_customer_id
+    sql: count(${TABLE}."CUSTOMER_ID")
+    type: count
