@@ -102,8 +102,3 @@ fields:
       - day_of_year
       - week_of_year
       - month_of_year
-  - description: Measure created from dimension customer_id
-    field_type: measure
-    name: count_distinct_customer_id
-    sql: count_distinct(${TABLE}."CUSTOMER_ID")
-    type: count_distinct
