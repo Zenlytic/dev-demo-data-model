@@ -14,8 +14,9 @@ fields:
   - name: first_name
     field_type: dimension
     type: string
-    sql: ${TABLE}."FIRST_NAME"
+    description: First name description
     searchable: true
+    sql: ${TABLE}."FIRST_NAME"
 
   - name: last_name
     field_type: dimension
