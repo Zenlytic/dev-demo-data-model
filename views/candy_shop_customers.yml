@@ -107,3 +107,8 @@ fields:
     name: count_distinct_customer_id
     sql: count_distinct(${TABLE}."CUSTOMER_ID")
     type: count_distinct
+  - description: Measure created from dimension customer_id with count aggregation.
+    field_type: measure
+    name: count_customer_id
+    sql: count(${TABLE}."CUSTOMER_ID")
+    type: count
