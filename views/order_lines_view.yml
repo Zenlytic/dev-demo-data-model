@@ -349,3 +349,15 @@ fields:
   value_format_name: decimal_1
   sql: ${products.number_of_products} / ${number_of_orders}
 
+
+- name: bargain_hunter_rate_ccoqehhh
+  field_type: measure
+  type: number
+  label: Bargain Hunter Rate
+  description: The Bargain Hunter Rate is the percentage of orders that include at
+    least one line item with a discount greater than 5. It is calculated as (distinct
+    orders with any line-item discount > 5) divided by (total distinct orders) × 100,
+    and is expressed as a numeric percentage from 0 to 100.
+  sql: 100.0 * COUNT(DISTINCT CASE WHEN ${order_lines.discount} > 5 THEN ${order_lines.order_id}
+    END) / NULLIF(COUNT(DISTINCT ${order_lines.order_id}), 0)
+  canon_date: order_lines.order
