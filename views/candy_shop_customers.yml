@@ -7,9 +7,11 @@ fields:
   - name: customer_id
     field_type: dimension
     type: string
-    sql: ${TABLE}."CUSTOMER_ID"
-    searchable: true
-    primary_key: true
+    description: customer id description
+    hidden: true
+    label: Customer Id NJM
+    searchable: false
+    sql: '${TABLE}."CUSTOMER_ID" -- TODO: NJM'
 
   - name: first_name
     field_type: dimension
