@@ -115,7 +115,7 @@ fields:
     description: >-
       Measure created from dimension customer_id with count_distinct
       aggregation.
-    label: Count Distinct Customer Id NJM77
+    label: Count Distinct Customer Id NJM79
     primary_key: false
     searchable: false
     sql: ${TABLE}."CUSTOMER_ID"
