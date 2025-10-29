@@ -8,7 +8,7 @@ fields:
     field_type: dimension
     type: string
     description: customer id description
-    label: Customer Id
+    label: Customer Id Njm
     primary_key: true
     searchable: false
     sql: ${TABLE}."CUSTOMER_ID"
