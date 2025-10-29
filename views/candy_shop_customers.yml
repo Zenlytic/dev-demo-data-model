@@ -9,7 +9,7 @@ fields:
     type: string
     label: Customer Id
     primary_key: true
-    searchable: true
+    searchable: false
     sql: ${TABLE}."CUSTOMER_ID"
 
   - name: first_name
