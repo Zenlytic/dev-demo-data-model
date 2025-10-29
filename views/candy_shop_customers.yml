@@ -131,4 +131,6 @@ fields:
     name: count_distinct_customer_id
     sql: ${TABLE}."CUSTOMER_ID"
     type: count_distinct
-label: Candy Shop Customers djfklsd sldkjfksldjf sdlkj fsdlkj fsd
+label: >-
+  Candy Shop Customers djfklsd sldkjfksldjf sdlkj fsdlkj fsd sdjklsdjfl
+  sdkjfsdlkjfsdkl
