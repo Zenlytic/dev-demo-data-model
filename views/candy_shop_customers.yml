@@ -113,7 +113,12 @@ fields:
   - name: birthday
     field_type: dimension_group
     type: time
-    sql: ${TABLE}."BIRTHDAY"
+    description: birthday description
+    datatype: date
+    hidden: true
+    label: Birthday label
+    primary_key: false
+    sql: '${TABLE}."BIRTHDAY" -- TODO: NJM'
     timeframes:
       - date
       - week
