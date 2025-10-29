@@ -108,11 +108,15 @@ fields:
     type: time
     sql: ${TABLE}."BIRTHDAY"
     timeframes: *ref_0
-  - description: >-
+
+  - name: count_distinct_customer_id
+    field_type: measure
+    type: count_distinct
+    description: >-
       Measure created from dimension customer_id with count_distinct
       aggregation.
-    field_type: measure
-    name: count_distinct_customer_id
+    label: Count Distinct Customer Id NJM
+    primary_key: false
+    searchable: false
     sql: ${TABLE}."CUSTOMER_ID"
-    type: count_distinct
 label: Customers
