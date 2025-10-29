@@ -8,7 +8,8 @@ fields:
     field_type: dimension
     type: string
     label: Customer Id
-    searchable: true
+    primary_key: true
+    searchable: false
     sql: ${TABLE}."CUSTOMER_ID"
 
   - name: first_name
