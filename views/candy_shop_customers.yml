@@ -7,10 +7,8 @@ fields:
   - name: customer_id
     field_type: dimension
     type: string
-    hidden: true
     label: Customer Id
-    primary_key: true
-    searchable: false
+    searchable: true
     sql: ${TABLE}."CUSTOMER_ID"
 
   - name: first_name
