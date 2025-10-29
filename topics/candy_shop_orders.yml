@@ -1,7 +1,7 @@
 base_view: candy_shop_orders
 name: candy_shop_orders
 model_name: zenlytic_managed
-label: Candy Shop Orders
+label: candy_shop_orders
 description: ''
 views:
   candy_shop_order_items:
