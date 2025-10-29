@@ -94,8 +94,13 @@ fields:
   - name: date_joined
     field_type: dimension_group
     type: time
-    sql: ${TABLE}."DATE_JOINED"
-    timeframes: &ref_0
+    description: date joined description
+    datatype: date
+    hidden: true
+    label: Date Joined NJM
+    primary_key: false
+    sql: '${TABLE}."DATE_JOINED" --TODO: NJM'
+    timeframes:
       - date
       - week
       - month
@@ -109,7 +114,15 @@ fields:
     field_type: dimension_group
     type: time
     sql: ${TABLE}."BIRTHDAY"
-    timeframes: *ref_0
+    timeframes:
+      - date
+      - week
+      - month
+      - quarter
+      - year
+      - day_of_year
+      - week_of_year
+      - month_of_year
   - description: >-
       Measure created from dimension customer_id with count_distinct
       aggregation.
