@@ -113,13 +113,12 @@ fields:
 
   - name: count_distinct_customer_id
     field_type: measure
-    type: count
+    type: count_distinct
     description: >-
       Measure created from dimension customer_id with count_distinct
-      aggregation. --TODO: NJM
-    hidden: true
-    label: Count Distinct Customer Id NJM
+      aggregation.
+    label: Count Distinct Customer Id
     primary_key: false
-    sql: '${TABLE}."CUSTOMER_ID" -- TODO: NJM'
+    sql: ${TABLE}."CUSTOMER_ID"
     value_format_name: decimal_0
 label: Customers
