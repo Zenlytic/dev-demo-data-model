@@ -316,3 +316,13 @@ fields:
   sql: >-
     SUM(${gross_profit_from_paid_marketing}) /
     nullif(${total_marketing_spend}, 0)
+
+- name: total_gross_profit_txxaneht
+  field_type: measure
+  type: sum
+  label: Total Gross Profit
+  description: Total gross profit generated from paid marketing, calculated as the
+    sum of the marketing_spend.gross_profit_from_paid_marketing values across the
+    selected records and expressed as a numeric (currency) amount.
+  sql: ${marketing_spend.gross_profit_from_paid_marketing}
+  canon_date: marketing_spend.spend
