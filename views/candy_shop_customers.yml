@@ -131,4 +131,10 @@ fields:
     name: count_distinct_customer_id
     sql: ${TABLE}."CUSTOMER_ID"
     type: count_distinct
+  - field_type: dimension
+    type: string
+    label: My new dimension
+    searchable: false
+    sql: jkljklj
+    name: my_new_dimension
 label: Customers
