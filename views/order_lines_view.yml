@@ -349,3 +349,11 @@ fields:
   value_format_name: decimal_1
   sql: ${products.number_of_products} / ${number_of_orders}
 
+
+- name: bargain_hunter_rate_lstpxfkf
+  field_type: measure
+  type: number
+  label: Bargain Hunter Rate
+  sql: 100.0 * COUNT(DISTINCT CASE WHEN ${order_lines.discount} > 5 THEN ${order_lines.order_id}
+    END) / NULLIF(COUNT(DISTINCT ${order_lines.order_id}), 0)
+  canon_date: order_lines.order
