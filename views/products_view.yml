@@ -92,3 +92,13 @@ fields:
   sql: ${TABLE}.PRICE
   canon_date: order_lines.order
   update_where_timeframe: true
+
+- name: num_product_types_dlmqmmgy
+  field_type: measure
+  type: count_distinct
+  label: Num Product Types Number 9
+  description: 'The type of the product sold (Eye, Lip, Face, etc) '
+  value_format_name: decimal_0
+  sql: ${products.product_type}
+  zoe_description: 'The type of the product. '
+  canon_date: order_lines.order
