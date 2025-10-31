@@ -143,4 +143,10 @@ fields:
     searchable: false
     sql: fjkdjk
     name: some_new_field
+  - field_type: dimension
+    type: string
+    label: Some new field name
+    searchable: false
+    sql: 'TODO: NJM'
+    name: some_new_field_name
 label: Customers
