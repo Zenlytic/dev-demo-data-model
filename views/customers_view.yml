@@ -40,7 +40,6 @@ fields:
     field_type: dimension
     type: string
     description: The id of the customer. NJM
-    label: Some customer id
     primary_key: true
     searchable: false
     sql: ${TABLE}.CUSTOMER_ID
