@@ -124,8 +124,9 @@ fields:
     field_type: dimension
     type: string
     description: The first campaign the user came in through
-    sql: ${TABLE}.first_campaign
+    label: First Campaign NJM
     searchable: false
+    sql: ${TABLE}.first_campaign
 
   - name: first_order
     field_type: dimension_group
