@@ -274,5 +274,10 @@ fields:
       can't identify)
     value_format_name: decimal_0
     sql: ${anonymous_id}
+  - description: Measure created from dimension utm_medium with average aggregation.
+    field_type: measure
+    name: average_utm_medium
+    sql: ${TABLE}.UTM_MEDIUM
+    type: average
 event_dimension: event_name
 label: Events
