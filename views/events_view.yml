@@ -41,13 +41,6 @@ fields:
     sql: ${TABLE}.MARKETING_CHANNEL
     searchable: false
 
-  - name: utm_medium
-    field_type: dimension
-    type: string
-    description: The marketing medium the user came through to reach the site initially
-    sql: ${TABLE}.UTM_MEDIUM
-    searchable: false
-
   - name: utm_source
     field_type: dimension
     type: string
