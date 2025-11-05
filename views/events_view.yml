@@ -34,13 +34,6 @@ fields:
     description: Whether the device is mobile or not
     sql: ${TABLE}.DEVICE_IS_MOBILE
 
-  - name: marketing_channel
-    field_type: dimension
-    type: string
-    description: The marketing channel the user came through to reach the site initially
-    sql: ${TABLE}.MARKETING_CHANNEL
-    searchable: false
-
   - name: utm_source
     field_type: dimension
     type: string
