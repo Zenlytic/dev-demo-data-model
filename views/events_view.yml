@@ -266,4 +266,4 @@ fields:
     value_format_name: decimal_0
     name: measure_1
 event_dimension: event_name
-label: Events NJM
+label: Events
