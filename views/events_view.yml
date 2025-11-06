@@ -29,16 +29,6 @@ fields:
     sql: ${TABLE}.IP_ADDRESS
     searchable: false
 
-  - name: browser_name
-    field_type: dimension
-    type: string
-    hidden: true
-    description: The user's browser
-    tiers: null
-    sql: ${TABLE}.BROWSER_NAME
-    searchable: true
-    synonyms: []
-
   - name: geo_region_name
     field_type: dimension
     type: string
