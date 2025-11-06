@@ -212,5 +212,13 @@ fields:
     name: count_distinct_page_url
     sql: ${TABLE}.PAGE_URL
     type: count_distinct
+  - field_type: measure
+    type: sum
+    description: jklj
+    label: My new measure
+    primary_key: false
+    sql: jkljklj
+    value_format_name: decimal_0
+    name: my_new_measure
 event_dimension: event_name
 label: Events
