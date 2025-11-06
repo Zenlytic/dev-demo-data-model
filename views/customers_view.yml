@@ -163,4 +163,4 @@ fields:
     searchable: false
     sql: 'TODO: NJM'
     name: my_new_dimension_lol
-label: Customers NJM
+label: Customers
