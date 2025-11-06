@@ -156,3 +156,10 @@ fields:
     type: count_distinct
     value_format_name: decimal_0
     sql: ${email}
+  - field_type: dimension
+    type: string
+    description: jkljlk
+    label: my new dimension lol
+    searchable: false
+    sql: 'TODO: NJM'
+    name: my_new_dimension_lol
