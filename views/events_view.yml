@@ -256,5 +256,13 @@ fields:
     searchable: false
     sql: 'TODO: NJM'
     name: my_new_dimension_3
+  - field_type: measure
+    type: sum
+    description: Measure 1 descrip
+    label: Measure 1
+    primary_key: false
+    sql: measure sql defintiion
+    value_format_name: decimal_0
+    name: measure_1
 event_dimension: event_name
 label: Events
