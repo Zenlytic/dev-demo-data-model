@@ -241,14 +241,13 @@ fields:
     sql: ${TABLE}.PAGE_URL_PATH
     type: count_distinct
     viewName: events
-  - field_type: dimension
-    type: string
-    description: description 1
-    hidden: true
-    label: My new dimension 1
-    primary_key: true
-    searchable: true
-    sql: sql definition 1
-    name: my_new_dimension_1
+
+  - name: my_new_dimension_1
+    field_type: dimension
+    type: number
+    description: description 2
+    label: My new dimension 2
+    searchable: false
+    sql: sql definition 2
 event_dimension: event_name
 label: Events
