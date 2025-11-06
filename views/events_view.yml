@@ -234,5 +234,14 @@ fields:
       - week_of_year
       - month_of_year
     name: my_new_dimension_group
+  - field_type: measure
+    type: sum
+    description: jkljlkj
+    hidden: true
+    label: Some new measure
+    primary_key: false
+    sql: 'TODO: NJM'
+    value_format_name: decimal_0
+    name: some_new_measure
 event_dimension: event_name
 label: Events
