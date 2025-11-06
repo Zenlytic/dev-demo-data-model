@@ -52,6 +52,6 @@ relationships:
     sql_on: ${products.product_id}=${product_facts.primkey}
   - from_table: order_lines
     join_table: customers
-    join_type: inner
+    join_type: left_outer
     relationship: many_to_one
     sql_on: ${order_lines.customer_id}=${customers.customer_id}
