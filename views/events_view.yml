@@ -249,5 +249,12 @@ fields:
     searchable: false
     sql: jkljlkj
     name: another_new_dimension
+  - field_type: dimension
+    type: string
+    description: jklj
+    label: jkljklj
+    searchable: false
+    sql: jklj
+    name: jkljklj
 event_dimension: event_name
 label: Events
