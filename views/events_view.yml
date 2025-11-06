@@ -249,5 +249,12 @@ fields:
     label: My new dimension 2
     searchable: false
     sql: sql definition 2
+  - field_type: dimension
+    type: number
+    description: description 3
+    label: My new dimension 3
+    searchable: false
+    sql: 'TODO: NJM'
+    name: my_new_dimension_3
 event_dimension: event_name
 label: Events
