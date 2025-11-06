@@ -202,5 +202,10 @@ fields:
     primary_key: false
     sql: ${TABLE}.IP_ADDRESS
     value_format_name: decimal_0
+  - description: Measure created from dimension browser_user_agent with sum aggregation.
+    field_type: measure
+    name: sum_browser_user_agent
+    sql: ${TABLE}.BROWSER_USER_AGENT
+    type: sum
 event_dimension: event_name
 label: Events
