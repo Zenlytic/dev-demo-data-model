@@ -207,5 +207,14 @@ fields:
     name: sum_browser_user_agent
     sql: ${TABLE}.BROWSER_USER_AGENT
     type: sum
+  - field_type: dimension
+    type: number
+    description: jkljlkjklj
+    hidden: true
+    label: My new dimension
+    primary_key: true
+    searchable: true
+    sql: 'TODO: NJM'
+    name: my_new_dimension
 event_dimension: event_name
 label: Events
