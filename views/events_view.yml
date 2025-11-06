@@ -220,5 +220,12 @@ fields:
     sql: jkljklj
     value_format_name: decimal_0
     name: my_new_measure
+  - description: >-
+      Measure created from dimension browser_user_agent with average
+      aggregation.
+    field_type: measure
+    name: average_browser_user_agent
+    sql: ${TABLE}.BROWSER_USER_AGENT
+    type: average
 event_dimension: event_name
 label: Events
