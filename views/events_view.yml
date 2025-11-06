@@ -193,10 +193,14 @@ fields:
       can't identify)
     value_format_name: decimal_0
     sql: ${anonymous_id}
-  - description: Measure created from dimension ip_address with average aggregation.
+
+  - name: average_ip_address
     field_type: measure
-    name: average_ip_address
-    sql: ${TABLE}.IP_ADDRESS
     type: average
+    description: Measure created from dimension ip_address with average aggregation.
+    label: Average IP Address
+    primary_key: false
+    sql: ${TABLE}.IP_ADDRESS
+    value_format_name: decimal_0
 event_dimension: event_name
 label: Events
