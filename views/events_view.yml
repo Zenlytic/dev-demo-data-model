@@ -374,5 +374,12 @@ fields:
       - week_of_year
       - month_of_year
     name: another_dimension_group
+  - field_type: dimension
+    type: string
+    description: jklj
+    label: A perfect dimension
+    searchable: false
+    sql: jklj
+    name: a_perfect_dimension
 event_dimension: event_name
 label: Events
