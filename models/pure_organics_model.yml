@@ -40,3 +40,8 @@ relationships:
     join_type: left_outer
     relationship: one_to_many
     sql_on: ${customers.customer_id}=${events.customer_id}
+  - from_table: order_facts
+    join_table: order_lines
+    join_type: left_outer
+    relationship: one_to_one
+    sql_on: ${order_facts.primkey}=${order_lines.order_id}
