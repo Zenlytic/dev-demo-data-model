@@ -7,13 +7,6 @@ sql_table_name: demo_prod.events
 default_date: event
 row_label: Event
 fields:
-  - name: session_id
-    field_type: dimension
-    type: string
-    hidden: true
-    sql: ${TABLE}.SESSION_ID
-    searchable: false
-
   - name: browser_user_agent
     field_type: dimension
     type: string
