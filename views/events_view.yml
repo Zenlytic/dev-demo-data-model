@@ -21,12 +21,6 @@ fields:
     sql: ${TABLE}.SESSION_ID
     searchable: false
 
-  - name: device_is_mobile
-    field_type: dimension
-    type: yesno
-    description: Whether the device is mobile or not
-    sql: ${TABLE}.DEVICE_IS_MOBILE
-
   - name: utm_source
     field_type: dimension
     type: string
