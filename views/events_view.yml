@@ -265,5 +265,11 @@ fields:
     sql: measure sql defintiion
     value_format_name: decimal_0
     name: measure_1
+  - field_type: dimension
+    type: string
+    label: customer id
+    searchable: false
+    sql: 'TODO: NJM'
+    name: customer_id
 event_dimension: event_name
 label: Events
