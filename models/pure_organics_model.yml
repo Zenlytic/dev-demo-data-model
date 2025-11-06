@@ -34,3 +34,9 @@ mappings:
       The marketing campaign that the customer came through before placing their
       order.
     group_label: Acquisition
+relationships:
+  - from_table: customers
+    join_table: events
+    join_type: left_outer
+    relationship: one_to_many
+    sql_on: ${customers.customer_id}=${events.customer_id}
