@@ -243,5 +243,11 @@ fields:
     sql: 'TODO: NJM'
     value_format_name: decimal_0
     name: some_new_measure
+  - field_type: dimension
+    type: string
+    label: another new dimension
+    searchable: false
+    sql: jkljlkj
+    name: another_new_dimension
 event_dimension: event_name
 label: Events
