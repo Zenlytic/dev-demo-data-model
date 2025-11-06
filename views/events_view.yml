@@ -14,13 +14,6 @@ fields:
     sql: ${TABLE}.SESSION_ID
     searchable: false
 
-  - name: promotion
-    field_type: dimension
-    type: string
-    description: The promotion the user came through to reach the site initially
-    sql: ${TABLE}.PROMOTION
-    searchable: true
-
   - name: device_type
     field_type: dimension
     type: string
