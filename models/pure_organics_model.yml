@@ -35,11 +35,6 @@ mappings:
       order.
     group_label: Acquisition
 relationships:
-  - from_table: customers
-    join_table: events
-    join_type: left_outer
-    relationship: many_to_one
-    sql_on: ${customers.customer_id}=${events.customer_id}
   - from_table: order_facts
     join_table: order_lines
     join_type: left_outer
