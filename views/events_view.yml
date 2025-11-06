@@ -7,13 +7,6 @@ sql_table_name: demo_prod.events
 default_date: event
 row_label: Event
 fields:
-  - name: click_id
-    field_type: dimension
-    type: string
-    hidden: true
-    sql: ${TABLE}.CLICK_ID
-    searchable: false
-
   - name: customer_id
     field_type: dimension
     type: string
