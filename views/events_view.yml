@@ -207,5 +207,10 @@ fields:
     name: sum_browser_user_agent
     sql: ${TABLE}.BROWSER_USER_AGENT
     type: sum
+  - description: Measure created from dimension page_url with count_distinct aggregation.
+    field_type: measure
+    name: count_distinct_page_url
+    sql: ${TABLE}.PAGE_URL
+    type: count_distinct
 event_dimension: event_name
 label: Events
