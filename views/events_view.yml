@@ -21,13 +21,6 @@ fields:
     sql: ${TABLE}.SESSION_ID
     searchable: false
 
-  - name: utm_source
-    field_type: dimension
-    type: string
-    description: The marketing source the user came through to reach the site initially
-    sql: ${TABLE}.UTM_SOURCE
-    searchable: false
-
   - name: promotion
     field_type: dimension
     type: string
