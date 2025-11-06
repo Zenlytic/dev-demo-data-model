@@ -14,13 +14,6 @@ fields:
     sql: ${TABLE}.SESSION_ID
     searchable: false
 
-  - name: device_type
-    field_type: dimension
-    type: string
-    description: The user's device type (hardware)
-    sql: ${TABLE}.DEVICE_TYPE
-    searchable: true
-
   - name: browser_user_agent
     field_type: dimension
     type: string
