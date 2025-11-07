@@ -169,11 +169,11 @@ fields:
     searchable: false
     sql: 'TODO: NJM'
     name: my_new_dimension_1
-  - field_type: dimension
+
+  - name: pj_the_cat
+    field_type: dimension
     type: string
-    label: PJ the cat
+    label: PJ the cat 2
     searchable: false
     sql: jkljlkj
-    name: pj_the_cat
-    viewName: customers
 label: Customers
