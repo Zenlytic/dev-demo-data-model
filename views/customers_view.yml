@@ -163,4 +163,10 @@ fields:
     searchable: false
     sql: 'TODO: NJM'
     name: my_new_dimension_lol
+  - field_type: dimension
+    type: string
+    label: My new dimension 1
+    searchable: false
+    sql: 'TODO: NJM'
+    name: my_new_dimension_1
 label: Customers
