@@ -348,3 +348,13 @@ fields:
   description: Total gross revenue = revenue from product sales + shipping revenues
   value_format_name: decimal_1
   sql: ${products.number_of_products} / ${number_of_orders}
+
+- name: bargain_hunter_rate_pct_lipqpmwt
+  field_type: measure
+  type: number
+  label: Bargain Hunter Rate Pct
+  description: The percentage of orders that received a discount greater than 5%,
+    showing how many customers are bargain hunters.
+  sql: 100.0 * COUNT(DISTINCT CASE WHEN ${order_lines.discount} > 5 THEN ${order_lines.order_id}
+    END) / NULLIF(COUNT(DISTINCT ${order_lines.order_id}), 0)
+  canon_date: order_lines.order
