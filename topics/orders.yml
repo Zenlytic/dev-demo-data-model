@@ -1,7 +1,7 @@
-base_view: orders
-name: orders
-model_name: zenlytic_managed
-label: Orders
-description: ''
-views: {}
-type: topic
+# base_view: orders
+# name: orders
+# model_name: zenlytic_managed
+# label: Orders
+# description: ''
+# views: {}
+# type: topic
