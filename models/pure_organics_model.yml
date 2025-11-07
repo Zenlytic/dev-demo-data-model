@@ -42,7 +42,7 @@ relationships:
     sql_on: ${order_facts.primkey}=${order_lines.order_id}
   - from_table: products
     join_table: product_facts
-    join_type: left_outer
+    join_type: full_outer
     relationship: one_to_one
     sql_on: ${products.product_id}=${product_facts.primkey}
   - from_table: order_lines
