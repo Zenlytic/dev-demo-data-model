@@ -134,3 +134,9 @@ fields:
     sql: >-
       SUM(${gross_profit_from_paid_marketing}) /
       nullif(${total_marketing_spend}, 0)
+  - field_type: dimension
+    type: string
+    label: dkfjsdklfj
+    searchable: false
+    sql: jkljkl
+    name: dkfjsdklfj
