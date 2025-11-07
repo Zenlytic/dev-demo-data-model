@@ -170,7 +170,7 @@ fields:
   - name: my_new_dimension_1
     field_type: dimension
     type: string
-    description: Something else
+    description: Something else 99
     label: My new dimension 1
     searchable: false
     sql: 'TODO: NJM'
