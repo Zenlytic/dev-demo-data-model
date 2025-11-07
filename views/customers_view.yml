@@ -172,8 +172,11 @@ fields:
 
   - name: pj_the_cat
     field_type: dimension
-    type: string
+    type: number
+    description: testing description
+    hidden: true
     label: PJ the cat 2
-    searchable: false
-    sql: jkljlkj
+    primary_key: true
+    searchable: true
+    sql: jkljlkj somethign else
 label: Customers
