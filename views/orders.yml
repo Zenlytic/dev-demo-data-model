@@ -1,104 +1,104 @@
-type: view
-name: orders
-model_name: zenlytic_managed
-sql_table_name: orders
-default_date: order_date
-fields:
-  - name: order_id
-    field_type: dimension
-    type: string
-    sql: ${TABLE}."ORDER_ID"
-    searchable: true
-    primary_key: true
+# type: view
+# name: orders
+# model_name: zenlytic_managed
+# sql_table_name: orders
+# default_date: order_date
+# fields:
+#   - name: order_id
+#     field_type: dimension
+#     type: string
+#     sql: ${TABLE}."ORDER_ID"
+#     searchable: true
+#     primary_key: true
 
-  - name: customer_id
-    field_type: dimension
-    type: string
-    sql: ${TABLE}."CUSTOMER_ID"
-    searchable: true
+#   - name: customer_id
+#     field_type: dimension
+#     type: string
+#     sql: ${TABLE}."CUSTOMER_ID"
+#     searchable: true
 
-  - name: product_id
-    field_type: dimension
-    type: string
-    sql: ${TABLE}."PRODUCT_ID"
-    searchable: true
+#   - name: product_id
+#     field_type: dimension
+#     type: string
+#     sql: ${TABLE}."PRODUCT_ID"
+#     searchable: true
 
-  - name: product_name
-    field_type: dimension
-    type: string
-    sql: ${TABLE}."PRODUCT_NAME"
-    searchable: true
+#   - name: product_name
+#     field_type: dimension
+#     type: string
+#     sql: ${TABLE}."PRODUCT_NAME"
+#     searchable: true
 
-  - name: quantity
-    field_type: dimension
-    type: number
-    sql: ${TABLE}."QUANTITY"
-    searchable: true
+#   - name: quantity
+#     field_type: dimension
+#     type: number
+#     sql: ${TABLE}."QUANTITY"
+#     searchable: true
 
-  - name: unit_price
-    field_type: dimension
-    type: number
-    sql: ${TABLE}."UNIT_PRICE"
-    searchable: true
+#   - name: unit_price
+#     field_type: dimension
+#     type: number
+#     sql: ${TABLE}."UNIT_PRICE"
+#     searchable: true
 
-  - name: promo_code
-    field_type: dimension
-    type: string
-    sql: ${TABLE}."PROMO_CODE"
-    searchable: true
+#   - name: promo_code
+#     field_type: dimension
+#     type: string
+#     sql: ${TABLE}."PROMO_CODE"
+#     searchable: true
 
-  - name: discount_amount
-    field_type: dimension
-    type: number
-    sql: ${TABLE}."DISCOUNT_AMOUNT"
-    searchable: true
+#   - name: discount_amount
+#     field_type: dimension
+#     type: number
+#     sql: ${TABLE}."DISCOUNT_AMOUNT"
+#     searchable: true
 
-  - name: subtotal
-    field_type: dimension
-    type: number
-    sql: ${TABLE}."SUBTOTAL"
-    searchable: true
+#   - name: subtotal
+#     field_type: dimension
+#     type: number
+#     sql: ${TABLE}."SUBTOTAL"
+#     searchable: true
 
-  - name: tax_amount
-    field_type: dimension
-    type: number
-    sql: ${TABLE}."TAX_AMOUNT"
-    searchable: true
+#   - name: tax_amount
+#     field_type: dimension
+#     type: number
+#     sql: ${TABLE}."TAX_AMOUNT"
+#     searchable: true
 
-  - name: total_amount
-    field_type: dimension
-    type: number
-    sql: ${TABLE}."TOTAL_AMOUNT"
-    searchable: true
+#   - name: total_amount
+#     field_type: dimension
+#     type: number
+#     sql: ${TABLE}."TOTAL_AMOUNT"
+#     searchable: true
 
-  - name: status
-    field_type: dimension
-    type: string
-    sql: ${TABLE}."STATUS"
-    searchable: true
+#   - name: status
+#     field_type: dimension
+#     type: string
+#     sql: ${TABLE}."STATUS"
+#     searchable: true
 
-  - name: payment_method
-    field_type: dimension
-    type: string
-    sql: ${TABLE}."PAYMENT_METHOD"
-    searchable: true
+#   - name: payment_method
+#     field_type: dimension
+#     type: string
+#     sql: ${TABLE}."PAYMENT_METHOD"
+#     searchable: true
 
-  - name: shipping_address
-    field_type: dimension
-    type: string
-    sql: ${TABLE}."SHIPPING_ADDRESS"
-    searchable: true
+#   - name: shipping_address
+#     field_type: dimension
+#     type: string
+#     sql: ${TABLE}."SHIPPING_ADDRESS"
+#     searchable: true
 
-  - name: order_date
-    field_type: dimension_group
-    type: time
-    sql: ${TABLE}."ORDER_DATE"
-    timeframes:
-      - date
-      - week
-      - month
-      - quarter
-      - year
-      - day_of_year
-      - week_of_year
-      - month_of_year
+#   - name: order_date
+#     field_type: dimension_group
+#     type: time
+#     sql: ${TABLE}."ORDER_DATE"
+#     timeframes:
+#       - date
+#       - week
+#       - month
+#       - quarter
+#       - year
+#       - day_of_year
+#       - week_of_year
+#       - month_of_year
