@@ -3,20 +3,20 @@ name: plan
 model_name: pure_organics
 sql_table_name: PEOPLE_PULSE_RAW.PLAN
 fields:
-  - name: SALES_REP_ID
-    field_type: dimension
-    type: string
-    sql: ${TABLE}."SALES_REP_ID"
-    searchable: true
+- name: SALES_REP_ID
+  field_type: dimension
+  type: string
+  sql: ${TABLE}."SALES_REP_ID"
+  searchable: true
 
-  - name: DAILY_QUOTA
-    field_type: dimension
-    type: string
-    sql: ${TABLE}."DAILY_QUOTA"
-    searchable: true
+- name: DAILY_QUOTA
+  field_type: dimension
+  type: string
+  sql: ${TABLE}."DAILY_QUOTA"
+  searchable: true
 
-  - name: DATE
-    field_type: dimension
-    type: string
-    sql: ${TABLE}."DATE"
-    searchable: true
+- name: DATE
+  field_type: dimension
+  type: string
+  sql: ${TABLE}."DATE"
+  searchable: true
