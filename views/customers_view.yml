@@ -166,12 +166,14 @@ fields:
     searchable: false
     sql: 'TODO: NJM'
     name: my_new_dimension_lol
-  - field_type: dimension
+
+  - name: my_new_dimension_1
+    field_type: dimension
     type: string
+    description: Something else
     label: My new dimension 1
     searchable: false
     sql: 'TODO: NJM'
-    name: my_new_dimension_1
 
   - name: pj_the_cat
     field_type: dimension
