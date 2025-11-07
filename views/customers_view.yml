@@ -71,8 +71,9 @@ fields:
   - name: last_name
     field_type: dimension
     type: string
-    sql: ${TABLE}.LAST_NAME
+    description: last name jkljlkj
     searchable: false
+    sql: ${TABLE}.LAST_NAME
 
   - name: full_name
     field_type: dimension
