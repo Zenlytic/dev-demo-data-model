@@ -55,3 +55,8 @@ relationships:
     join_type: inner
     relationship: many_to_one
     sql_on: ${events.customer_id}=${customers.customer_id}
+  - from_table: products
+    join_table: product_facts
+    join_type: left_outer
+    relationship: one_to_one
+    sql_on: ${products.product_id}=${product_facts.primkey}
