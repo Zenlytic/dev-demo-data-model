@@ -64,8 +64,9 @@ fields:
   - name: first_name
     field_type: dimension
     type: string
-    sql: ${TABLE}.FIRST_NAME
+    description: first namejkljkl
     searchable: false
+    sql: ${TABLE}.FIRST_NAME
 
   - name: last_name
     field_type: dimension
