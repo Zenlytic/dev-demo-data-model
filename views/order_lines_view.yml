@@ -356,3 +356,15 @@ fields:
   sql: (COUNT(DISTINCT CASE WHEN ${order_lines.discount} > 5 THEN ${order_lines.order_id}
     END) * 1.0) / NULLIF(COUNT(DISTINCT ${order_lines.order_id}), 0)
   canon_date: order_lines.order
+
+- name: count_distinct_filtered_revenue_tsfsffvz
+  field_type: measure
+  type: count_distinct
+  label: Count Distinct Filtered Revenue
+  sql: CASE WHEN DATE_TRUNC('MONTH', CAST(CAST(CONVERT_TIMEZONE('America/New_York',
+    ${order_lines.order_raw}) AS TIMESTAMPNTZ) AS TIMESTAMP)) <= '2025-10-31' AND
+    DATE_TRUNC('MONTH', CAST(CAST(CONVERT_TIMEZONE('America/New_York', ${order_lines.order_raw})
+    AS TIMESTAMPNTZ) AS TIMESTAMP)) >= '2025-08-01' AND ${order_lines.marketing_channel}
+    = 'Facebook' AND ${products.product_type} = 'Eye' THEN ${order_lines.revenue}
+    END
+  canon_date: order_lines.order
