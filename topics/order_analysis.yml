@@ -8,7 +8,6 @@ description: >-
   'ORDER_ID,' identifying unique orders, and 'CAMPAIGN' and 'PROMOTION,'
   indicating marketing strategies linked to each order. The model differentiates
   between 'SUBSCRIPTION_VS_OTP' to track subscription versus one-time purchases,
-  and includes 'MARKETING_SOURCE' and 'CHANNELS' for attribution insights.
   
 zoe_description: >-
   This model analyzes order data, providing insights into marketing efficacy and
