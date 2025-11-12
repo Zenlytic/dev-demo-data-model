@@ -7,7 +7,7 @@ description: >-
   analyze marketing influences and revenue outcomes. Key fields include
   'ORDER_ID,' identifying unique orders, and 'CAMPAIGN' and 'PROMOTION,'
   indicating marketing strategies linked to each order. The model differentiates
-  between 'SUBSCRIPTION_VS_OTP' to track subscription versus one-time purchases,
+  
   
 zoe_description: >-
   This model analyzes order data, providing insights into marketing efficacy and
