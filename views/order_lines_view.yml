@@ -201,7 +201,7 @@ fields:
   label: Total Gross Revenue
   description: >-
     Total gross revenue = revenue from product sales + shipping revenues.
-    Testing.
+    in USD.
   value_format_name: usd
   sql: ${revenue}
   synonyms:
