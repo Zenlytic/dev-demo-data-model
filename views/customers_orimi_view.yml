@@ -95,7 +95,10 @@ fields:
   - year
   sql: ${TABLE}."FIRST_ORDER_AT"
 
-
+- name: mymeasure
+  type: sum
+  field_type: measure
+  sql: ${address}
 # To help you get started with defining fields, we've included a quick guide which you can delete at any time.
 # The following keys are required for all fields. All the fields above have been created based on the columns
 # in your table.
