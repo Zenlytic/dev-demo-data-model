@@ -184,16 +184,6 @@ fields:
   sql: ${TABLE}.ORDER_AT
 
 
-- name: bargain_hunter_rate_dxjyiidf
-  field_type: measure
-  type: number
-  label: Bargain Hunter Rate
-  description: The Bargain Hunter Rate shows the percentage of unique orders that
-    received a discount greater than 5%.
-  value_format_name: decimal_pct_2
-  sql: COUNT(DISTINCT CASE WHEN ${order_lines.discount} > 5 THEN ${order_lines.order_id}
-    END) * 100.0 / NULLIF(COUNT(DISTINCT ${order_lines.order_id}), 0)
-  canon_date: order_lines.order
 - name: total_gross_revenue
   field_type: measure
   type: sum
