@@ -1,5 +1,4 @@
 version: '1'
 type: model
 name: redshift
-connection: demo
-
+connection: redshift
