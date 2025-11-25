@@ -95,32 +95,6 @@ fields:
   sql: ${TABLE}.CAMPAIGN
   searchable: true
 
-- name: promotion
-  field_type: dimension
-  type: string
-  hidden: false
-  description: The promotion given to the customer for this order
-  sql: ${TABLE}.PROMOTION
-  searchable: true
-
-- name: subscription_vs_otp
-  field_type: dimension
-  type: string
-  hidden: false
-  description: Whether the order was from a subscription or a one time purchase (OTP)
-  sql: ${TABLE}.SUBSCRIPTION_VS_OTP
-  searchable: true
-
-- name: marketing_source
-  field_type: dimension
-  type: string
-  hidden: false
-  description: >-
-    The marketing source that the customer came through before placing their
-    order.
-  sql: ${TABLE}.MARKETING_SOURCE
-  searchable: true
-
 - name: marketing_channel
   field_type: dimension
   type: string
