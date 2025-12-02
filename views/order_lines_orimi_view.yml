@@ -5,169 +5,169 @@ model_name: pure_organics
 sql_table_name: DEMO_PROD.ORDER_LINES_ORIMI
 default_date: order_at
 fields:
-- name: style_guide_viewed
-  field_type: dimension
-  type: yesno
-  sql: ${TABLE}."STYLE_GUIDE_VIEWED"
+  - name: style_guide_viewed
+    field_type: dimension
+    type: yesno
+    sql: ${TABLE}."STYLE_GUIDE_VIEWED"
 
-- name: product_id
-  field_type: dimension
-  type: string
-  sql: ${TABLE}."PRODUCT_ID"
-  searchable: true
+  - name: product_id
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."PRODUCT_ID"
+    searchable: true
 
-- name: product_video_viewed
-  field_type: dimension
-  type: yesno
-  sql: ${TABLE}."PRODUCT_VIDEO_VIEWED"
+  - name: product_video_viewed
+    field_type: dimension
+    type: yesno
+    sql: ${TABLE}."PRODUCT_VIDEO_VIEWED"
 
-- name: order_line_id
-  field_type: dimension
-  type: number
-  sql: ${TABLE}."ORDER_LINE_ID"
+  - name: order_line_id
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."ORDER_LINE_ID"
 
-- name: order_id
-  field_type: dimension
-  type: number
-  sql: ${TABLE}."ORDER_ID"
+  - name: order_id
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."ORDER_ID"
 
-- name: customer_id
-  field_type: dimension
-  type: number
-  sql: ${TABLE}."CUSTOMER_ID"
+  - name: customer_id
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."CUSTOMER_ID"
 
-- name: revenue
-  field_type: dimension
-  type: number
-  sql: ${TABLE}."REVENUE"
+  - name: revenue
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."REVENUE"
 
-- name: ar_vr_viewed
-  field_type: dimension
-  type: yesno
-  sql: ${TABLE}."AR_VR_VIEWED"
+  - name: ar_vr_viewed
+    field_type: dimension
+    type: yesno
+    sql: ${TABLE}."AR_VR_VIEWED"
 
-- name: cogs
-  field_type: dimension
-  type: number
-  sql: ${TABLE}."COGS"
+  - name: cogs
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."COGS"
 
-- name: live_chat_used
-  field_type: dimension
-  type: yesno
-  sql: ${TABLE}."LIVE_CHAT_USED"
+  - name: live_chat_used
+    field_type: dimension
+    type: yesno
+    sql: ${TABLE}."LIVE_CHAT_USED"
 
-- name: marketing_source
-  field_type: dimension
-  type: string
-  sql: ${TABLE}."MARKETING_SOURCE"
-  searchable: true
+  - name: marketing_source
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."MARKETING_SOURCE"
+    searchable: true
 
-- name: marketing_channel
-  field_type: dimension
-  type: string
-  sql: ${TABLE}."MARKETING_CHANNEL"
-  searchable: true
+  - name: marketing_channel
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."MARKETING_CHANNEL"
+    searchable: true
 
-- name: returned_for_fit
-  field_type: dimension
-  type: yesno
-  sql: ${TABLE}."RETURNED_FOR_FIT"
+  - name: returned_for_fit
+    field_type: dimension
+    type: yesno
+    sql: ${TABLE}."RETURNED_FOR_FIT"
 
-- name: subscription_vs_otp
-  field_type: dimension
-  type: string
-  sql: ${TABLE}."SUBSCRIPTION_VS_OTP"
-  searchable: true
+  - name: subscription_vs_otp
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."SUBSCRIPTION_VS_OTP"
+    searchable: true
 
-- name: is_returned
-  field_type: dimension
-  type: yesno
-  sql: ${TABLE}."IS_RETURNED"
+  - name: is_returned
+    field_type: dimension
+    type: yesno
+    sql: ${TABLE}."IS_RETURNED"
 
-- name: last_click
-  field_type: dimension
-  type: string
-  sql: ${TABLE}."LAST_CLICK"
-  searchable: true
+  - name: last_click
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."LAST_CLICK"
+    searchable: true
 
-- name: order_number
-  field_type: dimension
-  type: number
-  sql: ${TABLE}."ORDER_NUMBER"
+  - name: order_number
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."ORDER_NUMBER"
 
-- name: new_vs_repeat
-  field_type: dimension
-  type: string
-  sql: ${TABLE}."NEW_VS_REPEAT"
-  searchable: true
+  - name: new_vs_repeat
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."NEW_VS_REPEAT"
+    searchable: true
 
-- name: first_click
-  field_type: dimension
-  type: string
-  sql: ${TABLE}."FIRST_CLICK"
-  searchable: true
+  - name: first_click
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."FIRST_CLICK"
+    searchable: true
 
-- name: quantity
-  field_type: dimension
-  type: number
-  sql: ${TABLE}."QUANTITY"
+  - name: quantity
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."QUANTITY"
 
-- name: discount
-  field_type: dimension
-  type: number
-  sql: ${TABLE}."DISCOUNT"
+  - name: discount
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."DISCOUNT"
 
-- name: price
-  field_type: dimension
-  type: number
-  sql: ${TABLE}."PRICE"
+  - name: price
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."PRICE"
 
-- name: promotion
-  field_type: dimension
-  type: string
-  sql: ${TABLE}."PROMOTION"
-  searchable: true
+  - name: promotion
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."PROMOTION"
+    searchable: true
 
-- name: campaign
-  field_type: dimension
-  type: string
-  sql: ${TABLE}."CAMPAIGN"
-  searchable: true
+  - name: campaign
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."CAMPAIGN"
+    searchable: true
 
-- name: return_reason
-  field_type: dimension
-  type: string
-  sql: ${TABLE}."RETURN_REASON"
-  searchable: true
+  - name: return_reason
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."RETURN_REASON"
+    searchable: true
 
-- name: order_at
-  field_type: dimension_group
-  type: time
-  datatype: timestamp
-  timeframes:
-  - raw
-  - date
-  - day_of_year
-  - week
-  - week_of_year
-  - month
-  - month_of_year
-  - quarter
-  - year
-  sql: ${TABLE}."ORDER_AT"
+  - name: order_at
+    field_type: dimension_group
+    type: time
+    datatype: timestamp
+    timeframes:
+      - raw
+      - date
+      - day_of_year
+      - week
+      - week_of_year
+      - month
+      - month_of_year
+      - quarter
+      - year
+    sql: ${TABLE}."ORDER_AT"
 
-- name: return_at
-  field_type: dimension_group
-  type: time
-  datatype: timestamp
-  timeframes:
-  - raw
-  - date
-  - day_of_year
-  - week
-  - week_of_year
-  - month
-  - month_of_year
-  - quarter
-  - year
-  sql: ${TABLE}."RETURN_AT"
+  - name: return_at
+    field_type: dimension_group
+    type: time
+    datatype: timestamp
+    timeframes:
+      - raw
+      - date
+      - day_of_year
+      - week
+      - week_of_year
+      - month
+      - month_of_year
+      - quarter
+      - year
+    sql: ${TABLE}."RETURN_AT"
