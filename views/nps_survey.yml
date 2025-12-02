@@ -3,26 +3,26 @@ name: nps_survey
 model_name: pure_organics
 sql_table_name: PEOPLE_PULSE_RAW.NPS_SURVEY
 fields:
-- name: CUSTOMER_ID
-  field_type: dimension
-  type: string
-  sql: ${TABLE}."CUSTOMER_ID"
-  searchable: true
+  - name: CUSTOMER_ID
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."CUSTOMER_ID"
+    searchable: true
 
-- name: SURVEY_SCORE
-  field_type: dimension
-  type: string
-  sql: ${TABLE}."SURVEY_SCORE"
-  searchable: true
+  - name: SURVEY_SCORE
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."SURVEY_SCORE"
+    searchable: true
 
-- name: FEEDBACK
-  field_type: dimension
-  type: string
-  sql: ${TABLE}."FEEDBACK"
-  searchable: true
+  - name: FEEDBACK
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."FEEDBACK"
+    searchable: true
 
-- name: ID
-  field_type: dimension
-  type: string
-  sql: ${TABLE}."ID"
-  searchable: true
+  - name: ID
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."ID"
+    searchable: true
