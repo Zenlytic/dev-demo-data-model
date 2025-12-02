@@ -349,3 +349,12 @@ fields:
   description: Total gross revenue = revenue from product sales + shipping revenues
   value_format_name: decimal_1
   sql: ${products.number_of_products} / ${number_of_orders}
+
+- name: orders_with_discount_above_5_oqkevibm
+  field_type: measure
+  type: count_distinct
+  label: Orders With Discount Above 5
+  description: The unique number of orders placed
+  value_format_name: decimal_0
+  sql: CASE WHEN ${order_lines.discount} > 5 THEN ${order_lines.order_id} END
+  canon_date: order_lines.order
