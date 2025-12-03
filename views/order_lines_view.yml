@@ -62,7 +62,7 @@ fields:
     type: string
     hidden: false
     sql: ${TABLE}.PRODUCT_ID
-    searchable: false
+    searchable: true
 
   - name: revenue
     field_type: dimension
