@@ -88,7 +88,7 @@ fields:
 - name: count_price_zkjqecah
   field_type: measure
   type: count
-  label: Count Price2
+  label: Count Price
   sql: ${TABLE}.PRICE
   canon_date: order_lines.order
   update_where_timeframe: true
