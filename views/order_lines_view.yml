@@ -5,7 +5,10 @@ description: Description of order_lines view.
 model_name: pure_organics
 sql_table_name: DEMO_PROD.ORDER_LINES
 default_date: order
-row_label: Order line
+access_filters:
+  - field: order_lines.product_id
+    user_attribute: 'products'
+
 identifiers:
   - name: product_id
     type: foreign
