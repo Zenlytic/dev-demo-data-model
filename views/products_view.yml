@@ -100,5 +100,5 @@ fields:
     canon_date: order_lines.order
     label: Num Product Types Number 9
     sql: ${products.product_type}
-    value_format_name: decimal_0
+    value_format_name: decimal_1
     zoe_description: 'The type of the product. '
