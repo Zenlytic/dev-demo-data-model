@@ -1,0 +1,190 @@
+version: 1
+type: view
+name: events_orimi
+model_name: pure_organics
+sql_table_name: DEMO_PROD.EVENTS_ORIMI
+fields:
+  - name: customer_id
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."CUSTOMER_ID"
+
+  - name: anonymous_id
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."ANONYMOUS_ID"
+
+  - name: click_id
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."CLICK_ID"
+    searchable: false
+
+  - name: event_id
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."EVENT_ID"
+    searchable: false
+
+  - name: session_id
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."SESSION_ID"
+
+  - name: browser_language
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."BROWSER_LANGUAGE"
+    searchable: false
+
+  - name: device_type
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."DEVICE_TYPE"
+    searchable: true
+
+  - name: marketing_channel
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."MARKETING_CHANNEL"
+    searchable: true
+
+  - name: os_name
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."OS_NAME"
+    searchable: true
+
+  - name: utm_medium
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."UTM_MEDIUM"
+    searchable: true
+
+  - name: os_timezone
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."OS_TIMEZONE"
+    searchable: false
+
+  - name: device_is_mobile
+    field_type: dimension
+    type: yesno
+    sql: ${TABLE}."DEVICE_IS_MOBILE"
+
+  - name: utm_source
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."UTM_SOURCE"
+    searchable: true
+
+  - name: geo_country
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."GEO_COUNTRY"
+    searchable: false
+
+  - name: geo_timezone
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."GEO_TIMEZONE"
+    searchable: false
+
+  - name: os
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."OS"
+    searchable: false
+
+  - name: referer_url_scheme
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."REFERER_URL_SCHEME"
+    searchable: true
+
+  - name: geo_latitude
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."GEO_LATITUDE"
+
+  - name: page_url
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."PAGE_URL"
+    searchable: true
+
+  - name: referer_url
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."REFERER_URL"
+    searchable: true
+
+  - name: utm_campaign
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."UTM_CAMPAIGN"
+    searchable: true
+
+  - name: ip_address
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."IP_ADDRESS"
+    searchable: false
+
+  - name: page_url_path
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."PAGE_URL_PATH"
+    searchable: true
+
+  - name: referer_medium
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."REFERER_MEDIUM"
+    searchable: true
+
+  - name: referer_url_port
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."REFERER_URL_PORT"
+
+  - name: event_timestamp
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."EVENT_TIMESTAMP"
+    searchable: false
+
+  - name: browser_user_agent
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."BROWSER_USER_AGENT"
+    searchable: false
+
+  - name: event_name
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."EVENT_NAME"
+    searchable: true
+
+  - name: geo_longitude
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."GEO_LONGITUDE"
+
+  - name: promotion
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."PROMOTION"
+    searchable: true
+
+  - name: browser_name
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."BROWSER_NAME"
+    searchable: true
+
+  - name: geo_region_name
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."GEO_REGION_NAME"
+    searchable: false
