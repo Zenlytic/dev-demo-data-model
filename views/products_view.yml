@@ -99,7 +99,6 @@ fields:
     description: 'The type of the product sold (Eye, Lip, Face, etc) '
     canon_date: order_lines.order
     label: Num Product Types Number 9
-    primary_key: false
     sql: ${products.product_type}
     value_format_name: decimal_1
     zoe_description: 'The type of the product. '
