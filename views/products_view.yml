@@ -78,27 +78,3 @@ fields:
     description: The Price of the Product
     sql: ${TABLE}.PRICE
     searchable: true
-
-  - name: number_of_products
-    field_type: measure
-    type: count_distinct
-    description: The Distinct Number of Products
-    sql: ${product_id}
-
-  - name: count_price_zkjqecah
-    field_type: measure
-    type: count
-    label: Count Price
-    sql: ${TABLE}.PRICE
-    canon_date: order_lines.order
-    update_where_timeframe: true
-
-  - name: num_product_types_dlmqmmgy
-    field_type: measure
-    type: count_distinct
-    description: 'The type of the product sold (Eye, Lip, Face, etc) '
-    canon_date: order_lines.order
-    label: Num Product Types Number 9
-    sql: ${products.product_type}
-    value_format_name: decimal_1
-    zoe_description: 'The type of the product. '
