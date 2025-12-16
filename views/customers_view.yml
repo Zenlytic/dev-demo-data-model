@@ -22,7 +22,7 @@ description: >-
   customer behavior, track customer acquisition and retention, and optimize your
   marketing campaigns to drive revenue and growth. 
 model_name: pure_organics
-sql_table_name: 'DEMO."demo_prod"."customers"'
+sql_table_name: 'DEMO."DEMO_PROD".customers'
 default_date: first_order
 row_label: Customer
 identifiers:
