@@ -2,7 +2,7 @@ version: 1
 type: view
 name: products
 model_name: pure_organics
-sql_table_name: DEMO_PROD.PRODUCTS
+sql_table_name: '"DEMO_PROD"."PRODUCTS"'
 default_date: order_lines.order
 identifiers:
   - name: product_id
