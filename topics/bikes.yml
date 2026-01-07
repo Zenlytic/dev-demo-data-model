@@ -3,5 +3,10 @@ name: orders
 model_name: zenlytic_managed
 label: Bikes
 description: ''
-views: {}
+views:
+  stores:
+    join:
+      join_type: left_outer
+      relationship: many_to_one
+      sql_on: ${orders.store_id}=${stores.store_id}
 type: topic

@@ -1,0 +1,53 @@
+type: view
+name: stores
+model_name: zenlytic_managed
+sql_table_name: stores
+fields:
+  - name: store_id
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."STORE_ID"
+    searchable: true
+    primary_key: true
+
+  - name: store_name
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."STORE_NAME"
+    searchable: true
+
+  - name: phone
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."PHONE"
+    searchable: true
+
+  - name: email
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."EMAIL"
+    searchable: true
+
+  - name: street
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."STREET"
+    searchable: true
+
+  - name: city
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."CITY"
+    searchable: true
+
+  - name: state
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."STATE"
+    searchable: true
+
+  - name: zip_code
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."ZIP_CODE"
+    searchable: true
