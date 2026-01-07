@@ -8,5 +8,10 @@ views:
     join:
       join_type: left_outer
       relationship: many_to_one
-      sql_on: ${orders.store_id}=${stores.store_id}
+      sql_on: ${orders.order_id}=${stores.store_name}
+  stocks:
+    join:
+      join_type: left_outer
+      relationship: many_to_one
+      sql_on: ${orders.store_id}=${stocks.store_id}
 type: topic

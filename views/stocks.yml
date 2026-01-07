@@ -1,0 +1,23 @@
+type: view
+name: stocks
+model_name: zenlytic_managed
+sql_table_name: stocks
+fields:
+  - name: store_id
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."STORE_ID"
+    searchable: true
+    primary_key: true
+
+  - name: product_id
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."PRODUCT_ID"
+    searchable: true
+
+  - name: quantity
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."QUANTITY"
+    searchable: true
