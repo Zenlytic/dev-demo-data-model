@@ -73,5 +73,6 @@ fields:
   - name: total_cogs
     field_type: measure
     type: sum
+    label: Total Cogs
     sql: ${TABLE}.total_cogs
     value_format_name: decimal_0
