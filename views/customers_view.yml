@@ -148,7 +148,7 @@ fields:
   - name: number_of_customers
     field_type: measure
     type: count_distinct
-    label: test2
+    label: test
     sql: ${customer_id}
     value_format_name: decimal_0
 
