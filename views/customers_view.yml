@@ -40,7 +40,7 @@ fields:
     field_type: dimension
     type: string
     description: The id of the customer.
-    label: Customer ID
+    label: Customer Id
     primary_key: true
     searchable: false
     sql: ${TABLE}.CUSTOMER_ID
