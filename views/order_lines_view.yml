@@ -166,7 +166,7 @@ fields:
     type: time
     datatype: timestamp
     primary_key: false
-    label: Orderjoe
+    label: Order
     description: >-
       The time at which the order was placed. This is the main time field to use
       for orders
