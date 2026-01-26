@@ -355,10 +355,11 @@ fields:
     hidden: false
     label: 90-Day Customer Retention Rate
     description: >-
-      Percentage of customers who make a repeat purchase within 90 days of their first order.
-      This is a critical indicator of product-market fit and customer satisfaction.
+      Percentage of customers who make a repeat purchase within 90 days of their
+      first order. This is a critical indicator of product-market fit and
+      customer satisfaction.
     value_format_name: percent_1
-    sql: >-
+    sql: |-
       COUNT(DISTINCT CASE 
         WHEN EXISTS (
           SELECT 1 FROM DEMO_PROD.ORDER_LINES ol2 
@@ -374,11 +375,12 @@ fields:
     hidden: false
     label: Orders per Customer
     description: >-
-      Average number of orders per customer. This metric helps calculate customer lifetime value
-      and understand customer engagement levels.
+      Average number of orders per customer. This metric helps calculate
+      customer lifetime value and understand customer engagement levels.
     value_format_name: decimal_2
     sql: >-
-      COUNT(DISTINCT ${TABLE}.ORDER_ID) / NULLIF(COUNT(DISTINCT ${TABLE}.CUSTOMER_ID), 0)
+      COUNT(DISTINCT ${TABLE}.ORDER_ID) / NULLIF(COUNT(DISTINCT
+      ${TABLE}.CUSTOMER_ID), 0)
 
   - name: product_cross_sell_index
     field_type: measure
@@ -387,8 +389,10 @@ fields:
     label: Product Cross-Sell Index
     description: >-
       Measures how many different products are purchased per order on average.
-      Higher values indicate stronger cross-sell performance and product affinity.
+      Higher values indicate stronger cross-sell performance and product
+      affinity.
     value_format_name: decimal_2
     sql: >-
-      COUNT(DISTINCT ${TABLE}.PRODUCT_ID) / NULLIF(COUNT(DISTINCT ${TABLE}.ORDER_ID), 0)
+      COUNT(DISTINCT ${TABLE}.PRODUCT_ID) / NULLIF(COUNT(DISTINCT
+      ${TABLE}.ORDER_ID), 0)
 label: Order Lines
