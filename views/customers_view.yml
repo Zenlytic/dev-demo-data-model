@@ -144,16 +144,3 @@ fields:
       - time
       - year
     sql: ${TABLE}.first_order_at
-
-  - name: number_of_customers
-    field_type: measure
-    type: count_distinct
-    label: Check Fetch2
-    value_format_name: decimal_0
-    sql: ${customer_id}
-
-  - name: number_of_emails
-    field_type: measure
-    type: count_distinct
-    value_format_name: decimal_0
-    sql: ${email}
