@@ -148,9 +148,9 @@ fields:
   - name: number_of_customers
     field_type: measure
     type: count_distinct
-    label: Check Fetch2
-    value_format_name: decimal_0
+    label: Check Fe
     sql: ${customer_id}
+    value_format_name: decimal_0
 
   - name: number_of_emails
     field_type: measure
