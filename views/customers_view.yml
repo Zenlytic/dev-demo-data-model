@@ -148,7 +148,7 @@ fields:
   - name: number_of_customers
     field_type: measure
     type: count_distinct
-    label: hi
+    label: project save metric
     sql: ${customer_id}
     value_format_name: decimal_0
 
