@@ -11,6 +11,10 @@ identifiers:
   - name: product_id
     type: foreign
     sql: ${product_id}
+  - name: order_line_id
+    type: primary
+    sql: ${order_line_id}
+    allowed_fanouts: []
 fields:
   - name: order_line_id
     field_type: dimension
