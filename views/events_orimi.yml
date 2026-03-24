@@ -4,156 +4,156 @@ name: events_orimi
 model_name: pure_organics
 sql_table_name: '"DEMO_PROD"."EVENTS_ORIMI"'
 fields:
-- name: utm_campaign
-  sql: ${TABLE}."UTM_CAMPAIGN"
-  field_type: dimension
-  type: string
-  searchable: true
-- name: geo_region_name
-  sql: ${TABLE}."GEO_REGION_NAME"
-  field_type: dimension
-  type: string
-  searchable: false
 - name: event_id
+  field_type: dimension
+  type: string
   sql: ${TABLE}."EVENT_ID"
-  field_type: dimension
-  type: string
-  searchable: false
-- name: referer_medium
-  sql: ${TABLE}."REFERER_MEDIUM"
-  field_type: dimension
-  type: string
-  searchable: true
-- name: browser_user_agent
-  sql: ${TABLE}."BROWSER_USER_AGENT"
-  field_type: dimension
-  type: string
-  searchable: false
-- name: browser_name
-  sql: ${TABLE}."BROWSER_NAME"
-  field_type: dimension
-  type: string
-  searchable: true
-- name: os_name
-  sql: ${TABLE}."OS_NAME"
-  field_type: dimension
-  type: string
-  searchable: true
-- name: os
-  sql: ${TABLE}."OS"
-  field_type: dimension
-  type: string
-  searchable: false
-- name: referer_url_scheme
-  sql: ${TABLE}."REFERER_URL_SCHEME"
-  field_type: dimension
-  type: string
-  searchable: true
-- name: page_url
-  sql: ${TABLE}."PAGE_URL"
-  field_type: dimension
-  type: string
-  searchable: true
-- name: event_timestamp
-  sql: ${TABLE}."EVENT_TIMESTAMP"
-  field_type: dimension
-  type: string
-  searchable: false
-- name: utm_source
-  sql: ${TABLE}."UTM_SOURCE"
-  field_type: dimension
-  type: string
-  searchable: true
-- name: geo_longitude
-  sql: ${TABLE}."GEO_LONGITUDE"
-  field_type: dimension
-  type: number
-- name: geo_country
-  sql: ${TABLE}."GEO_COUNTRY"
-  field_type: dimension
-  type: string
-  searchable: false
-- name: referer_url_port
-  sql: ${TABLE}."REFERER_URL_PORT"
-  field_type: dimension
-  type: number
-- name: marketing_channel
-  sql: ${TABLE}."MARKETING_CHANNEL"
-  field_type: dimension
-  type: string
-  searchable: true
-- name: promotion
-  sql: ${TABLE}."PROMOTION"
-  field_type: dimension
-  type: string
-  searchable: true
-- name: ip_address
-  sql: ${TABLE}."IP_ADDRESS"
-  field_type: dimension
-  type: string
   searchable: false
 - name: anonymous_id
+  field_type: dimension
+  type: number
   sql: ${TABLE}."ANONYMOUS_ID"
-  field_type: dimension
-  type: number
 - name: customer_id
-  sql: ${TABLE}."CUSTOMER_ID"
   field_type: dimension
   type: number
-- name: os_timezone
-  sql: ${TABLE}."OS_TIMEZONE"
+  sql: ${TABLE}."CUSTOMER_ID"
+- name: click_id
   field_type: dimension
   type: string
+  sql: ${TABLE}."CLICK_ID"
+  searchable: false
+- name: session_id
+  field_type: dimension
+  type: number
+  sql: ${TABLE}."SESSION_ID"
+- name: utm_campaign
+  field_type: dimension
+  type: string
+  sql: ${TABLE}."UTM_CAMPAIGN"
+  searchable: true
+- name: geo_region_name
+  field_type: dimension
+  type: string
+  sql: ${TABLE}."GEO_REGION_NAME"
+  searchable: false
+- name: referer_medium
+  field_type: dimension
+  type: string
+  sql: ${TABLE}."REFERER_MEDIUM"
+  searchable: true
+- name: browser_user_agent
+  field_type: dimension
+  type: string
+  sql: ${TABLE}."BROWSER_USER_AGENT"
+  searchable: false
+- name: browser_name
+  field_type: dimension
+  type: string
+  sql: ${TABLE}."BROWSER_NAME"
+  searchable: true
+- name: os_name
+  field_type: dimension
+  type: string
+  sql: ${TABLE}."OS_NAME"
+  searchable: true
+- name: os
+  field_type: dimension
+  type: string
+  sql: ${TABLE}."OS"
+  searchable: false
+- name: referer_url_scheme
+  field_type: dimension
+  type: string
+  sql: ${TABLE}."REFERER_URL_SCHEME"
+  searchable: true
+- name: page_url
+  field_type: dimension
+  type: string
+  sql: ${TABLE}."PAGE_URL"
+  searchable: true
+- name: event_timestamp
+  field_type: dimension
+  type: string
+  sql: ${TABLE}."EVENT_TIMESTAMP"
+  searchable: false
+- name: utm_source
+  field_type: dimension
+  type: string
+  sql: ${TABLE}."UTM_SOURCE"
+  searchable: true
+- name: geo_longitude
+  field_type: dimension
+  type: number
+  sql: ${TABLE}."GEO_LONGITUDE"
+- name: geo_country
+  field_type: dimension
+  type: string
+  sql: ${TABLE}."GEO_COUNTRY"
+  searchable: false
+- name: referer_url_port
+  field_type: dimension
+  type: number
+  sql: ${TABLE}."REFERER_URL_PORT"
+- name: marketing_channel
+  field_type: dimension
+  type: string
+  sql: ${TABLE}."MARKETING_CHANNEL"
+  searchable: true
+- name: promotion
+  field_type: dimension
+  type: string
+  sql: ${TABLE}."PROMOTION"
+  searchable: true
+- name: ip_address
+  field_type: dimension
+  type: string
+  sql: ${TABLE}."IP_ADDRESS"
+  searchable: false
+- name: os_timezone
+  field_type: dimension
+  type: string
+  sql: ${TABLE}."OS_TIMEZONE"
   searchable: false
 - name: referer_url
-  sql: ${TABLE}."REFERER_URL"
   field_type: dimension
   type: string
+  sql: ${TABLE}."REFERER_URL"
   searchable: true
 - name: device_type
-  sql: ${TABLE}."DEVICE_TYPE"
   field_type: dimension
   type: string
+  sql: ${TABLE}."DEVICE_TYPE"
   searchable: true
 - name: page_url_path
-  sql: ${TABLE}."PAGE_URL_PATH"
   field_type: dimension
   type: string
+  sql: ${TABLE}."PAGE_URL_PATH"
   searchable: true
 - name: geo_timezone
-  sql: ${TABLE}."GEO_TIMEZONE"
   field_type: dimension
   type: string
+  sql: ${TABLE}."GEO_TIMEZONE"
   searchable: false
 - name: utm_medium
-  sql: ${TABLE}."UTM_MEDIUM"
   field_type: dimension
   type: string
+  sql: ${TABLE}."UTM_MEDIUM"
   searchable: true
 - name: device_is_mobile
-  sql: ${TABLE}."DEVICE_IS_MOBILE"
   field_type: dimension
   type: yesno
+  sql: ${TABLE}."DEVICE_IS_MOBILE"
 - name: geo_latitude
+  field_type: dimension
+  type: number
   sql: ${TABLE}."GEO_LATITUDE"
-  field_type: dimension
-  type: number
-- name: click_id
-  sql: ${TABLE}."CLICK_ID"
-  field_type: dimension
-  type: string
-  searchable: false
 - name: event_name
+  field_type: dimension
+  type: string
   sql: ${TABLE}."EVENT_NAME"
-  field_type: dimension
-  type: string
   searchable: true
-- name: session_id
-  sql: ${TABLE}."SESSION_ID"
-  field_type: dimension
-  type: number
 - name: browser_language
-  sql: ${TABLE}."BROWSER_LANGUAGE"
   field_type: dimension
   type: string
+  sql: ${TABLE}."BROWSER_LANGUAGE"
   searchable: false
