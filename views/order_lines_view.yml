@@ -396,3 +396,14 @@ fields:
   sql: >-
     COUNT(DISTINCT ${TABLE}.PRODUCT_ID) / NULLIF(COUNT(DISTINCT
     ${TABLE}.ORDER_ID), 0)
+
+- name: bargain_hunter_rate_jzvikzdk
+  field_type: measure
+  type: number
+  label: Bargain Hunter Rate
+  description: The Bargain Hunter Rate shows the proportion of unique orders where
+    customers received a discount greater than 5%.
+  value_format_name: percent_2
+  sql: COUNT(DISTINCT CASE WHEN ${order_lines.discount} > 5 THEN ${order_lines.order_id}
+    END) / NULLIF(COUNT(DISTINCT ${order_lines.order_id}), 0)
+  canon_date: order_lines.order
