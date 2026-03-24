@@ -396,12 +396,3 @@ fields:
   sql: >-
     COUNT(DISTINCT ${TABLE}.PRODUCT_ID) / NULLIF(COUNT(DISTINCT
     ${TABLE}.ORDER_ID), 0)
-
-- name: bargain_hunter_orders_djrpuabr
-  field_type: measure
-  type: count_distinct
-  label: Bargain Hunter Orders
-  description: The number of unique orders where a discount greater than 5 was applied.
-  value_format_name: decimal_0
-  sql: CASE WHEN ${order_lines.discount} > 5 THEN ${order_lines.order_id} END
-  canon_date: order_lines.order
