@@ -15,14 +15,7 @@ identifiers:
   type: foreign
   sql: ${customer_id}
 fields:
-- name: order_line_id
-  field_type: dimension
-  type: string
-  hidden: true
-  primary_key: true
-  label: Order Line Id
-  sql: ${TABLE}.ORDER_LINE_ID
-  searchable: false
+
 
 - name: customer_id
   field_type: dimension
