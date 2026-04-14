@@ -1,0 +1,90 @@
+version: 1
+type: view
+name: orders
+model_name: pure_organics
+sql_table_name: '"WCB"."ORDERS"'
+fields:
+- name: top_customers
+  sql: ${TABLE}."TOP_CUSTOMERS"
+  field_type: dimension
+  type: string
+  searchable: true
+- name: emails_from_us_in_the_last_week
+  sql: ${TABLE}."EMAILS_FROM_US_IN_THE_LAST_WEEK"
+  field_type: dimension
+  type: string
+  searchable: true
+- name: order_created_at
+  sql: ${TABLE}."ORDER_CREATED_AT"
+  field_type: dimension_group
+  type: time
+  timeframes:
+  - raw
+  - date
+  - day_of_year
+  - week
+  - week_of_year
+  - month
+  - month_of_year
+  - quarter
+  - year
+  datatype: date
+- name: customer_id
+  sql: ${TABLE}."CUSTOMER_ID"
+  field_type: dimension
+  type: string
+  searchable: false
+- name: day_of_week
+  sql: ${TABLE}."DAY_OF_WEEK"
+  field_type: dimension
+  type: string
+  searchable: true
+- name: twitter
+  sql: ${TABLE}."TWITTER"
+  field_type: dimension
+  type: string
+  searchable: true
+- name: revenue
+  sql: ${TABLE}."REVENUE"
+  field_type: dimension
+  type: number
+- name: campaign
+  sql: ${TABLE}."CAMPAIGN"
+  field_type: dimension
+  type: string
+  searchable: true
+- name: order_id
+  sql: ${TABLE}."ORDER_ID"
+  field_type: dimension
+  type: number
+- name: new_vs_repeat
+  sql: ${TABLE}."NEW_VS_REPEAT"
+  field_type: dimension
+  type: string
+  searchable: true
+- name: product
+  sql: ${TABLE}."PRODUCT"
+  field_type: dimension
+  type: string
+  searchable: true
+- name: last_viewed_page
+  sql: ${TABLE}."LAST_VIEWED_PAGE"
+  field_type: dimension
+  type: string
+  searchable: true
+- name: state
+  sql: ${TABLE}."STATE"
+  field_type: dimension
+  type: string
+  searchable: true
+- name: acquisition_channel
+  sql: ${TABLE}."ACQUISITION_CHANNEL"
+  field_type: dimension
+  type: string
+  searchable: true
+- name: social_network
+  sql: ${TABLE}."SOCIAL_NETWORK"
+  field_type: dimension
+  type: string
+  searchable: true
+default_date: order_created_at
