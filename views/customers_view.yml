@@ -2,7 +2,7 @@ version: 1
 type: view
 name: customers
 description: >-
-  view provides a comprehensive overview of customer data for Pure
+  This view provides a comprehensive overview of customer data for Pure
   Organics, including details such as the customer's ID, email address, name,
   address, and location. The `accepts_marketing` field indicates whether the
   customer has opted in to marketing communications, while the `first_order`
