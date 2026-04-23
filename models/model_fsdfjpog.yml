@@ -2,4 +2,4 @@ version: 1
 type: model
 name: model_fsdfjpog
 connection: teradata
-# testing something else
+# testing
