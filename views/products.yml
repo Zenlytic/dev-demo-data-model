@@ -2,10 +2,14 @@ version: 1
 type: view
 name: products
 model_name: pure_organics
-sql_table_name: '"DEMO_RAW"."PRODUCTS"'
+sql_table_name: '"DEMO_PROD"."PRODUCTS"'
 fields:
-- name: product_id
-  sql: ${TABLE}."PRODUCT_ID"
+- name: price
+  sql: ${TABLE}."PRICE"
+  field_type: dimension
+  type: number
+- name: product_title
+  sql: ${TABLE}."PRODUCT_TITLE"
   field_type: dimension
   type: string
   searchable: true
@@ -14,12 +18,8 @@ fields:
   field_type: dimension
   type: string
   searchable: true
-- name: product_title
-  sql: ${TABLE}."PRODUCT_TITLE"
+- name: product_id
+  sql: ${TABLE}."PRODUCT_ID"
   field_type: dimension
   type: string
   searchable: true
-- name: price
-  sql: ${TABLE}."PRICE"
-  field_type: dimension
-  type: number

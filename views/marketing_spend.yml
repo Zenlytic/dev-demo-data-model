@@ -2,23 +2,15 @@ version: 1
 type: view
 name: marketing_spend
 model_name: pure_organics
-sql_table_name: '"PEOPLE_PULSE_RAW"."MARKETING_SPEND"'
+sql_table_name: '"DEMO_RAW"."MARKETING_SPEND"'
 fields:
-- name: spend
-  sql: ${TABLE}."SPEND"
-  field_type: dimension
-  type: number
-- name: conversion_rate
-  sql: ${TABLE}."CONVERSION_RATE"
-  field_type: dimension
-  type: number
 - name: source
   sql: ${TABLE}."SOURCE"
   field_type: dimension
   type: string
   searchable: true
-- name: date
-  sql: ${TABLE}."DATE"
+- name: spend_at
+  sql: ${TABLE}."SPEND_AT"
   field_type: dimension_group
   type: time
   timeframes:
@@ -32,22 +24,23 @@ fields:
   - quarter
   - year
   datatype: timestamp
-- name: engagement
-  sql: ${TABLE}."ENGAGEMENT"
+- name: ad_spend
+  sql: ${TABLE}."AD_SPEND"
   field_type: dimension
   type: number
-- name: campaign
-  sql: ${TABLE}."CAMPAIGN"
+- name: spend_id
+  sql: ${TABLE}."SPEND_ID"
   field_type: dimension
   type: string
-  searchable: true
+  searchable: false
 - name: channel
   sql: ${TABLE}."CHANNEL"
   field_type: dimension
   type: string
   searchable: true
-- name: reach
-  sql: ${TABLE}."REACH"
+- name: campaign
+  sql: ${TABLE}."CAMPAIGN"
   field_type: dimension
-  type: number
-default_date: date
+  type: string
+  searchable: true
+default_date: spend_at

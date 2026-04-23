@@ -1,0 +1,31 @@
+version: 1
+type: view
+name: applicable_roles
+model_name: pure_organics
+sql_table_name: '"INFORMATION_SCHEMA"."APPLICABLE_ROLES"'
+fields:
+- name: grantee
+  sql: ${TABLE}."GRANTEE"
+  description: Role or user to whom the privilege is granted
+  field_type: dimension
+  type: string
+  searchable: true
+- name: role_name
+  sql: ${TABLE}."ROLE_NAME"
+  description: Name of the role
+  field_type: dimension
+  type: string
+  searchable: true
+- name: role_owner
+  sql: ${TABLE}."ROLE_OWNER"
+  description: Owner of the role
+  field_type: dimension
+  type: string
+  searchable: true
+- name: is_grantable
+  sql: ${TABLE}."IS_GRANTABLE"
+  description: Whether this role can be granted to others
+  field_type: dimension
+  type: string
+  searchable: true
+description: The roles that can be applied to the current user.
