@@ -1,0 +1,78 @@
+version: 1
+type: view
+name: people_pulse_account
+model_name: pure_organics
+sql_table_name: '"DEMO_PROD_PEOPLE_PULSE"."PEOPLE_PULSE_ACCOUNT"'
+fields:
+- name: size
+  sql: ${TABLE}."SIZE"
+  field_type: dimension
+  type: number
+- name: churned
+  sql: ${TABLE}."CHURNED"
+  field_type: dimension
+  type: yesno
+- name: location
+  sql: ${TABLE}."LOCATION"
+  field_type: dimension
+  type: string
+  searchable: false
+- name: industry
+  sql: ${TABLE}."INDUSTRY"
+  field_type: dimension
+  type: string
+  searchable: true
+- name: contact_email
+  sql: ${TABLE}."CONTACT_EMAIL"
+  field_type: dimension
+  type: string
+  searchable: false
+- name: account_id
+  sql: ${TABLE}."ACCOUNT_ID"
+  field_type: dimension
+  type: number
+- name: contract_end_date
+  sql: ${TABLE}."CONTRACT_END_DATE"
+  field_type: dimension_group
+  type: time
+  timeframes:
+  - raw
+  - date
+  - day_of_year
+  - week
+  - week_of_year
+  - month
+  - month_of_year
+  - quarter
+  - year
+  datatype: timestamp
+- name: account_name
+  sql: ${TABLE}."ACCOUNT_NAME"
+  field_type: dimension
+  type: string
+  searchable: false
+- name: contact_name
+  sql: ${TABLE}."CONTACT_NAME"
+  field_type: dimension
+  type: string
+  searchable: false
+- name: annual_revenue
+  sql: ${TABLE}."ANNUAL_REVENUE"
+  field_type: dimension
+  type: number
+- name: contract_start_date
+  sql: ${TABLE}."CONTRACT_START_DATE"
+  field_type: dimension_group
+  type: time
+  timeframes:
+  - raw
+  - date
+  - day_of_year
+  - week
+  - week_of_year
+  - month
+  - month_of_year
+  - quarter
+  - year
+  datatype: timestamp
+default_date: contract_end_date
