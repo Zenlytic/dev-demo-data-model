@@ -1,0 +1,25 @@
+version: 1
+type: view
+name: nps_survey
+model_name: pure_organics
+sql_table_name: '"PEOPLE_PULSE_RAW"."NPS_SURVEY"'
+fields:
+- name: id
+  sql: ${TABLE}."ID"
+  field_type: dimension
+  type: number
+- name: feedback
+  sql: ${TABLE}."FEEDBACK"
+  field_type: dimension
+  type: string
+  searchable: true
+- name: customer_id
+  sql: ${TABLE}."CUSTOMER_ID"
+  field_type: dimension
+  type: string
+  searchable: false
+- name: survey_score
+  sql: ${TABLE}."SURVEY_SCORE"
+  field_type: dimension
+  type: string
+  searchable: true

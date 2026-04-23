@@ -1,0 +1,31 @@
+version: 1
+type: view
+name: order_info
+model_name: pure_organics
+sql_table_name: '"DEMO_RAW"."ORDER_INFO"'
+fields:
+- name: ar_vr_viewed
+  sql: ${TABLE}."AR_VR_VIEWED"
+  field_type: dimension
+  type: yesno
+- name: returned_for_fit
+  sql: ${TABLE}."RETURNED_FOR_FIT"
+  field_type: dimension
+  type: string
+  searchable: true
+- name: live_chat_used
+  sql: ${TABLE}."LIVE_CHAT_USED"
+  field_type: dimension
+  type: yesno
+- name: order_id
+  sql: ${TABLE}."ORDER_ID"
+  field_type: dimension
+  type: number
+- name: style_guide_viewed
+  sql: ${TABLE}."STYLE_GUIDE_VIEWED"
+  field_type: dimension
+  type: yesno
+- name: product_video_viewed
+  sql: ${TABLE}."PRODUCT_VIDEO_VIEWED"
+  field_type: dimension
+  type: yesno

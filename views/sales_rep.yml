@@ -1,0 +1,45 @@
+version: 1
+type: view
+name: sales_rep
+model_name: pure_organics
+sql_table_name: '"PEOPLE_PULSE_RAW"."SALES_REP"'
+fields:
+- name: region
+  sql: ${TABLE}."REGION"
+  field_type: dimension
+  type: string
+  searchable: true
+- name: quota
+  sql: ${TABLE}."QUOTA"
+  field_type: dimension
+  type: number
+- name: name
+  sql: ${TABLE}."NAME"
+  field_type: dimension
+  type: string
+  searchable: true
+- name: sales_rep_id
+  sql: ${TABLE}."SALES_REP_ID"
+  field_type: dimension
+  type: number
+- name: email
+  sql: ${TABLE}."EMAIL"
+  field_type: dimension
+  type: string
+  searchable: true
+- name: hire_date
+  sql: ${TABLE}."HIRE_DATE"
+  field_type: dimension_group
+  type: time
+  timeframes:
+  - raw
+  - date
+  - day_of_year
+  - week
+  - week_of_year
+  - month
+  - month_of_year
+  - quarter
+  - year
+  datatype: timestamp
+default_date: hire_date

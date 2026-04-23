@@ -1,0 +1,21 @@
+version: 1
+type: view
+name: marketing_click_info
+model_name: pure_organics
+sql_table_name: '"DEMO_RAW"."MARKETING_CLICK_INFO"'
+fields:
+- name: last_click
+  sql: ${TABLE}."LAST_CLICK"
+  field_type: dimension
+  type: string
+  searchable: true
+- name: order_line_id
+  sql: ${TABLE}."ORDER_LINE_ID"
+  field_type: dimension
+  type: string
+  searchable: false
+- name: first_click
+  sql: ${TABLE}."FIRST_CLICK"
+  field_type: dimension
+  type: string
+  searchable: true
