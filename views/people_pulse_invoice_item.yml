@@ -1,0 +1,35 @@
+version: 1
+type: view
+name: people_pulse_invoice_item
+model_name: pure_organics
+sql_table_name: '"DEMO_PROD_PEOPLE_PULSE"."PEOPLE_PULSE_INVOICE_ITEM"'
+fields:
+- name: tax_rate
+  sql: ${TABLE}."TAX_RATE"
+  field_type: dimension
+  type: number
+- name: cost
+  sql: ${TABLE}."COST"
+  field_type: dimension
+  type: number
+- name: discount
+  sql: ${TABLE}."DISCOUNT"
+  field_type: dimension
+  type: number
+- name: unit_price
+  sql: ${TABLE}."UNIT_PRICE"
+  field_type: dimension
+  type: number
+- name: product_id
+  sql: ${TABLE}."PRODUCT_ID"
+  field_type: dimension
+  type: string
+  searchable: true
+- name: invoice_id
+  sql: ${TABLE}."INVOICE_ID"
+  field_type: dimension
+  type: number
+- name: quantity
+  sql: ${TABLE}."QUANTITY"
+  field_type: dimension
+  type: number
