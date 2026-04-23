@@ -8,6 +8,6 @@ hidden: false
 views:
   customers:
     join:
-      join_type: full
+      join_type: full_outer
       relationship: one_to_many
       sql_on: ${customers.customer_id} = ${order_lines.customer_id}
