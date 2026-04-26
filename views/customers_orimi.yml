@@ -8,6 +8,7 @@ fields:
 - name: third_product_id
   field_type: dimension
   sql: ${TABLE}."THIRD_PRODUCT_ID"
+  searchable: true
 - name: second_product_id
   field_type: dimension
   type: string
