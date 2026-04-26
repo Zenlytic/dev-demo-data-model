@@ -18,7 +18,9 @@ identifiers:
 - name: customer_id
   type: primary
   sql: ${customer_id}
-- name: 
+- name: second_identifier
+  type: secondary
+  sql: "SELECT 2"
 fields:
 - name: customer_id
   field_type: dimension
