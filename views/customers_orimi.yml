@@ -12,7 +12,7 @@ fields:
 - name: sixth_product_id
   field_type: dimension
   type: string
-  sql: ${TABLE}.jklj
+  sql: ${TABLE}.
 - name: fourth_product_id
   field_type: dimension
   type: string
