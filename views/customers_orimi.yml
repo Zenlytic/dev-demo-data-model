@@ -6,6 +6,7 @@ sql_table_name: '"DEMO_PROD"."CUSTOMERS_ORIMI"'
 default_date: first_order_at
 fields:
 - name: fourth_product_id
+
 - name: third_product_id
   field_type: dimension
   type: string
@@ -93,3 +94,4 @@ fields:
   - quarter
   - year
   sql: ${TABLE}."FIRST_ORDER_AT"
+  
