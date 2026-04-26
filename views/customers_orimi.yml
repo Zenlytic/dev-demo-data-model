@@ -5,7 +5,8 @@ model_name: pure_organics
 sql_table_name: '"DEMO_PROD"."CUSTOMERS_ORIMI"'
 default_date: first_order_at
 fields:
-- name: 
+- name: second_product_id
+  field_type: dimension
 - name: first_product_id
   field_type: dimension
   type: string
