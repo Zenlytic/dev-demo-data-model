@@ -8,7 +8,8 @@ fields:
 - name: second_product_id
   field_type: dimension
   type; string
-  sql
+  sql: ${TABLE}."FIRST_PRODUCT_ID"
+  
 - name: first_product_id
   field_type: dimension
   type: string
