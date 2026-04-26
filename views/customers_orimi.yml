@@ -14,7 +14,6 @@ fields:
   field_type: dimension_group
   type: string
   searchable: true
-  
 - name: third_product_id
   field_type: dimension
   type: string
