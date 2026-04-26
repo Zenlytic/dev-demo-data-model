@@ -11,6 +11,7 @@ fields:
   sql: ${TABLE}."FIRST_PRODUCT_ID"
 - name: sixth_product_id
   field_type: dimension
+  type: sr
 - name: fourth_product_id
   field_type: dimension
   type: string
