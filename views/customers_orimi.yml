@@ -11,7 +11,7 @@ fields:
   searchable: true
   sql: ${TABLE}."FIRST_PRODUCT_ID"
 - name: product_new
-  
+  field_type: dimension
 - name: seventh_product_id
   field_type: dimension
   type: string
