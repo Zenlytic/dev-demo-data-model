@@ -7,6 +7,8 @@ default_date: first_order_at
 fields:
 - name: second_product_id
   field_type: dimension
+  type; string
+  sql
 - name: first_product_id
   field_type: dimension
   type: string
