@@ -7,7 +7,7 @@ default_date: first_order_at
 fields:
 - name: third_product_id
   field_type: dimension
-  
+  sql: ${TABLE}."THIRD_PRODUCT_ID"
 - name: second_product_id
   field_type: dimension
   type: string
