@@ -7,7 +7,7 @@ default_date: first_order_at
 fields:
 - name: second_product_id
   field_type: dimension
-  type; string
+  type string
   sql: ${TABLE}."FIRST_PRODUCT_ID"
   searchable: true
 - name: first_product_id
