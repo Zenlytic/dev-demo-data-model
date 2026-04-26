@@ -13,6 +13,8 @@ fields:
 - name: product_new
   field_type: dimension
   type: string
+  searchable: true
+  sql: 
 - name: seventh_product_id
   field_type: dimension
   type: string
