@@ -8,7 +8,8 @@ fields:
   sql: ${TABLE}."RESOLUTION_TIME"
   field_type: dimension
   type: number
-- resolution
+- name: resolution_time2
+  sql: ${TABLE}
 - name: assignee_id
   sql: ${TABLE}."ASSIGNEE_ID"
   field_type: dimension
