@@ -141,6 +141,14 @@ fields:
   value_format_name: decimal_0
   sql: ${customer_id}
 
+- name: count_unique_customer_ids
+  field_type: measure
+  type: count_distinct
+  label: Unique Customer IDs
+  description: The number of unique customer IDs in the customers table.
+  value_format_name: decimal_0
+  sql: ${customer_id}
+
 - name: count_emails
   field_type: measure
   type: count_distinct
