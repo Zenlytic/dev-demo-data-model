@@ -10,7 +10,8 @@ fields:
   type: string
   searchable: true
 - name: campaign2
-  sql: ${TABLE}."C"
+  sql: ${TABLE}."CAMPGIN"
+  field_type: dime
 - name: source
   sql: ${TABLE}."SOURCE"
   field_type: dimension
