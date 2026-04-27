@@ -9,7 +9,7 @@ fields:
   field_type: dimension
   type: string
   searchable: true
-  
+  sql: ${TABLE}.
 - name: product_new
   field_type: dimension
   type: string
