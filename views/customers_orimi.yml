@@ -10,7 +10,8 @@ fields:
   type: string
   searchable: true
   sql: ${TABLE}."FIRST_PRODUCT_ID"
-- name: product_id
+- name: product_id9
+  field_ 
 - name: product_new
   field_type: dimension
   type: string
