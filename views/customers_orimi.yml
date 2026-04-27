@@ -12,7 +12,8 @@ fields:
   searchable: true
 - name: something_else2
   field_type: dimension
-  sql
+  sql: ${TABLE}.FIRST_PRODUCT_ID
+  
 - name: third_product_id
   field_type: dimension
   type: string
