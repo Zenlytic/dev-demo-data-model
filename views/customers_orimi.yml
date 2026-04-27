@@ -1,4 +1,4 @@
-_dleiversion: 1
+version: 1
 type: view
 name: customers_orimi
 model_name: pure_organics
