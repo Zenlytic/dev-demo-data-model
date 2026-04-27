@@ -10,6 +10,7 @@ fields:
   type: string
   searchable: true
 - name: campaign2
+  sql: ${TABLE}."C"
 - name: source
   sql: ${TABLE}."SOURCE"
   field_type: dimension
