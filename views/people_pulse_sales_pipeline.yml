@@ -11,7 +11,7 @@ fields:
   searchable: true
 - name: campaign2
   sql: ${TABLE}."CAMPGIN"
-  field_type: dime
+  field_type: dimension
 - name: source
   sql: ${TABLE}."SOURCE"
   field_type: dimension
