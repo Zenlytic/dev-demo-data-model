@@ -6,7 +6,7 @@ sql_table_name: '"DEMO_PROD"."CUSTOMERS_ORIMI"'
 default_date: first_order_at
 fields:
 - name: product_id8
-  fi
+  field_type: 
 - name: product_new
   field_type: dimension
   type: string
