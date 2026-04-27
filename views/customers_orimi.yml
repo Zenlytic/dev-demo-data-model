@@ -13,7 +13,7 @@ fields:
 - name: product_id9
   field_type: dimension
   type: string
-  
+  searchable: true
 - name: product_new
   field_type: dimension
   type: string
