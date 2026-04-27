@@ -9,7 +9,8 @@ fields:
   field_type: dimension
   type: number
 - name: resolution_time2
-  sql: ${TABLE}
+  sql: ${TABLE}."RESOLUTION_TIME"
+  field
 - name: assignee_id
   sql: ${TABLE}."ASSIGNEE_ID"
   field_type: dimension
