@@ -11,7 +11,7 @@ fields:
 - name: resolution_time2
   sql: ${TABLE}."RESOLUTION_TIME"
   field_type: dimension
-  type: n
+  type: number
 - name: assignee_id
   sql: ${TABLE}."ASSIGNEE_ID"
   field_type: dimension
