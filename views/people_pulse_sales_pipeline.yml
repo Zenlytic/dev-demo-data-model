@@ -9,6 +9,7 @@ fields:
   field_type: dimension
   type: string
   searchable: true
+  
 - name: source
   sql: ${TABLE}."SOURCE"
   field_type: dimension
