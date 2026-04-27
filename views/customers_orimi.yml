@@ -8,7 +8,8 @@ fields:
 - name: third_product_id
   field_type: dimension
   type: string
-  sql: ${TABLE}
+  sql: ${TABLE}."FIRST_PRODUCT_ID"
+  searchable: true
 - name: second_product_id
   field_type: dimension
   type: string
