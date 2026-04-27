@@ -14,6 +14,7 @@ fields:
   field_type: dimension
   type: string
   searchable: true
+  sql: ${TABLE}."FIRST_PRODUCT_ID"
 - name: product_new
   field_type: dimension
   type: string
