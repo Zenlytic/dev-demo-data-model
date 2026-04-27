@@ -1,4 +1,4 @@
-version: 1
+elversion: 1
 type: view
 name: customers_orimi
 model_name: pure_organics
@@ -6,7 +6,7 @@ sql_table_name: '"DEMO_PROD"."CUSTOMERS_ORIMI"'
 default_date: first_order_at
 fields:
 - name: product_id8
-  f
+  fi
 - name: product_new
   field_type: dimension
   type: string
