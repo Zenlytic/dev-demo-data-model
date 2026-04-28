@@ -6,7 +6,7 @@ description: Product sales by styles and SKUs
 filters:
   - field: order_lines.subscription_vs_otp
     value: Subscription, One Time Purchase
-    
+  - field: field
 elements:
   - title: Product sales by type last 6 months
     model: pure_organics
