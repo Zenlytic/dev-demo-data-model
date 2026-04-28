@@ -8,6 +8,7 @@ default_date: event
 row_label: Event
 fields:
 - name: anonymous_id2
+  field_type: 
 - name: anonymous_id
   field_type: dimension
   type: string
