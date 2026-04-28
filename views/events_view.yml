@@ -11,7 +11,7 @@ fields:
   field_type: dimension
   type: string
   hidden: false
-  sql: ${TABLE}.""
+  sql: ${TABLE}.
 - name: anonymous_id
   field_type: dimension
   type: string
