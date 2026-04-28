@@ -15,6 +15,7 @@ fields:
   tags:
   - customer
   searchable: false
+- name: anonymous_id2
   
 
 - name: click_id
