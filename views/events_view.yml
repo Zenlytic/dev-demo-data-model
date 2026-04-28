@@ -15,6 +15,7 @@ fields:
   tags:
   - customer
   searchable: false
+  
 
 - name: click_id
   field_type: dimension
