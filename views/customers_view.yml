@@ -34,6 +34,7 @@ fields:
   primary_key: false
   description: Something to do with the customer.
   searchable: false
+  sql: ${TABLE}
 
 - name: customer_id
   field_type: dimension
