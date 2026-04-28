@@ -33,7 +33,7 @@ fields:
   hidden: false
   primary_key: false
   description: Something to do with the customer.
-  
+  searchable: false
 
 - name: customer_id
   field_type: dimension
