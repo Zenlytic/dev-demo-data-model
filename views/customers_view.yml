@@ -32,7 +32,7 @@ fields:
   type: string
   hidden: false
   primary_key: false
-  
+  description: Somet
 - name: customer_id
   field_type: dimension
   type: string
