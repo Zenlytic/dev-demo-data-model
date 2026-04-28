@@ -13,7 +13,8 @@ fields:
   hidden: false
   sql: ${TABLE}.ANONYMOUS_ID
   tags:
-      
+    - customer
+  searchable: false
 - name: anonymous_id
   field_type: dimension
   type: string
