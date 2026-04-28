@@ -16,6 +16,7 @@ fields:
   - customer
   searchable: false
 - name: anonymous_id2
+  field_type: dimension
   
 
 - name: click_id
