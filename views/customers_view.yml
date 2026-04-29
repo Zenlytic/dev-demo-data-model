@@ -29,9 +29,7 @@ identifiers:
 fields:
 - name: customer_id2
   field_type: dimension
-  type: string
-  hidden: false
-  primary_key: true
+  
 - name: customer_id
   field_type: dimension
   type: string
@@ -159,3 +157,4 @@ fields:
   type: count_distinct
   value_format_name: decimal_0
   sql: ${email}
+
