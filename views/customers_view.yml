@@ -33,6 +33,7 @@ fields:
   hidden: false
   primary_key: false
   description: Something to do here 
+  
 - name: customer_id2
   field_type: dimension
   type: string
