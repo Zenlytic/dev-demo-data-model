@@ -10,7 +10,7 @@ fields:
 - name: anonymous_id
   field_type: dimension
   type: string
-  label: Anonymous Id 4
+  label: Anonymous Id 5
   hidden: true
   sql: ${TABLE}.ANONYMOUS_ID
   tags:
