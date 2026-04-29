@@ -29,6 +29,7 @@ identifiers:
 fields:
 - name: customer_id2
   field_type: dimension
+  type: string
   
 - name: customer_id
   field_type: dimension
