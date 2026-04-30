@@ -256,9 +256,9 @@ fields:
     field_type: measure
     type: number
     hidden: false
-    description: Total net revenue = gross revenue - discounts
+    description: Total net revenue = gross revenue (no discount deduction)
     value_format_name: usd
-    sql: ${total_gross_revenue} - ${total_discounts}
+    sql: ${total_gross_revenue}
     zoe_description: This is the default revenue metric. Use this whenever the user asks about "revenue" without specifying gross or net.
     synonyms:
       - revenue
