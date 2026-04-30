@@ -223,7 +223,12 @@ fields:
     field_type: measure
     type: count_distinct
     hidden: false
+    label: Total Orders
     description: The unique number of orders placed
+    zoe_description: This is the default metric for the orders table. Use this whenever the user asks about orders or order counts without specifying a different metric.
+    synonyms:
+      - total_orders
+      - order count
     value_format_name: decimal_0
     sql: ${order_id}
 
