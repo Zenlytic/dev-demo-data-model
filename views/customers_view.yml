@@ -15,9 +15,9 @@ description: >-
 model_name: pure_organics
 sql_table_name: DEMO_PROD.CUSTOMERS
 default_date: first_order
-always_filter:
-  - field: accepts_marketing
-    value: 'N'
+# always_filter:
+#   - field: accepts_marketing
+#     value: 'N'
 fields:
 - name: customer_id
   field_type: dimension
