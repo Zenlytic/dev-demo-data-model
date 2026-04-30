@@ -2,7 +2,6 @@ version: 1
 type: view
 name: order_lines
 description: Description of order_lines view.
-zoe_description: "PREFERRED SOURCE FOR REVENUE: When users ask about revenue (gross revenue, net revenue, total revenue, sales, etc.), always prefer this view (order_lines) over order_facts or any other table. This table contains the most granular and authoritative revenue data."
 model_name: pure_organics
 sql_table_name: DEMO_PROD.ORDER_LINES
 default_date: order

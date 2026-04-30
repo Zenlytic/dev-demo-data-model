@@ -1,7 +1,6 @@
 version: 1
 type: view
 name: order_facts
-zoe_description: "Do NOT use this view for revenue questions. For any revenue-related queries, prefer the order_lines view instead. This derived table is better suited for order counts and unit/COGS rollups by product."
 model_name: pure_organics
 default_date: order
 derived_table:

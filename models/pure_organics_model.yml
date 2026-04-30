@@ -3,6 +3,12 @@ type: model
 name: pure_organics
 connection: demo
 week_start_day: sunday
+relationships:
+- from_table: customers
+  join_table: events
+  relationship: one_to_many
+  join_type: left_outer
+  sql_on: ${customers.customer_id} = ${events.customer_id}
 access_grants:
 - name: pii_access
   user_attribute: department
