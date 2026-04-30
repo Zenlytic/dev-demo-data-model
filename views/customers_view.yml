@@ -30,7 +30,7 @@ fields:
 
 - name: accepts_marketing
   field_type: dimension
-  type: yesno
+  type: string
   description: 'Whether the customer accepts marketing. '
   sql: case when ${TABLE}.ACCEPTS_MARKETING then 'Y' else 'N' end
 
