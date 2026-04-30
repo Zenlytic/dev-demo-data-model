@@ -19,7 +19,7 @@ always_filter:
   - field: state
     value: CO
   - field: customers.accepts_marketing
-    value: 'N'
+    value: N
 fields:
 - name: customer_id
   field_type: dimension
