@@ -199,9 +199,9 @@ fields:
       USD.
     value_format_name: usd
     sql: ${revenue}
+    zoe_description: This is gross revenue (before discounts). When the user asks generically about "revenue" without specifying gross or net, prefer total_net_revenue instead.
     synonyms:
       - sales
-      - revenue
 
   - name: total_discounts
     field_type: measure
@@ -254,6 +254,9 @@ fields:
     description: Total net revenue = gross revenue - discounts
     value_format_name: usd
     sql: ${total_gross_revenue} - ${total_discounts}
+    zoe_description: This is the default revenue metric. Use this whenever the user asks about "revenue" without specifying gross or net.
+    synonyms:
+      - revenue
 
   - name: repurchase_rate
     field_type: measure
