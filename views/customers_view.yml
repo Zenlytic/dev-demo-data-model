@@ -33,7 +33,8 @@ fields:
   type: string
   description: 'Whether the customer accepts marketing. '
   sql: case when ${TABLE}.ACCEPTS_MARKETING then 'Y' else 'N' end
-
+  searchable: true
+  
 - name: email
   field_type: dimension
   type: string
