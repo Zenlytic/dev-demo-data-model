@@ -16,6 +16,8 @@ model_name: pure_organics
 sql_table_name: DEMO_PROD.CUSTOMERS
 default_date: first_order
 always_filter:
+  - field: state
+    value: CO
   - field: customers.accepts_marketing
     value: 'N'
 fields:
