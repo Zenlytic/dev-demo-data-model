@@ -15,17 +15,9 @@ description: >-
 model_name: pure_organics
 sql_table_name: DEMO_PROD.CUSTOMERS
 default_date: first_order
-row_label: Customer
-identifiers:
-- name: customer_id
-  type: primary
-  sql: ${customer_id}
-- name: orders_join
-  type: join
-  reference: order_lines
-  relationship: one_to_many
-  join_type: left_outer
-  sql_on: ${order_lines.customer_id} = ${customers.customer_id}
+always_filter:
+  - field: accepts_marketing
+    value: 'N'
 fields:
 - name: customer_id
   field_type: dimension
@@ -40,7 +32,7 @@ fields:
   field_type: dimension
   type: yesno
   description: 'Whether the customer accepts marketing. '
-  sql: ${TABLE}.ACCEPTS_MARKETING
+  sql: case when ${TABLE}.ACCEPTS_MARKETING then 'Y' else 'N' end
 
 - name: email
   field_type: dimension
