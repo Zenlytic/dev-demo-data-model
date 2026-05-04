@@ -1,6 +1,6 @@
 version: 1
 type: dashboard
-name: nicks_dashboard
+name: nicks_dashboard1
 label: Nick's Dashboard
 description: Product sales by styles and SKUs
 filters
