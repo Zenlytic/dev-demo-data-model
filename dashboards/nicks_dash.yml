@@ -2,7 +2,7 @@ version: 1
 type: dashboard
 name: nicks_dashboard1
 label: Nick's Dashboard
-description: Product sales by styles and SKUs
+description: Product sales by styles and SKUsio
 filters
   - field: order_lines.subscription_vs_otp
     value: Subscription, One Time Purchase
