@@ -32,6 +32,7 @@ fields:
   type: string
   hidden: false
   primary_key: true
+  label: Customer Id 1
   description: The id of the customer.
   sql: ${TABLE}.CUSTOMER_ID
   searchable: false
