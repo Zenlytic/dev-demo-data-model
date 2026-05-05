@@ -1,6 +1,6 @@
 version: 1
 type: view
-name: customers_orimi
+name: customers_orimi asdasdasd
 model_name: pure_organics
 sql_table_name: '"DEMO_PROD"."CUSTOMERS_ORIMI"'
 default_date: first_order_at
