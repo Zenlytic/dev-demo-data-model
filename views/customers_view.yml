@@ -22,10 +22,10 @@ identifiers:
   sql: ${customer_id}
 - name: orders_join
   type: join
-  reference: order_lines
+  reference: order_items
   relationship: one_to_many
   join_type: left_outer
-  sql_on: ${order_lines.customer_id} = ${customers.customer_id}
+  sql_on: ${order_items.customer_id} = ${customers.customer_id}
 fields:
 - name: customer_id
   field_type: dimension

@@ -1,7 +1,7 @@
 version: 1
 type: view
-name: order_lines
-description: Description of order_lines view.
+name: order_items
+description: Description of order_items view.
 model_name: pure_organics
 sql_table_name: DEMO_PROD.ORDER_LINES
 default_date: order
@@ -293,7 +293,7 @@ fields:
       total number of orders.
     value_format_name: decimal_1
     sql: >-
-      ${order_lines.number_of_units} / nullif(${order_lines.number_of_orders},
+      ${order_items.number_of_units} / nullif(${order_items.number_of_orders},
       0)
 
   - name: total_gross_revenue_from_advertising
@@ -364,9 +364,9 @@ fields:
       discounts by the number of unique orders; this field contains numerical
       values representing the mean discount per order.
     sql: >-
-      SUM(${order_lines.discount}) / NULLIF(COUNT(DISTINCT
-      ${order_lines.order_id}), 0)
-    canon_date: order_lines.order
+      SUM(${order_items.discount}) / NULLIF(COUNT(DISTINCT
+      ${order_items.order_id}), 0)
+    canon_date: order_items.order
 
   - name: net_margin_kxsmwfit
     field_type: measure
@@ -377,10 +377,10 @@ fields:
       discounts and cost of goods sold (COGS), showing overall profitability for
       each order.
     sql: >-
-      CASE WHEN SUM(${order_lines.revenue}) = 0 THEN NULL ELSE
-      ((SUM(${order_lines.revenue}) - SUM(${order_lines.discount})) -
-      SUM(ORDER_LINES.COGS)) / SUM(${order_lines.revenue}) END
-    canon_date: order_lines.order
+      CASE WHEN SUM(${order_items.revenue}) = 0 THEN NULL ELSE
+      ((SUM(${order_items.revenue}) - SUM(${order_items.discount})) -
+      SUM(ORDER_LINES.COGS)) / SUM(${order_items.revenue}) END
+    canon_date: order_items.order
 
   - name: repurchase_rate_yvntcgye
     field_type: measure
@@ -391,7 +391,7 @@ fields:
       (repeat) customers.
     value_format_name: percent_2
     sql: >-
-      COUNT(DISTINCT CASE WHEN ${order_lines.new_vs_repeat} = 'Repeat' THEN
-      ${order_lines.order_id} END) / NULLIF(COUNT(DISTINCT
-      ${order_lines.order_id}), 0)
-    canon_date: order_lines.order
+      COUNT(DISTINCT CASE WHEN ${order_items.new_vs_repeat} = 'Repeat' THEN
+      ${order_items.order_id} END) / NULLIF(COUNT(DISTINCT
+      ${order_items.order_id}), 0)
+    canon_date: order_items.order
