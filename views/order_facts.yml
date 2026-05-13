@@ -3,7 +3,7 @@ type: view
 name: order_facts
 model_name: pure_organics
 default_date: order
-# testing making a change
+# testing making a change testing
 derived_table:
   sql: >
     select order_lines.order_at
