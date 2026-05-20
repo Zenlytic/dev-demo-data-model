@@ -20,7 +20,7 @@ fields:
   searchable: false
 
 - name: product_type
-  label: Product Type 2
+  label: Product Type 3
   field_type: dimension
   type: string
   description: 'The type of the product sold (Eye, Lip, Face, etc) '
