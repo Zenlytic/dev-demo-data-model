@@ -95,21 +95,21 @@ fields:
   field_type: dimension
   type: string
   description: The first marketing group the user came in through
-  sql: ${TABLE}."first_channel"
+  sql: ${TABLE}.first_channel
   searchable: false
 
 - name: first_promotion
   field_type: dimension
   type: string
   description: The first promotion the user came in through
-  sql: ${TABLE}."first_promotion"
+  sql: ${TABLE}.first_promotion
   searchable: false
 
 - name: first_campaign
   field_type: dimension
   type: string
   description: The first campaign the user came in through
-  sql: ${TABLE}."first_campaign"
+  sql: ${TABLE}."FIRST_CAMPAIGN"
   searchable: false
 
 - name: first_order
