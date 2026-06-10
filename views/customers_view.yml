@@ -127,7 +127,7 @@ fields:
   - quarter
   - time
   - year
-  sql: ${TABLE}."first_order_at"
+  sql: ${TABLE}."FIRST_ORDER_AT"
 
 - name: count_customers
   field_type: measure
