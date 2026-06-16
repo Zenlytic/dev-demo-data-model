@@ -126,12 +126,10 @@ fields:
   timeframes:
   - raw
   - date
-  - week_index
   - week
   - month_of_year
   - month
   - quarter
-  - time
   - year
   sql: ${TABLE}.first_order_at
 

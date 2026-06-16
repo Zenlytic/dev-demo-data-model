@@ -42,7 +42,7 @@ fields:
     type: string
     hidden: false
     drill_fields:
-      - order_date
+      - order_week
       - subscription_vs_otp
       - marketing_channel
       - campaign
@@ -164,7 +164,7 @@ fields:
     field_type: dimension
     type: number
     hidden: true
-    sql: dense_rank() over (partition by ${customer_id} order by ${order_date} asc)
+    sql: dense_rank() over (partition by ${customer_id} order by ${TABLE}.ORDER_AT asc)
     window: true
 
   - name: order
@@ -179,15 +179,29 @@ fields:
     timeframes:
       - raw
       - date
-      - week_index
       - week
-      - month_of_year
       - month
       - quarter
       - year
-      - hour_of_day
-      - day_of_week
     sql: ${TABLE}.ORDER_AT
+
+  - name: order_date
+    field_type: dimension
+    type: string
+    hidden: false
+    label: Order Date (Day)
+    description: The date on which the order was placed.
+    sql: TO_CHAR(DATE(${TABLE}.ORDER_AT), 'YYYY-MM-DD')
+    searchable: false
+
+  - name: order_month
+    field_type: dimension
+    type: string
+    hidden: false
+    label: Order Month
+    description: The month in which the order was placed (YYYY-MM format).
+    sql: TO_CHAR(DATE_TRUNC('month', ${TABLE}.ORDER_AT), 'YYYY-MM')
+    searchable: false
 
   - name: total_gross_revenue
     field_type: measure

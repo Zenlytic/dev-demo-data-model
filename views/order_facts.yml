@@ -24,7 +24,7 @@ fields:
     type: string
     hidden: true
     primary_key: true
-    sql: concat(${order_raw}||${product_type})
+    sql: concat(${TABLE}.order_at||${product_type})
     searchable: false
 
   - name: product_title
@@ -50,12 +50,10 @@ fields:
     timeframes:
       - raw
       - date
-      - week_index
       - week
       - month_of_year
       - month
       - quarter
-      - time
       - year
     sql: ${TABLE}.order_at
 
