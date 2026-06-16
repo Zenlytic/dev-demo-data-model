@@ -177,6 +177,7 @@ fields:
       The time at which the order was placed. This is the main time field to use
       for orders
     timeframes:
+      - raw
       - date
     sql: ${TABLE}.ORDER_AT
 

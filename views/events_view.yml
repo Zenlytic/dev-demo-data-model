@@ -237,6 +237,7 @@ fields:
   label: Event Date
   description: The time of interaction with the site
   timeframes:
+  - raw
   - date
   sql: ${TABLE}.EVENT_TIMESTAMP
 

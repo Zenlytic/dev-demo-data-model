@@ -26,6 +26,7 @@ fields:
     type: time
     datatype: date
     timeframes:
+      - raw
       - date
     sql: ${TABLE}.DATE_MONTH
     label: Date Month
