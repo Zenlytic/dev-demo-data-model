@@ -177,13 +177,52 @@ fields:
       The time at which the order was placed. This is the main time field to use
       for orders
     timeframes:
-      - raw
       - date
-      - week
-      - month
-      - quarter
-      - year
     sql: ${TABLE}.ORDER_AT
+
+  - name: order_raw
+    field_type: dimension
+    type: string
+    hidden: true
+    label: Order Timestamp
+    sql: ${TABLE}.ORDER_AT
+    searchable: false
+
+  - name: order_week
+    field_type: dimension
+    type: string
+    hidden: false
+    label: Order Week
+    description: The week in which the order was placed (week start date).
+    sql: TO_CHAR(DATE_TRUNC('week', ${TABLE}.ORDER_AT), 'YYYY-MM-DD')
+    searchable: false
+
+  - name: order_month
+    field_type: dimension
+    type: string
+    hidden: false
+    label: Order Month
+    description: The month in which the order was placed (YYYY-MM format).
+    sql: TO_CHAR(DATE_TRUNC('month', ${TABLE}.ORDER_AT), 'YYYY-MM')
+    searchable: false
+
+  - name: order_quarter
+    field_type: dimension
+    type: string
+    hidden: false
+    label: Order Quarter
+    description: The quarter in which the order was placed.
+    sql: TO_CHAR(DATE_TRUNC('quarter', ${TABLE}.ORDER_AT), 'YYYY-MM')
+    searchable: false
+
+  - name: order_year
+    field_type: dimension
+    type: number
+    hidden: false
+    label: Order Year
+    description: The year in which the order was placed.
+    sql: YEAR(${TABLE}.ORDER_AT)
+    searchable: false
 
   - name: total_gross_revenue
     field_type: measure

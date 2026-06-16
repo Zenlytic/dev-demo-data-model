@@ -237,16 +237,44 @@ fields:
   label: Event
   description: The time of interaction with the site
   timeframes:
-  - raw
   - date
-  - week
-  - month
-  - quarter
-  - year
-  - day_of_year
-  - week_of_year
-  - month_of_year
   sql: ${TABLE}.EVENT_TIMESTAMP
+
+- name: event_week
+  field_type: dimension
+  type: string
+  hidden: false
+  label: Event Week
+  description: The week of interaction with the site.
+  sql: TO_CHAR(DATE_TRUNC('week', ${TABLE}.EVENT_TIMESTAMP), 'YYYY-MM-DD')
+  searchable: false
+
+- name: event_month
+  field_type: dimension
+  type: string
+  hidden: false
+  label: Event Month
+  description: The month of interaction with the site.
+  sql: TO_CHAR(DATE_TRUNC('month', ${TABLE}.EVENT_TIMESTAMP), 'YYYY-MM')
+  searchable: false
+
+- name: event_quarter
+  field_type: dimension
+  type: string
+  hidden: false
+  label: Event Quarter
+  description: The quarter of interaction with the site.
+  sql: TO_CHAR(DATE_TRUNC('quarter', ${TABLE}.EVENT_TIMESTAMP), 'YYYY-MM')
+  searchable: false
+
+- name: event_year
+  field_type: dimension
+  type: number
+  hidden: false
+  label: Event Year
+  description: The year of interaction with the site.
+  sql: YEAR(${TABLE}.EVENT_TIMESTAMP)
+  searchable: false
 
 - name: number_of_events
   field_type: measure

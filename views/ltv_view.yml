@@ -26,15 +26,46 @@ fields:
     type: time
     datatype: date
     timeframes:
-      - raw
       - date
-      - week
-      - month
-      - quarter
-      - year
     sql: ${TABLE}.DATE_MONTH
     label: Date Month
     description: The calendar month for this row of customer activity.
+
+  - name: date_month_week
+    field_type: dimension
+    type: string
+    hidden: false
+    label: Date Month Week
+    description: The week of the customer activity month.
+    sql: TO_CHAR(DATE_TRUNC('week', ${TABLE}.DATE_MONTH), 'YYYY-MM-DD')
+    searchable: false
+
+  - name: date_month_month
+    field_type: dimension
+    type: string
+    hidden: false
+    label: Date Month Month
+    description: The month of the customer activity.
+    sql: TO_CHAR(DATE_TRUNC('month', ${TABLE}.DATE_MONTH), 'YYYY-MM')
+    searchable: false
+
+  - name: date_month_quarter
+    field_type: dimension
+    type: string
+    hidden: false
+    label: Date Month Quarter
+    description: The quarter of the customer activity.
+    sql: TO_CHAR(DATE_TRUNC('quarter', ${TABLE}.DATE_MONTH), 'YYYY-MM')
+    searchable: false
+
+  - name: date_month_year
+    field_type: dimension
+    type: number
+    hidden: false
+    label: Date Month Year
+    description: The year of the customer activity.
+    sql: YEAR(${TABLE}.DATE_MONTH)
+    searchable: false
 
   - name: n_customers_in_month
     field_type: dimension

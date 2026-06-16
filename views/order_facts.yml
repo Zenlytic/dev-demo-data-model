@@ -48,14 +48,32 @@ fields:
       The time at which the order was placed. This is the main time field to use
       for orders
     timeframes:
-      - raw
       - date
-      - week
-      - month_of_year
-      - month
-      - quarter
-      - year
     sql: ${TABLE}.order_at
+
+  - name: order_week_dim
+    field_type: dimension
+    type: string
+    hidden: false
+    label: Order Week
+    sql: TO_CHAR(DATE_TRUNC('week', ${TABLE}.order_at), 'YYYY-MM-DD')
+    searchable: false
+
+  - name: order_month_dim
+    field_type: dimension
+    type: string
+    hidden: false
+    label: Order Month
+    sql: TO_CHAR(DATE_TRUNC('month', ${TABLE}.order_at), 'YYYY-MM')
+    searchable: false
+
+  - name: order_year_dim
+    field_type: dimension
+    type: number
+    hidden: false
+    label: Order Year
+    sql: YEAR(${TABLE}.order_at)
+    searchable: false
 
   - name: number_of_orders
     field_type: measure

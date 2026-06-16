@@ -124,14 +124,44 @@ fields:
   datatype: timestamp
   description: The time at which the customer's first order was placed.
   timeframes:
-  - raw
   - date
-  - week
-  - month_of_year
-  - month
-  - quarter
-  - year
   sql: ${TABLE}.first_order_at
+
+- name: first_order_week
+  field_type: dimension
+  type: string
+  hidden: false
+  label: First Order Week
+  description: The week of the customer's first order.
+  sql: TO_CHAR(DATE_TRUNC('week', ${TABLE}.first_order_at), 'YYYY-MM-DD')
+  searchable: false
+
+- name: first_order_month
+  field_type: dimension
+  type: string
+  hidden: false
+  label: First Order Month
+  description: The month of the customer's first order.
+  sql: TO_CHAR(DATE_TRUNC('month', ${TABLE}.first_order_at), 'YYYY-MM')
+  searchable: false
+
+- name: first_order_quarter
+  field_type: dimension
+  type: string
+  hidden: false
+  label: First Order Quarter
+  description: The quarter of the customer's first order.
+  sql: TO_CHAR(DATE_TRUNC('quarter', ${TABLE}.first_order_at), 'YYYY-MM')
+  searchable: false
+
+- name: first_order_year
+  field_type: dimension
+  type: number
+  hidden: false
+  label: First Order Year
+  description: The year of the customer's first order.
+  sql: YEAR(${TABLE}.first_order_at)
+  searchable: false
 
 - name: count_customers
   field_type: measure

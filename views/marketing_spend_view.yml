@@ -73,16 +73,44 @@ fields:
   datatype: timestamp
   description: The date of the ad spend
   timeframes:
-  - raw
   - date
-  - week
-  - month
-  - quarter
-  - year
-  - day_of_year
-  - week_of_year
-  - month_of_year
   sql: ${TABLE}.spend_at
+
+- name: spend_week
+  field_type: dimension
+  type: string
+  hidden: false
+  label: Spend Week
+  description: The week of the ad spend.
+  sql: TO_CHAR(DATE_TRUNC('week', ${TABLE}.spend_at), 'YYYY-MM-DD')
+  searchable: false
+
+- name: spend_month
+  field_type: dimension
+  type: string
+  hidden: false
+  label: Spend Month
+  description: The month of the ad spend.
+  sql: TO_CHAR(DATE_TRUNC('month', ${TABLE}.spend_at), 'YYYY-MM')
+  searchable: false
+
+- name: spend_quarter
+  field_type: dimension
+  type: string
+  hidden: false
+  label: Spend Quarter
+  description: The quarter of the ad spend.
+  sql: TO_CHAR(DATE_TRUNC('quarter', ${TABLE}.spend_at), 'YYYY-MM')
+  searchable: false
+
+- name: spend_year
+  field_type: dimension
+  type: number
+  hidden: false
+  label: Spend Year
+  description: The year of the ad spend.
+  sql: YEAR(${TABLE}.spend_at)
+  searchable: false
 
 
 - name: total_marketing_spend
