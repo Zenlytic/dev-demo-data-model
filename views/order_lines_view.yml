@@ -185,24 +185,6 @@ fields:
       - year
     sql: ${TABLE}.ORDER_AT
 
-  - name: order_date
-    field_type: dimension
-    type: string
-    hidden: false
-    label: Order Date (Day)
-    description: The date on which the order was placed.
-    sql: TO_CHAR(DATE(${TABLE}.ORDER_AT), 'YYYY-MM-DD')
-    searchable: false
-
-  - name: order_month
-    field_type: dimension
-    type: string
-    hidden: false
-    label: Order Month
-    description: The month in which the order was placed (YYYY-MM format).
-    sql: TO_CHAR(DATE_TRUNC('month', ${TABLE}.ORDER_AT), 'YYYY-MM')
-    searchable: false
-
   - name: total_gross_revenue
     field_type: measure
     type: sum
