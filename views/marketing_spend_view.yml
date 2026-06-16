@@ -73,6 +73,7 @@ fields:
   datatype: timestamp
   description: The date of the ad spend
   timeframes:
+  - raw
   - date
   sql: ${TABLE}.spend_at
 
