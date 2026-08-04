@@ -1,0 +1,245 @@
+From c396df85a00ae359917ff2f20c3196db09be6a97 Mon Sep 17 00:00:00 2001
+From: Cursor Agent <cursoragent@cursor.com>
+Date: Tue, 4 Aug 2026 16:47:21 +0000
+Subject: [PATCH] Catch git permission denied errors and raise a user-friendly
+ GitPermissionError
+
+When a deploy key lacks write access, git push (and other git
+operations) fail with a raw GitPython GitCommandError like:
+
+  Cmd('git') failed due to: exit code(128)
+    cmdline: git push origin pb-test-2
+    stderr: 'ERROR: Permission to Zenlytic/dev-demo-data-model.git denied to deploy key ...'
+
+This surfaces the raw dump to the user on actions like Save Model.
+Translate these failures into GitPermissionError (a subclass of
+MetricsLayerException) with a message that is safe to display to
+the user. Non-permission git errors propagate unchanged.
+
+Fixes ZEN-8504
+---
+ metrics_layer/core/exceptions.py        | 12 ++++
+ metrics_layer/core/parse/github_repo.py | 78 +++++++++++++++++------
+ tests/test_github_repo.py               | 85 +++++++++++++++++++++++++
+ 3 files changed, 155 insertions(+), 20 deletions(-)
+ create mode 100644 tests/test_github_repo.py
+
+diff --git a/metrics_layer/core/exceptions.py b/metrics_layer/core/exceptions.py
+index 7ea1061..d3adf25 100644
+--- a/metrics_layer/core/exceptions.py
++++ b/metrics_layer/core/exceptions.py
+@@ -27,3 +27,15 @@ class JoinError(QueryError):
+ 
+ class ConfigError(MetricsLayerException):
+     pass
++
++
++class GitError(MetricsLayerException):
++    def __init__(self, message: str):
++        self.message = message
++
++    def __str__(self):
++        return self.message
++
++
++class GitPermissionError(GitError):
++    pass
+diff --git a/metrics_layer/core/parse/github_repo.py b/metrics_layer/core/parse/github_repo.py
+index 9d6124c..1532f78 100644
+--- a/metrics_layer/core/parse/github_repo.py
++++ b/metrics_layer/core/parse/github_repo.py
+@@ -1,5 +1,6 @@
+ import os
+ import pathlib
++import re
+ import shutil
+ from glob import glob
+ from typing import Union
+@@ -8,6 +9,7 @@ import git
+ import yaml
+ 
+ from metrics_layer.core import utils
++from metrics_layer.core.exceptions import GitPermissionError
+ 
+ BASE_PATH = os.getenv("GIT_REPO_BASE_PATH", os.path.dirname(__file__))
+ 
+@@ -180,29 +182,65 @@ class GithubRepo(BaseRepo):
+ 
+     def _ssh_wrapped(self, func, **kwargs):
+         private_key = kwargs.pop("private_key", None)
+-        if private_key and self._file_path:
+-            self._write_private_key(private_key, self._file_path)
+-            try:
++        try:
++            if private_key and self._file_path:
++                self._write_private_key(private_key, self._file_path)
++                try:
++                    func(**kwargs)
++                    os.remove(self._file_path)
++                except Exception as e:
++                    os.remove(self._file_path)
++                    raise e
++            else:
+                 func(**kwargs)
+-                os.remove(self._file_path)
+-            except Exception as e:
+-                os.remove(self._file_path)
+-                raise e
+-        else:
+-            func(**kwargs)
++        except git.GitCommandError as e:
++            GithubRepo.raise_for_git_permission_error(e)
++            raise
++
++    @staticmethod
++    def raise_for_git_permission_error(error: git.GitCommandError):
++        """Translate GitPython permission failures (e.g. a deploy key without write access)
++        into a GitPermissionError with a message that is safe to display to the user."""
++        stderr = str(error.stderr or "")
++        permission_denied_indicators = [
++            "denied to deploy key",
++            "Permission denied",
++            "correct access rights",
++            "The requested URL returned error: 403",
++        ]
++        if not any(indicator in stderr for indicator in permission_denied_indicators):
++            return
++
++        match = re.search(r"Permission to ([^\s']+) denied(?: to ([^\n']+))?", stderr)
++        repo_reference = f"the repository {match.group(1)}" if match else "the repository"
++        actor_reference = "the deploy key"
++        if match and match.group(2):
++            actor_reference = match.group(2).strip().rstrip(".'\"")
++            if not actor_reference.startswith("the "):
++                actor_reference = f"the {actor_reference}"
++        message = (
++            f"Permission denied while running git. Access to {repo_reference} was denied to"
++            f" {actor_reference}. Please make sure {actor_reference} has write access and the"
++            " repository exists."
++        )
++        raise GitPermissionError(message) from error
+ 
+     def fetch_github_repo(self, private_key: str):
+-        if self.is_ssh:
+-            if private_key is None:
+-                raise ValueError("Private key is required for SSH mode of connection to Github.")
+-            repo, branch_options, file_path = GithubRepo._fetch_github_repo_ssh(
+-                self.repo_url, self.repo_destination, self.branch, private_key
+-            )
+-        else:
+-            repo, branch_options = GithubRepo._fetch_github_repo_https(
+-                self.repo_url, self.repo_destination, self.branch
+-            )
+-            file_path = None
++        try:
++            if self.is_ssh:
++                if private_key is None:
++                    raise ValueError("Private key is required for SSH mode of connection to Github.")
++                repo, branch_options, file_path = GithubRepo._fetch_github_repo_ssh(
++                    self.repo_url, self.repo_destination, self.branch, private_key
++                )
++            else:
++                repo, branch_options = GithubRepo._fetch_github_repo_https(
++                    self.repo_url, self.repo_destination, self.branch
++                )
++                file_path = None
++        except git.GitCommandError as e:
++            GithubRepo.raise_for_git_permission_error(e)
++            raise
+         return repo, branch_options, file_path
+ 
+     @staticmethod
+diff --git a/tests/test_github_repo.py b/tests/test_github_repo.py
+new file mode 100644
+index 0000000..190958a
+--- /dev/null
++++ b/tests/test_github_repo.py
+@@ -0,0 +1,85 @@
++import git
++import pytest
++
++from metrics_layer.core.exceptions import GitError, GitPermissionError, MetricsLayerException
++from metrics_layer.core.parse.github_repo import GithubRepo
++
++DEPLOY_KEY_DENIED_STDERR = (
++    "ERROR: Permission to Zenlytic/dev-demo-data-model.git denied to deploy key\n"
++    "fatal: Could not read from remote repository.\n\n"
++    "Please make sure you have the correct access rights\n"
++    "and the repository exists."
++)
++
++
++def _deploy_key_denied_error():
++    return git.GitCommandError(
++        ["git", "push", "origin", "pb-test-2"], status=128, stderr=DEPLOY_KEY_DENIED_STDERR
++    )
++
++
++def test_deploy_key_permission_denied_is_translated():
++    with pytest.raises(GitPermissionError) as exc_info:
++        GithubRepo.raise_for_git_permission_error(_deploy_key_denied_error())
++
++    message = str(exc_info.value)
++    assert "Permission denied" in message
++    assert "Zenlytic/dev-demo-data-model.git" in message
++    assert "deploy key" in message
++    # The raw GitPython formatting should not leak into the user-facing message
++    assert "Cmd('git') failed" not in message
++    assert "exit code(128)" not in message
++    # The exception is catchable via the library's base exception types
++    assert isinstance(exc_info.value, GitError)
++    assert isinstance(exc_info.value, MetricsLayerException)
++
++
++def test_https_403_is_translated():
++    error = git.GitCommandError(
++        ["git", "push", "origin", "main"],
++        status=128,
++        stderr=(
++            "fatal: unable to access 'https://github.com/Zenlytic/dev-demo-data-model/':"
++            " The requested URL returned error: 403"
++        ),
++    )
++    with pytest.raises(GitPermissionError):
++        GithubRepo.raise_for_git_permission_error(error)
++
++
++def test_unrelated_git_error_is_not_translated():
++    error = git.GitCommandError(
++        ["git", "push", "origin", "main"],
++        status=1,
++        stderr="error: failed to push some refs to 'origin' (non-fast-forward)",
++    )
++    # Should return without raising, so the original error propagates unchanged
++    assert GithubRepo.raise_for_git_permission_error(error) is None
++
++
++def test_add_commit_and_push_raises_git_permission_error(monkeypatch):
++    repo = GithubRepo(repo_url="git@github.com:Zenlytic/dev-demo-data-model.git", branch="master")
++    repo._file_path = None
++
++    class FakeGit:
++        def checkout(self, *args, **kwargs):
++            pass
++
++        def add(self, *args, **kwargs):
++            pass
++
++        def commit(self, *args, **kwargs):
++            pass
++
++        def push(self, *args, **kwargs):
++            raise _deploy_key_denied_error()
++
++    class FakeRepo:
++        git = FakeGit()
++
++    repo.git_repo = FakeRepo()
++
++    with pytest.raises(GitPermissionError) as exc_info:
++        repo.add_commit_and_push(message="test commit", branch_name="pb-test-2")
++
++    assert "Zenlytic/dev-demo-data-model.git" in str(exc_info.value)
+-- 
+2.43.0
+
