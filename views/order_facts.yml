@@ -45,8 +45,7 @@ fields:
     datatype: timestamp
     label: Order Date
     description: >-
-      The time at which the order was placed. This is the main time field to use
-      for orders
+      local-side-A
     timeframes:
       - raw
       - date
