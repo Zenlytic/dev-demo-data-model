@@ -14,7 +14,7 @@ fields:
   type: string
   hidden: true
   primary_key: true
-  description: local-side-B
+  description: resolved-A-and-B
   sql: ${TABLE}.PRODUCT_ID
   zoe_description: The id of the product.
   searchable: false
