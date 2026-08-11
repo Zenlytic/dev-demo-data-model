@@ -45,7 +45,7 @@ fields:
     datatype: timestamp
     label: Order Date
     description: >-
-      local-side-B
+      resolved-A-and-B
     timeframes:
       - raw
       - date
