@@ -30,6 +30,9 @@ cannot answer.
    inferring or summarizing from it.
 6. **Respect recency for volatile topics.** For anything that changes often (pricing, market share,
    news, regulations), prefer the most recent available source and note the as-of date in your answer.
+7. **Anchor relative time references to the current date.** When interpreting or describing "recent,"
+   "latest," or "this year" in a search result, resolve it against the current date given in context,
+   not the source's own publication framing.
 
 ## Workflow
 
