@@ -431,3 +431,18 @@ fields:
       ${order_lines.order_id} END) / NULLIF(COUNT(DISTINCT
       ${order_lines.order_id}), 0)
     canon_date: order_lines.placed_at
+
+  - name: discount_rate
+    field_type: measure
+    type: number
+    label: Discount Rate
+    description: >-
+      Discount rate = total discounts / total gross revenue. Shows what
+      share of gross revenue is given away as discounts, useful for gauging
+      how promotion-dependent sales are.
+    value_format_name: percent_1
+    sql: ${total_discounts} / nullif(${total_gross_revenue}, 0)
+    synonyms:
+      - discount percentage
+      - promo rate
+    canon_date: order_lines.placed_at
