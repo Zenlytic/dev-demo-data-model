@@ -1,0 +1,22 @@
+type: view
+name: sum_total_cost_by_user_id_observations
+model_name: zenlytic_managed
+sql_table_name: sum_total_cost_by_user_id_observations
+fields:
+  - name: dimension
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."DIMENSION"
+    searchable: true
+
+  - name: metric
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."METRIC"
+    searchable: true
+
+  - name: time_dimension
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."TIME_DIMENSION"
+    searchable: true

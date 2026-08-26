@@ -10,7 +10,6 @@ description: >-
   and customer purchasing behavior over time.
 sql_table_name: DEMO.DEMO_PROD.LTV
 default_date: activity_time
-
 fields:
   - name: customer_id
     field_type: dimension
@@ -74,8 +73,8 @@ fields:
     sql: ${TABLE}.N_CUSTOMERS_IN_MONTH
     label: Active in Month
     description: >-
-      1 if the customer was active (placed at least one order) in this month,
-      0 otherwise.
+      1 if the customer was active (placed at least one order) in this month, 0
+      otherwise.
     searchable: false
 
   - name: n_orders_in_month
@@ -91,7 +90,9 @@ fields:
     type: number
     sql: ${TABLE}.N_CUMULATIVE_ORDERS
     label: Cumulative Orders
-    description: Running total of orders placed by this customer up to and including this month.
+    description: >-
+      Running total of orders placed by this customer up to and including this
+      month.
     searchable: false
 
   - name: gross_sales
