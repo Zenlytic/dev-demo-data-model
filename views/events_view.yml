@@ -301,4 +301,25 @@ fields:
     can't identify)
   value_format_name: decimal_0
   sql: ${anonymous_id}
+
+- name: conversion_rate
+  field_type: measure
+  type: number
+  label: Conversion Rate
+  description: >-
+    The share of sessions that completed a purchase, calculated as the
+    number of sessions with a 'Complete Purchase' event divided by the
+    total number of sessions.
+  zoe_description: >-
+    Session-level conversion rate. Numerator counts distinct session_id
+    where event_name = 'Complete Purchase'; denominator counts all distinct
+    session_id on the events view. Do not divide order counts by session
+    counts from a different grain/table without aggregating first.
+  synonyms:
+  - CVR
+  - purchase conversion rate
+  value_format_name: percent_1
+  sql: >-
+    COUNT(DISTINCT CASE WHEN ${event_name} = 'Complete Purchase' THEN
+    ${session_id} END) / NULLIF(COUNT(DISTINCT ${session_id}), 0)
 event_dimension: event_name
