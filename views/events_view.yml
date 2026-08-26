@@ -301,4 +301,18 @@ fields:
     can't identify)
   value_format_name: decimal_0
   sql: ${anonymous_id}
+
+- name: conversion_rate
+  field_type: measure
+  type: number
+  description: >-
+    Conversion rate = number of sessions that completed a purchase / total
+    number of sessions.
+  value_format_name: percent_1
+  sql: >-
+    COUNT(DISTINCT CASE WHEN ${event_name} = 'Complete Purchase' THEN
+    ${session_id} END) / NULLIF(COUNT(DISTINCT ${session_id}), 0)
+  synonyms:
+    - CVR
+    - conversion
 event_dimension: event_name
