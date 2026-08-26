@@ -164,7 +164,9 @@ fields:
     field_type: dimension
     type: number
     hidden: true
-    sql: dense_rank() over (partition by ${customer_id} order by ${TABLE}.ORDER_AT asc)
+    sql: >-
+      dense_rank() over (partition by ${customer_id} order by ${TABLE}.ORDER_AT
+      asc)
     window: true
 
   - name: placed_at
