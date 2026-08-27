@@ -192,15 +192,6 @@ fields:
   sql: TO_CHAR(DATE_TRUNC('month', ${TABLE}.ORDER_AT), 'YYYY-MM')
   searchable: false
 
-- name: order_quarter
-  field_type: dimension
-  type: string
-  hidden: false
-  label: Order Quarter
-  description: The quarter in which the order was placed.
-  sql: TO_CHAR(DATE_TRUNC('quarter', ${TABLE}.ORDER_AT), 'YYYY-MM')
-  searchable: false
-
 - name: order_year
   field_type: dimension
   type: number
