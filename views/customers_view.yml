@@ -100,9 +100,9 @@ fields:
 - name: first_marketing_group
   field_type: dimension
   type: string
-  description: The first marketing group the user came in through
-  sql: ${TABLE}.first_channel
-  searchable: false
+  description: The customer's first marketing channel (falls back to the marketing spend channel).
+  sql: coalesce(${TABLE}.first_channel, ${marketing_spend.channel})
+  searchable: true
 
 - name: first_promotion
   field_type: dimension

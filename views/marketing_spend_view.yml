@@ -6,6 +6,8 @@ model_name: pure_organics
 sql_table_name: DEMO_PROD.MARKETING_SPEND
 default_date: ad_date
 row_label: Spend Item
+required_access_grants:
+- pii_access
 fields:
 - name: revenue_from_paid_marketing
   field_type: dimension
