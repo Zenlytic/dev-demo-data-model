@@ -178,7 +178,7 @@ fields:
   hidden: false
   label: Order Week
   description: The week in which the order was placed (week start date).
-  sql: TO_CHAR(DATE_TRUNC('week', ${TABLE}.ORDER_AT), 'YYYY-MM-DD')
+  sql: TO_CHAR(DATE_TRUNC('week', ${order_month}), 'YYYY-MM-DD')
   searchable: false
 
 - name: order_month
