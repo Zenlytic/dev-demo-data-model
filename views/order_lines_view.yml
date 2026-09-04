@@ -166,13 +166,11 @@ fields:
   sql: dense_rank() over (partition by ${customer_id} order by ${TABLE}.ORDER_AT asc)
   window: true
 
-- name: order_raw
-  field_type: dimension
-  type: string
-  hidden: true
-  label: Order Timestamp
+- name: order
+  field_type: dimension_group
+  type: time
+  timeframes: [date, month]
   sql: ${TABLE}.ORDER_AT
-  searchable: false
 
 - name: order_week
   field_type: dimension
