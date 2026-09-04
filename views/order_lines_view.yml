@@ -173,7 +173,7 @@ fields:
 - name: order
   field_type: dimension_group
   type: time
-  timeframes: [date, month]
+  timeframes: [date]
   sql: ${TABLE}.ORDER_AT
 
 - name: order_week
