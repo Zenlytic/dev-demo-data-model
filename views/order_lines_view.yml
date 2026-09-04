@@ -1,7 +1,11 @@
 version: 1
 type: view
 name: order_lines
-description: Description of order_lines view.
+description: >-
+  One row per order line, with purchase details and measures for analyzing order
+  volume, gross and net revenue, discounts, COGS, profitability, customer type,
+  subscription versus one-time purchases, and marketing attribution by campaign,
+  promotion, source, and channel.
 model_name: pure_organics
 sql_table_name: DEMO_PROD.ORDER_LINES
 default_date: placed_at
