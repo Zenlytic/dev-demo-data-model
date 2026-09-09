@@ -411,8 +411,9 @@ fields:
   hidden: false
   label: Gross Margin %
   description: >-
-    Gross margin percentage = gross profit / net revenue. Measures how much of
-    net revenue is retained after deducting cost of goods sold (COGS).
+    Pourcentage de marge brute = bénéfice brut / chiffre d'affaires net. Mesure
+    la part du chiffre d'affaires net conservée après déduction du coût des
+    marchandises vendues (COGS).
   value_format_name: percent_1
   sql: >-
     ${gross_profit} / NULLIF(${total_net_revenue}, 0)
