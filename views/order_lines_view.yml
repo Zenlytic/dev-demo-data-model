@@ -405,6 +405,22 @@ fields:
     ${order_lines.order_id}), 0)
   canon_date: order_lines.placed_at
 
+- name: gross_margin_pct
+  field_type: measure
+  type: number
+  hidden: false
+  label: Gross Margin %
+  description: >-
+    Gross margin percentage = gross profit / net revenue. Measures how much of
+    net revenue is retained after deducting cost of goods sold (COGS).
+  value_format_name: percent_1
+  sql: >-
+    ${gross_profit} / NULLIF(${total_net_revenue}, 0)
+  synonyms:
+  - gross margin
+  - margin percent
+  - margin %
+
 - name: net_margin_kxsmwfit
   field_type: measure
   type: number
