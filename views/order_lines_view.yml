@@ -411,7 +411,9 @@ fields:
   hidden: false
   label: Gross Margin %
   description: >-
-    売上総利益率 = 売上総利益 ÷ 純売上高。売上原価（COGS）を差し引いた後、純売上高のうちどれだけが残るかを示す指標。
+    Pourcentage de marge brute = bénéfice brut / chiffre d'affaires net. Mesure
+    la part du chiffre d'affaires net conservée après déduction du coût des
+    marchandises vendues (COGS).
   value_format_name: percent_1
   sql: >-
     ${gross_profit} / NULLIF(${total_net_revenue}, 0)
