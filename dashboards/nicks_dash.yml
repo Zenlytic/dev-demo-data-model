@@ -7,12 +7,6 @@ filters:
   - field: order_lines.subscription_vs_otp
     value: Subscription, One Time Purchase
 elements:
-  - title: Product sales by type last 6 months
-    model: pure_organics
-    metric: order_lines.total_gross_revenue
-    slice_by:
-      - products.product_type
-    time_period: 6 months
   - title: Product sales by SKU (MTD vs last MTD)
     model: pure_organics
     metric: order_lines.total_gross_revenue
