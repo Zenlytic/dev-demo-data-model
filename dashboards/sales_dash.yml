@@ -62,3 +62,4 @@ elements:
   slice_by:
   - order_lines.subscription_vs_otp
   time_period: month to date
+
