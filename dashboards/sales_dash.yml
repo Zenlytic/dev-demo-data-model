@@ -43,7 +43,6 @@ elements:
   slice_by:
   - order_lines.marketing_channel
   - order_lines.marketing_source
-  - order_lines.campaign
   time_period: month to date
   size: full
   force_table: true
