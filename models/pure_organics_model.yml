@@ -9,7 +9,6 @@ access_grants:
   allowed_values:
   - Executive
   - Finance
-<<<<<<< HEAD
 mappings:
   marketing_channel:
     fields:
@@ -34,6 +33,3 @@ mappings:
       The marketing campaign that the customer came through before placing their
       order.
     group_label: Acquisition
-=======
-
->>>>>>> a9dfbb79c8269daee46e74ffb9811bb0bda0c447
