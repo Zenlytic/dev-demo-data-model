@@ -235,7 +235,7 @@ fields:
   type: string
   hidden: false
   label: Event Week
-  description: The week of interaction with the site.
+  description: The week of interaction with the site
   sql: TO_CHAR(DATE_TRUNC('week', ${TABLE}.EVENT_TIMESTAMP), 'YYYY-MM-DD')
   searchable: false
 
