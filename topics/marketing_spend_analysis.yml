@@ -15,5 +15,5 @@ zoe_description: >-
   and source. It includes metrics such as total spend, CAC, CPC, ROAS, and
   PROAS, which can be used to evaluate campaign success and optimize marketing
   strategies.
-hidden: false
+hidden: 3
 views: {}
