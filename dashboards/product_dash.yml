@@ -4,18 +4,18 @@ name: product_dashboard
 label: Product Dashboard
 description: Product sales by styles and SKUs
 filters:
-  - field: order_lines.subscription_vs_otp
+  - field: order_items.subscription_vs_otp
     value: Subscription, One Time Purchase
 elements:
   - title: Product sales by type last 6 months
     model: pure_organics
-    metric: order_lines.total_gross_revenue
+    metric: order_items.total_gross_revenue
     slice_by:
       - products.product_type
     time_period: 6 months
   - title: Product sales by SKU (MTD vs last MTD)
     model: pure_organics
-    metric: order_lines.total_gross_revenue
+    metric: order_items.total_gross_revenue
     slice_by:
       - products.product_title
     time_period: month to date
@@ -25,13 +25,13 @@ elements:
   - title: Product basket breakdown (what's purchased together, last 6 months)
     question_type: analyze_baskets
     model: pure_organics
-    metric: order_lines.number_of_orders
+    metric: order_items.number_of_orders
     category: products.product_title
     combinations: 2
     time_period: 6 months
   - title: Product sales by type (MTD)
     model: pure_organics
-    metric: order_lines.total_gross_revenue
+    metric: order_items.total_gross_revenue
     slice_by:
       - products.product_type
     time_period: month to date

@@ -28,11 +28,6 @@ fields:
   type: string
   hidden: true
   description: Represents the id of each customer.
-  drill_fields:
-  - customers.email
-  - customers.state
-  - customers.city
-  - customers.zipcode
   sql: ${TABLE}.CUSTOMER_ID
   searchable: false
 
