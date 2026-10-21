@@ -1,2 +1,0 @@
-# Pure Organics Data Model
-
