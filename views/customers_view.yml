@@ -183,3 +183,13 @@ fields:
   type: count_distinct
   value_format_name: decimal_0
   sql: ${email}
+
+- name: count_unique_emails
+  field_type: measure
+  type: count_distinct
+  label: Unique Customer Emails (Case-Insensitive)
+  description: Count of distinct customer email addresses, normalized to lowercase so that case variants (e.g. User@example.com and user@example.com) are treated as the same address.
+  value_format_name: decimal_0
+  required_access_grants:
+  - pii_access
+  sql: LOWER(${email})
