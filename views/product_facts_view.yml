@@ -26,7 +26,7 @@ fields:
   type: string
   hidden: true
   primary_key: true
-  sql: concat(${TABLE}.order_at||${product_type})
+  sql: concat_ws('|', ${TABLE}.order_at, ${TABLE}.product_title, ${TABLE}.product_type)
   searchable: false
 
 - name: product_title

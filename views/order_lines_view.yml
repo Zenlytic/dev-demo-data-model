@@ -418,17 +418,3 @@ fields:
     ((SUM(${order_lines.revenue}) - SUM(${order_lines.discount})) -
     SUM(ORDER_LINES.COGS)) / SUM(${order_lines.revenue}) END
   canon_date: order_lines.placed_at
-
-- name: repurchase_rate_yvntcgye
-  field_type: measure
-  type: number
-  label: Repurchase Rate
-  description: >-
-    Repurchase Rate shows the percentage of orders that come from returning
-    (repeat) customers.
-  value_format_name: percent_2
-  sql: >-
-    COUNT(DISTINCT CASE WHEN ${order_lines.new_vs_repeat} = 'Repeat' THEN
-    ${order_lines.order_id} END) / NULLIF(COUNT(DISTINCT
-    ${order_lines.order_id}), 0)
-  canon_date: order_lines.placed_at

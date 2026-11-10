@@ -24,7 +24,7 @@ fields:
   type: string
   hidden: true
   primary_key: true
-  sql: concat(${TABLE}.order_at||${product_type})
+  sql: concat_ws('|', ${TABLE}.order_at, ${TABLE}.product_title, ${TABLE}.product_type)
   searchable: false
 
 - name: product_title
@@ -90,27 +90,3 @@ fields:
   field_type: measure
   type: sum
   sql: ${TABLE}.total_cogs
-
-- name: ywuuqbnwwufratcmzdatbrajnnmtzbkeylvpdnbl
-  field_type: measure
-  type: sum
-  label: Duplicate Number Of Orders
-  sql: ${TABLE}.number_of_orders
-  canon_date: order_facts.order_time
-  update_where_timeframe: true
-
-- name: atggfsvlzimivwiehgcyosyugbrsnldxzmmroler
-  field_type: measure
-  type: sum
-  label: Duplicate Number Of Units
-  sql: ${TABLE}.number_of_units
-  canon_date: order_facts.order_time
-  update_where_timeframe: true
-
-- name: uqmqdsktzhurbjjcyfvcmyfxgvapigxydalyzcdd
-  field_type: measure
-  type: sum
-  label: Duplicate Number Of Orders
-  sql: ${TABLE}.number_of_orders
-  canon_date: order_facts.order_time
-  update_where_timeframe: true

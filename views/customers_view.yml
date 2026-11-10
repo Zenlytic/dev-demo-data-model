@@ -164,17 +164,11 @@ fields:
   - date
   sql: ${TABLE}.first_order_at
 
-- name: count_unique_customer_ids
+- name: count_customers
   field_type: measure
   type: count_distinct
   label: Unique Customer IDs
   description: The number of unique customer IDs in the customers table.
-  value_format_name: decimal_0
-  sql: ${customer_id}
-
-- name: count_customers
-  field_type: measure
-  type: count_distinct
   value_format_name: decimal_0
   sql: ${customer_id}
 
